@@ -1,0 +1,55 @@
+<oofem version="1">
+  <Output>tmpatch43-2.out</Output>
+  <Description>Patch test of linear triangle elements, steady-state solution, prescribed constant edge flux, no heat source</Description>
+  <Analysis type="StationaryProblem" nsteps="1"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="2.2 0.0 0.0"/>
+      <Node coords="4.0 0.0 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+      <Node id="5" coords="2.2 1.0 0.0"/>
+      <Node coords="4.0 1.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <tr1ht nodes="1 2 4"/>
+      <tr1ht nodes="2 5 4"/>
+      <tr1ht nodes="2 3 5"/>
+      <tr1ht nodes="3 6 5"/>
+    </Elements>
+    <CrossSections>
+      <SimpleTransportCS mat="1" set="1" thickness="0.15"/>
+    </CrossSections>
+    <Materials>
+      <IsoHeat d="0.0" k="3.0" c="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="10" values="10.0" set="2"/>
+      <!--Neumann bc-->
+      <constantedgeload loadtimefunction="1" components="-15.0" loadtype="2" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-4"/>
+      <Set nodes="1 4"/>
+      <Set elementedges="4 1"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--corresponds to exact solution-->
+    <errorcheck>
+      <NODE tStep="1" number="2" dof="10" unknown="d" value="16.0"/>
+      <NODE tStep="1" number="3" dof="10" unknown="d" value="25.0"/>
+      <NODE tStep="1" number="5" dof="10" unknown="d" value="16.0"/>
+      <NODE tStep="1" number="6" dof="10" unknown="d" value="25.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="56" component="1" value="-15.0"/>
+      <ELEMENT tStep="1" number="2" gp="1" keyword="56" component="1" value="-15.0"/>
+      <ELEMENT tStep="1" number="3" gp="1" keyword="56" component="1" value="-15.0"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="56" component="1" value="-15.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

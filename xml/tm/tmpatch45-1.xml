@@ -1,0 +1,44 @@
+<oofem version="1">
+  <Output>tmpatch45-1.out</Output>
+  <Description>Test of tr1ht element with a constant heat source, adiabatic</Description>
+  <Analysis type="TransientTransport" nsteps="10" deltat="3600.0" rtolf="1e-06" forcescale="0.0" forcescaledofs="10" alpha="0.5"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="2.2 0.0 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <tr1ht nodes="1 2 3" bodyloads="1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleTransportCS mat="1" set="1" thickness="0.15"/>
+    </CrossSections>
+    <Materials>
+      <IsoHeat d="1.0" k="1.0" c="1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <!--Internal source-->
+      <deadweight loadtimefunction="1" components="0.001" set="0"/>
+    </BoundaryConditions>
+    <InitialConditions>
+      <InitialCondition conditions="u 25.0" dofs="10" set="1"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <!--PiecewiseLinFunction 1 t 2 -3600 36000 f(t) 2 1.0 36.0-->
+      <Set elementranges="1"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <NODE tStep="1" number="1" dof="10" unknown="d" value="28.6"/>
+      <NODE tStep="2" number="1" dof="10" unknown="d" value="32.2"/>
+      <NODE tStep="6" number="1" dof="10" unknown="d" value="46.6"/>
+      <NODE tStep="10" number="1" dof="10" unknown="d" value="61.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

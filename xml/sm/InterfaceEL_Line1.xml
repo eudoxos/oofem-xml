@@ -1,0 +1,66 @@
+<oofem version="1">
+  <Output>InterfaceEL_Line1.out</Output>
+  <Description>Test of interface element - linear line element: Written by Jim Brouzoulis, Chalmers University of Technology. Interface element is loaded in shear only.</Description>
+  <Analysis type="staticstructural" nsteps="5" deltat="1.0" rtolf="1e-06" maxiter="10" miniter="2" manrmsteps="1"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="1.0 0.3 0.0"/>
+      <Node coords="0.0 0.3 0.0"/>
+      <Node id="5" coords="0.0 0.3 0.0"/>
+      <Node coords="1.0 0.3 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+      <Node coords="0.0 1.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <PlaneStress2D nodes="1 2 3 4" crosssect="1" nip="9"/>
+      <PlaneStress2D nodes="5 6 7 8" crosssect="1" nip="9"/>
+      <IntElLine1 nodes="4 3 5 6"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" material="1"/>
+      <InterfaceCS thickness="1.0" material="2" set="4"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="0.0" e="100000.0" n="0.0" talpha="0.0"/>
+      <!--Bilinear cohesive zone material-->
+      <!--intmatbilinearcz 2 kn 1.0e6 g1c 1.0e1 g2c 1.5e0 mu 0.0 gamma 0.5 sigf 1.e2  use_num_tangent 1-->
+      <CohInt kn="1.0" ks="100.0" stiffcoeffkn="1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.8 0.0" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <PiecewiseLinFunction t="1.0 6.0" f_t_="0.0 1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1"/>
+      <Set nodes="2"/>
+      <Set nodes="7 8"/>
+      <Set elements="3"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-05">
+      <!--step 2-->
+      <REACTION tStep="2" number="1" dof="1" value="-7.97519718"/>
+      <REACTION tStep="2" number="2" dof="1" value="-7.97519718"/>
+      <REACTION tStep="2" number="7" dof="1" value="7.97519718"/>
+      <REACTION tStep="2" number="8" dof="1" value="7.97519718"/>
+      <REACTION tStep="2" number="1" dof="2" value="-4.78515021"/>
+      <REACTION tStep="2" number="2" dof="2" value="4.78515021"/>
+      <!--step 5-->
+      <REACTION tStep="5" number="1" dof="1" value="-31.9007887"/>
+      <REACTION tStep="5" number="2" dof="1" value="-31.9007887"/>
+      <REACTION tStep="5" number="7" dof="1" value="31.9007887"/>
+      <REACTION tStep="5" number="8" dof="1" value="31.9007887"/>
+      <REACTION tStep="5" number="1" dof="2" value="-19.1406008"/>
+      <REACTION tStep="5" number="2" dof="2" value="19.1406008"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

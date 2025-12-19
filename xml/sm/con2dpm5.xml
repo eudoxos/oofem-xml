@@ -1,0 +1,34 @@
+<oofem version="1">
+  <Output>con2dpm5.out</Output>
+  <Description>Test of 1D CDPM2 on a 1D truss element</Description>
+  <Analysis type="NonLinearStatic" nsteps="50" contextoutputstep="10000000">
+    <Metasteps>
+      <Metastep nsteps="3" rtolv="0.001" controllmode="0" steplength="5e-05" minsteplength="1e-05" psi="0.0" hpcmode="2" hpc="2 1" hpcw="1.0" reqiterations="100000" stiffmode="1" maxiter="100000" donotfixload=""/>
+    </Metasteps>
+  </Analysis>
+  <Domain domain="1dtruss">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0" bc="1"/>
+      <Node coords="0.25 0.0 0.0" load="2"/>
+    </Nodes>
+    <Elements>
+      <truss1d nodes="1 2" mat="1" crosssect="1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" width="0.1"/>
+    </CrossSections>
+    <Materials>
+      <con2dpm d="0.0" e="20000000000.0" n="0.2" talpha="0.0" wf="0.0008" fc="35000000.0" ft="2000000.0" hp="0.025" yieldtol="1e-10" asoft="7.0" stype="2" damflag="3"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+      <NodalLoad loadtimefunction="1" components="1.0"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets/>
+  </Domain>
+</oofem>

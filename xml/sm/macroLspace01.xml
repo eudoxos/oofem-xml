@@ -1,0 +1,56 @@
+<oofem version="1">
+  <Output>macroLspace01.out</Output>
+  <Description>test of one MacroLSpace element with embedded problem from file micromaterial01.in</Description>
+  <Analysis type="StaticStructural" nsteps="3" rtolf="0.0001" deltat="1.0"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <!--the size of macroelement should physically correspond to underlying microproblem, although the algorithm is robust enough to accomodate any size-->
+      <Node coords="0.0 0.0 3.0"/>
+      <Node coords="0.0 4.5 3.0"/>
+      <Node coords="2.0 4.5 3.0"/>
+      <Node coords="2.0 0.0 3.0"/>
+      <Node id="5" coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 4.5 0.0"/>
+      <Node coords="2.0 4.5 0.0"/>
+      <Node coords="2.0 0.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <macrolspace nodes="1 2 3 4 5 6 7 8" crosssect="1" mat="1" micromasternodes="25 34 36 27 1 10 12 3" microboundarynodes="1 13 25 4 16 28 7 19 31 10 22 34 2 14 26 5 29 8 32 11 23 35 3 15 27 6 18 30 9 21 33 12 24 36"/>
+    </Elements>
+    <CrossSections>
+      <!--lspace 1 nodes 8 1 2 3 4 5 6 7 8 crossSect 1-->
+      <SimpleCS material="1"/>
+    </CrossSections>
+    <Materials>
+      <micromat file="microMaterial01.in.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <!--IsoLE 1 d 0.0 E 10.0 n 0.2 tAlpha 0.000012-->
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="2" dofs="2" values="0.1" set="3"/>
+      <BoundaryCondition loadtimefunction="1" dofs="3" values="0.0" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction t="1.0 101.0" f_t_="0.0 100.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1 2 5 6"/>
+      <Set nodes="1 4 5 8"/>
+      <Set nodes="2 3 6 7"/>
+      <Set nodes="5 6 7 8"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--strains and stresses are not transferred from the subproblem, check only reactions.-->
+    <errorcheck tolerance="0.0001">
+      <REACTION tStep="2" number="1" dof="2" value="-0.33333"/>
+      <REACTION tStep="2" number="2" dof="2" value="0.33333"/>
+      <REACTION tStep="3" number="1" dof="2" value="-0.66667"/>
+      <REACTION tStep="3" number="2" dof="2" value="0.66667"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

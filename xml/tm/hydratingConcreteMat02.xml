@@ -1,0 +1,43 @@
+<oofem version="1">
+  <Output>hydratingConcreteMat02.out</Output>
+  <Description>Test of hydrating concrete material, linear triangluar element with a heat source, transient linear solver, adiabatic conditions, exponential model</Description>
+  <Analysis type="TransientTransport" nsteps="29" deltat="3600.0" alpha="1.0" rtolv="1e-05"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="2.2 0.0 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <tr1ht nodes="1 2 3"/>
+    </Elements>
+    <CrossSections>
+      <SimpleTransportCS thickness="0.15" mat="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <!--Standard concrete k(conductivity)=1.7 W/m/K   c(capacity)=870 J/kg/K-->
+      <HydratingConcreteMat d="2458.0" k="1.7" c="870.0" hydrationmodeltype="1" qpot="509.0" masscement="409.0" referencetemperature="25.0" tau="48600.0" beta="0.9" dohinf="0.85" activationenergy="38300.0" castingtime="0.0"/>
+    </Materials>
+    <BoundaryConditions/>
+    <InitialConditions>
+      <InitialCondition conditions="u 25.0" dofs="10" set="1"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elements="1"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.001">
+      <TIME/>
+      <NODE tStep="5" number="1" dof="10" unknown="d" value="35.954999"/>
+      <NODE tStep="29" number="1" dof="10" unknown="d" value="104.396706"/>
+      <ELEMENT tStep="5" number="1" gp="1" keyword="39" component="1" value="0.112531681"/>
+      <ELEMENT tStep="29" number="1" gp="1" keyword="39" component="1" value="0.815578417"/>
+      <ELEMENT tStep="5" number="1" gp="1" keyword="135" component="1" value="22226.9086"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

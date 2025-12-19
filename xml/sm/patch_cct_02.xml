@@ -1,0 +1,58 @@
+<oofem version="1">
+  <Output>patch_cct_02.out</Output>
+  <Description>test of cct loaded by surface load</Description>
+  <Analysis type="StaticStructural" nsteps="1"/>
+  <Domain domain="2dmindlinplate">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <!--pure bending along x axis-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="4.0 0.0 0.0"/>
+      <Node coords="4.0 4.0 0.0"/>
+      <Node coords="0.0 4.0 0.0"/>
+      <Node id="5" coords="2.0 2.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <cctplate nodes="1 2 5"/>
+      <cctplate nodes="2 3 5"/>
+      <cctplate nodes="3 4 5"/>
+      <cctplate nodes="4 1 5"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="0.3" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="2500.0" e="15.0" n="0.25" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="3 4 5" values="0.0 0.0 0.0" set="2"/>
+      <ConstantSurfaceLoad loadtimefunction="1" dofs="3 4 5" components="1.0 0.0 0.0" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1,2,3,4"/>
+      <Set nodes="1 4"/>
+      <Set elementboundaries="1 1 2 1 3 1 4 1"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--exact solution-->
+    <errorcheck tolerance="1e-05">
+      <!--check reactions-->
+      <REACTION tStep="1" number="1" dof="3" value="-8.0"/>
+      <REACTION tStep="1" number="4" dof="3" value="-8.0"/>
+      <REACTION tStep="1" number="1" dof="5" value="16.0"/>
+      <REACTION tStep="1" number="4" dof="5" value="16.0"/>
+      <!--check all nodes-->
+      <NODE tStep="1" number="2" dof="3" unknown="d" value="970.999598"/>
+      <NODE tStep="1" number="3" dof="3" unknown="d" value="970.999598"/>
+      <NODE tStep="1" number="2" dof="4" unknown="d" value="23.543133"/>
+      <NODE tStep="1" number="3" dof="4" unknown="d" value="-23.543133"/>
+      <NODE tStep="1" number="2" dof="5" unknown="d" value="-475.021586"/>
+      <NODE tStep="1" number="3" dof="5" unknown="d" value="-475.021586"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

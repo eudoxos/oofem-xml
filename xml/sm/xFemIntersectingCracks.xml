@@ -1,0 +1,72 @@
+<oofem version="1">
+  <Output>xFemIntersectingCracks.out</Output>
+  <Description>Test of enrichment front for intersecting cracks. Written by Erik Svenning, Chalmers University of Technology, February 2014</Description>
+  <Analysis type="StaticStructural" nsteps="1" deltat="1.0" rtolf="1e-06" maxiter="40" miniter="2" manrmsteps="1"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0"/>
+      <Node coords="1.0 0.0"/>
+      <Node coords="1.0 1.0"/>
+      <Node coords="0.0 1.0"/>
+      <Node id="5" coords="0.333333 0.0"/>
+      <Node coords="0.666667 0.0"/>
+      <Node coords="1.0 0.333333"/>
+      <Node coords="1.0 0.666667"/>
+      <Node coords="0.666667 1.0"/>
+      <Node id="10" coords="0.333333 1.0"/>
+      <Node coords="0.0 0.666667"/>
+      <Node coords="0.0 0.333333"/>
+      <Node coords="0.666667 0.333333"/>
+      <Node coords="0.666667 0.666667"/>
+      <Node id="15" coords="0.333333 0.333333"/>
+      <Node coords="0.333333 0.666667"/>
+    </Nodes>
+    <Elements>
+      <PlaneStress2DXFEM id="13" nodes="2 6 13 7" nip="4" nlgeo="0" useplanestrain="1"/>
+      <PlaneStress2DXFEM nodes="7 13 14 8" nip="4" nlgeo="0" useplanestrain="1"/>
+      <PlaneStress2DXFEM id="15" nodes="8 14 9 3" nip="4" nlgeo="0" useplanestrain="1"/>
+      <PlaneStress2DXFEM nodes="6 5 15 13" nip="4" nlgeo="0" useplanestrain="1"/>
+      <PlaneStress2DXFEM nodes="13 15 16 14" nip="4" nlgeo="0" useplanestrain="1"/>
+      <PlaneStress2DXFEM nodes="14 16 10 9" nip="4" nlgeo="0" useplanestrain="1"/>
+      <PlaneStress2DXFEM nodes="5 1 12 15" nip="4" nlgeo="0" useplanestrain="1"/>
+      <PlaneStress2DXFEM id="20" nodes="15 12 11 16" nip="4" nlgeo="0" useplanestrain="1"/>
+      <PlaneStress2DXFEM nodes="16 11 4 10" nip="4" nlgeo="0" useplanestrain="1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <!--Linear elasticity-->
+      <IsoLE d="1.0" e="1000000.0" n="0.3" talpha="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <!--Cohesive zone-->
+      <!--IntMatBilinearCZElastic 2 kn 1.0e-6 ks 1.0e-6 knc 1.0e-6 g1c 1.0e6 sigfn 1.0e6 sigfs 1.0e6-->
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.01 0.02" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="13-21"/>
+      <Set noderanges="1,2,4-7,10-12"/>
+      <Set nodes="3 8 9"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck filename="xFemIntersectingCracks.in" tolerance="1e-06">
+      <!--Node displacements-->
+      <NODE tStep="0" number="14" dof="1" unknown="d" value="0.01"/>
+      <NODE tStep="0" number="14" dof="2" unknown="d" value="0.02"/>
+      <NODE tStep="0" number="14" dof="23" unknown="d" value="0.0"/>
+      <NODE tStep="0" number="14" dof="24" unknown="d" value="0.0"/>
+      <NODE tStep="0" number="14" dof="31" unknown="d" value="0.01"/>
+      <NODE tStep="0" number="14" dof="32" unknown="d" value="0.02"/>
+      <NODE tStep="0" number="14" dof="39" unknown="d" value="0.0"/>
+      <NODE tStep="0" number="14" dof="40" unknown="d" value="0.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

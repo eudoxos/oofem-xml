@@ -1,0 +1,64 @@
+<oofem version="1">
+  <Output>MPS_01_sec_sm.out</Output>
+  <Description>basic creep in tension, test includes prediction of paramters q1-q4 based on concrete composition</Description>
+  <Analysis type="StaticStructural" nsteps="25" prescribedtimes="8.64 17.28 43.2 86.4 172.8 432.0 864.0 1728.0 4320.0 8640.0 17280.0 43200.0 86400.0 172800.0 432000.0 864000.0 1728000.0 4320000.0 8640000.0 17280000.0 43200000.0 86400000.0 172800000.0 432000000.0 864000000.0"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <!--NODES-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <Node id="5" coords="0.0 0.2 0.0"/>
+      <Node coords="0.1 0.2 0.0"/>
+      <Node coords="0.0 0.3 0.0"/>
+      <Node coords="0.1 0.3 0.0"/>
+    </Nodes>
+    <Elements>
+      <!--ELEMENTS-->
+      <planestress2d nodes="1 2 4 3" crosssect="1"/>
+      <planestress2d nodes="5 6 8 7" crosssect="2"/>
+    </Elements>
+    <CrossSections>
+      <!--CROSSECTION-->
+      <SimpleCS thick="1.0" width="1.0" material="1"/>
+      <SimpleCS thick="1.0" width="1.0" material="2"/>
+    </CrossSections>
+    <Materials>
+      <!--MATERIAL-->
+      <mps d="0.0" n="0.2" talpha="1.2e-05" referencetemperature="296.0" mode="0" fc="30.0" cc="350.0" w_c="0.5" a_c="6.0" stiffnessfactor="1000000.0" timefactor="1.0" lambda0="86400.0" begoftimeofinterest="0.0864" endoftimeofinterest="864000000.0" relmatage="604800.0" coupledanalysistype="0"/>
+      <mps d="0.0" n="0.2" talpha="1.2e-05" referencetemperature="296.0" mode="1" q1="2.313994709e-05" q2="0.0001624555762" q3="2.944507318e-06" q4="5.791488024e-06" timefactor="1.0" lambda0="86400.0" begoftimeofinterest="0.0864" endoftimeofinterest="864000000.0" relmatage="604800.0" coupledanalysistype="0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="2"/>
+      <NodalLoad loadtimefunction="2" dofs="1 2" components="0.05 0.0" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <!--TIME FUNCTION-->
+      <ConstantFunction f_t_="1.0"/>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1 5"/>
+      <Set nodes="3 7"/>
+      <Set nodes="2 4 6 8"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-11">
+      <NODE tStep="4" number="2" dof="1" unknown="d" value="4.925232e-06"/>
+      <NODE tStep="10" number="2" dof="1" unknown="d" value="6.091198e-06"/>
+      <NODE tStep="16" number="2" dof="1" unknown="d" value="7.907595e-06"/>
+      <NODE tStep="22" number="2" dof="1" unknown="d" value="1.073072e-05"/>
+      <NODE tStep="25" number="2" dof="1" unknown="d" value="1.208951e-05"/>
+      <NODE tStep="4" number="6" dof="1" unknown="d" value="4.925232e-06"/>
+      <NODE tStep="10" number="6" dof="1" unknown="d" value="6.091198e-06"/>
+      <NODE tStep="16" number="6" dof="1" unknown="d" value="7.907595e-06"/>
+      <NODE tStep="22" number="6" dof="1" unknown="d" value="1.073072e-05"/>
+      <NODE tStep="25" number="6" dof="1" unknown="d" value="1.208951e-05"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

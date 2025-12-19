@@ -1,0 +1,51 @@
+<oofem version="1">
+  <Output>latticetransmat.out</Output>
+  <Description>Test of lattice transport material</Description>
+  <Analysis type="TransientTransport" nsteps="2" deltat="20.0" rtolf="1e-06" forcescale="0.0" forcescaledofs="11" alpha="1.0" contextoutputstep="100"/>
+  <Domain domain="2dmasslatticetransport">
+    <OutputManager tstep_step="1" dofman_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0"/>
+      <Node coords="0.0 5.0"/>
+      <Node coords="0.0 10.0"/>
+      <Node coords="0.0 15.0"/>
+      <Node id="5" coords="0.0 20.0"/>
+      <Node coords="0.0 25.0"/>
+      <Node coords="0.0 30.0"/>
+    </Nodes>
+    <Elements>
+      <latticemt2d nodes="1 2" dim="1.0" thick="1000.0" width="1000.0" gpcoords="0.0 2.5"/>
+      <latticemt2d nodes="2 3" dim="1.0" thick="1000.0" width="1000.0" gpcoords="0.0 7.5"/>
+      <latticemt2d nodes="3 4" dim="1.0" thick="1000.0" width="1000.0" gpcoords="0.0 12.5"/>
+      <latticemt2d nodes="4 5" dim="1.0" thick="1000.0" width="1000.0" gpcoords="0.0 17.5"/>
+      <latticemt2d id="5" nodes="5 6" dim="1.0" thick="1000.0" width="1000.0" gpcoords="0.0 22.5"/>
+      <latticemt2d nodes="6 7" dim="1.0" thick="1000.0" width="1000.0" gpcoords="0.0 27.5"/>
+    </Elements>
+    <CrossSections>
+      <simpletransportcs set="1" mat="1"/>
+    </CrossSections>
+    <Materials>
+      <latticetransmat d="1e-09" k="1e-13" vis="1e-09" thetas="0.0924" thetar="0.0" contype="1" m="0.4396" a="18.6237"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="11" values="0.0" set="2"/>
+    </BoundaryConditions>
+    <InitialConditions>
+      <InitialCondition conditions="u 0.1" valtype="1" dofs="11" set="1"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-6"/>
+      <Set nodes="1"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-05">
+      <NODE tStep="2" number="2" dof="11" unknown="d" value="0.0322169279"/>
+      <NODE tStep="2" number="7" dof="11" unknown="d" value="0.0956257368"/>
+      <REACTION tStep="20" number="1" dof="1" value="6.5013e-10"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

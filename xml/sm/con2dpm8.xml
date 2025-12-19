@@ -1,0 +1,32 @@
+<oofem version="1">
+  <Output>con2dpm8.out</Output>
+  <Description>Test of thermal strain for 1D CDPM2</Description>
+  <Analysis type="StaticStructural" nsteps="1" initialguess="1" rtolf="0.001" stiffmode="2" maxiter="1000"/>
+  <Domain domain="1dtruss">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0" bc="1"/>
+      <Node coords="0.25 0.0 0.0" bc="1"/>
+    </Nodes>
+    <Elements>
+      <truss1d nodes="1 2" mat="1" crosssect="1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" width="0.1"/>
+    </CrossSections>
+    <Materials>
+      <con2dpm d="0.0" e="20000000000.0" n="0.2" talpha="0.0001" wf="0.0008" fc="35000000.0" ft="2000000.0" hp="0.025" yieldtol="1e-10" asoft="7.0" stype="2" damflag="3"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+      <StructTemperatureLoad loadtimefunction="1" components="-2.0 0.0" set="1"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1"/>
+    </Sets>
+  </Domain>
+</oofem>

@@ -1,0 +1,69 @@
+<oofem version="1">
+  <Output>beam3dsubsoil01.out</Output>
+  <Description>test</Description>
+  <Analysis type="LinearStatic" nsteps="1"/>
+  <Domain domain="3dshell">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="1800.0 0.0 0.0" load="2"/>
+      <Node coords="3600.0 0.0 0.0"/>
+      <Node coords="3600.0 1.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <Beam3d nodes="1 2" refnode="4" subsoilmat="2"/>
+      <Beam3d nodes="2 3" refnode="4" subsoilmat="2"/>
+    </Elements>
+    <CrossSections>
+      <!--Beam3dSubsoil 3 nodes 2 1 2 master 1-->
+      <!--Beam3dSubsoil 4 nodes 2 2 3 master 2-->
+      <SimpleCS area="80000.0" iy="1066666666.6666665" iz="266666666.66666663" ik="160000000.0" beamshearcoeff="1e+30" material="1" set="1"/>
+      <SimpleCS material="2"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="1.0" e="200000.0" n="0.15" talpha="1.2e-05"/>
+      <winkler d="0.0" c1="0.0 0.0 20.0 0.0 0.0 0.0" global="1"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 4 6" values="0.0 0.0 0.0 0.0" set="2"/>
+      <!--ConstantEdgeLoad 2 loadTimeFunction 1 dofs 6 1 2 3 4 5 6 Components 6 0.0 0.0 20000000.0 0.0 0.0 0.0 loadType 3 set 3-->
+      <NodalLoad loadtimefunction="1" components="0.0 0.0 100000.0 0.0 0.0 0.0"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <PeakFunction t="1.0" f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-2"/>
+      <Set nodes="1 2 3"/>
+      <Set elementranges="1-2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--exact solution-->
+    <errorcheck tolerance="1e-06">
+      <!--check reactions-->
+      <REACTION tStep="1" number="1" dof="1" value="0.0"/>
+      <REACTION tStep="1" number="1" dof="2" value="0.0"/>
+      <REACTION tStep="1" number="1" dof="4" value="0.0"/>
+      <REACTION tStep="1" number="1" dof="6" value="0.0"/>
+      <REACTION tStep="1" number="3" dof="1" value="0.0"/>
+      <REACTION tStep="1" number="3" dof="2" value="0.0"/>
+      <REACTION tStep="1" number="3" dof="4" value="0.0"/>
+      <REACTION tStep="1" number="3" dof="6" value="0.0"/>
+      <!--check all nodes-->
+      <NODE tStep="1" number="1" dof="3" unknown="d" value="1.28771568"/>
+      <NODE tStep="1" number="2" dof="3" unknown="d" value="1.45335141"/>
+      <NODE tStep="1" number="3" dof="3" unknown="d" value="1.28771568"/>
+      <!--check element no. 1 force vector-->
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="3" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="5" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="9" value="50000.0"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="11" value="44045623.1" tolerance="0.01"/>
+      <BEAM_ELEMENT tStep="1" number="2" keyword="1" component="3" value="50000.0"/>
+      <BEAM_ELEMENT tStep="1" number="2" keyword="1" component="5" value="-44045623.1" tolerance="0.01"/>
+      <BEAM_ELEMENT tStep="1" number="2" keyword="1" component="9" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="2" keyword="1" component="11" value="0.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

@@ -1,0 +1,66 @@
+<oofem version="1">
+  <Output>dkt_twist01.out</Output>
+  <Description>"Patch test of DKT elements -&gt; twisting of a square plate"</Description>
+  <Analysis type="LinearStatic" nsteps="1"/>
+  <Domain domain="2dmindlinplate">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="8.0 0.0 0.0"/>
+      <Node coords="8.0 8.0 0.0"/>
+      <Node coords="0.0 8.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <DKTPlate nodes="1 2 3"/>
+      <DKTPlate nodes="3 4 1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="2500.0" e="10000.0" n="0.3" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="3" values="0.0" set="2"/>
+      <NodalLoad loadtimefunction="1" dofs="3 4 5" components="5.0 0.0 0.0" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-2"/>
+      <Set nodes="1 2 4"/>
+      <Set nodes="3"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--exact solution-->
+    <!--DISPLACEMENT             w-->
+    <!--node 3                   0.2496-->
+    <!--STRAIN                     STRESS-->
+    <!--kapa_x  =  0.0             m_x  =  0.0-->
+    <!--kapa_y  =  0.0             m_y  =  0.0-->
+    <!--kapa_xy =  7.8e-3          m_xy = -2.5-->
+    <!--gama_xz =  0.0             q_x  =  0.0-->
+    <!--gama_yz =  0.0             q_y  =  0.0-->
+    <!--node 1   R_w = 5.0-->
+    <!--node 2   R_w =-5.0-->
+    <!--node 4   R_w =-5.0-->
+    <errorcheck tolerance="0.0001">
+      <!--check reactions-->
+      <REACTION tStep="1" number="1" dof="3" value="5.0"/>
+      <REACTION tStep="1" number="2" dof="3" value="-5.0"/>
+      <REACTION tStep="1" number="4" dof="3" value="-5.0"/>
+      <!--check all nodes-->
+      <NODE tStep="1" number="3" dof="3" unknown="d" value="0.2496"/>
+      <!--check element no. 1 stress vector-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="4" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="5" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="6" value="-2.5"/>
+      <ELEMENT tStep="1" number="2" gp="1" keyword="1" component="4" value="0.0"/>
+      <ELEMENT tStep="1" number="2" gp="1" keyword="1" component="5" value="0.0"/>
+      <ELEMENT tStep="1" number="2" gp="1" keyword="1" component="6" value="-2.5"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

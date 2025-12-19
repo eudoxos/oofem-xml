@@ -1,0 +1,60 @@
+<oofem version="1">
+  <Output>libeam3dboundary.out</Output>
+  <Description>Reinforcement test case in 3D RVE - periodicity with LIBeam3dBoundary elements</Description>
+  <Analysis type="StaticStructural" nsteps="1" deltat="1.0" rtolf="0.0001" maxiter="30" miniter="1" initialguess="1"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 -0.2 0.0"/>
+      <Node coords="0.0 -0.1 0.0"/>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node id="5" coords="-0.2 0.0 0.0"/>
+      <Node coords="-0.1 0.0 0.0"/>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="-0.1 0.0 0.0"/>
+      <Node id="10" coords="0.0 0.1 0.0"/>
+      <Node coords="0.4 0.4 0.4"/>
+    </Nodes>
+    <Elements>
+      <libeam3d nodes="1 2" refnode="9" crosssect="1"/>
+      <libeam3d nodes="2 3" refnode="9" crosssect="1"/>
+      <libeam3d nodes="3 4" refnode="9" crosssect="1"/>
+      <libeam3dboundary nodes="4 1 11" refnode="6" crosssect="1" location="0 16"/>
+      <libeam3d id="5" nodes="5 6" refnode="10" crosssect="1"/>
+      <libeam3d nodes="6 7" refnode="10" crosssect="1"/>
+      <libeam3d nodes="7 8" refnode="10" crosssect="1"/>
+      <libeam3dboundary nodes="8 5 11" refnode="10" crosssect="1" location="0 22"/>
+    </Elements>
+    <CrossSections>
+      <FiberedCS fibermaterials="1" thicks="0.01772455923" widths="0.01772455923" thick="0.01772455923" width="0.01772455923" fiberycentrecoords="0.008862279616" fiberzcentrecoords="0.008862279616"/>
+    </CrossSections>
+    <Materials>
+      <MisesMat d="1.0" e="200000000000.0" n="0.3" sig0="500e6" h="845665961.9" omega_crit="0.0" a="0.0" talpha="1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3 4 5 6" values="0.0 0.0 0.0 0.0 0.0 0.0" set="3"/>
+      <BoundaryCondition loadtimefunction="1" dofs="31 38 36 39 32 34 37 35 33" values="3e-06 4e-06 0.0 4e-06 -5e-06 0.0 0.0 0.0 0.0" set="2"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction t="0.0 15.0" f_t_="0.0 1.5"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-8"/>
+      <Set nodes="11"/>
+      <Set nodes="1 5"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.001">
+      <REACTION tStep="1" number="11" dof="31" value="75.40953415"/>
+      <REACTION tStep="1" number="11" dof="32" value="-125.6751341"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="7" component="1" value="-314.1878"/>
+      <!--TIME-->
+      <ELEMENT tStep="1" number="8" gp="1" keyword="7" component="1" value="188.5238"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

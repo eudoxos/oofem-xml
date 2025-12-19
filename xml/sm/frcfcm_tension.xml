@@ -1,0 +1,186 @@
+<oofem version="1">
+  <Output>frcfcm_tension.out</Output>
+  <Description>fixed crack model for fiber reinforced concrete - separate tests on a single finite element</Description>
+  <Analysis type="NonLinearStatic" nsteps="100" deltat="1.0" rtolv="1e-06" maxiter="10000" controllmode="1" stiffmode="0" renumber="1"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <!--1 CAF-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <!--2 SAF-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node id="5" coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <!--3_SRF-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <!--4_CAF_activation_opening-->
+      <Node id="10" coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <!--5_CAF_crack_spacing-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.2 0.0 0.0"/>
+      <Node id="15" coords="0.0 0.1 0.0"/>
+      <!--6_CAF_fibre_orientation_snubbing-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <!--7_CAF_fibre_orientation_no_snubbing-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node id="20" coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <!--8_CAF_activation_opening_smooth-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+    </Nodes>
+    <Elements>
+      <TrPlaneStress2D nodes="1 2 3"/>
+      <TrPlaneStress2D nodes="4 5 6"/>
+      <TrPlaneStress2D nodes="7 8 9"/>
+      <TrPlaneStress2D nodes="10 11 12"/>
+      <TrPlaneStress2D id="5" nodes="13 14 15"/>
+      <TrPlaneStress2D nodes="16 17 18"/>
+      <TrPlaneStress2D nodes="19 20 21"/>
+      <TrPlaneStress2D nodes="22 23 24"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" width="1.0" material="1" set="6"/>
+      <SimpleCS thick="1.0" width="1.0" material="2" set="7"/>
+      <SimpleCS thick="1.0" width="1.0" material="3" set="8"/>
+      <SimpleCS thick="1.0" width="1.0" material="4" set="9"/>
+      <SimpleCS id="5" thick="1.0" width="1.0" material="5" set="10"/>
+      <SimpleCS thick="1.0" width="1.0" material="6" set="11"/>
+      <SimpleCS thick="1.0" width="1.0" material="7" set="12"/>
+      <SimpleCS thick="1.0" width="1.0" material="8" set="13"/>
+    </CrossSections>
+    <Materials>
+      <frcfcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="0" vf="0.02" df="4e-05" ef="20000.0" gfib="1000.0" tau_0="1.0" f="0.7" kfib="0.9" fsstype="0" fdamtype="0" fibertype="0"/>
+      <frcfcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="0" vf="0.02" lf="0.012" df="4e-05" ef="20000.0" gfib="1000.0" tau_0="1.0" f="0.7" kfib="0.9" fsstype="0" fdamtype="0" fibertype="1"/>
+      <frcfcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="0" vf="0.02" lf="0.012" df="4e-05" ef="20000.0" gfib="1000.0" tau_0="1.0" f="0.7" kfib="0.9" fsstype="0" fdamtype="0" fibertype="2"/>
+      <frcfcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="2e-05" ft="2.0" softtype="2" sheartype="0" vf="0.02" df="4e-05" ef="20000.0" gfib="1000.0" tau_0="1.0" f="0.7" kfib="0.9" fsstype="0" fdamtype="0" fibertype="0" fibreactivationopening="1e-05"/>
+      <frcfcm id="5" d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="2e-05" ft="2.0" softtype="2" sheartype="0" vf="0.02" df="4e-05" ef="20000.0" gfib="1000.0" tau_0="1.0" f="0.7" kfib="0.9" fsstype="0" fdamtype="0" fibertype="0" fibreactivationopening="1e-05" crackspacing="0.1"/>
+      <frcfcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="2e-05" ft="2.0" softtype="2" sheartype="0" vf="0.02" df="4e-05" ef="20000.0" gfib="1000.0" tau_0="1.0" f="0.7" kfib="0.9" fsstype="0" fdamtype="0" fibertype="0" fibreactivationopening="0.0" fibreorientationvector="0.5 0.866025403784439 0.0"/>
+      <frcfcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="2e-05" ft="2.0" softtype="2" sheartype="0" vf="0.02" df="4e-05" ef="20000.0" gfib="1000.0" tau_0="1.0" f="0.0" kfib="0.9" fsstype="0" fdamtype="0" fibertype="0" fibreactivationopening="0.0" fibreorientationvector="0.5 0.866025403784439 0.0"/>
+      <frcfcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="1e-05" ft="2.0" softtype="2" sheartype="0" vf="0.02" df="4e-05" ef="20000.0" gfib="1000.0" tau_0="1.0" f="0.7" kfib="0.9" fsstype="0" fdamtype="0" fibertype="0" fibreactivationopening="1e-05" dw0="5e-06" dw1="5e-06"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="2" dofs="1" values="0.01" set="3"/>
+      <BoundaryCondition loadtimefunction="3" dofs="1" values="0.01" set="4"/>
+      <BoundaryCondition id="5" loadtimefunction="3" dofs="1" values="0.02" set="5"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <!--normal loading:-->
+      <PiecewiseLinfunction npoints="12" t="0.0 1.0 10.0 20.0 30.0 40.0 50.0 60.0 70.0 80.0 90.0 100.0" f_t_="0.0 0.001 0.005 0.0 0.005 0.01 0.0 0.01 0.02 0.0 0.02 0.06"/>
+      <!--activation opening:-->
+      <PiecewiseLinfunction npoints="11" t="0.0 10.0 20.0 30.0 40.0 50.0 60.0 70.0 80.0 90.0 100.0" f_t_="0.0 0.001 0.0025 0.0 0.0025 0.006 0.0 0.006 0.01 0.0 -0.001"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1 3 4 6 7 9 10 12 13 15 16 18 19 21 22 24"/>
+      <Set nodes="1 2 4 5 7 8 10 11 13 14 16 17 19 20 22 23"/>
+      <Set nodes="2 5 8"/>
+      <Set nodes="11 17 20 23"/>
+      <Set id="5" nodes="14"/>
+      <Set elementranges="1"/>
+      <Set elementranges="2"/>
+      <Set elementranges="3"/>
+      <Set elementranges="4"/>
+      <Set id="10" elementranges="5"/>
+      <Set elementranges="6"/>
+      <Set elementranges="7"/>
+      <Set elementranges="8"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <ELEMENT tStep="5" number="1" gp="1" keyword="1" component="1" value="3.7777" tolerance="0.0001"/>
+      <ELEMENT tStep="15" number="1" gp="1" keyword="1" component="1" value="2.689" tolerance="0.0001"/>
+      <ELEMENT tStep="27" number="1" gp="1" keyword="1" component="1" value="2.689" tolerance="0.0001"/>
+      <ELEMENT tStep="35" number="1" gp="1" keyword="1" component="1" value="6.7025" tolerance="0.0001"/>
+      <ELEMENT tStep="45" number="1" gp="1" keyword="1" component="1" value="2.8351" tolerance="0.0001"/>
+      <ELEMENT tStep="57" number="1" gp="1" keyword="1" component="1" value="2.8351" tolerance="0.0001"/>
+      <ELEMENT tStep="65" number="1" gp="1" keyword="1" component="1" value="8.9156" tolerance="0.0001"/>
+      <ELEMENT tStep="75" number="1" gp="1" keyword="1" component="1" value="2.9714" tolerance="0.0001"/>
+      <ELEMENT tStep="87" number="1" gp="1" keyword="1" component="1" value="2.9714" tolerance="0.0001"/>
+      <ELEMENT tStep="95" number="1" gp="1" keyword="1" component="1" value="15.223" tolerance="0.0001"/>
+      <ELEMENT tStep="5" number="2" gp="1" keyword="1" component="1" value="3.6927" tolerance="0.0001"/>
+      <ELEMENT tStep="15" number="2" gp="1" keyword="1" component="1" value="2.3073" tolerance="0.0001"/>
+      <ELEMENT tStep="27" number="2" gp="1" keyword="1" component="1" value="2.3073" tolerance="0.0001"/>
+      <ELEMENT tStep="35" number="2" gp="1" keyword="1" component="1" value="5.5663" tolerance="0.0001"/>
+      <ELEMENT tStep="45" number="2" gp="1" keyword="1" component="1" value="1.7853" tolerance="0.0001"/>
+      <ELEMENT tStep="57" number="2" gp="1" keyword="1" component="1" value="1.7853" tolerance="0.0001"/>
+      <ELEMENT tStep="65" number="2" gp="1" keyword="1" component="1" value="5.7459" tolerance="0.0001"/>
+      <ELEMENT tStep="75" number="2" gp="1" keyword="1" component="1" value="1.2104" tolerance="0.0001"/>
+      <ELEMENT tStep="87" number="2" gp="1" keyword="1" component="1" value="1.2104" tolerance="0.0001"/>
+      <ELEMENT tStep="95" number="2" gp="1" keyword="1" component="1" value="5.352" tolerance="0.0001"/>
+      <ELEMENT tStep="5" number="3" gp="1" keyword="1" component="1" value="3.5715" tolerance="0.0001"/>
+      <ELEMENT tStep="15" number="3" gp="1" keyword="1" component="1" value="2.1046" tolerance="0.0001"/>
+      <ELEMENT tStep="27" number="3" gp="1" keyword="1" component="1" value="2.1046" tolerance="0.0001"/>
+      <ELEMENT tStep="35" number="3" gp="1" keyword="1" component="1" value="5.111" tolerance="0.0001"/>
+      <ELEMENT tStep="45" number="3" gp="1" keyword="1" component="1" value="1.5312" tolerance="0.0001"/>
+      <ELEMENT tStep="57" number="3" gp="1" keyword="1" component="1" value="1.5312" tolerance="0.0001"/>
+      <ELEMENT tStep="65" number="3" gp="1" keyword="1" component="1" value="5.1453" tolerance="0.0001"/>
+      <ELEMENT tStep="75" number="3" gp="1" keyword="1" component="1" value="1.0323" tolerance="0.0001"/>
+      <ELEMENT tStep="87" number="3" gp="1" keyword="1" component="1" value="1.0323" tolerance="0.0001"/>
+      <ELEMENT tStep="95" number="3" gp="1" keyword="1" component="1" value="4.7664" tolerance="0.0001"/>
+      <ELEMENT tStep="5" number="4" gp="1" keyword="1" component="1" value="0.8" tolerance="0.0001"/>
+      <ELEMENT tStep="15" number="4" gp="1" keyword="1" component="1" value="1.1888" tolerance="0.0001"/>
+      <ELEMENT tStep="25" number="4" gp="1" keyword="1" component="1" value="0.658324" tolerance="0.0001"/>
+      <ELEMENT tStep="35" number="4" gp="1" keyword="1" component="1" value="0.3848863" tolerance="0.0001"/>
+      <ELEMENT tStep="45" number="4" gp="1" keyword="1" component="1" value="3.2354" tolerance="0.0001"/>
+      <ELEMENT tStep="55" number="4" gp="1" keyword="1" component="1" value="1.3142" tolerance="0.0001"/>
+      <ELEMENT tStep="65" number="4" gp="1" keyword="1" component="1" value="0.24546" tolerance="0.0001"/>
+      <ELEMENT tStep="75" number="4" gp="1" keyword="1" component="1" value="5.5777" tolerance="0.0001"/>
+      <ELEMENT tStep="85" number="4" gp="1" keyword="1" component="1" value="1.8647" tolerance="0.0001"/>
+      <ELEMENT tStep="95" number="4" gp="1" keyword="1" component="1" value="-0.8" tolerance="0.0001"/>
+      <ELEMENT tStep="5" number="5" gp="1" keyword="1" component="1" value="0.8" tolerance="0.0001"/>
+      <ELEMENT tStep="15" number="5" gp="1" keyword="1" component="1" value="1.1888" tolerance="0.0001"/>
+      <ELEMENT tStep="25" number="5" gp="1" keyword="1" component="1" value="0.658324" tolerance="0.0001"/>
+      <ELEMENT tStep="35" number="5" gp="1" keyword="1" component="1" value="0.3848863" tolerance="0.0001"/>
+      <ELEMENT tStep="45" number="5" gp="1" keyword="1" component="1" value="3.2354" tolerance="0.0001"/>
+      <ELEMENT tStep="55" number="5" gp="1" keyword="1" component="1" value="1.3142" tolerance="0.0001"/>
+      <ELEMENT tStep="65" number="5" gp="1" keyword="1" component="1" value="0.24546" tolerance="0.0001"/>
+      <ELEMENT tStep="75" number="5" gp="1" keyword="1" component="1" value="5.5777" tolerance="0.0001"/>
+      <ELEMENT tStep="85" number="5" gp="1" keyword="1" component="1" value="1.8647" tolerance="0.0001"/>
+      <ELEMENT tStep="95" number="5" gp="1" keyword="1" component="1" value="-0.8" tolerance="0.0001"/>
+      <ELEMENT tStep="5" number="6" gp="1" keyword="1" component="1" value="0.8" tolerance="5e-05"/>
+      <ELEMENT tStep="15" number="6" gp="1" keyword="1" component="1" value="2.9261" tolerance="5e-05"/>
+      <ELEMENT tStep="25" number="6" gp="1" keyword="1" component="1" value="1.958498" tolerance="5e-05"/>
+      <ELEMENT tStep="35" number="6" gp="1" keyword="1" component="1" value="1.176897" tolerance="5e-05"/>
+      <ELEMENT tStep="45" number="6" gp="1" keyword="1" component="1" value="4.1861" tolerance="5e-05"/>
+      <ELEMENT tStep="55" number="6" gp="1" keyword="1" component="1" value="2.0319" tolerance="5e-05"/>
+      <ELEMENT tStep="65" number="6" gp="1" keyword="1" component="1" value="0.75929" tolerance="5e-05"/>
+      <ELEMENT tStep="75" number="6" gp="1" keyword="1" component="1" value="6.2796" tolerance="5e-05"/>
+      <ELEMENT tStep="85" number="6" gp="1" keyword="1" component="1" value="2.4728" tolerance="5e-05"/>
+      <ELEMENT tStep="95" number="6" gp="1" keyword="1" component="1" value="-0.8" tolerance="5e-05"/>
+      <ELEMENT tStep="5" number="7" gp="1" keyword="1" component="1" value="0.8" tolerance="5e-05"/>
+      <ELEMENT tStep="15" number="7" gp="1" keyword="1" component="1" value="2.4658" tolerance="5e-05"/>
+      <ELEMENT tStep="25" number="7" gp="1" keyword="1" component="1" value="0.98528" tolerance="5e-05"/>
+      <ELEMENT tStep="35" number="7" gp="1" keyword="1" component="1" value="0.50585" tolerance="5e-05"/>
+      <ELEMENT tStep="45" number="7" gp="1" keyword="1" component="1" value="2.3568" tolerance="5e-05"/>
+      <ELEMENT tStep="55" number="7" gp="1" keyword="1" component="1" value="0.78848" tolerance="5e-05"/>
+      <ELEMENT tStep="65" number="7" gp="1" keyword="1" component="1" value="0.20755" tolerance="5e-05"/>
+      <ELEMENT tStep="75" number="7" gp="1" keyword="1" component="1" value="3.461" tolerance="5e-05"/>
+      <ELEMENT tStep="85" number="7" gp="1" keyword="1" component="1" value="0.93241" tolerance="5e-05"/>
+      <ELEMENT tStep="95" number="7" gp="1" keyword="1" component="1" value="-0.8" tolerance="5e-05"/>
+      <ELEMENT tStep="5" number="8" gp="1" keyword="1" component="1" value="0.8" tolerance="5e-05"/>
+      <ELEMENT tStep="15" number="8" gp="1" keyword="1" component="1" value="1.00781563" tolerance="5e-05"/>
+      <ELEMENT tStep="25" number="8" gp="1" keyword="1" component="1" value="0.556534357" tolerance="5e-05"/>
+      <ELEMENT tStep="35" number="8" gp="1" keyword="1" component="1" value="0.0884920963" tolerance="5e-05"/>
+      <ELEMENT tStep="45" number="8" gp="1" keyword="1" component="1" value="3.2353945" tolerance="5e-05"/>
+      <ELEMENT tStep="55" number="8" gp="1" keyword="1" component="1" value="1.46149038" tolerance="5e-05"/>
+      <ELEMENT tStep="65" number="8" gp="1" keyword="1" component="1" value="0.391347201" tolerance="5e-05"/>
+      <ELEMENT tStep="75" number="8" gp="1" keyword="1" component="1" value="5.57774621" tolerance="5e-05"/>
+      <ELEMENT tStep="85" number="8" gp="1" keyword="1" component="1" value="1.9923691" tolerance="5e-05"/>
+      <ELEMENT tStep="95" number="8" gp="1" keyword="1" component="1" value="-0.799999193" tolerance="5e-05"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

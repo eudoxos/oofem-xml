@@ -1,0 +1,1348 @@
+<oofem version="1">
+  <Output>concrete_3point.out</Output>
+  <Description>Test: 3-point bending, triangular elements, 1 loaded point</Description>
+  <Analysis type="StaticStructural" nsteps="20" solvertype="calm" steplength="0.025" rtolf="0.0001" psi="0.0" maxiter="200" reqiterations="80" hpc="1 2" stiffmode="1"/>
+  <Domain domain="2dplanestress">
+    <!--zkracena verze vypoctu z me disertace-->
+    <!--Monitored 2-->
+    <!--1 node 1 displacement 2 *-->
+    <!--2 node 1 force        2 *-->
+    <!--**-->
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="1000.0 500.0"/>
+      <Node coords="900.0 0.0"/>
+      <Node coords="850.755859 0.0"/>
+      <Node coords="796.661743 0.0"/>
+      <Node id="5" coords="736.054993 0.0"/>
+      <Node coords="667.393921 0.0"/>
+      <Node coords="589.31958 0.0"/>
+      <Node coords="500.725708 0.0"/>
+      <Node coords="400.839996 0.0"/>
+      <Node id="10" coords="289.309998 0.0"/>
+      <Node coords="166.261612 0.0"/>
+      <Node coords="0.0 0.0"/>
+      <Node coords="900.0 500.0"/>
+      <Node coords="900.0 475.552399"/>
+      <Node id="15" coords="900.0 451.711365"/>
+      <Node coords="900.0 428.109802"/>
+      <Node coords="900.0 404.33139"/>
+      <Node coords="900.0 380.010651"/>
+      <Node coords="900.0 354.926605"/>
+      <Node id="20" coords="900.0 329.090668"/>
+      <Node coords="900.0 302.78418"/>
+      <Node coords="900.0 276.46933"/>
+      <Node coords="900.0 250.56337"/>
+      <Node coords="900.0 225.213165"/>
+      <Node id="25" coords="900.0 200.219864"/>
+      <Node coords="900.0 175.1017"/>
+      <Node coords="900.0 149.182297"/>
+      <Node coords="900.0 121.63591"/>
+      <Node coords="900.0 91.484993"/>
+      <Node id="30" coords="900.0 57.568787"/>
+      <Node coords="875.552429 500.0"/>
+      <Node coords="848.563599 500.0"/>
+      <Node coords="818.45813 500.0"/>
+      <Node coords="784.570496 500.0"/>
+      <Node id="35" coords="746.113525 500.0"/>
+      <Node coords="702.149414 500.0"/>
+      <Node coords="651.572083 500.0"/>
+      <Node coords="593.115417 500.0"/>
+      <Node coords="525.405273 500.0"/>
+      <Node id="40" coords="447.074524 500.0"/>
+      <Node coords="356.944366 500.0"/>
+      <Node coords="254.24086 500.0"/>
+      <Node coords="138.775726 500.0"/>
+      <Node coords="0.0 500.0"/>
+      <Node id="45" coords="0.0 360.076019"/>
+      <Node coords="0.0 219.966446"/>
+      <Node coords="0.0 109.983208"/>
+      <Node coords="878.935547 473.539581"/>
+      <Node coords="879.723022 443.877136"/>
+      <Node id="50" coords="881.672485 419.23526"/>
+      <Node coords="881.968079 392.962646"/>
+      <Node coords="882.365784 368.033539"/>
+      <Node coords="877.727966 236.751816"/>
+      <Node coords="878.186951 215.276642"/>
+      <Node id="55" coords="874.857788 189.177475"/>
+      <Node coords="880.654297 343.041534"/>
+      <Node coords="876.252563 317.506744"/>
+      <Node coords="872.579651 289.776947"/>
+      <Node coords="873.22699 263.396057"/>
+      <Node id="60" coords="877.151672 162.014923"/>
+      <Node coords="848.464172 470.395142"/>
+      <Node coords="848.601562 440.401703"/>
+      <Node coords="875.65979 137.510849"/>
+      <Node coords="848.940186 411.388306"/>
+      <Node id="65" coords="848.531494 383.558624"/>
+      <Node coords="848.861389 204.232742"/>
+      <Node coords="848.091736 227.235229"/>
+      <Node coords="847.064941 356.830475"/>
+      <Node coords="846.441711 250.595291"/>
+      <Node id="70" coords="846.571838 178.505997"/>
+      <Node coords="844.655884 329.850952"/>
+      <Node coords="842.540283 301.936462"/>
+      <Node coords="843.256592 275.166138"/>
+      <Node coords="816.25531 468.365448"/>
+      <Node id="75" coords="816.262451 435.483826"/>
+      <Node coords="872.458435 101.911865"/>
+      <Node coords="842.928711 153.34343"/>
+      <Node coords="816.013123 403.608765"/>
+      <Node coords="813.471558 374.514862"/>
+      <Node id="80" coords="818.597961 216.517319"/>
+      <Node coords="821.992676 237.732895"/>
+      <Node coords="834.844788 120.387291"/>
+      <Node coords="821.167969 193.690567"/>
+      <Node coords="810.729187 345.419067"/>
+      <Node id="85" coords="816.604797 259.828278"/>
+      <Node coords="806.842957 168.979385"/>
+      <Node coords="809.296021 314.220154"/>
+      <Node coords="809.550354 282.029755"/>
+      <Node coords="780.887268 468.643555"/>
+      <Node id="90" coords="785.898254 429.370361"/>
+      <Node coords="868.35083 61.73917"/>
+      <Node coords="780.995239 398.208496"/>
+      <Node coords="775.076355 368.068146"/>
+      <Node coords="825.469543 83.332481"/>
+      <Node id="95" coords="802.078735 141.094971"/>
+      <Node coords="787.066162 194.222366"/>
+      <Node coords="790.452942 226.194199"/>
+      <Node coords="800.622681 245.997971"/>
+      <Node coords="773.470825 331.750275"/>
+      <Node id="100" coords="781.63147 253.296783"/>
+      <Node coords="775.877136 290.544647"/>
+      <Node coords="747.559753 461.154175"/>
+      <Node coords="778.143799 103.791527"/>
+      <Node coords="761.883972 148.253647"/>
+      <Node id="105" coords="746.057556 429.100983"/>
+      <Node coords="735.982788 404.722595"/>
+      <Node coords="735.116577 359.037048"/>
+      <Node coords="757.724792 208.741913"/>
+      <Node coords="736.450439 310.305573"/>
+      <Node id="110" coords="745.335266 258.583069"/>
+      <Node coords="706.334167 453.328369"/>
+      <Node coords="695.90448 401.934631"/>
+      <Node coords="826.07196 35.56945"/>
+      <Node coords="696.396362 335.902557"/>
+      <Node id="115" coords="696.605164 278.509155"/>
+      <Node coords="772.449646 54.619114"/>
+      <Node coords="656.613525 369.914612"/>
+      <Node coords="647.650024 302.002625"/>
+      <Node coords="710.16333 221.670105"/>
+      <Node id="120" coords="723.195557 78.65036"/>
+      <Node coords="644.417419 433.159637"/>
+      <Node coords="603.972534 353.860321"/>
+      <Node coords="721.421997 153.109589"/>
+      <Node coords="646.269104 233.199844"/>
+      <Node id="125" coords="663.0177 177.478485"/>
+      <Node coords="666.024109 118.539635"/>
+      <Node coords="588.308105 257.428131"/>
+      <Node coords="593.009644 159.887482"/>
+      <Node coords="565.205383 418.769379"/>
+      <Node id="130" coords="610.272583 70.090065"/>
+      <Node coords="521.244751 320.242615"/>
+      <Node coords="673.864868 59.946304"/>
+      <Node coords="471.461456 402.520386"/>
+      <Node coords="512.435486 85.804222"/>
+      <Node id="135" coords="508.782654 205.401779"/>
+      <Node coords="367.033264 420.028564"/>
+      <Node coords="414.052185 296.122314"/>
+      <Node coords="417.513306 142.334641"/>
+      <Node coords="300.743744 220.636261"/>
+      <Node id="140" coords="308.723083 96.996696"/>
+      <Node coords="303.593323 367.69931"/>
+      <Node coords="166.868607 151.789566"/>
+      <Node coords="203.365555 422.039856"/>
+      <Node coords="213.101395 270.257965"/>
+      <Node id="145" coords="118.057777 319.183533"/>
+      <Node coords="987.5 0.0"/>
+      <Node coords="943.75 0.0"/>
+      <Node coords="987.5 200.0"/>
+      <Node coords="987.5 181.928055"/>
+      <Node id="150" coords="987.5 163.477005"/>
+      <Node coords="987.5 144.086121"/>
+      <Node coords="987.5 123.12471"/>
+      <Node coords="987.5 99.854897"/>
+      <Node coords="987.5 73.386528"/>
+      <Node id="155" coords="987.5 42.629635"/>
+      <Node coords="1012.5 200.0"/>
+      <Node coords="1012.5 181.928055"/>
+      <Node coords="1012.5 163.477005"/>
+      <Node coords="1012.5 144.086121"/>
+      <Node id="160" coords="1012.5 123.12471"/>
+      <Node coords="1012.5 99.854897"/>
+      <Node coords="1012.5 73.386528"/>
+      <Node coords="1012.5 42.629635"/>
+      <Node coords="1012.5 0.0"/>
+      <Node id="165" coords="1056.25 0.0"/>
+      <Node coords="1100.0 0.0"/>
+      <Node coords="1100.0 500.0"/>
+      <Node coords="1100.0 475.552399"/>
+      <Node coords="1100.0 451.711365"/>
+      <Node id="170" coords="1100.0 428.109802"/>
+      <Node coords="1100.0 404.33139"/>
+      <Node coords="1100.0 380.010651"/>
+      <Node coords="1100.0 354.926605"/>
+      <Node coords="1100.0 329.090668"/>
+      <Node id="175" coords="1100.0 302.78418"/>
+      <Node coords="1100.0 276.46933"/>
+      <Node coords="1100.0 250.56337"/>
+      <Node coords="1100.0 225.213165"/>
+      <Node coords="1100.0 200.219864"/>
+      <Node id="180" coords="1100.0 175.1017"/>
+      <Node coords="1100.0 149.182297"/>
+      <Node coords="1100.0 121.63591"/>
+      <Node coords="1100.0 91.484993"/>
+      <Node coords="1100.0 57.568787"/>
+      <Node id="185" coords="1082.176392 500.0"/>
+      <Node coords="1064.352661 500.0"/>
+      <Node coords="1044.223633 500.0"/>
+      <Node coords="1024.911743 500.0"/>
+      <Node coords="986.941711 500.0"/>
+      <Node id="190" coords="967.353149 500.0"/>
+      <Node coords="946.701721 500.0"/>
+      <Node coords="924.447632 500.0"/>
+      <Node coords="995.226074 485.17865"/>
+      <Node coords="1012.406921 487.741211"/>
+      <Node id="195" coords="1010.528259 472.557617"/>
+      <Node coords="977.630188 483.531677"/>
+      <Node coords="1032.321899 481.204865"/>
+      <Node coords="967.473938 195.40593"/>
+      <Node coords="965.682495 176.083801"/>
+      <Node id="200" coords="1029.443604 193.593475"/>
+      <Node coords="1032.429443 175.001572"/>
+      <Node coords="1077.11792 474.846375"/>
+      <Node coords="961.851135 156.427612"/>
+      <Node coords="1037.24231 155.810181"/>
+      <Node id="205" coords="1053.166138 472.292999"/>
+      <Node coords="1029.509033 463.096985"/>
+      <Node coords="990.405945 468.713989"/>
+      <Node coords="969.334961 465.930023"/>
+      <Node coords="944.130981 190.999908"/>
+      <Node id="210" coords="968.884277 215.280746"/>
+      <Node coords="1026.922974 210.883835"/>
+      <Node coords="1056.321045 184.92923"/>
+      <Node coords="955.619019 482.17215"/>
+      <Node coords="1005.27124 455.373047"/>
+      <Node id="215" coords="983.742615 450.788544"/>
+      <Node coords="1019.864929 441.965698"/>
+      <Node coords="998.120422 436.159088"/>
+      <Node coords="1042.267822 449.985809"/>
+      <Node coords="1012.71875 421.387146"/>
+      <Node id="220" coords="976.156677 431.791229"/>
+      <Node coords="1035.290771 427.096069"/>
+      <Node coords="1028.911133 407.151947"/>
+      <Node coords="991.030579 416.314667"/>
+      <Node coords="967.16571 412.047974"/>
+      <Node id="225" coords="960.914062 447.520905"/>
+      <Node coords="1007.131104 400.679077"/>
+      <Node coords="983.296021 395.717682"/>
+      <Node coords="956.396057 391.342438"/>
+      <Node coords="950.89624 428.305267"/>
+      <Node id="230" coords="936.503967 444.873169"/>
+      <Node coords="944.5979 463.845764"/>
+      <Node coords="956.394958 136.927322"/>
+      <Node coords="1043.991455 137.35675"/>
+      <Node coords="941.205505 170.521545"/>
+      <Node id="235" coords="1058.952515 168.587601"/>
+      <Node coords="920.450745 186.046021"/>
+      <Node coords="946.42981 211.046539"/>
+      <Node coords="952.278015 231.026642"/>
+      <Node coords="988.418396 222.476959"/>
+      <Node id="240" coords="1007.424438 216.510345"/>
+      <Node coords="1051.418701 204.558533"/>
+      <Node coords="1079.250244 195.155945"/>
+      <Node coords="1087.505615 174.34436"/>
+      <Node coords="1057.653564 430.395721"/>
+      <Node id="245" coords="1054.713623 412.680389"/>
+      <Node coords="1026.432739 384.030426"/>
+      <Node coords="1000.76825 378.818512"/>
+      <Node coords="973.731995 373.924377"/>
+      <Node coords="938.749756 408.230347"/>
+      <Node id="250" coords="921.776184 425.422058"/>
+      <Node coords="912.710693 440.147705"/>
+      <Node coords="917.521118 462.732758"/>
+      <Node coords="926.983887 479.97934"/>
+      <Node coords="975.684875 236.716583"/>
+      <Node id="255" coords="999.082764 239.828796"/>
+      <Node coords="1024.018433 232.261124"/>
+      <Node coords="1049.034302 226.144836"/>
+      <Node coords="1060.418701 451.444458"/>
+      <Node coords="1083.553345 416.437531"/>
+      <Node id="260" coords="1047.703857 392.467865"/>
+      <Node coords="982.441406 256.932556"/>
+      <Node coords="929.063965 148.961975"/>
+      <Node coords="1073.307129 151.210266"/>
+      <Node coords="915.119995 163.16597"/>
+      <Node id="265" coords="919.455444 209.200424"/>
+      <Node coords="924.790894 226.286865"/>
+      <Node coords="937.377686 248.38916"/>
+      <Node coords="1078.673096 213.751343"/>
+      <Node coords="1021.221741 361.641235"/>
+      <Node id="270" coords="990.81781 355.482697"/>
+      <Node coords="945.290527 370.072388"/>
+      <Node coords="924.036133 387.010193"/>
+      <Node coords="909.757202 405.091034"/>
+      <Node coords="959.214844 252.611908"/>
+      <Node id="275" coords="1072.016602 238.814331"/>
+      <Node coords="1081.398438 433.300751"/>
+      <Node coords="1074.966797 395.830231"/>
+      <Node coords="1053.369385 369.695251"/>
+      <Node coords="963.811096 277.387909"/>
+      <Node id="280" coords="1001.172424 265.209076"/>
+      <Node coords="1045.218994 249.671188"/>
+      <Node coords="913.87085 240.08699"/>
+      <Node coords="943.994446 275.70874"/>
+      <Node coords="1005.726135 334.523438"/>
+      <Node id="285" coords="961.448975 351.153381"/>
+      <Node coords="1080.03894 451.394623"/>
+      <Node coords="954.224243 302.027008"/>
+      <Node coords="983.218445 286.663422"/>
+      <Node coords="1011.245728 289.483398"/>
+      <Node id="290" coords="1018.799927 249.004593"/>
+      <Node coords="1070.409058 264.684265"/>
+      <Node coords="1024.867065 267.400421"/>
+      <Node coords="956.039001 116.355095"/>
+      <Node coords="1044.157227 116.563545"/>
+      <Node id="295" coords="927.773071 348.063721"/>
+      <Node coords="1084.94519 377.873749"/>
+      <Node coords="920.698547 265.50177"/>
+      <Node coords="1040.048584 343.120422"/>
+      <Node coords="979.223328 332.450012"/>
+      <Node id="300" coords="926.174683 293.84552"/>
+      <Node coords="988.511475 308.533844"/>
+      <Node coords="1044.543701 276.318115"/>
+      <Node coords="924.614075 129.073639"/>
+      <Node coords="1075.80481 129.484131"/>
+      <Node id="305" coords="948.893188 327.307159"/>
+      <Node coords="920.701599 325.041077"/>
+      <Node coords="913.87146 367.860107"/>
+      <Node coords="1071.787964 347.240601"/>
+      <Node coords="1019.91095 314.808044"/>
+      <Node id="310" coords="1070.689209 292.329987"/>
+      <Node coords="967.301086 314.902802"/>
+      <Node coords="1040.229858 297.74826"/>
+      <Node coords="1054.807251 320.261871"/>
+      <Node coords="939.247253 95.716988"/>
+      <Node id="315" coords="1060.85498 95.819145"/>
+      <Node coords="1078.490112 318.511322"/>
+      <Node coords="1085.096436 106.766518"/>
+      <Node coords="915.026184 106.645897"/>
+      <Node coords="937.530762 60.522198"/>
+      <Node id="320" coords="1062.486206 60.539227"/>
+      <Node coords="1149.244141 0.0"/>
+      <Node coords="1203.338257 0.0"/>
+      <Node coords="1263.944946 0.0"/>
+      <Node coords="1332.606079 0.0"/>
+      <Node id="325" coords="1410.68042 0.0"/>
+      <Node coords="1499.274292 0.0"/>
+      <Node coords="1599.160034 0.0"/>
+      <Node coords="1710.689941 0.0"/>
+      <Node coords="1833.738403 0.0"/>
+      <Node id="330" coords="2000.0 0.0"/>
+      <Node coords="2000.0 500.0"/>
+      <Node coords="2000.0 360.076019"/>
+      <Node coords="2000.0 219.966446"/>
+      <Node coords="2000.0 109.983208"/>
+      <Node id="335" coords="1124.447632 500.0"/>
+      <Node coords="1151.436401 500.0"/>
+      <Node coords="1181.54187 500.0"/>
+      <Node coords="1215.429443 500.0"/>
+      <Node coords="1253.886475 500.0"/>
+      <Node id="340" coords="1297.850586 500.0"/>
+      <Node coords="1348.427856 500.0"/>
+      <Node coords="1406.884521 500.0"/>
+      <Node coords="1474.594727 500.0"/>
+      <Node coords="1552.925537 500.0"/>
+      <Node id="345" coords="1643.055542 500.0"/>
+      <Node coords="1745.759155 500.0"/>
+      <Node coords="1861.224243 500.0"/>
+      <Node coords="1124.791504 473.150757"/>
+      <Node coords="1120.852905 443.723083"/>
+      <Node id="350" coords="1117.790527 418.775146"/>
+      <Node coords="1118.929565 394.277679"/>
+      <Node coords="1123.23877 369.661591"/>
+      <Node coords="1127.120728 238.01004"/>
+      <Node coords="1121.929932 211.645859"/>
+      <Node id="355" coords="1119.058105 189.06102"/>
+      <Node coords="1127.550659 342.637787"/>
+      <Node coords="1128.829102 316.139465"/>
+      <Node coords="1129.120483 289.808868"/>
+      <Node coords="1128.689087 263.819611"/>
+      <Node id="360" coords="1119.519409 163.29454"/>
+      <Node coords="1152.309204 470.280548"/>
+      <Node coords="1151.649048 440.322754"/>
+      <Node coords="1123.103271 137.603134"/>
+      <Node coords="1151.580566 411.662231"/>
+      <Node id="365" coords="1153.50354 384.205597"/>
+      <Node coords="1155.291992 225.967484"/>
+      <Node coords="1151.760986 202.510925"/>
+      <Node coords="1156.59314 357.193085"/>
+      <Node coords="1157.4375 251.228516"/>
+      <Node id="370" coords="1152.105591 178.212372"/>
+      <Node coords="1158.940063 330.115356"/>
+      <Node coords="1159.750488 303.296387"/>
+      <Node coords="1159.200684 276.942566"/>
+      <Node coords="1183.960938 468.381989"/>
+      <Node id="375" coords="1184.056152 435.717224"/>
+      <Node coords="1126.445068 101.583275"/>
+      <Node coords="1154.675171 152.973236"/>
+      <Node coords="1184.799438 404.11438"/>
+      <Node coords="1188.068848 375.120972"/>
+      <Node id="380" coords="1185.451782 237.918823"/>
+      <Node coords="1187.036499 210.783676"/>
+      <Node coords="1161.469727 118.9618"/>
+      <Node coords="1184.633301 190.287369"/>
+      <Node coords="1191.240723 346.546783"/>
+      <Node id="385" coords="1188.960693 262.856628"/>
+      <Node coords="1192.842041 167.363571"/>
+      <Node coords="1192.626709 317.668457"/>
+      <Node coords="1191.657837 289.526489"/>
+      <Node coords="1219.159912 469.057465"/>
+      <Node id="390" coords="1214.212524 430.472229"/>
+      <Node coords="1130.914307 61.451527"/>
+      <Node coords="1219.229736 399.527435"/>
+      <Node coords="1225.549316 369.566223"/>
+      <Node coords="1170.801392 81.614143"/>
+      <Node id="395" coords="1191.372925 137.235779"/>
+      <Node coords="1217.119873 244.449188"/>
+      <Node coords="1213.812256 217.421432"/>
+      <Node coords="1224.574829 184.32666"/>
+      <Node coords="1227.982544 335.316132"/>
+      <Node id="400" coords="1221.478882 272.338654"/>
+      <Node coords="1227.010864 301.457672"/>
+      <Node coords="1251.377563 463.743286"/>
+      <Node coords="1213.358765 98.868065"/>
+      <Node coords="1234.578857 139.1987"/>
+      <Node id="405" coords="1252.513672 432.520782"/>
+      <Node coords="1262.325439 407.286957"/>
+      <Node coords="1264.94873 361.026703"/>
+      <Node coords="1250.158569 246.689728"/>
+      <Node coords="1248.804565 209.647751"/>
+      <Node id="410" coords="1265.209961 316.400787"/>
+      <Node coords="1260.795166 274.527466"/>
+      <Node coords="1289.951538 460.572174"/>
+      <Node coords="1298.881836 400.942444"/>
+      <Node coords="1286.037109 227.026077"/>
+      <Node id="415" coords="1274.62439 161.491501"/>
+      <Node coords="1172.101807 34.67923"/>
+      <Node coords="1306.548218 339.847809"/>
+      <Node coords="1299.368652 284.286194"/>
+      <Node coords="1221.695068 51.239086"/>
+      <Node id="420" coords="1350.985352 373.583923"/>
+      <Node coords="1355.821899 307.292786"/>
+      <Node coords="1273.187866 75.416862"/>
+      <Node coords="1332.421387 443.353424"/>
+      <Node coords="1337.813477 190.508255"/>
+      <Node id="425" coords="1391.044678 434.869781"/>
+      <Node coords="1413.319824 347.390778"/>
+      <Node coords="1337.720581 250.484726"/>
+      <Node coords="1405.5979 251.70694"/>
+      <Node coords="1332.13208 97.178467"/>
+      <Node id="430" coords="1476.265869 415.445618"/>
+      <Node coords="1409.577393 150.866302"/>
+      <Node coords="1486.907959 313.453979"/>
+      <Node coords="1405.307251 54.092819"/>
+      <Node coords="1480.769287 200.065903"/>
+      <Node id="435" coords="1500.357056 75.82505"/>
+      <Node coords="1577.891235 379.612183"/>
+      <Node coords="1564.580566 111.634193"/>
+      <Node coords="1574.510254 247.320145"/>
+      <Node coords="1686.707886 280.033295"/>
+      <Node id="440" coords="1705.557983 387.724518"/>
+      <Node coords="1832.817993 323.428925"/>
+      <Node coords="1648.067993 107.169945"/>
+      <Node coords="1843.716675 140.241135"/>
+      <Node coords="1750.158691 168.39357"/>
+    </Nodes>
+    <Elements>
+      <!--**-->
+      <!--Element 799-->
+      <!--TrPlaneStress2d Elements-->
+      <TrPlaneStress2d nodes="14 48 15"/>
+      <TrPlaneStress2d nodes="15 49 16"/>
+      <TrPlaneStress2d nodes="16 50 17"/>
+      <TrPlaneStress2d nodes="13 31 14"/>
+      <TrPlaneStress2d id="5" nodes="17 51 18"/>
+      <TrPlaneStress2d nodes="18 52 19"/>
+      <TrPlaneStress2d nodes="23 53 24"/>
+      <TrPlaneStress2d nodes="24 54 25"/>
+      <TrPlaneStress2d nodes="25 55 26"/>
+      <TrPlaneStress2d id="10" nodes="19 56 20"/>
+      <TrPlaneStress2d nodes="20 57 21"/>
+      <TrPlaneStress2d nodes="21 58 22"/>
+      <TrPlaneStress2d nodes="22 59 23"/>
+      <TrPlaneStress2d nodes="26 60 27"/>
+      <TrPlaneStress2d id="15" nodes="48 49 15"/>
+      <TrPlaneStress2d nodes="48 61 49"/>
+      <TrPlaneStress2d nodes="14 31 48"/>
+      <TrPlaneStress2d nodes="49 50 16"/>
+      <TrPlaneStress2d nodes="49 62 50"/>
+      <TrPlaneStress2d id="20" nodes="27 63 28"/>
+      <TrPlaneStress2d nodes="32 48 31"/>
+      <TrPlaneStress2d nodes="50 51 17"/>
+      <TrPlaneStress2d nodes="50 64 51"/>
+      <TrPlaneStress2d nodes="51 52 18"/>
+      <TrPlaneStress2d id="25" nodes="51 65 52"/>
+      <TrPlaneStress2d nodes="54 55 25"/>
+      <TrPlaneStress2d nodes="54 66 55"/>
+      <TrPlaneStress2d nodes="24 53 54"/>
+      <TrPlaneStress2d nodes="53 67 54"/>
+      <TrPlaneStress2d id="30" nodes="52 56 19"/>
+      <TrPlaneStress2d nodes="52 68 56"/>
+      <TrPlaneStress2d nodes="23 59 53"/>
+      <TrPlaneStress2d nodes="59 69 53"/>
+      <TrPlaneStress2d nodes="55 60 26"/>
+      <TrPlaneStress2d id="35" nodes="55 70 60"/>
+      <TrPlaneStress2d nodes="56 57 20"/>
+      <TrPlaneStress2d nodes="56 71 57"/>
+      <TrPlaneStress2d nodes="57 58 21"/>
+      <TrPlaneStress2d nodes="57 72 58"/>
+      <TrPlaneStress2d id="40" nodes="58 59 22"/>
+      <TrPlaneStress2d nodes="58 73 59"/>
+      <TrPlaneStress2d nodes="61 62 49"/>
+      <TrPlaneStress2d nodes="61 74 62"/>
+      <TrPlaneStress2d nodes="48 32 61"/>
+      <TrPlaneStress2d id="45" nodes="62 64 50"/>
+      <TrPlaneStress2d nodes="62 75 64"/>
+      <TrPlaneStress2d nodes="28 76 29"/>
+      <TrPlaneStress2d nodes="33 61 32"/>
+      <TrPlaneStress2d nodes="60 63 27"/>
+      <TrPlaneStress2d id="50" nodes="60 77 63"/>
+      <TrPlaneStress2d nodes="64 65 51"/>
+      <TrPlaneStress2d nodes="64 78 65"/>
+      <TrPlaneStress2d nodes="65 68 52"/>
+      <TrPlaneStress2d nodes="65 79 68"/>
+      <TrPlaneStress2d id="55" nodes="67 66 54"/>
+      <TrPlaneStress2d nodes="67 80 66"/>
+      <TrPlaneStress2d nodes="53 69 67"/>
+      <TrPlaneStress2d nodes="69 81 67"/>
+      <TrPlaneStress2d nodes="63 76 28"/>
+      <TrPlaneStress2d id="60" nodes="63 82 76"/>
+      <TrPlaneStress2d nodes="66 70 55"/>
+      <TrPlaneStress2d nodes="66 83 70"/>
+      <TrPlaneStress2d nodes="68 71 56"/>
+      <TrPlaneStress2d nodes="68 84 71"/>
+      <TrPlaneStress2d id="65" nodes="59 73 69"/>
+      <TrPlaneStress2d nodes="73 85 69"/>
+      <TrPlaneStress2d nodes="70 77 60"/>
+      <TrPlaneStress2d nodes="70 86 77"/>
+      <TrPlaneStress2d nodes="71 72 57"/>
+      <TrPlaneStress2d id="70" nodes="71 87 72"/>
+      <TrPlaneStress2d nodes="72 73 58"/>
+      <TrPlaneStress2d nodes="72 88 73"/>
+      <TrPlaneStress2d nodes="74 75 62"/>
+      <TrPlaneStress2d nodes="74 89 75"/>
+      <TrPlaneStress2d id="75" nodes="61 33 74"/>
+      <TrPlaneStress2d nodes="75 78 64"/>
+      <TrPlaneStress2d nodes="75 90 78"/>
+      <TrPlaneStress2d nodes="29 91 30"/>
+      <TrPlaneStress2d nodes="34 74 33"/>
+      <TrPlaneStress2d id="80" nodes="78 79 65"/>
+      <TrPlaneStress2d nodes="78 92 79"/>
+      <TrPlaneStress2d nodes="79 84 68"/>
+      <TrPlaneStress2d nodes="79 93 84"/>
+      <TrPlaneStress2d nodes="76 91 29"/>
+      <TrPlaneStress2d id="85" nodes="76 94 91"/>
+      <TrPlaneStress2d nodes="77 82 63"/>
+      <TrPlaneStress2d nodes="77 95 82"/>
+      <TrPlaneStress2d nodes="80 83 66"/>
+      <TrPlaneStress2d nodes="80 96 83"/>
+      <TrPlaneStress2d id="90" nodes="67 81 80"/>
+      <TrPlaneStress2d nodes="81 97 80"/>
+      <TrPlaneStress2d nodes="69 85 81"/>
+      <TrPlaneStress2d nodes="85 98 81"/>
+      <TrPlaneStress2d nodes="83 86 70"/>
+      <TrPlaneStress2d id="95" nodes="83 96 86"/>
+      <TrPlaneStress2d nodes="84 87 71"/>
+      <TrPlaneStress2d nodes="84 99 87"/>
+      <TrPlaneStress2d nodes="73 88 85"/>
+      <TrPlaneStress2d nodes="88 100 85"/>
+      <TrPlaneStress2d id="100" nodes="87 88 72"/>
+      <TrPlaneStress2d nodes="87 101 88"/>
+      <TrPlaneStress2d nodes="89 90 75"/>
+      <TrPlaneStress2d nodes="89 102 90"/>
+      <TrPlaneStress2d nodes="74 34 89"/>
+      <TrPlaneStress2d id="105" nodes="82 94 76"/>
+      <TrPlaneStress2d nodes="82 103 94"/>
+      <TrPlaneStress2d nodes="86 95 77"/>
+      <TrPlaneStress2d nodes="86 104 95"/>
+      <TrPlaneStress2d nodes="90 92 78"/>
+      <TrPlaneStress2d id="110" nodes="90 105 92"/>
+      <TrPlaneStress2d nodes="92 93 79"/>
+      <TrPlaneStress2d nodes="92 106 93"/>
+      <TrPlaneStress2d nodes="93 99 84"/>
+      <TrPlaneStress2d nodes="93 107 99"/>
+      <TrPlaneStress2d id="115" nodes="35 89 34"/>
+      <TrPlaneStress2d nodes="80 97 96"/>
+      <TrPlaneStress2d nodes="97 108 96"/>
+      <TrPlaneStress2d nodes="108 104 96"/>
+      <TrPlaneStress2d nodes="97 100 108"/>
+      <TrPlaneStress2d id="120" nodes="81 98 97"/>
+      <TrPlaneStress2d nodes="98 100 97"/>
+      <TrPlaneStress2d nodes="98 85 100"/>
+      <TrPlaneStress2d nodes="99 101 87"/>
+      <TrPlaneStress2d nodes="99 109 101"/>
+      <TrPlaneStress2d id="125" nodes="88 101 100"/>
+      <TrPlaneStress2d nodes="101 110 100"/>
+      <TrPlaneStress2d nodes="102 105 90"/>
+      <TrPlaneStress2d nodes="102 111 105"/>
+      <TrPlaneStress2d nodes="89 35 102"/>
+      <TrPlaneStress2d id="130" nodes="104 86 96"/>
+      <TrPlaneStress2d nodes="111 106 105"/>
+      <TrPlaneStress2d nodes="106 92 105"/>
+      <TrPlaneStress2d nodes="102 35 111"/>
+      <TrPlaneStress2d nodes="91 3 30"/>
+      <TrPlaneStress2d id="135" nodes="95 103 82"/>
+      <TrPlaneStress2d nodes="95 104 103"/>
+      <TrPlaneStress2d nodes="106 107 93"/>
+      <TrPlaneStress2d nodes="106 112 107"/>
+      <TrPlaneStress2d nodes="94 113 91"/>
+      <TrPlaneStress2d id="140" nodes="107 109 99"/>
+      <TrPlaneStress2d nodes="107 114 109"/>
+      <TrPlaneStress2d nodes="109 110 101"/>
+      <TrPlaneStress2d nodes="109 115 110"/>
+      <TrPlaneStress2d nodes="110 108 100"/>
+      <TrPlaneStress2d id="145" nodes="36 111 35"/>
+      <TrPlaneStress2d nodes="103 116 94"/>
+      <TrPlaneStress2d nodes="112 114 107"/>
+      <TrPlaneStress2d nodes="112 117 114"/>
+      <TrPlaneStress2d nodes="106 111 112"/>
+      <TrPlaneStress2d id="150" nodes="113 3 91"/>
+      <TrPlaneStress2d nodes="94 116 113"/>
+      <TrPlaneStress2d nodes="116 4 113"/>
+      <TrPlaneStress2d nodes="2 30 3"/>
+      <TrPlaneStress2d nodes="114 115 109"/>
+      <TrPlaneStress2d id="155" nodes="114 118 115"/>
+      <TrPlaneStress2d nodes="115 119 110"/>
+      <TrPlaneStress2d nodes="103 120 116"/>
+      <TrPlaneStress2d nodes="37 111 36"/>
+      <TrPlaneStress2d nodes="104 120 103"/>
+      <TrPlaneStress2d id="160" nodes="111 121 112"/>
+      <TrPlaneStress2d nodes="3 113 4"/>
+      <TrPlaneStress2d nodes="117 118 114"/>
+      <TrPlaneStress2d nodes="117 122 118"/>
+      <TrPlaneStress2d nodes="112 121 117"/>
+      <TrPlaneStress2d id="165" nodes="121 122 117"/>
+      <TrPlaneStress2d nodes="119 108 110"/>
+      <TrPlaneStress2d nodes="119 123 108"/>
+      <TrPlaneStress2d nodes="108 123 104"/>
+      <TrPlaneStress2d nodes="118 124 115"/>
+      <TrPlaneStress2d id="170" nodes="115 124 119"/>
+      <TrPlaneStress2d nodes="124 125 119"/>
+      <TrPlaneStress2d nodes="120 5 116"/>
+      <TrPlaneStress2d nodes="111 37 121"/>
+      <TrPlaneStress2d nodes="119 125 123"/>
+      <TrPlaneStress2d id="175" nodes="125 126 123"/>
+      <TrPlaneStress2d nodes="4 116 5"/>
+      <TrPlaneStress2d nodes="38 121 37"/>
+      <TrPlaneStress2d nodes="122 127 118"/>
+      <TrPlaneStress2d nodes="126 120 123"/>
+      <TrPlaneStress2d id="180" nodes="125 128 126"/>
+      <TrPlaneStress2d nodes="104 123 120"/>
+      <TrPlaneStress2d nodes="118 127 124"/>
+      <TrPlaneStress2d nodes="127 128 124"/>
+      <TrPlaneStress2d nodes="124 128 125"/>
+      <TrPlaneStress2d id="185" nodes="5 120 6"/>
+      <TrPlaneStress2d nodes="39 129 38"/>
+      <TrPlaneStress2d nodes="128 130 126"/>
+      <TrPlaneStress2d nodes="122 131 127"/>
+      <TrPlaneStress2d nodes="6 130 7"/>
+      <TrPlaneStress2d id="190" nodes="130 132 126"/>
+      <TrPlaneStress2d nodes="40 133 39"/>
+      <TrPlaneStress2d nodes="126 132 120"/>
+      <TrPlaneStress2d nodes="132 6 120"/>
+      <TrPlaneStress2d nodes="132 130 6"/>
+      <TrPlaneStress2d id="195" nodes="129 121 38"/>
+      <TrPlaneStress2d nodes="39 133 129"/>
+      <TrPlaneStress2d nodes="133 131 129"/>
+      <TrPlaneStress2d nodes="128 134 130"/>
+      <TrPlaneStress2d nodes="131 135 127"/>
+      <TrPlaneStress2d id="200" nodes="122 129 131"/>
+      <TrPlaneStress2d nodes="128 135 134"/>
+      <TrPlaneStress2d nodes="135 128 127"/>
+      <TrPlaneStress2d nodes="122 121 129"/>
+      <TrPlaneStress2d nodes="7 134 8"/>
+      <TrPlaneStress2d id="205" nodes="41 136 40"/>
+      <TrPlaneStress2d nodes="130 134 7"/>
+      <TrPlaneStress2d nodes="131 137 135"/>
+      <TrPlaneStress2d nodes="40 136 133"/>
+      <TrPlaneStress2d nodes="136 137 133"/>
+      <TrPlaneStress2d id="210" nodes="137 138 135"/>
+      <TrPlaneStress2d nodes="131 133 137"/>
+      <TrPlaneStress2d nodes="138 134 135"/>
+      <TrPlaneStress2d nodes="138 9 134"/>
+      <TrPlaneStress2d nodes="8 134 9"/>
+      <TrPlaneStress2d id="215" nodes="42 136 41"/>
+      <TrPlaneStress2d nodes="137 139 138"/>
+      <TrPlaneStress2d nodes="139 140 138"/>
+      <TrPlaneStress2d nodes="137 141 139"/>
+      <TrPlaneStress2d nodes="9 140 10"/>
+      <TrPlaneStress2d id="220" nodes="9 138 140"/>
+      <TrPlaneStress2d nodes="140 142 10"/>
+      <TrPlaneStress2d nodes="47 142 46"/>
+      <TrPlaneStress2d nodes="12 11 47"/>
+      <TrPlaneStress2d nodes="137 136 141"/>
+      <TrPlaneStress2d id="225" nodes="136 42 141"/>
+      <TrPlaneStress2d nodes="43 143 42"/>
+      <TrPlaneStress2d nodes="139 142 140"/>
+      <TrPlaneStress2d nodes="141 144 139"/>
+      <TrPlaneStress2d nodes="10 142 11"/>
+      <TrPlaneStress2d id="230" nodes="144 142 139"/>
+      <TrPlaneStress2d nodes="141 143 144"/>
+      <TrPlaneStress2d nodes="143 145 144"/>
+      <TrPlaneStress2d nodes="143 141 42"/>
+      <TrPlaneStress2d nodes="142 47 11"/>
+      <TrPlaneStress2d id="235" nodes="44 45 43"/>
+      <TrPlaneStress2d nodes="46 145 45"/>
+      <TrPlaneStress2d nodes="46 142 145"/>
+      <TrPlaneStress2d nodes="145 43 45"/>
+      <TrPlaneStress2d nodes="43 145 143"/>
+      <TrPlaneStress2d id="240" nodes="145 142 144"/>
+      <TrPlaneStress2d nodes="189 193 1"/>
+      <TrPlaneStress2d nodes="193 194 1"/>
+      <TrPlaneStress2d nodes="194 188 1"/>
+      <TrPlaneStress2d nodes="193 195 194"/>
+      <TrPlaneStress2d id="245" nodes="189 196 193"/>
+      <TrPlaneStress2d nodes="194 197 188"/>
+      <TrPlaneStress2d nodes="148 198 149"/>
+      <TrPlaneStress2d nodes="149 199 150"/>
+      <TrPlaneStress2d nodes="157 200 156"/>
+      <TrPlaneStress2d id="250" nodes="158 201 157"/>
+      <TrPlaneStress2d nodes="185 168 167"/>
+      <TrPlaneStress2d nodes="186 202 185"/>
+      <TrPlaneStress2d nodes="150 203 151"/>
+      <TrPlaneStress2d nodes="159 204 158"/>
+      <TrPlaneStress2d id="255" nodes="188 197 187"/>
+      <TrPlaneStress2d nodes="190 196 189"/>
+      <TrPlaneStress2d nodes="187 205 186"/>
+      <TrPlaneStress2d nodes="195 197 194"/>
+      <TrPlaneStress2d nodes="195 206 197"/>
+      <TrPlaneStress2d id="260" nodes="193 207 195"/>
+      <TrPlaneStress2d nodes="196 207 193"/>
+      <TrPlaneStress2d nodes="196 208 207"/>
+      <TrPlaneStress2d nodes="198 199 149"/>
+      <TrPlaneStress2d nodes="198 209 199"/>
+      <TrPlaneStress2d id="265" nodes="148 210 198"/>
+      <TrPlaneStress2d nodes="200 211 156"/>
+      <TrPlaneStress2d nodes="157 201 200"/>
+      <TrPlaneStress2d nodes="201 212 200"/>
+      <TrPlaneStress2d nodes="190 213 196"/>
+      <TrPlaneStress2d id="270" nodes="206 205 197"/>
+      <TrPlaneStress2d nodes="195 214 206"/>
+      <TrPlaneStress2d nodes="207 214 195"/>
+      <TrPlaneStress2d nodes="208 215 207"/>
+      <TrPlaneStress2d nodes="196 213 208"/>
+      <TrPlaneStress2d id="275" nodes="214 216 206"/>
+      <TrPlaneStress2d nodes="207 215 214"/>
+      <TrPlaneStress2d nodes="215 217 214"/>
+      <TrPlaneStress2d nodes="216 218 206"/>
+      <TrPlaneStress2d nodes="214 217 216"/>
+      <TrPlaneStress2d id="280" nodes="217 219 216"/>
+      <TrPlaneStress2d nodes="215 220 217"/>
+      <TrPlaneStress2d nodes="218 205 206"/>
+      <TrPlaneStress2d nodes="216 221 218"/>
+      <TrPlaneStress2d nodes="219 221 216"/>
+      <TrPlaneStress2d id="285" nodes="219 222 221"/>
+      <TrPlaneStress2d nodes="217 223 219"/>
+      <TrPlaneStress2d nodes="220 223 217"/>
+      <TrPlaneStress2d nodes="220 224 223"/>
+      <TrPlaneStress2d nodes="215 225 220"/>
+      <TrPlaneStress2d id="290" nodes="219 226 222"/>
+      <TrPlaneStress2d nodes="223 226 219"/>
+      <TrPlaneStress2d nodes="223 227 226"/>
+      <TrPlaneStress2d nodes="224 227 223"/>
+      <TrPlaneStress2d nodes="224 228 227"/>
+      <TrPlaneStress2d id="295" nodes="220 229 224"/>
+      <TrPlaneStress2d nodes="225 229 220"/>
+      <TrPlaneStress2d nodes="225 230 229"/>
+      <TrPlaneStress2d nodes="215 208 225"/>
+      <TrPlaneStress2d nodes="208 231 225"/>
+      <TrPlaneStress2d id="300" nodes="151 232 152"/>
+      <TrPlaneStress2d nodes="160 233 159"/>
+      <TrPlaneStress2d nodes="191 213 190"/>
+      <TrPlaneStress2d nodes="199 203 150"/>
+      <TrPlaneStress2d nodes="199 234 203"/>
+      <TrPlaneStress2d id="305" nodes="158 204 201"/>
+      <TrPlaneStress2d nodes="204 235 201"/>
+      <TrPlaneStress2d nodes="209 234 199"/>
+      <TrPlaneStress2d nodes="209 236 234"/>
+      <TrPlaneStress2d nodes="198 237 209"/>
+      <TrPlaneStress2d id="310" nodes="210 237 198"/>
+      <TrPlaneStress2d nodes="210 238 237"/>
+      <TrPlaneStress2d nodes="148 239 210"/>
+      <TrPlaneStress2d nodes="211 240 156"/>
+      <TrPlaneStress2d nodes="200 241 211"/>
+      <TrPlaneStress2d id="315" nodes="212 241 200"/>
+      <TrPlaneStress2d nodes="212 242 241"/>
+      <TrPlaneStress2d nodes="201 235 212"/>
+      <TrPlaneStress2d nodes="235 243 212"/>
+      <TrPlaneStress2d nodes="221 244 218"/>
+      <TrPlaneStress2d id="320" nodes="222 245 221"/>
+      <TrPlaneStress2d nodes="226 246 222"/>
+      <TrPlaneStress2d nodes="227 247 226"/>
+      <TrPlaneStress2d nodes="228 248 227"/>
+      <TrPlaneStress2d nodes="224 249 228"/>
+      <TrPlaneStress2d id="325" nodes="229 249 224"/>
+      <TrPlaneStress2d nodes="229 250 249"/>
+      <TrPlaneStress2d nodes="230 250 229"/>
+      <TrPlaneStress2d nodes="230 251 250"/>
+      <TrPlaneStress2d nodes="225 231 230"/>
+      <TrPlaneStress2d id="330" nodes="231 252 230"/>
+      <TrPlaneStress2d nodes="208 213 231"/>
+      <TrPlaneStress2d nodes="191 253 213"/>
+      <TrPlaneStress2d nodes="210 254 238"/>
+      <TrPlaneStress2d nodes="239 254 210"/>
+      <TrPlaneStress2d id="335" nodes="239 255 254"/>
+      <TrPlaneStress2d nodes="148 240 239"/>
+      <TrPlaneStress2d nodes="240 255 239"/>
+      <TrPlaneStress2d nodes="240 148 156"/>
+      <TrPlaneStress2d nodes="211 256 240"/>
+      <TrPlaneStress2d id="340" nodes="241 257 211"/>
+      <TrPlaneStress2d nodes="244 258 218"/>
+      <TrPlaneStress2d nodes="221 245 244"/>
+      <TrPlaneStress2d nodes="245 259 244"/>
+      <TrPlaneStress2d nodes="222 260 245"/>
+      <TrPlaneStress2d id="345" nodes="230 252 251"/>
+      <TrPlaneStress2d nodes="252 15 251"/>
+      <TrPlaneStress2d nodes="231 253 252"/>
+      <TrPlaneStress2d nodes="255 261 254"/>
+      <TrPlaneStress2d nodes="256 255 240"/>
+      <TrPlaneStress2d id="350" nodes="211 257 256"/>
+      <TrPlaneStress2d nodes="258 205 218"/>
+      <TrPlaneStress2d nodes="192 253 191"/>
+      <TrPlaneStress2d nodes="192 14 253"/>
+      <TrPlaneStress2d nodes="203 232 151"/>
+      <TrPlaneStress2d id="355" nodes="203 262 232"/>
+      <TrPlaneStress2d nodes="159 233 204"/>
+      <TrPlaneStress2d nodes="233 263 204"/>
+      <TrPlaneStress2d nodes="234 262 203"/>
+      <TrPlaneStress2d nodes="234 264 262"/>
+      <TrPlaneStress2d id="360" nodes="204 263 235"/>
+      <TrPlaneStress2d nodes="263 243 235"/>
+      <TrPlaneStress2d nodes="209 265 236"/>
+      <TrPlaneStress2d nodes="237 265 209"/>
+      <TrPlaneStress2d nodes="237 266 265"/>
+      <TrPlaneStress2d id="365" nodes="238 266 237"/>
+      <TrPlaneStress2d nodes="238 267 266"/>
+      <TrPlaneStress2d nodes="242 268 241"/>
+      <TrPlaneStress2d nodes="212 243 242"/>
+      <TrPlaneStress2d nodes="243 179 242"/>
+      <TrPlaneStress2d id="370" nodes="246 260 222"/>
+      <TrPlaneStress2d nodes="226 247 246"/>
+      <TrPlaneStress2d nodes="247 269 246"/>
+      <TrPlaneStress2d nodes="227 248 247"/>
+      <TrPlaneStress2d nodes="248 270 247"/>
+      <TrPlaneStress2d id="375" nodes="228 271 248"/>
+      <TrPlaneStress2d nodes="249 272 228"/>
+      <TrPlaneStress2d nodes="250 273 249"/>
+      <TrPlaneStress2d nodes="251 16 250"/>
+      <TrPlaneStress2d nodes="253 231 213"/>
+      <TrPlaneStress2d id="380" nodes="254 274 238"/>
+      <TrPlaneStress2d nodes="241 268 257"/>
+      <TrPlaneStress2d nodes="268 275 257"/>
+      <TrPlaneStress2d nodes="244 276 258"/>
+      <TrPlaneStress2d nodes="259 276 244"/>
+      <TrPlaneStress2d id="385" nodes="259 170 276"/>
+      <TrPlaneStress2d nodes="245 277 259"/>
+      <TrPlaneStress2d nodes="260 277 245"/>
+      <TrPlaneStress2d nodes="260 278 277"/>
+      <TrPlaneStress2d nodes="261 274 254"/>
+      <TrPlaneStress2d id="390" nodes="261 279 274"/>
+      <TrPlaneStress2d nodes="255 280 261"/>
+      <TrPlaneStress2d nodes="257 281 256"/>
+      <TrPlaneStress2d nodes="267 282 266"/>
+      <TrPlaneStress2d nodes="238 274 267"/>
+      <TrPlaneStress2d id="395" nodes="274 283 267"/>
+      <TrPlaneStress2d nodes="269 278 246"/>
+      <TrPlaneStress2d nodes="247 270 269"/>
+      <TrPlaneStress2d nodes="270 284 269"/>
+      <TrPlaneStress2d nodes="248 285 270"/>
+      <TrPlaneStress2d id="400" nodes="276 286 258"/>
+      <TrPlaneStress2d nodes="279 283 274"/>
+      <TrPlaneStress2d nodes="279 287 283"/>
+      <TrPlaneStress2d nodes="261 288 279"/>
+      <TrPlaneStress2d nodes="280 288 261"/>
+      <TrPlaneStress2d id="405" nodes="280 289 288"/>
+      <TrPlaneStress2d nodes="255 290 280"/>
+      <TrPlaneStress2d nodes="281 290 256"/>
+      <TrPlaneStress2d nodes="290 255 256"/>
+      <TrPlaneStress2d nodes="257 275 281"/>
+      <TrPlaneStress2d id="410" nodes="275 291 281"/>
+      <TrPlaneStress2d nodes="280 292 289"/>
+      <TrPlaneStress2d nodes="290 292 280"/>
+      <TrPlaneStress2d nodes="290 281 292"/>
+      <TrPlaneStress2d nodes="152 293 153"/>
+      <TrPlaneStress2d id="415" nodes="161 294 160"/>
+      <TrPlaneStress2d nodes="169 286 170"/>
+      <TrPlaneStress2d nodes="169 202 286"/>
+      <TrPlaneStress2d nodes="202 205 286"/>
+      <TrPlaneStress2d nodes="202 186 205"/>
+      <TrPlaneStress2d id="420" nodes="170 259 171"/>
+      <TrPlaneStress2d nodes="16 251 15"/>
+      <TrPlaneStress2d nodes="17 273 16"/>
+      <TrPlaneStress2d nodes="187 197 205"/>
+      <TrPlaneStress2d nodes="236 264 234"/>
+      <TrPlaneStress2d id="425" nodes="236 26 264"/>
+      <TrPlaneStress2d nodes="266 24 265"/>
+      <TrPlaneStress2d nodes="246 278 260"/>
+      <TrPlaneStress2d nodes="271 285 248"/>
+      <TrPlaneStress2d nodes="271 295 285"/>
+      <TrPlaneStress2d id="430" nodes="228 272 271"/>
+      <TrPlaneStress2d nodes="249 273 272"/>
+      <TrPlaneStress2d nodes="273 18 272"/>
+      <TrPlaneStress2d nodes="250 16 273"/>
+      <TrPlaneStress2d nodes="268 178 275"/>
+      <TrPlaneStress2d id="435" nodes="277 171 259"/>
+      <TrPlaneStress2d nodes="278 296 277"/>
+      <TrPlaneStress2d nodes="283 297 267"/>
+      <TrPlaneStress2d nodes="284 298 269"/>
+      <TrPlaneStress2d nodes="270 299 284"/>
+      <TrPlaneStress2d id="440" nodes="286 205 258"/>
+      <TrPlaneStress2d nodes="276 170 286"/>
+      <TrPlaneStress2d nodes="287 300 283"/>
+      <TrPlaneStress2d nodes="279 288 287"/>
+      <TrPlaneStress2d nodes="289 301 288"/>
+      <TrPlaneStress2d id="445" nodes="291 302 281"/>
+      <TrPlaneStress2d nodes="275 177 291"/>
+      <TrPlaneStress2d nodes="292 302 289"/>
+      <TrPlaneStress2d nodes="292 281 302"/>
+      <TrPlaneStress2d nodes="168 202 169"/>
+      <TrPlaneStress2d id="450" nodes="171 296 172"/>
+      <TrPlaneStress2d nodes="296 173 172"/>
+      <TrPlaneStress2d nodes="178 268 179"/>
+      <TrPlaneStress2d nodes="13 14 192"/>
+      <TrPlaneStress2d nodes="15 252 14"/>
+      <TrPlaneStress2d id="455" nodes="18 273 17"/>
+      <TrPlaneStress2d nodes="25 265 24"/>
+      <TrPlaneStress2d nodes="202 168 185"/>
+      <TrPlaneStress2d nodes="232 293 152"/>
+      <TrPlaneStress2d nodes="232 303 293"/>
+      <TrPlaneStress2d id="460" nodes="160 294 233"/>
+      <TrPlaneStress2d nodes="294 304 233"/>
+      <TrPlaneStress2d nodes="253 14 252"/>
+      <TrPlaneStress2d nodes="262 303 232"/>
+      <TrPlaneStress2d nodes="262 27 303"/>
+      <TrPlaneStress2d id="465" nodes="233 304 263"/>
+      <TrPlaneStress2d nodes="304 181 263"/>
+      <TrPlaneStress2d nodes="264 27 262"/>
+      <TrPlaneStress2d nodes="265 25 236"/>
+      <TrPlaneStress2d nodes="242 179 268"/>
+      <TrPlaneStress2d id="470" nodes="282 24 266"/>
+      <TrPlaneStress2d nodes="282 23 24"/>
+      <TrPlaneStress2d nodes="282 297 23"/>
+      <TrPlaneStress2d nodes="282 267 297"/>
+      <TrPlaneStress2d nodes="285 299 270"/>
+      <TrPlaneStress2d id="475" nodes="285 305 299"/>
+      <TrPlaneStress2d nodes="295 305 285"/>
+      <TrPlaneStress2d nodes="295 306 305"/>
+      <TrPlaneStress2d nodes="271 307 295"/>
+      <TrPlaneStress2d nodes="296 171 277"/>
+      <TrPlaneStress2d id="480" nodes="278 308 296"/>
+      <TrPlaneStress2d nodes="283 300 297"/>
+      <TrPlaneStress2d nodes="300 22 297"/>
+      <TrPlaneStress2d nodes="298 278 269"/>
+      <TrPlaneStress2d nodes="284 309 298"/>
+      <TrPlaneStress2d id="485" nodes="299 301 284"/>
+      <TrPlaneStress2d nodes="301 287 288"/>
+      <TrPlaneStress2d nodes="289 309 301"/>
+      <TrPlaneStress2d nodes="291 310 302"/>
+      <TrPlaneStress2d nodes="297 22 23"/>
+      <TrPlaneStress2d id="490" nodes="305 311 299"/>
+      <TrPlaneStress2d nodes="310 312 302"/>
+      <TrPlaneStress2d nodes="312 289 302"/>
+      <TrPlaneStress2d nodes="312 309 289"/>
+      <TrPlaneStress2d nodes="173 308 174"/>
+      <TrPlaneStress2d id="495" nodes="176 291 177"/>
+      <TrPlaneStress2d nodes="177 275 178"/>
+      <TrPlaneStress2d nodes="179 243 180"/>
+      <TrPlaneStress2d nodes="180 243 181"/>
+      <TrPlaneStress2d nodes="19 307 18"/>
+      <TrPlaneStress2d id="500" nodes="20 306 19"/>
+      <TrPlaneStress2d nodes="26 236 25"/>
+      <TrPlaneStress2d nodes="27 264 26"/>
+      <TrPlaneStress2d nodes="272 307 271"/>
+      <TrPlaneStress2d nodes="272 18 307"/>
+      <TrPlaneStress2d id="505" nodes="287 306 300"/>
+      <TrPlaneStress2d nodes="306 287 305"/>
+      <TrPlaneStress2d nodes="295 19 306"/>
+      <TrPlaneStress2d nodes="307 19 295"/>
+      <TrPlaneStress2d nodes="308 173 296"/>
+      <TrPlaneStress2d id="510" nodes="278 298 308"/>
+      <TrPlaneStress2d nodes="309 313 298"/>
+      <TrPlaneStress2d nodes="284 301 309"/>
+      <TrPlaneStress2d nodes="291 176 310"/>
+      <TrPlaneStress2d nodes="311 301 299"/>
+      <TrPlaneStress2d id="515" nodes="311 287 301"/>
+      <TrPlaneStress2d nodes="305 287 311"/>
+      <TrPlaneStress2d nodes="310 313 312"/>
+      <TrPlaneStress2d nodes="313 308 298"/>
+      <TrPlaneStress2d nodes="309 312 313"/>
+      <TrPlaneStress2d id="520" nodes="153 314 154"/>
+      <TrPlaneStress2d nodes="162 315 161"/>
+      <TrPlaneStress2d nodes="174 316 175"/>
+      <TrPlaneStress2d nodes="175 310 176"/>
+      <TrPlaneStress2d nodes="181 304 182"/>
+      <TrPlaneStress2d id="525" nodes="21 306 20"/>
+      <TrPlaneStress2d nodes="22 300 21"/>
+      <TrPlaneStress2d nodes="28 303 27"/>
+      <TrPlaneStress2d nodes="303 314 293"/>
+      <TrPlaneStress2d nodes="314 153 293"/>
+      <TrPlaneStress2d id="530" nodes="294 315 304"/>
+      <TrPlaneStress2d nodes="294 161 315"/>
+      <TrPlaneStress2d nodes="313 316 308"/>
+      <TrPlaneStress2d nodes="313 310 316"/>
+      <TrPlaneStress2d nodes="182 317 183"/>
+      <TrPlaneStress2d id="535" nodes="29 318 28"/>
+      <TrPlaneStress2d nodes="316 310 175"/>
+      <TrPlaneStress2d nodes="174 308 316"/>
+      <TrPlaneStress2d nodes="154 319 155"/>
+      <TrPlaneStress2d nodes="163 320 162"/>
+      <TrPlaneStress2d id="540" nodes="314 319 154"/>
+      <TrPlaneStress2d nodes="314 29 319"/>
+      <TrPlaneStress2d nodes="162 320 315"/>
+      <TrPlaneStress2d nodes="320 183 315"/>
+      <TrPlaneStress2d nodes="183 320 184"/>
+      <TrPlaneStress2d id="545" nodes="30 319 29"/>
+      <TrPlaneStress2d nodes="263 181 243"/>
+      <TrPlaneStress2d nodes="300 306 21"/>
+      <TrPlaneStress2d nodes="182 304 317"/>
+      <TrPlaneStress2d nodes="304 315 317"/>
+      <TrPlaneStress2d id="550" nodes="318 303 28"/>
+      <TrPlaneStress2d nodes="318 314 303"/>
+      <TrPlaneStress2d nodes="315 183 317"/>
+      <TrPlaneStress2d nodes="318 29 314"/>
+      <TrPlaneStress2d nodes="319 147 155"/>
+      <TrPlaneStress2d id="555" nodes="163 165 320"/>
+      <TrPlaneStress2d nodes="155 147 146"/>
+      <TrPlaneStress2d nodes="164 165 163"/>
+      <TrPlaneStress2d nodes="147 30 2"/>
+      <TrPlaneStress2d nodes="166 184 165"/>
+      <TrPlaneStress2d id="560" nodes="320 165 184"/>
+      <TrPlaneStress2d nodes="30 147 319"/>
+      <TrPlaneStress2d nodes="169 348 168"/>
+      <TrPlaneStress2d nodes="170 349 169"/>
+      <TrPlaneStress2d nodes="171 350 170"/>
+      <TrPlaneStress2d id="565" nodes="167 168 335"/>
+      <TrPlaneStress2d nodes="172 351 171"/>
+      <TrPlaneStress2d nodes="173 352 172"/>
+      <TrPlaneStress2d nodes="178 353 177"/>
+      <TrPlaneStress2d nodes="179 354 178"/>
+      <TrPlaneStress2d id="570" nodes="180 355 179"/>
+      <TrPlaneStress2d nodes="174 356 173"/>
+      <TrPlaneStress2d nodes="175 357 174"/>
+      <TrPlaneStress2d nodes="176 358 175"/>
+      <TrPlaneStress2d nodes="177 359 176"/>
+      <TrPlaneStress2d id="575" nodes="181 360 180"/>
+      <TrPlaneStress2d nodes="348 335 168"/>
+      <TrPlaneStress2d nodes="169 349 348"/>
+      <TrPlaneStress2d nodes="349 361 348"/>
+      <TrPlaneStress2d nodes="170 350 349"/>
+      <TrPlaneStress2d id="580" nodes="350 362 349"/>
+      <TrPlaneStress2d nodes="335 348 336"/>
+      <TrPlaneStress2d nodes="182 363 181"/>
+      <TrPlaneStress2d nodes="171 351 350"/>
+      <TrPlaneStress2d nodes="351 364 350"/>
+      <TrPlaneStress2d id="585" nodes="172 352 351"/>
+      <TrPlaneStress2d nodes="352 365 351"/>
+      <TrPlaneStress2d nodes="354 353 178"/>
+      <TrPlaneStress2d nodes="354 366 353"/>
+      <TrPlaneStress2d nodes="179 355 354"/>
+      <TrPlaneStress2d id="590" nodes="355 367 354"/>
+      <TrPlaneStress2d nodes="173 356 352"/>
+      <TrPlaneStress2d nodes="356 368 352"/>
+      <TrPlaneStress2d nodes="353 359 177"/>
+      <TrPlaneStress2d nodes="353 369 359"/>
+      <TrPlaneStress2d id="595" nodes="180 360 355"/>
+      <TrPlaneStress2d nodes="360 370 355"/>
+      <TrPlaneStress2d nodes="174 357 356"/>
+      <TrPlaneStress2d nodes="357 371 356"/>
+      <TrPlaneStress2d nodes="175 358 357"/>
+      <TrPlaneStress2d id="600" nodes="358 372 357"/>
+      <TrPlaneStress2d nodes="176 359 358"/>
+      <TrPlaneStress2d nodes="359 373 358"/>
+      <TrPlaneStress2d nodes="361 336 348"/>
+      <TrPlaneStress2d nodes="349 362 361"/>
+      <TrPlaneStress2d id="605" nodes="362 374 361"/>
+      <TrPlaneStress2d nodes="350 364 362"/>
+      <TrPlaneStress2d nodes="364 375 362"/>
+      <TrPlaneStress2d nodes="336 361 337"/>
+      <TrPlaneStress2d nodes="183 376 182"/>
+      <TrPlaneStress2d id="610" nodes="181 363 360"/>
+      <TrPlaneStress2d nodes="363 377 360"/>
+      <TrPlaneStress2d nodes="351 365 364"/>
+      <TrPlaneStress2d nodes="365 378 364"/>
+      <TrPlaneStress2d nodes="352 368 365"/>
+      <TrPlaneStress2d id="615" nodes="368 379 365"/>
+      <TrPlaneStress2d nodes="366 369 353"/>
+      <TrPlaneStress2d nodes="366 380 369"/>
+      <TrPlaneStress2d nodes="354 367 366"/>
+      <TrPlaneStress2d nodes="367 381 366"/>
+      <TrPlaneStress2d id="620" nodes="182 376 363"/>
+      <TrPlaneStress2d nodes="376 382 363"/>
+      <TrPlaneStress2d nodes="355 370 367"/>
+      <TrPlaneStress2d nodes="370 383 367"/>
+      <TrPlaneStress2d nodes="356 371 368"/>
+      <TrPlaneStress2d id="625" nodes="371 384 368"/>
+      <TrPlaneStress2d nodes="369 373 359"/>
+      <TrPlaneStress2d nodes="369 385 373"/>
+      <TrPlaneStress2d nodes="360 377 370"/>
+      <TrPlaneStress2d nodes="377 386 370"/>
+      <TrPlaneStress2d id="630" nodes="357 372 371"/>
+      <TrPlaneStress2d nodes="372 387 371"/>
+      <TrPlaneStress2d nodes="358 373 372"/>
+      <TrPlaneStress2d nodes="373 388 372"/>
+      <TrPlaneStress2d nodes="374 337 361"/>
+      <TrPlaneStress2d id="635" nodes="362 375 374"/>
+      <TrPlaneStress2d nodes="375 389 374"/>
+      <TrPlaneStress2d nodes="364 378 375"/>
+      <TrPlaneStress2d nodes="378 390 375"/>
+      <TrPlaneStress2d nodes="337 374 338"/>
+      <TrPlaneStress2d id="640" nodes="184 391 183"/>
+      <TrPlaneStress2d nodes="365 379 378"/>
+      <TrPlaneStress2d nodes="379 392 378"/>
+      <TrPlaneStress2d nodes="368 384 379"/>
+      <TrPlaneStress2d nodes="384 393 379"/>
+      <TrPlaneStress2d id="645" nodes="183 391 376"/>
+      <TrPlaneStress2d nodes="391 394 376"/>
+      <TrPlaneStress2d nodes="363 382 377"/>
+      <TrPlaneStress2d nodes="382 395 377"/>
+      <TrPlaneStress2d nodes="380 385 369"/>
+      <TrPlaneStress2d id="650" nodes="380 396 385"/>
+      <TrPlaneStress2d nodes="366 381 380"/>
+      <TrPlaneStress2d nodes="381 397 380"/>
+      <TrPlaneStress2d nodes="367 383 381"/>
+      <TrPlaneStress2d nodes="383 398 381"/>
+      <TrPlaneStress2d id="655" nodes="370 386 383"/>
+      <TrPlaneStress2d nodes="386 398 383"/>
+      <TrPlaneStress2d nodes="371 387 384"/>
+      <TrPlaneStress2d nodes="387 399 384"/>
+      <TrPlaneStress2d nodes="385 388 373"/>
+      <TrPlaneStress2d id="660" nodes="385 400 388"/>
+      <TrPlaneStress2d nodes="372 388 387"/>
+      <TrPlaneStress2d nodes="388 401 387"/>
+      <TrPlaneStress2d nodes="389 338 374"/>
+      <TrPlaneStress2d nodes="375 390 389"/>
+      <TrPlaneStress2d id="665" nodes="390 402 389"/>
+      <TrPlaneStress2d nodes="376 394 382"/>
+      <TrPlaneStress2d nodes="394 403 382"/>
+      <TrPlaneStress2d nodes="377 395 386"/>
+      <TrPlaneStress2d nodes="395 404 386"/>
+      <TrPlaneStress2d id="670" nodes="378 392 390"/>
+      <TrPlaneStress2d nodes="392 405 390"/>
+      <TrPlaneStress2d nodes="379 393 392"/>
+      <TrPlaneStress2d nodes="393 406 392"/>
+      <TrPlaneStress2d nodes="384 399 393"/>
+      <TrPlaneStress2d id="675" nodes="399 407 393"/>
+      <TrPlaneStress2d nodes="338 389 339"/>
+      <TrPlaneStress2d nodes="396 400 385"/>
+      <TrPlaneStress2d nodes="396 408 400"/>
+      <TrPlaneStress2d nodes="380 397 396"/>
+      <TrPlaneStress2d id="680" nodes="397 409 396"/>
+      <TrPlaneStress2d nodes="381 398 397"/>
+      <TrPlaneStress2d nodes="398 409 397"/>
+      <TrPlaneStress2d nodes="387 401 399"/>
+      <TrPlaneStress2d nodes="401 410 399"/>
+      <TrPlaneStress2d id="685" nodes="400 401 388"/>
+      <TrPlaneStress2d nodes="400 411 401"/>
+      <TrPlaneStress2d nodes="402 339 389"/>
+      <TrPlaneStress2d nodes="390 405 402"/>
+      <TrPlaneStress2d nodes="405 412 402"/>
+      <TrPlaneStress2d id="690" nodes="412 339 402"/>
+      <TrPlaneStress2d nodes="405 406 412"/>
+      <TrPlaneStress2d nodes="405 392 406"/>
+      <TrPlaneStress2d nodes="184 321 391"/>
+      <TrPlaneStress2d nodes="382 403 395"/>
+      <TrPlaneStress2d id="695" nodes="403 404 395"/>
+      <TrPlaneStress2d nodes="393 407 406"/>
+      <TrPlaneStress2d nodes="407 413 406"/>
+      <TrPlaneStress2d nodes="409 408 396"/>
+      <TrPlaneStress2d nodes="409 414 408"/>
+      <TrPlaneStress2d id="700" nodes="414 411 408"/>
+      <TrPlaneStress2d nodes="411 400 408"/>
+      <TrPlaneStress2d nodes="409 415 414"/>
+      <TrPlaneStress2d nodes="391 416 394"/>
+      <TrPlaneStress2d nodes="404 398 386"/>
+      <TrPlaneStress2d id="705" nodes="404 415 398"/>
+      <TrPlaneStress2d nodes="399 410 407"/>
+      <TrPlaneStress2d nodes="410 417 407"/>
+      <TrPlaneStress2d nodes="401 411 410"/>
+      <TrPlaneStress2d nodes="411 418 410"/>
+      <TrPlaneStress2d id="710" nodes="339 412 340"/>
+      <TrPlaneStress2d nodes="394 419 403"/>
+      <TrPlaneStress2d nodes="413 412 406"/>
+      <TrPlaneStress2d nodes="407 417 413"/>
+      <TrPlaneStress2d nodes="417 420 413"/>
+      <TrPlaneStress2d id="715" nodes="416 419 394"/>
+      <TrPlaneStress2d nodes="416 322 419"/>
+      <TrPlaneStress2d nodes="391 321 416"/>
+      <TrPlaneStress2d nodes="321 184 166"/>
+      <TrPlaneStress2d nodes="398 415 409"/>
+      <TrPlaneStress2d id="720" nodes="410 418 417"/>
+      <TrPlaneStress2d nodes="418 421 417"/>
+      <TrPlaneStress2d nodes="411 414 418"/>
+      <TrPlaneStress2d nodes="419 422 403"/>
+      <TrPlaneStress2d nodes="340 412 341"/>
+      <TrPlaneStress2d id="725" nodes="403 422 404"/>
+      <TrPlaneStress2d nodes="413 423 412"/>
+      <TrPlaneStress2d nodes="322 416 321"/>
+      <TrPlaneStress2d nodes="415 424 414"/>
+      <TrPlaneStress2d nodes="420 423 413"/>
+      <TrPlaneStress2d id="730" nodes="420 425 423"/>
+      <TrPlaneStress2d nodes="417 421 420"/>
+      <TrPlaneStress2d nodes="421 426 420"/>
+      <TrPlaneStress2d nodes="418 427 421"/>
+      <TrPlaneStress2d nodes="419 323 422"/>
+      <TrPlaneStress2d id="735" nodes="423 341 412"/>
+      <TrPlaneStress2d nodes="323 419 322"/>
+      <TrPlaneStress2d nodes="341 425 342"/>
+      <TrPlaneStress2d nodes="404 422 415"/>
+      <TrPlaneStress2d nodes="414 427 418"/>
+      <TrPlaneStress2d id="740" nodes="414 424 427"/>
+      <TrPlaneStress2d nodes="424 428 427"/>
+      <TrPlaneStress2d nodes="415 429 424"/>
+      <TrPlaneStress2d nodes="426 425 420"/>
+      <TrPlaneStress2d nodes="426 430 425"/>
+      <TrPlaneStress2d id="745" nodes="421 428 426"/>
+      <TrPlaneStress2d nodes="425 341 423"/>
+      <TrPlaneStress2d nodes="427 428 421"/>
+      <TrPlaneStress2d nodes="429 431 424"/>
+      <TrPlaneStress2d nodes="415 422 429"/>
+      <TrPlaneStress2d id="750" nodes="324 422 323"/>
+      <TrPlaneStress2d nodes="342 430 343"/>
+      <TrPlaneStress2d nodes="424 431 428"/>
+      <TrPlaneStress2d nodes="430 342 425"/>
+      <TrPlaneStress2d nodes="426 432 430"/>
+      <TrPlaneStress2d id="755" nodes="429 433 431"/>
+      <TrPlaneStress2d nodes="431 434 428"/>
+      <TrPlaneStress2d nodes="325 433 324"/>
+      <TrPlaneStress2d nodes="422 324 429"/>
+      <TrPlaneStress2d nodes="429 324 433"/>
+      <TrPlaneStress2d id="760" nodes="343 430 344"/>
+      <TrPlaneStress2d nodes="426 428 432"/>
+      <TrPlaneStress2d nodes="433 435 431"/>
+      <TrPlaneStress2d nodes="434 432 428"/>
+      <TrPlaneStress2d nodes="432 436 430"/>
+      <TrPlaneStress2d id="765" nodes="431 435 434"/>
+      <TrPlaneStress2d nodes="433 326 435"/>
+      <TrPlaneStress2d nodes="435 437 434"/>
+      <TrPlaneStress2d nodes="326 433 325"/>
+      <TrPlaneStress2d nodes="344 436 345"/>
+      <TrPlaneStress2d id="770" nodes="436 344 430"/>
+      <TrPlaneStress2d nodes="432 438 436"/>
+      <TrPlaneStress2d nodes="437 438 434"/>
+      <TrPlaneStress2d nodes="435 327 437"/>
+      <TrPlaneStress2d nodes="438 439 436"/>
+      <TrPlaneStress2d id="775" nodes="432 434 438"/>
+      <TrPlaneStress2d nodes="327 435 326"/>
+      <TrPlaneStress2d nodes="345 440 346"/>
+      <TrPlaneStress2d nodes="439 440 436"/>
+      <TrPlaneStress2d nodes="439 441 440"/>
+      <TrPlaneStress2d id="780" nodes="438 442 439"/>
+      <TrPlaneStress2d nodes="328 442 327"/>
+      <TrPlaneStress2d nodes="333 443 334"/>
+      <TrPlaneStress2d nodes="334 329 330"/>
+      <TrPlaneStress2d nodes="442 444 439"/>
+      <TrPlaneStress2d id="785" nodes="438 437 442"/>
+      <TrPlaneStress2d nodes="346 441 347"/>
+      <TrPlaneStress2d nodes="345 436 440"/>
+      <TrPlaneStress2d nodes="441 346 440"/>
+      <TrPlaneStress2d nodes="439 444 441"/>
+      <TrPlaneStress2d id="790" nodes="444 443 441"/>
+      <TrPlaneStress2d nodes="437 327 442"/>
+      <TrPlaneStress2d nodes="444 328 443"/>
+      <TrPlaneStress2d nodes="329 443 328"/>
+      <TrPlaneStress2d nodes="442 328 444"/>
+      <TrPlaneStress2d id="795" nodes="331 347 332"/>
+      <TrPlaneStress2d nodes="332 441 333"/>
+      <TrPlaneStress2d nodes="443 329 334"/>
+      <TrPlaneStress2d nodes="333 441 443"/>
+      <TrPlaneStress2d nodes="347 441 332"/>
+    </Elements>
+    <CrossSections>
+      <!--**-->
+      <SimpleCS thick="1.0" material="1" set="1"/>
+      <SimpleCS thick="1.0" material="2" set="2"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="2500.0" e="20000.0" n="0.2" talpha="1.2e-05"/>
+      <Concrete3 d="0.0" e="20000.0" n="0.2" gf="0.1" ft="2.5" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="3"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="4"/>
+      <!--BoundaryCondition 3 loadTimeFunction 2 dofs 1 2 values 1 -0.025 set 5-->
+      <NodalLoad loadtimefunction="1" dofs="1 2" components="0.0 -1.0" set="5" reference=""/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="2.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-240,562-799"/>
+      <Set elementranges="241-561"/>
+      <Set nodes="12"/>
+      <Set nodes="330"/>
+      <Set id="5" nodes="1"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-06">
+      <!--check load levels-->
+      <LOADLEVEL tStep="1" value="6.105389"/>
+      <LOADLEVEL tStep="2" value="12.210779"/>
+      <LOADLEVEL tStep="3" value="18.160715"/>
+      <LOADLEVEL tStep="4" value="23.798851"/>
+      <LOADLEVEL tStep="5" value="28.987424"/>
+      <LOADLEVEL tStep="6" value="33.733775"/>
+      <LOADLEVEL tStep="7" value="38.10168"/>
+      <LOADLEVEL tStep="8" value="41.454458"/>
+      <LOADLEVEL tStep="9" value="43.523632"/>
+      <LOADLEVEL tStep="10" value="43.944412"/>
+      <LOADLEVEL tStep="11" value="40.616307"/>
+      <LOADLEVEL tStep="12" value="35.640997"/>
+      <LOADLEVEL tStep="13" value="33.458921"/>
+      <LOADLEVEL tStep="14" value="30.429273"/>
+      <LOADLEVEL tStep="15" value="28.534107"/>
+      <LOADLEVEL tStep="16" value="26.685269"/>
+      <LOADLEVEL tStep="17" value="25.71336"/>
+      <LOADLEVEL tStep="18" value="23.58197"/>
+      <LOADLEVEL tStep="19" value="22.329408"/>
+      <LOADLEVEL tStep="20" value="21.473918"/>
+      <!--check node displacement at final step-->
+      <NODE tStep="1" number="1" dof="2" unknown="d" value="-0.025" tolerance="1e-09"/>
+      <NODE tStep="2" number="1" dof="2" unknown="d" value="-0.05" tolerance="1e-09"/>
+      <NODE tStep="3" number="1" dof="2" unknown="d" value="-0.075" tolerance="1e-09"/>
+      <NODE tStep="4" number="1" dof="2" unknown="d" value="-0.1" tolerance="1e-09"/>
+      <NODE tStep="5" number="1" dof="2" unknown="d" value="-0.125" tolerance="1e-09"/>
+      <NODE tStep="6" number="1" dof="2" unknown="d" value="-0.15" tolerance="1e-09"/>
+      <NODE tStep="7" number="1" dof="2" unknown="d" value="-0.175" tolerance="1e-09"/>
+      <NODE tStep="8" number="1" dof="2" unknown="d" value="-0.2" tolerance="1e-09"/>
+      <NODE tStep="9" number="1" dof="2" unknown="d" value="-0.223529412" tolerance="1e-09"/>
+      <NODE tStep="10" number="1" dof="2" unknown="d" value="-0.248506881" tolerance="1e-09"/>
+      <NODE tStep="11" number="1" dof="2" unknown="d" value="-0.27348435" tolerance="1e-09"/>
+      <NODE tStep="12" number="1" dof="2" unknown="d" value="-0.28862221" tolerance="1e-09"/>
+      <NODE tStep="13" number="1" dof="2" unknown="d" value="-0.299732566" tolerance="1e-09"/>
+      <NODE tStep="14" number="1" dof="2" unknown="d" value="-0.31143489" tolerance="1e-09"/>
+      <NODE tStep="15" number="1" dof="2" unknown="d" value="-0.323957999" tolerance="1e-09"/>
+      <NODE tStep="16" number="1" dof="2" unknown="d" value="-0.33714835" tolerance="1e-09"/>
+      <NODE tStep="17" number="1" dof="2" unknown="d" value="-0.351381985" tolerance="1e-09"/>
+      <NODE tStep="18" number="1" dof="2" unknown="d" value="-0.365945211" tolerance="1e-09"/>
+      <NODE tStep="19" number="1" dof="2" unknown="d" value="-0.380153237" tolerance="1e-09"/>
+      <NODE tStep="20" number="1" dof="2" unknown="d" value="-0.396213669" tolerance="1e-09"/>
+      <!--check some arbitrary element-->
+      <ELEMENT tStep="10" number="338" gp="1" keyword="4" component="1" value="0.00193951745" tolerance="1e-08"/>
+      <ELEMENT tStep="10" number="338" gp="1" keyword="4" component="2" value="1.26544635e-05" tolerance="1e-08"/>
+      <ELEMENT tStep="10" number="338" gp="1" keyword="4" component="6" value="0.000340924245" tolerance="1e-08"/>
+      <ELEMENT tStep="10" number="338" gp="1" keyword="1" component="1" value="1.01732715" tolerance="1e-08"/>
+      <ELEMENT tStep="10" number="338" gp="1" keyword="1" component="2" value="0.165217303" tolerance="1e-08"/>
+      <ELEMENT tStep="10" number="338" gp="1" keyword="1" component="6" value="0.0753828658" tolerance="1e-08"/>
+      <ELEMENT tStep="20" number="338" gp="1" keyword="4" component="1" value="0.00649791757" tolerance="1e-08"/>
+      <ELEMENT tStep="20" number="338" gp="1" keyword="4" component="2" value="6.02559845e-05" tolerance="1e-08"/>
+      <ELEMENT tStep="20" number="338" gp="1" keyword="4" component="6" value="0.00192610989" tolerance="1e-08"/>
+      <ELEMENT tStep="20" number="338" gp="1" keyword="1" component="1" value="-0.0338740932" tolerance="1e-08"/>
+      <ELEMENT tStep="20" number="338" gp="1" keyword="1" component="2" value="-1.5806596" tolerance="1e-08"/>
+      <ELEMENT tStep="20" number="338" gp="1" keyword="1" component="6" value="0.231394491" tolerance="1e-08"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

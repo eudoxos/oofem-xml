@@ -1,0 +1,82 @@
+<oofem version="1">
+  <Output>FCSimpleColumn.out</Output>
+  <Description>Test of mpm upbrick11 element</Description>
+  <!--final time 500, initial time step 1-->
+  <Analysis type="mpmproblem" nsteps="500" deltat="1.0" alpha="0.5" manrmsteps="0" keeptangent=""/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="-0.0199999996 0.0399999991 0.00100000005"/>
+      <Node coords="-0.0199999996 0.0401000008 0.00100000005"/>
+      <Node coords="-0.0199999996 0.0399999991 0.000750000007"/>
+      <Node coords="-0.0199999996 0.0401000008 0.000750000007"/>
+      <Node id="5" coords="-0.0199999996 0.0399999991 0.000500000024"/>
+      <Node coords="-0.0199999996 0.0401000008 0.000500000024"/>
+      <Node coords="-0.0199999996 0.0399999991 0.000250000012"/>
+      <Node coords="-0.0199999996 0.0401000008 0.000250000012"/>
+      <Node coords="-0.0199999996 0.0399999991 0.0"/>
+      <Node id="10" coords="-0.0199999996 0.0401000008 0.0"/>
+      <Node coords="-0.0198999997 0.0399999991 0.00100000005"/>
+      <Node coords="-0.0198999997 0.0401000008 0.00100000005"/>
+      <Node coords="-0.0198999997 0.0399999991 0.000750000007"/>
+      <Node coords="-0.0198999997 0.0401000008 0.000750000007"/>
+      <Node id="15" coords="-0.0198999997 0.0399999991 0.000500000024"/>
+      <Node coords="-0.0198999997 0.0401000008 0.000500000024"/>
+      <Node coords="-0.0198999997 0.0399999991 0.000250000012"/>
+      <Node coords="-0.0198999997 0.0401000008 0.000250000012"/>
+      <Node coords="-0.0198999997 0.0399999991 0.0"/>
+      <Node id="20" coords="-0.0198999997 0.0401000008 0.0"/>
+    </Nodes>
+    <Elements>
+      <upbrick11 nodes="11 12 14 13 1 2 4 3"/>
+      <upbrick11 nodes="13 14 16 15 3 4 6 5"/>
+      <upbrick11 nodes="15 16 18 17 5 6 8 7"/>
+      <upbrick11 nodes="17 18 20 19 7 8 10 9" crosssect="1" mat="1"/>
+    </Elements>
+    <CrossSections>
+      <dummycs mat="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <!--ks = inifinity, kw=1e+09-->
+      <!--1/Q = n/Kt+(b-n)/Ks = 0.3333/1.e9+(1-0.3333)/inf = 3.333333e-10-->
+      <!--The porosity (n) and the void ratio (e) are inter-related as follows: n = e / (1+e), n=0.5/(1+0.5)= 0.333-->
+      <upm d="1.0" e="10000000.0" nu="0.3" k="1e-15" c="3.33333333e-10" alpha="1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <!--x-displacement-->
+      <boundarycondition loadtimefunction="1" set="2" values="0.0" dofs="1"/>
+      <!--y-displacement-->
+      <boundarycondition loadtimefunction="1" set="3" values="0.0" dofs="2"/>
+      <!--z-displacement-->
+      <boundarycondition loadtimefunction="1" set="4" values="0.0" dofs="3"/>
+      <!--pressure top (bleeding=pressure set to zero?)-->
+      <boundarycondition loadtimefunction="1" set="5" values="0.0" dofs="11"/>
+      <!--pressure load top p=1, Fi=p*a/4 = 1*(0.0001*0.0001)/4 = 2.5e-09-->
+      <nodalload id="5" loadtimefunction="2" dofs="3" components="2.5e-09" set="5"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <constantfunction f_t_="1.0"/>
+      <PiecewiseLinFunction npoints="4" t="-10.0 0.0 100.0 500.0" f_t_="0.0 0.0 1000000.0 1000000.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elements="1 2 3 4"/>
+      <!--x-bc-->
+      <Set noderanges="1-20"/>
+      <!--y-bc-->
+      <Set noderanges="1-20"/>
+      <!--z-bc-->
+      <Set nodes="7 8 17 18"/>
+      <!--top surface (load + )-->
+      <Set id="5" nodes="1 2 11 12"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <NODE tStep="100" number="1" dof="3" unknown="d" value="4.839788e-05" tolerance="1e-10"/>
+      <NODE tStep="100" number="7" dof="11" unknown="d" value="-201583.571" tolerance="1.0"/>
+      <NODE tStep="500" number="1" dof="3" unknown="d" value="5.571339e-05" tolerance="1e-10"/>
+      <NODE tStep="500" number="7" dof="11" unknown="d" value="-0.2687815" tolerance="1e-05"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

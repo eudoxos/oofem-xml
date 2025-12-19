@@ -1,0 +1,44 @@
+<oofem version="1">
+  <Output>con2dpm9.out</Output>
+  <Description>CDPM2 (Concretedpm2) Test of strain rate effect in tension second slope</Description>
+  <Analysis type="NonLinearStatic" nsteps="1" contextoutputstep="1000">
+    <Metasteps>
+      <Metastep nsteps="10" rtolv="0.001" reqiterations="4000" stiffmode="2" maxiter="4000" controllmode="0" steplength="0.0005" minsteplength="0.0005" psi="0.0" hpcmode="2" hpc="3 2" hpcw="1.0" donotfixload=""/>
+    </Metasteps>
+  </Analysis>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0" bc="1 1 1"/>
+      <Node coords="1.0 0.0 0.0" bc="0 1 1" load="2"/>
+      <Node coords="0.0 1.0 0.0" bc="0 0 1" load="3"/>
+      <Node coords="0.0 0.0 1.0" bc="1 1 0" load="4"/>
+    </Nodes>
+    <Elements>
+      <ltrspace nodes="1 2 3 4" mat="1" crosssect="1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS/>
+    </CrossSections>
+    <Materials>
+      <con2dpm d="0.0" e="30000000000.0" n="0.15" talpha="0.0" wf="9.3755e-05" fc="47400000.0" ft="4740000.0" hp="0.5" yieldtol="1e-10" asoft="15.0" stype="2" helem="0.1" sratetype="2" eratetype="2" deltat="1e-06"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+      <NodalLoad loadtimefunction="1" components="0.0 0.0 0.0"/>
+      <NodalLoad loadtimefunction="1" components="0.0 1000000.0 0.0"/>
+      <NodalLoad loadtimefunction="1" components="0.0 0.0 0.0"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets/>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.1">
+      <ELEMENT tStep="3" number="1" gp="1" keyword="4" component="2" value="0.0015"/>
+      <ELEMENT tStep="3" number="1" gp="1" keyword="1" component="2" value="19478845.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

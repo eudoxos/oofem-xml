@@ -1,0 +1,88 @@
+<oofem version="1">
+  <Output>weakPeriodicTriangularObstacle.out</Output>
+  <Description>Test for SolutionbasedFormFunction</Description>
+  <Analysis type="stokesflow" nsteps="1" rtolf="0.01" lstype="0" smtype="1" linesearch="1" maxiter="1000"/>
+  <Domain domain="2dincompflow">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0"/>
+      <Node coords="2.0 0.0"/>
+      <Node coords="2.0 2.0"/>
+      <Node coords="0.0 2.0"/>
+      <Node id="5" coords="0.0 1.0"/>
+      <Node coords="0.5 0.5"/>
+      <Node coords="1.0 1.0"/>
+      <Node coords="0.5 1.5"/>
+      <Node coords="1.0 0.0"/>
+      <Node id="10" coords="1.0 0.3"/>
+      <Node coords="1.5 0.5"/>
+      <Node coords="2.0 1.0"/>
+      <Node coords="1.5 1.5"/>
+      <Node coords="1.0 1.7"/>
+      <Node id="15" coords="1.0 2.0"/>
+      <Node coords="0.25 1.75"/>
+      <Node coords="0.25 1.25"/>
+      <Node coords="0.25 0.75"/>
+      <Node coords="0.25 0.25"/>
+      <Node id="20" coords="0.0 1.5"/>
+      <Node coords="0.0 0.5"/>
+      <Node coords="0.75 0.75"/>
+      <Node coords="0.75 1.25"/>
+      <Node coords="0.5 1.0"/>
+    </Nodes>
+    <Elements>
+      <tr21stokes nodes="1 2 6 9 10 19"/>
+      <tr21stokes nodes="2 7 6 11 22 10"/>
+      <tr21stokes nodes="2 3 7 12 13 11"/>
+      <tr21stokes nodes="3 8 7 14 23 13"/>
+      <tr21stokes id="5" nodes="3 4 8 15 16 14"/>
+      <tr21stokes nodes="4 5 8 20 17 16"/>
+      <tr21stokes nodes="5 6 8 18 24 17"/>
+      <tr21stokes nodes="5 1 6 21 19 18"/>
+    </Elements>
+    <CrossSections>
+      <fluidcs mat="1" set="7"/>
+    </CrossSections>
+    <Materials>
+      <newtonianfluid mu="1.0" d="1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <deadweight components="-1.0 -0.0" loadtimefunction="1" valtype="4" set="7"/>
+      <BoundaryCondition loadtimefunction="1" set="5" values="0.0" dofs="11"/>
+      <BoundaryCondition loadtimefunction="1" set="6" values="0.0 0.0" dofs="7 8"/>
+      <weakperiodicbc elementsidespositiveset="1" elementsidesnegativeset="2" loadtimefunction="1" order="2" dofids="7" descritizationtype="1"/>
+      <weakperiodicbc id="5" elementsidespositiveset="3" elementsidesnegativeset="4" loadtimefunction="1" order="2" dofids="7" descritizationtype="1"/>
+      <weakperiodicbc elementsidespositiveset="1" elementsidesnegativeset="2" loadtimefunction="1" order="2" dofids="8" descritizationtype="1"/>
+      <weakperiodicbc elementsidespositiveset="3" elementsidesnegativeset="4" loadtimefunction="1" order="2" dofids="8" descritizationtype="1"/>
+      <weakperiodicbc elementsidespositiveset="1" elementsidesnegativeset="2" loadtimefunction="1" order="2" dofids="11" descritizationtype="1"/>
+      <weakperiodicbc elementsidespositiveset="3" elementsidesnegativeset="4" loadtimefunction="1" order="2" dofids="11" descritizationtype="1"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <!--Positive X-->
+      <Set elementboundaries="3 1"/>
+      <!--Negative X-->
+      <Set elementboundaries="6 1 8 1"/>
+      <!--Positive Y-->
+      <Set elementboundaries="5 1"/>
+      <!--Negative Y-->
+      <Set elementboundaries="1 1"/>
+      <!--Prescribed pressure-->
+      <Set id="5" nodes="5"/>
+      <!--Prescribed velocities-->
+      <Set nodes="6 7 8 22 23 24"/>
+      <!--All elements-->
+      <Set elementranges="1-8"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.0001">
+      <NODE tStep="1" number="5" dof="7" unknown="d" value="-0.11090237"/>
+      <NODE tStep="1" number="5" dof="8" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="6" dof="11" unknown="d" value="-0.277499368"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

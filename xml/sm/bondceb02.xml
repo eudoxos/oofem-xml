@@ -1,0 +1,69 @@
+<oofem version="1">
+  <Output>bondceb02.out</Output>
+  <Description>Test case for BondCEB interface material - rebar pull-out in 3D. Added by Adam Sciegaj</Description>
+  <Analysis type="StaticStructural" nsteps="20" deltat="1.0" rtolf="0.001" maxiter="50" initialguess="1"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="-0.1 -0.1 0.1"/>
+      <Node coords="-0.1 0.0 0.1"/>
+      <Node coords="0.1 0.0 0.1"/>
+      <Node coords="0.1 -0.1 0.1"/>
+      <Node id="5" coords="-0.1 -0.1 -0.1"/>
+      <Node coords="-0.1 0.0 -0.1"/>
+      <Node coords="0.1 0.0 -0.1"/>
+      <Node coords="0.1 -0.1 -0.1"/>
+      <Node coords="-0.1 0.1 0.1"/>
+      <Node id="10" coords="0.1 0.1 0.1"/>
+      <Node coords="-0.1 0.1 -0.1"/>
+      <Node coords="0.1 0.1 -0.1"/>
+      <Node coords="-0.1 0.0 0.1" dofidmask="1 2 3 4 5 6"/>
+      <Node coords="0.1 0.0 0.1" dofidmask="1 2 3 4 5 6"/>
+    </Nodes>
+    <Elements>
+      <lspace nodes="1 2 3 4 5 6 7 8"/>
+      <lspace nodes="2 9 10 3 6 11 12 7"/>
+      <libeam3d nodes="13 14" refnode="9"/>
+      <IntELPoint nodes="2 13" normal="0.0 0.0 1.0" length="0.1"/>
+      <IntElPoint id="5" nodes="3 14" normal="0.0 0.0 1.0" length="0.1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS material="1" set="1"/>
+      <SimpleCS area="0.00031416" material="2" set="2"/>
+      <InterfaceCS thickness="0.0628319" material="3" set="3"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="1.0" e="33600000000.0" n="0.2" talpha="1.0"/>
+      <IsoLE d="1.0" e="200000000000.0" n="0.3" talpha="1.0"/>
+      <bondceb kn="6000000000000.0" ks="61350000000.0" s1="0.001" s2="0.002" s3="0.0065" taumax="15410000.0" tauf="6164000.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3" values="0.0 0.0 0.0" set="4"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2 3" values="0.0 0.0" set="5"/>
+      <BoundaryCondition loadtimefunction="1" dofs="4 5 6" values="0.0 0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.008" set="6"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <PiecewiseLinFunction t="0.0 20.0" f_t_="0.0 1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elements="1 2"/>
+      <Set elements="3"/>
+      <Set elements="4 5"/>
+      <Set nodes="1"/>
+      <Set id="5" nodes="1 4"/>
+      <Set nodes="14"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="10.0">
+      <!--Bond stress values check-->
+      <ELEMENT tStep="1" number="5" gp="1" keyword="99" component="2" value="9017265.73"/>
+      <ELEMENT tStep="5" number="5" gp="1" keyword="99" component="2" value="15410000.0"/>
+      <ELEMENT tStep="8" number="5" gp="1" keyword="99" component="2" value="13424795.52"/>
+      <ELEMENT tStep="15" number="5" gp="1" keyword="99" component="2" value="7458171.7"/>
+      <ELEMENT tStep="19" number="5" gp="1" keyword="99" component="2" value="6164000.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

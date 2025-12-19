@@ -1,0 +1,80 @@
+<oofem version="1">
+  <Output>Buckling02.out</Output>
+  <Description>Euler buckling of a 2D beam, hinges on both supports. Rectangular cross section 160/40 mm, length 4 m, bending around more compliant axis. Initial imperfection as a sine wave with the amplitude of 2 mm. The critical force of perfect beam is 210e+3*8.533e-07*pi^2/4^2=0.1105 MN (after 50 iteration here 0.1065 MN, relative error 4% neglecting initial deflection). The solution uses updated Lagrange method, updating node coordinates after every equilibrated step.</Description>
+  <Analysis type="StaticStructural" nonlinform="2" nsteps="50" maxiter="50" rtolv="0.0001" manrmsteps="1"/>
+  <Domain domain="3dbeam">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.25 0.0 0.0003"/>
+      <Node coords="0.5 0.0 0.0007"/>
+      <Node coords="0.75 0.0 0.0011"/>
+      <Node id="5" coords="1.0 0.0 0.0013"/>
+      <Node coords="1.25 0.0 0.0016"/>
+      <Node coords="1.5 0.0 0.0017"/>
+      <Node coords="1.75 0.0 0.002"/>
+      <Node coords="2.0 0.0 0.002"/>
+      <Node id="10" coords="2.25 0.0 0.002"/>
+      <Node coords="2.5 0.0 0.0017"/>
+      <Node coords="2.75 0.0 0.0016"/>
+      <Node coords="3.0 0.0 0.0013"/>
+      <Node coords="3.25 0.0 0.0011"/>
+      <Node id="15" coords="3.5 0.0 0.0007"/>
+      <Node coords="3.75 0.0 0.0003"/>
+      <Node coords="4.0 0.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <Beam3D nodes="1 2" yaxis="0.0 1.0 0.0"/>
+      <Beam3D nodes="2 3" yaxis="0.0 1.0 0.0"/>
+      <Beam3D nodes="3 4" yaxis="0.0 1.0 0.0"/>
+      <Beam3D nodes="4 5" yaxis="0.0 1.0 0.0"/>
+      <Beam3D id="5" nodes="5 6" yaxis="0.0 1.0 0.0"/>
+      <Beam3D nodes="6 7" yaxis="0.0 1.0 0.0"/>
+      <Beam3D nodes="7 8" yaxis="0.0 1.0 0.0"/>
+      <Beam3D nodes="8 9" yaxis="0.0 1.0 0.0"/>
+      <Beam3D nodes="9 10" yaxis="0.0 1.0 0.0"/>
+      <Beam3D id="10" nodes="10 11" yaxis="0.0 1.0 0.0"/>
+      <Beam3D nodes="11 12" yaxis="0.0 1.0 0.0"/>
+      <Beam3D nodes="12 13" yaxis="0.0 1.0 0.0"/>
+      <Beam3D nodes="13 14" yaxis="0.0 1.0 0.0"/>
+      <Beam3D nodes="14 15" yaxis="0.0 1.0 0.0"/>
+      <Beam3D id="15" nodes="15 16" yaxis="0.0 1.0 0.0"/>
+      <Beam3D nodes="16 17" yaxis="0.0 1.0 0.0"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS area="0.0064" iy="8.533e-07" iz="1e-08" ik="1e-08" beamshearcoeff="1.0" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="1.0" e="210000.0" n="0.2" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <!--Restrain y-displacement, x-rotation, z-rotation on all nodes-->
+      <BoundaryCondition loadtimefunction="1" dofs="2 4 6" values="0.0 0.0 0.0" set="2"/>
+      <!--Bottom node - hinge-->
+      <BoundaryCondition loadtimefunction="1" dofs="1 3" values="0.0 0.0" set="3"/>
+      <!--Top node - fixed horizontal displacement-->
+      <BoundaryCondition loadtimefunction="1" dofs="3" values="0.0" set="4"/>
+      <!--Vertical displacement of top node-->
+      <BoundaryCondition loadtimefunction="2" dofs="1" values="-4e-05" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction npoints="2" t="1.0 201.0" f_t_="0.0 200.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-16"/>
+      <Set noderanges="1-17"/>
+      <Set nodes="1"/>
+      <Set nodes="17"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <TIME/>
+      <NODE tStep="50" number="17" dof="1" unknown="d" value="-0.00196"/>
+      <NODE tStep="50" number="9" dof="3" unknown="d" value="0.035814"/>
+      <REACTION tStep="50" number="1" dof="1" value="0.106453645"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

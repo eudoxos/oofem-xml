@@ -1,0 +1,65 @@
+<oofem version="1">
+  <Output>deadweight02.out</Output>
+  <Description>Test of deadweight on LSpace element</Description>
+  <!--The analytical solution (x is the coordinate from the top) for the second step reads:-->
+  <!--F(x) = -20x-->
+  <!--sigma(x)=-20x-->
+  <!--epsilon(x)=0.2x-->
+  <!--displacement_x(x)=0.1x^2-0.4-->
+  <Analysis type="StaticStructural" nsteps="1"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 2.0"/>
+      <Node coords="0.0 2.0 2.0"/>
+      <Node coords="2.0 2.0 2.0"/>
+      <Node coords="2.0 0.0 2.0"/>
+      <Node id="5" coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 2.0 0.0"/>
+      <Node coords="2.0 2.0 0.0"/>
+      <Node coords="2.0 0.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <lspace nodes="1 2 3 4 5 6 7 8" crosssect="1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS material="1" set="4"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="2.0" e="100.0" n="0.01" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="3" values="0.0" set="3"/>
+      <DeadWeight loadtimefunction="1" components="0.0 0.0 -10.0" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="5"/>
+      <Set nodes="5 8"/>
+      <Set nodes="5 6 7 8"/>
+      <Set elementranges="1"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.001">
+      <!--check reactions-->
+      <REACTION tStep="5" number="1" dof="1" value="-1.3303"/>
+      <!--check displacements in top nodes-->
+      <NODE tStep="1" number="1" dof="3" unknown="d" value="-0.4"/>
+      <NODE tStep="1" number="2" dof="3" unknown="d" value="-0.4"/>
+      <NODE tStep="1" number="3" dof="3" unknown="d" value="-0.4"/>
+      <NODE tStep="1" number="4" dof="3" unknown="d" value="-0.4"/>
+      <!--check element No. 1 strain vector-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="0.002"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="0.002"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="3" value="-0.2"/>
+      <!--check element No. 1 stress vector-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="3" value="-20.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

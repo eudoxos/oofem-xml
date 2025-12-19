@@ -1,0 +1,98 @@
+<oofem version="1">
+  <Output>planestress_j2_new.out</Output>
+  <Description>Nonlinear plastic bar (2dplanestress computation)</Description>
+  <Analysis type="StaticStructural" nsteps="6" solvertype="calm" steplength="6.0" minsteplength="6.0" rtolf="1e-06" psi="0.0" maxiter="30" hpc="20 1"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0"/>
+      <Node coords="0.0 0.5"/>
+      <Node coords="0.0 1.0"/>
+      <Node coords="0.5 0.0"/>
+      <Node id="5" coords="0.5 0.5"/>
+      <Node coords="0.5 1.0"/>
+      <Node coords="1.0 0.0"/>
+      <Node coords="1.0 0.5"/>
+      <Node coords="1.0 1.0"/>
+      <Node id="10" coords="1.5 0.0"/>
+      <Node coords="1.5 0.5"/>
+      <Node coords="1.5 1.0"/>
+      <Node coords="2.0 0.0"/>
+      <Node coords="2.0 0.5"/>
+      <Node id="15" coords="2.0 1.0"/>
+      <Node coords="2.5 0.0"/>
+      <Node coords="2.5 0.5"/>
+      <Node coords="2.5 1.0"/>
+      <Node coords="3.0 0.0"/>
+      <Node id="20" coords="3.0 0.5"/>
+      <Node coords="3.0 1.0"/>
+    </Nodes>
+    <Elements>
+      <PlaneStress2d nodes="1 2 5 4"/>
+      <PlaneStress2d nodes="2 3 6 5"/>
+      <PlaneStress2d nodes="4 5 8 7"/>
+      <PlaneStress2d nodes="5 6 9 8"/>
+      <PlaneStress2d id="5" nodes="7 8 11 10"/>
+      <PlaneStress2d nodes="8 9 12 11"/>
+      <PlaneStress2d nodes="10 11 14 13"/>
+      <PlaneStress2d nodes="11 12 15 14"/>
+      <PlaneStress2d nodes="13 14 17 16"/>
+      <PlaneStress2d id="10" nodes="14 15 18 17"/>
+      <PlaneStress2d nodes="16 17 20 19"/>
+      <PlaneStress2d nodes="17 18 21 20"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <j2mat d="1.0" ry="1.7321" e="1.0" n="0.2" ihm="0.5" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="3"/>
+      <NodalLoad loadtimefunction="1" dofs="1 2" components="0.25 0.0" set="4" reference=""/>
+      <NodalLoad loadtimefunction="1" dofs="1 2" components="0.5 0.0" set="5" reference=""/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-12"/>
+      <Set nodes="1 2 3"/>
+      <Set nodes="1 4 7 10 13 16 19"/>
+      <Set nodes="19 21"/>
+      <Set id="5" nodes="20"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.0001">
+      <!--exact solution-->
+      <!--step 1-->
+      <NODE tStep="1" number="20" dof="1" unknown="d" value="6.0"/>
+      <ELEMENT tStep="1" number="12" gp="1" keyword="4" component="1" value="2.0"/>
+      <ELEMENT tStep="1" number="12" gp="1" keyword="1" component="1" value="1.8214"/>
+      <!--step 2-->
+      <NODE tStep="2" number="20" dof="1" unknown="d" value="12.0"/>
+      <ELEMENT tStep="2" number="12" gp="1" keyword="4" component="1" value="4.0"/>
+      <ELEMENT tStep="2" number="12" gp="1" keyword="1" component="1" value="2.4881"/>
+      <!--step 3-->
+      <NODE tStep="3" number="20" dof="1" unknown="d" value="18.0"/>
+      <ELEMENT tStep="3" number="12" gp="1" keyword="4" component="1" value="6.0"/>
+      <ELEMENT tStep="3" number="12" gp="1" keyword="1" component="1" value="3.1547"/>
+      <!--step 4-->
+      <NODE tStep="4" number="20" dof="1" unknown="d" value="24.0"/>
+      <ELEMENT tStep="4" number="12" gp="1" keyword="4" component="1" value="8.0"/>
+      <ELEMENT tStep="4" number="12" gp="1" keyword="1" component="1" value="3.8214"/>
+      <!--step 5-->
+      <NODE tStep="5" number="20" dof="1" unknown="d" value="30.0"/>
+      <ELEMENT tStep="5" number="12" gp="1" keyword="4" component="1" value="10.0"/>
+      <ELEMENT tStep="5" number="12" gp="1" keyword="1" component="1" value="4.4881"/>
+      <!--step 6-->
+      <NODE tStep="6" number="20" dof="1" unknown="d" value="36.0"/>
+      <ELEMENT tStep="6" number="12" gp="1" keyword="4" component="1" value="12.0"/>
+      <ELEMENT tStep="6" number="12" gp="1" keyword="1" component="1" value="5.1547"/>
+    </errorcheck>
+    <vtkxml tstep_step="1" domain_all="" vars="1 4" primvars="1"/>
+  </ExportModules>
+</oofem>

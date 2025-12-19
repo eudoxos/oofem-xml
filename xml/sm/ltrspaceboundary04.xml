@@ -1,0 +1,107 @@
+<oofem version="1">
+  <Output>ltrspaceboundary04.out</Output>
+  <Description>3D RVE - periodic boundary conditions with LTRSpaceBoundary elements, periodicity in x y z</Description>
+  <Analysis type="StaticStructural" nsteps="1" initialguess="1"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0" bc="1 1 1"/>
+      <Node id="9" coords="0.05827886 0.0 0.0"/>
+      <Node id="24" coords="0.0 0.04124619 0.0"/>
+      <Node id="33" coords="0.0 0.0 0.04902652"/>
+      <Node id="45" coords="0.04791257 0.05177834 0.0"/>
+      <Node id="63" coords="0.04791257 0.0 0.05059616"/>
+      <Node id="90" coords="0.0 0.04791257 0.05059616"/>
+      <Node id="99" coords="0.04463697 0.04791257 0.05059616"/>
+      <Node id="126" coords="0.1 0.1 0.1" dofidmask="31 38 36 39 32 34 37 35 33" bc="2 2 2 2 2 2 2 2 2"/>
+    </Nodes>
+    <Elements>
+      <ltrspaceboundary id="14" nodes="99 9 45 90 126" crosssect="1" mat="1" location="0 17 14 22"/>
+      <ltrspaceboundary id="15" nodes="9 99 63 90 126" crosssect="1" mat="1" location="17 0 16 22"/>
+      <ltrspaceboundary nodes="99 9 63 45 126" crosssect="1" mat="1" location="0 17 16 14"/>
+      <ltrspaceboundary id="18" nodes="24 99 9 90 126" crosssect="1" mat="1" location="22 0 0 22"/>
+      <ltrspaceboundary id="53" nodes="24 99 45 90 126" crosssect="1" mat="1" location="23 0 14 22"/>
+      <ltrspaceboundary nodes="9 24 45 90 126" crosssect="1" mat="1" location="17 23 14 22"/>
+      <ltrspaceboundary id="55" nodes="24 9 1 90 126" crosssect="1" mat="1" location="23 17 26 22"/>
+      <ltrspaceboundary id="57" nodes="90 99 45 24 126" crosssect="1" mat="1" location="0 0 14 14"/>
+      <ltrspaceboundary nodes="9 1 63 45 126" crosssect="1" mat="1" location="17 17 16 14"/>
+      <ltrspaceboundary nodes="1 90 45 24 126" crosssect="1" mat="1" location="17 0 14 14"/>
+      <ltrspaceboundary id="60" nodes="1 99 63 45 126" crosssect="1" mat="1" location="17 0 16 14"/>
+      <ltrspaceboundary nodes="1 90 99 45 126" crosssect="1" mat="1" location="17 0 0 14"/>
+      <ltrspaceboundary id="72" nodes="45 24 99 9 126" crosssect="1" mat="1" location="0 22 0 0"/>
+      <ltrspaceboundary nodes="24 45 99 90 126" crosssect="1" mat="1" location="22 0 0 22"/>
+      <ltrspaceboundary id="136" nodes="9 24 99 45 126" crosssect="1" mat="1" location="14 23 0 14"/>
+      <ltrspaceboundary id="140" nodes="24 9 99 90 126" crosssect="1" mat="1" location="23 14 0 22"/>
+      <ltrspaceboundary id="176" nodes="45 24 90 1 126" crosssect="1" mat="1" location="0 0 0 16"/>
+      <ltrspace nodes="24 45 90 99" crosssect="1" mat="1"/>
+      <ltrspaceboundary nodes="33 1 99 63 126" crosssect="1" mat="1" location="16 17 0 16"/>
+      <ltrspaceboundary nodes="33 1 90 99 126" crosssect="1" mat="1" location="16 17 0 0"/>
+      <ltrspaceboundary id="180" nodes="45 33 99 63 126" crosssect="1" mat="1" location="0 16 0 16"/>
+      <ltrspaceboundary nodes="33 45 1 63 126" crosssect="1" mat="1" location="16 0 16 16"/>
+      <ltrspaceboundary nodes="45 33 90 99 126" crosssect="1" mat="1" location="0 16 0 0"/>
+      <ltrspaceboundary nodes="33 45 90 1 126" crosssect="1" mat="1" location="16 0 0 16"/>
+      <ltrspaceboundary id="253" nodes="99 9 63 90 126" crosssect="1" mat="1" location="0 16 16 22"/>
+      <ltrspaceboundary nodes="45 9 99 90 126" crosssect="1" mat="1" location="0 16 0 22"/>
+      <ltrspaceboundary id="255" nodes="9 45 99 63 126" crosssect="1" mat="1" location="16 0 0 16"/>
+      <ltrspaceboundary nodes="9 45 24 90 126" crosssect="1" mat="1" location="16 0 22 22"/>
+      <ltrspaceboundary nodes="1 9 24 90 126" crosssect="1" mat="1" location="25 16 22 22"/>
+      <ltrspaceboundary id="261" nodes="45 9 1 63 126" crosssect="1" mat="1" location="0 16 16 16"/>
+      <ltrspaceboundary id="287" nodes="33 24 9 90 126" crosssect="1" mat="1" location="22 22 0 22"/>
+      <ltrspaceboundary nodes="1 33 24 9 126" crosssect="1" mat="1" location="22 22 22 0"/>
+      <ltrspaceboundary id="290" nodes="33 9 24 90 126" crosssect="1" mat="1" location="22 14 23 22"/>
+      <ltrspaceboundary id="304" nodes="1 33 9 24 126" crosssect="1" mat="1" location="23 22 14 23"/>
+      <ltrspace id="415" nodes="33 24 90 99" crosssect="1" mat="1"/>
+      <ltrspaceboundary id="419" nodes="90 33 99 24 126" crosssect="1" mat="1" location="0 0 0 14"/>
+      <ltrspaceboundary id="437" nodes="9 33 63 90 126" crosssect="1" mat="1" location="16 25 16 22"/>
+      <ltrspaceboundary nodes="33 9 1 90 126" crosssect="1" mat="1" location="25 16 25 22"/>
+      <ltrspaceboundary id="441" nodes="9 33 1 90 126" crosssect="1" mat="1" location="17 25 26 22"/>
+      <ltrspaceboundary nodes="33 9 63 90 126" crosssect="1" mat="1" location="25 17 16 22"/>
+      <ltrspaceboundary id="453" nodes="9 63 99 90 126" crosssect="1" mat="1" location="14 0 0 22"/>
+      <ltrspaceboundary nodes="33 63 9 90 126" crosssect="1" mat="1" location="22 0 14 22"/>
+      <ltrspaceboundary id="455" nodes="99 63 9 90 126" crosssect="1" mat="1" location="0 0 0 22"/>
+      <ltrspaceboundary nodes="63 33 9 90 126" crosssect="1" mat="1" location="0 22 0 22"/>
+      <ltrspace id="458" nodes="33 63 24 99" crosssect="1" mat="1"/>
+      <ltrspaceboundary id="462" nodes="9 63 1 24 126" crosssect="1" mat="1" location="14 0 14 14"/>
+      <ltrspaceboundary nodes="63 33 1 24 126" crosssect="1" mat="1" location="0 0 14 14"/>
+      <ltrspaceboundary nodes="33 63 99 24 126" crosssect="1" mat="1" location="0 0 0 14"/>
+      <ltrspace id="468" nodes="63 45 99 9" crosssect="1" mat="1"/>
+      <ltrspace nodes="63 24 45 9" crosssect="1" mat="1"/>
+      <ltrspace id="470" nodes="24 63 45 99" crosssect="1" mat="1"/>
+      <ltrspaceboundary id="474" nodes="99 63 45 24 126" crosssect="1" mat="1" location="0 0 14 14"/>
+      <ltrspaceboundary id="475" nodes="63 9 45 24 126" crosssect="1" mat="1" location="0 14 14 14"/>
+      <ltrspaceboundary nodes="63 9 99 45 126" crosssect="1" mat="1" location="0 14 0 14"/>
+      <ltrspace id="537" nodes="63 1 24 9" crosssect="1" mat="1"/>
+      <ltrspace nodes="63 1 33 24" crosssect="1" mat="1"/>
+    </Elements>
+    <CrossSections>
+      <simplecs/>
+    </CrossSections>
+    <Materials>
+      <isole talpha="0.0" d="0.0" e="30000000000.0" n="0.2"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+      <BoundaryCondition loadtimefunction="1" dofs="31 38 36 39 32 34 37 35 33" values="0.3 0.2 0.05 0.6 -0.5 0.25 0.15 0.35 0.0" set="1"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="126"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.001">
+      <REACTION tStep="1" number="126" dof="31" value="5833333.3333333"/>
+      <REACTION tStep="1" number="126" dof="38" value="10000000.0"/>
+      <REACTION tStep="1" number="126" dof="36" value="2500000.0"/>
+      <REACTION tStep="1" number="126" dof="39" value="10000000.0"/>
+      <REACTION tStep="1" number="126" dof="32" value="-14166666.666667"/>
+      <REACTION tStep="1" number="126" dof="34" value="7500000.0"/>
+      <REACTION tStep="1" number="126" dof="37" value="2500000.0"/>
+      <REACTION tStep="1" number="126" dof="35" value="7500000.0"/>
+      <REACTION tStep="1" number="126" dof="33" value="-1666666.6666667"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

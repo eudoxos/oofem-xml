@@ -1,0 +1,45 @@
+<oofem version="1">
+  <Output>lattice3ddamplast2.out</Output>
+  <Description>Confined shear. 3D Damage Plasticity Model</Description>
+  <Analysis type="NonLinearStatic" nsteps="1" contextoutputstep="100">
+    <Metasteps>
+      <Metastep nsteps="1" rtolv="0.0001" stiffmode="1" maxiter="1000" controllmode="1" minsteplength="1e-06"/>
+      <Metastep nsteps="2" rtolv="0.0001" maxiter="2000" stiffmode="1" controllmode="1" refloadmode="0" minsteplength="0.001" ddm="2 2" ddv="0.0001" ddltf="3"/>
+    </Metasteps>
+  </Analysis>
+  <Domain domain="3dlattice">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0" bc="1 1 1 1 1 1"/>
+      <Node coords="0.1 0.0 0.0" bc="1 0 1 1 1 1"/>
+    </Nodes>
+    <Elements>
+      <lattice3D nodes="1 2" crosssect="1" mat="1" polycoords="0.05 -0.5 -0.5 0.05 0.5 -0.5 0.05 0.5 0.5 0.05 -0.5 0.5"/>
+    </Elements>
+    <CrossSections>
+      <latticecs material="1"/>
+    </CrossSections>
+    <Materials>
+      <latticeplastdam d="0.0" talpha="0.0" e="40000000000.0" a1="0.175" a2="1.0" ft="6500000.0" fc="130000000.0" angle1="0.5" angle2="0.5" flow="0.25" wf="1.53e-05" ahard="0.001" iter="100" tol="1e-06"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="1.5"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction npoints="4" t="0.0 0.1 0.2 3.0" f_t_="1.0 1.0 0.0 0.0"/>
+      <PiecewiseLinFunction npoints="4" t="0.0 0.1 0.2 3.0" f_t_="0.0 0.0 0.0 10.0"/>
+    </LoadTimeFunctions>
+    <Sets/>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="138" component="1" value="0.0" tolerance="1e-05"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="139" component="1" value="0.0" tolerance="1e-05"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="139" component="1" value="-341108.968" tolerance="0.001"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="139" component="3" value="10669136.7" tolerance="0.1"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

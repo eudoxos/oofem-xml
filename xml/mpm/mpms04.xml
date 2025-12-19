@@ -1,0 +1,83 @@
+<oofem version="1">
+  <Output>mpms04.out</Output>
+  <Description>Demo of symbolic mpm problem; bending of clamped cantilever (l=3, h=0.3) loaded at the free end</Description>
+  <Analysis type="test" nsteps="1" lhsterms="1" rhsterms="2">
+    <MPMVariables>
+      <!--displacement-->
+      <Variable name="u" interpolation="feiquad" type="1" quantity="0" size="2" dofs="1 2"/>
+      <!--test function-->
+      <Variable name="w" interpolation="feiquad" type="1" quantity="0" size="2" dofs="1 2"/>
+    </MPMVariables>
+    <MPMTerms>
+      <BTSigmaTerm variable="u" testvariable="w" mmode="6"/>
+      <NTfTerm variable="u" testvariable="w" mmode="6" flux="0.0 1.0"/>
+    </MPMTerms>
+    <MPMIntegrals>
+      <Integral domain="1" set="1" term="1"/>
+      <Integral domain="1" set="2" term="2"/>
+    </MPMIntegrals>
+  </Analysis>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <!--6    7     8      9     10-->
+      <!--1    2     3      4     5-->
+      <!--Exact solution w_end=(F*L^2)/2*(L)*2/3/EI = FL^3/(3EI) = 0.3*3^3/(3*1*0.3^3/12.)=1200-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.75 0.0 0.0"/>
+      <Node coords="1.5 0.0 0.0"/>
+      <Node coords="2.25 0.0 0.0"/>
+      <Node id="5" coords="3.0 0.0 0.0"/>
+      <Node coords="0.0 0.3 0.0"/>
+      <Node coords="0.75 0.3 0.0"/>
+      <Node coords="1.5 0.3 0.0"/>
+      <Node coords="2.25 0.3 0.0"/>
+      <Node id="10" coords="3.0 0.3 0.0"/>
+    </Nodes>
+    <Elements>
+      <!--node 11 coords 3 0.            0.15         0.-->
+      <q1 nodes="1 2 7 6" mat="1" crosssect="1"/>
+      <q1 nodes="2 3 8 7" mat="1" crosssect="1"/>
+      <q1 nodes="3 4 9 8" mat="1" crosssect="1"/>
+      <q1 nodes="4 5 10 9" mat="1" crosssect="1"/>
+      <l1 id="5" nodes="5 10" mat="1" crosssect="1"/>
+    </Elements>
+    <CrossSections>
+      <simplecs thick="1.0"/>
+    </CrossSections>
+    <Materials>
+      <isole d="1.0" e="1.0" n="0.3" talpha="1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <!--x-displacement-->
+      <boundarycondition loadtimefunction="1" set="3" values="0.0" dofs="1"/>
+      <!--y-displacement-->
+      <boundarycondition loadtimefunction="1" set="4" values="0.0" dofs="2"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <constantfunction f_t_="1.0"/>
+      <PiecewiseLinFunction npoints="4" t="-10.0 0.0 1.0 5.0" f_t_="0.0 0.0 1.0 1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elements="1 2 3 4"/>
+      <Set elements="5"/>
+      <!--x-bc-->
+      <Set elementedges="1 4"/>
+      <!--y-bc-->
+      <!--set 4 nodes 3 1 6 11-->
+      <Set elementedges="1 4"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <!--check nodes-->
+      <NODE tStep="1" number="5" dof="1" unknown="d" value="88.8353772" tolerance="0.0001"/>
+      <NODE tStep="1" number="5" dof="2" unknown="d" value="1178.8242" tolerance="0.0001"/>
+      <NODE tStep="1" number="10" dof="1" unknown="d" value="-88.8353772" tolerance="0.0001"/>
+      <NODE tStep="1" number="10" dof="2" unknown="d" value="1178.8242" tolerance="0.0001"/>
+      <NODE tStep="1" number="22" dof="1" unknown="d" value="0.0" tolerance="0.0001"/>
+      <NODE tStep="1" number="22" dof="2" unknown="d" value="1178.80313" tolerance="0.0001"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

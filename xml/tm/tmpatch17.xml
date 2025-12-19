@@ -1,0 +1,49 @@
+<oofem version="1">
+  <Output>tmpatch17.out</Output>
+  <Description>Patch test of Quad1_ht elements with radiation source. Heat flow stabilizes at value -30.1 W/m2 which corresponds to temperature 8.05C. Temperature values in C.</Description>
+  <Analysis type="TransientTransport" nsteps="20" deltat="24000.0" alpha="0.5"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.2 0.0 0.0"/>
+      <Node coords="0.0 0.3 0.0"/>
+      <Node coords="0.2 0.3 0.0"/>
+      <Node id="5" coords="0.0 0.8 0.0"/>
+      <Node coords="0.2 0.8 0.0"/>
+    </Nodes>
+    <Elements>
+      <quad1ht nodes="1 3 4 2"/>
+      <quad1ht nodes="3 5 6 4"/>
+    </Elements>
+    <CrossSections>
+      <SimpleTransportCS mat="1" set="1" thickness="0.15"/>
+    </CrossSections>
+    <Materials>
+      <IsoHeat d="2400.0" k="3.0" c="1000.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="10" values="0.0" set="2"/>
+      <!--Radiation with emmisivity, temperature in C by default-->
+      <constantedgeload loadtimefunction="1" components="15.0" properties="e 0.8" loadtype="7" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <!--constantedgeload 2 loadTimeFunction 1 components 1 15.0 properties 1 a 0.5 loadtype 3 set 3-->
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-2"/>
+      <Set nodes="1 2"/>
+      <Set elementedges="2 2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <NODE tStep="20" number="3" dof="10" unknown="d" value="2.9169672"/>
+      <NODE tStep="20" number="4" dof="10" unknown="d" value="2.9169672"/>
+      <NODE tStep="20" number="5" dof="10" unknown="d" value="7.84993483"/>
+      <NODE tStep="20" number="6" dof="10" unknown="d" value="7.84993483"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

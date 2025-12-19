@@ -1,0 +1,41 @@
+<oofem version="1">
+  <Output>idm11.out</Output>
+  <Description>Test of PlaneStress2d element -&gt; tensile test with subsequent load-unload cycles</Description>
+  <Analysis type="NonLinearStatic" nsteps="1">
+    <Metasteps>
+      <!--unread on the next line: steplength 0.000001-->
+      <Metastep nsteps="100" rtolv="1e-07" maxiter="9000" controlmode="1"/>
+    </Metasteps>
+  </Analysis>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0" bc="1 1"/>
+      <Node coords="100.0 0.0" bc="2 1"/>
+      <Node coords="100.0 100.0" bc="2 0"/>
+      <Node coords="0.0 100.0" bc="1 0"/>
+    </Nodes>
+    <Elements>
+      <PlaneStress2d nodes="1 2 3 4" crosssect="1" mat="1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" area="1.0"/>
+    </CrossSections>
+    <Materials>
+      <idm1 d="0.0" e="20000.0" n="0.2" talpha="0.0" damlaw="11" e0="0.00016" w_k="0.07" w_r="1.65" w_f="6.0" f_k="0.57" f_r="1.2" equivstraintype="0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" d="0.0"/>
+      <BoundaryCondition loadtimefunction="2" d="1.0"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="100.0"/>
+      <PiecewiseLinFunction npoints="8" t="0.0 10.0 20.0 30.0 40.0 50.0 60.0 100.0" f_t_="0.0 0.7 0.0 2.0 0.0 4.0 0.0 7.0"/>
+    </LoadTimeFunctions>
+    <Sets/>
+  </Domain>
+  <ExportModules>
+    <vtkxml tstep_all="" vars="1 4 13" primvars="1" stype="2"/>
+  </ExportModules>
+</oofem>

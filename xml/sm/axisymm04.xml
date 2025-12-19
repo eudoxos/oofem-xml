@@ -1,0 +1,75 @@
+<oofem version="1">
+  <Output>axisymm04.out</Output>
+  <Description>Test of linear axisymmetric triangular elements, a thin ring with internal overpressure</Description>
+  <Analysis type="LinearStatic" nsteps="1"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="4.0 0.0"/>
+      <Node coords="4.0 0.1"/>
+      <Node coords="4.1 0.0"/>
+      <Node coords="4.1 0.1"/>
+      <Node id="5" coords="4.2 0.0"/>
+      <Node coords="4.2 0.1"/>
+    </Nodes>
+    <Elements>
+      <Axisymm3d nodes="1 4 2" boundaryloads="2 3"/>
+      <Axisymm3d nodes="1 3 4"/>
+      <Axisymm3d nodes="3 6 4"/>
+      <Axisymm3d nodes="3 5 6"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="1.0" e="1000.0" n="0.0" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="2"/>
+      <ConstantEdgeLoad loadtimefunction="1" components="10.0 0.0" loadtype="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-4"/>
+      <Set nodes="1 3 5"/>
+      <Set elementboundaries="1 2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-06">
+      <!--Exact displacement is 0.82 for r=4.1-->
+      <NODE tStep="1" number="1" dof="1" unknown="d" value="0.820426459"/>
+      <NODE tStep="1" number="2" dof="1" unknown="d" value="0.82053688"/>
+      <NODE tStep="1" number="3" dof="1" unknown="d" value="0.819742681"/>
+      <NODE tStep="1" number="4" dof="1" unknown="d" value="0.819745615"/>
+      <NODE tStep="1" number="5" dof="1" unknown="d" value="0.819545836"/>
+      <NODE tStep="1" number="6" dof="1" unknown="d" value="0.819466867"/>
+      <!--Constant strains and stresses over an element-->
+      <!--Element 1-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="-0.0079126"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="0.00032401"/>
+      <!--Exact solution for r=4.1 is 2.05e-1-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="3" value="0.203364376"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="6" value="0.00064803"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="1" value="-7.91264449"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="2" value="0.32401356"/>
+      <!--Exact solution for r=4.1 is sig_theta=205.0-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="3" value="203.364376"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="6" value="0.32401356"/>
+      <!--Element 4-->
+      <ELEMENT tStep="1" number="4" gp="1" keyword="4" component="1" value="-0.0019684"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="4" component="2" value="-5.3546e-05"/>
+      <!--Exact solution for r=4.1 is 2.05e-1-->
+      <ELEMENT tStep="1" number="4" gp="1" keyword="4" component="3" value="0.1967"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="4" component="6" value="-0.00078969"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="1" component="1" value="-1.96844953"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="1" component="2" value="-0.053546"/>
+      <!--Exact solution for r=4.1 is sig_theta=205.0-->
+      <ELEMENT tStep="1" number="4" gp="1" keyword="1" component="3" value="196.700431"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="1" component="6" value="-0.39484608"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

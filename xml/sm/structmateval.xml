@@ -1,0 +1,21 @@
+<oofem version="1">
+  <Output>structmateval.out</Output>
+  <Description>Test of the structural material evaluator.</Description>
+  <Analysis type="StructuralMaterialEvaluator" nsteps="1" componentfunctions="1 1 1 1 1 1" stresscontrol="1 2 3 4 5 6" vars="1 4" tolerance="1e-06"/>
+  <Domain domain="3d">
+    <OutputManager/>
+    <Nodes/>
+    <Elements/>
+    <CrossSections/>
+    <Materials>
+      <TutorialMaterial d="1.0" talpha="0.0" e="200000000000.0" n="0.3" sigy="200000000.0" h="20000000000.0"/>
+    </Materials>
+    <BoundaryConditions/>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <!--IsoE            1 d 1.0 tAlpha 0.0 E 200e9 n 0.3-->
+      <ConstantFunction f_t_="250000000.0"/>
+    </LoadTimeFunctions>
+    <Sets/>
+  </Domain>
+</oofem>

@@ -1,0 +1,64 @@
+<oofem version="1">
+  <Output>InterfaceEL_Point3D_01.out</Output>
+  <Description>Test of simple interface between two points. The interface has a constant stiffness and a linear stress-strain relationship. Three directions are tested.</Description>
+  <Analysis type="StaticStructural" nsteps="1" rtolf="0.0001" manrmsteps="30" deltat="1.0"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="2.0 0.0 0.0"/>
+      <Node coords="0.0 2.0 0.0"/>
+      <Node coords="0.0 0.0 2.0"/>
+    </Nodes>
+    <Elements>
+      <IntELPoint id="2" nodes="1 2" normal="1.0 0.0 0.0"/>
+      <IntELPoint nodes="1 3" normal="0.0 1.0 0.0"/>
+      <IntELPoint nodes="1 4" normal="0.0 0.0 1.0"/>
+    </Elements>
+    <CrossSections>
+      <InterfaceCS material="1" set="6"/>
+      <InterfaceCS material="1" set="7"/>
+      <InterfaceCS material="1" set="8"/>
+    </CrossSections>
+    <Materials>
+      <!--IntMatElastic 1 k 2.e+4-->
+      <CohInt kn="20000.0" ks="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3" values="0.0 0.0 0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="2" dofs="2 3" values="0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="2" dofs="1 3" values="0.0 0.0" set="3"/>
+      <BoundaryCondition loadtimefunction="2" dofs="1 2" values="0.0 0.0" set="4"/>
+      <nodalload id="5" loadtimefunction="2" dofs="1 2 3" components="6.0 7.0 8.0" set="5"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1"/>
+      <Set nodes="2"/>
+      <Set nodes="3"/>
+      <Set nodes="4"/>
+      <Set id="5" nodes="2 3 4"/>
+      <Set elements="2"/>
+      <Set elements="3"/>
+      <Set elements="4"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-05">
+      <!--Step 1-->
+      <NODE tStep="1" number="2" dof="1" unknown="d" value="0.0003"/>
+      <NODE tStep="1" number="3" dof="2" unknown="d" value="0.00035"/>
+      <NODE tStep="1" number="4" dof="3" unknown="d" value="0.0004"/>
+      <ELEMENT tStep="1" number="2" gp="1" keyword="98" component="1" value="0.0003"/>
+      <ELEMENT tStep="1" number="2" gp="1" keyword="99" component="1" value="6.0"/>
+      <ELEMENT tStep="1" number="3" gp="1" keyword="98" component="1" value="0.00035"/>
+      <ELEMENT tStep="1" number="3" gp="1" keyword="99" component="1" value="7.0"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="98" component="1" value="0.0004"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="99" component="1" value="8.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

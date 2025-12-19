@@ -1,0 +1,62 @@
+<oofem version="1">
+  <Output>homog01.out</Output>
+  <Description>Elastic homogenization of 2x2 quad elements with periodic boundary conditions and shear eigenstrain load</Description>
+  <Analysis type="LinearStatic" nsteps="1"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0"/>
+      <Node coords="1.5 0.0"/>
+      <Node coords="4.0 0.0" mastermask="1 1" doftype="1 1"/>
+      <Node coords="0.0 1.5"/>
+      <Node id="5" coords="1.8 1.5"/>
+      <Node coords="4.0 1.5" mastermask="4 4" doftype="1 1"/>
+      <Node coords="0.0 2.0" mastermask="1 1" doftype="1 1"/>
+      <Node coords="1.5 2.0" mastermask="2 2" doftype="1 1"/>
+      <Node coords="4.0 2.0" mastermask="7 7" doftype="1 1"/>
+    </Nodes>
+    <Elements>
+      <PlaneStress2d nodes="1 2 5 4" bodyloads="3"/>
+      <PlaneStress2d nodes="2 3 6 5" bodyloads="3"/>
+      <PlaneStress2d nodes="4 5 8 7" bodyloads="3"/>
+      <PlaneStress2d nodes="5 6 9 8" bodyloads="3"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="0.15" material="1" set="1"/>
+      <SimpleCS thick="0.15" material="2" set="2"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="0.0" e="10.0" n="0.25" talpha="1.2e-05"/>
+      <IsoLE d="0.0" e="2.0" n="0.25" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="3"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="4"/>
+      <StructEigenstrainLoad loadtimefunction="1" components="0.0 0.0 0.2"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elements="1 4"/>
+      <Set elements="2 3"/>
+      <Set nodes="1"/>
+      <Set nodes="3"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-08">
+      <!--check selected nodes-->
+      <NODE tStep="1" number="4" dof="1" unknown="d" value="-0.0576246558"/>
+      <NODE tStep="1" number="6" dof="1" unknown="d" value="-0.0576246558"/>
+      <!--check element strain vector-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="6" value="0.0694129179"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="4" component="6" value="0.042061277"/>
+    </errorcheck>
+    <!--vtkxml tstep_all domain_all cellvars 1 103 primvars 1 1 vars 2 1 4 stype 1-->
+    <!--hom tstep_all ists 2 1 4-->
+    <hom tstep_all="" ists="1 4 115" strain_energy="" regionsets="1 2"/>
+    <hom tstep_all="" ists="2 5" strain_energy="" regionsets="1 2"/>
+  </ExportModules>
+</oofem>

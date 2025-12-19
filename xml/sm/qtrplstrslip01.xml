@@ -1,0 +1,54 @@
+<oofem version="1">
+  <Output>qtrplstrslip01.out</Output>
+  <Description>Test case for QTrPlStrSlip element</Description>
+  <Analysis type="StaticStructural" nsteps="1" deltat="1.0" constrainednrminiter="5" rtolf="1e-05" maxiter="10" miniter="1" initialguess="1"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 2.0 0.0"/>
+      <Node coords="1.3001 2.53433 0.0"/>
+      <Node coords="0.0 4.0 0.0"/>
+      <Node coords="0.650049 2.26717 0.0"/>
+      <Node id="5" coords="0.650049 3.26717 0.0"/>
+      <Node coords="0.0 3.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <qtrplstrslip nodes="1 2 3 4 5 6" crosssect="1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="0.2" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <!--structslipfe2material 1 d 1.0 filename rvedispslipdd.in.rve use_num_tangent-->
+      <structslipfe2material d="1.0" filename="rvedispslipdd.in.rve" use_ext_stiffness="" dsde="36251590000.0 6935153000.0 24701.04; 6935153000.0 34927110000.0 29875.05; 24701.04 29875.05 13870800000.0" dbsde="2186768.0 432931.8 -29879330.0; -844444.8 -4229045.0 1481353.0" drsde="1570685000.0 135109.7 -1384.174; -60328.77 250932000.0 -515.0497; 0.0 0.0 0.0; 0.0 0.0 0.0" dsds="2186768.0 -844444.8; 432931.8 -4229045.0; -29879330.0 1481357.0" dbsds="80047120000.0 2205.447; 2205.447 26767630000.0" drsds="-8006.231 64256.44; -12368.79 7187.856; 0.0 0.0; 0.0 0.0" dsdg="1570685000.0 -60328.77 0.0 0.0; 135109.7 250932000.0 0.0 0.0; -1384.174 -515.0497 0.0 0.0" dbsdg="-8006.231 -12368.79 0.0 0.0; 64256.44 7187.856 0.0 0.0" drsdg="1881420000.0 117318.4 0.0 0.0; 117318.4 371326100.0 0.0 0.0; 0.0 0.0 0.0 0.0; 0.0 0.0 0.0 0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 51 52" values="0.0 0.0 0.0 0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 51" values="0.0 0.0" set="2"/>
+      <Boundarycondition loadtimefunction="1" dofs="1 2 51 52" values="0.0001 -0.0002 1e-05 3e-05" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1"/>
+      <Set nodes="3"/>
+      <Set nodes="2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.001">
+      <REACTION tStep="1" number="1" dof="2" value="67381.0164"/>
+      <REACTION tStep="1" number="1" dof="52" value="-2105.15553"/>
+      <REACTION tStep="1" number="3" dof="1" value="-68339.2776"/>
+      <REACTION tStep="1" number="3" dof="51" value="-2460.49126"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="143" component="1" value="-67304.4804"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="143" component="2" value="-293848.813"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="145" component="1" value="13231.2923"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="145" component="2" value="-6817.15957"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="145" component="3" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="145" component="4" value="0.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

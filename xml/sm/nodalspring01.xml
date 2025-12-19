@@ -1,0 +1,38 @@
+<oofem version="1">
+  <Output>nodalspring01.out</Output>
+  <Description>Test of nodal spring element</Description>
+  <Analysis type="LinearStatic" nsteps="1"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <NodalSpring nodes="1" dofmask="1 2 3" k="1.0 2.0 0.5"/>
+    </Elements>
+    <CrossSections/>
+    <Materials/>
+    <BoundaryConditions>
+      <NodalLoad loadtimefunction="1" dofs="1 2 3" components="1.0 1.0 1.0" set="1"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.0001">
+      <!--check nodal displacements-->
+      <NODE tStep="1" number="1" dof="1" unknown="d" value="1.0"/>
+      <NODE tStep="1" number="1" dof="2" unknown="d" value="0.5"/>
+      <!--element stresses and strains-->
+      <!--ELEMENT tStep 1 number 1 keyword "force/moment" component 1  value 1.0-->
+      <!--ELEMENT tStep 1 number 1 keyword "force/moment" component 2  value 1.0-->
+      <!--ELEMENT tStep 1 number 1 keyword "force/moment" component 3  value 1.0-->
+      <NODE tStep="1" number="1" dof="3" unknown="d" value="2.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

@@ -1,0 +1,936 @@
+<oofem version="1">
+  <Output>quasicontinuum3d.out</Output>
+  <Description>quasicontinuum 3d test</Description>
+  <!--qcLinearStatic nsteps 1 nmodules 0 QcApproach 3 mtrxt 1 geninterpelem 1 t3dfile quasicontinuum3d.t3d.in imsize 100-->
+  <Analysis type="qcLinearStatic" nsteps="1" qcapproach="3" mtrxt="1" geninterpelem="2" t3dfile="quasicontinuum3d.out.t3d"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <qcNode coords="0.0 0.0 0.0" bc="1 1 1"/>
+      <qcNode coords="23.86392 0.0 0.0" bc="0 0 1"/>
+      <qcNode coords="57.0449 0.0 0.0" bc="0 0 1"/>
+      <qcNode coords="81.60597 0.0 0.0" bc="0 0 1"/>
+      <qcNode id="5" coords="100.0 0.0 0.0" bc="0 1 1"/>
+      <qcNode coords="0.0 30.2552 0.0" bc="0 0 1"/>
+      <qcNode coords="25.07359 18.11778 0.0" bc="0 0 1"/>
+      <qcNode coords="56.1652 25.26394 0.0" bc="0 0 1"/>
+      <qcNode coords="78.93643 24.47111 0.0" bc="0 0 1"/>
+      <qcNode id="10" coords="100.0 18.50615 0.0" bc="0 0 1"/>
+      <qcNode coords="0.0 53.24879 0.0" bc="0 0 1"/>
+      <qcNode coords="21.48997 49.4239 0.0" bc="0 0 1"/>
+      <qcNode coords="56.65355 48.17626 0.0" bc="0 0 1"/>
+      <qcNode coords="77.94694 48.81804 0.0" bc="0 0 1"/>
+      <qcNode id="15" coords="100.0 50.60307 0.0" bc="0 0 1"/>
+      <qcNode coords="0.0 71.95549 0.0" bc="0 0 1"/>
+      <qcNode coords="24.74393 81.83198 0.0" bc="0 0 1"/>
+      <qcNode coords="51.79461 83.42655 0.0" bc="0 0 1"/>
+      <qcNode coords="72.16134 74.47822 0.0" bc="0 0 1"/>
+      <qcNode id="20" coords="100.0 67.60755 0.0" bc="0 0 1"/>
+      <qcNode coords="0.0 100.0 0.0" bc="0 0 1"/>
+      <qcNode coords="20.1495 100.0 0.0" bc="0 0 1"/>
+      <qcNode coords="52.50302 100.0 0.0" bc="0 0 1"/>
+      <qcNode coords="66.58439 100.0 0.0" bc="0 0 1"/>
+      <qcNode id="25" coords="100.0 100.0 0.0" bc="0 0 1"/>
+      <qcNode coords="0.0 0.0 31.14258" bc="0 0 0"/>
+      <qcNode coords="21.5971 0.0 29.1917" bc="0 0 0"/>
+      <qcNode coords="43.46121 0.0 17.65322" bc="0 0 0"/>
+      <qcNode coords="79.69805 0.0 27.90051" bc="0 0 0"/>
+      <qcNode id="30" coords="100.0 0.0 27.68806" bc="0 0 0"/>
+      <qcNode coords="0.0 17.49366 19.79924" bc="0 0 0"/>
+      <qcNode coords="28.94056 21.48033 32.48362" bc="0 0 0"/>
+      <qcNode coords="42.18674 26.46504 27.52074" bc="0 0 0"/>
+      <qcNode coords="82.08859 29.5435 20.50366" bc="0 0 0"/>
+      <qcNode id="35" coords="100.0 27.07141 32.87711" bc="0 0 0"/>
+      <qcNode coords="0.0 43.69445 25.55694" bc="0 0 0"/>
+      <qcNode coords="26.48101 43.99509 32.74242" bc="0 0 0"/>
+      <qcNode coords="45.94799 44.26725 33.17919" bc="0 0 0"/>
+      <qcNode coords="79.43015 44.56902 17.39293" bc="0 0 0"/>
+      <qcNode id="40" coords="100.0 52.69848 26.68904" bc="0 0 0"/>
+      <qcNode coords="0.0 67.74711 29.49948" bc="0 0 0"/>
+      <qcNode coords="26.21432 68.39902 25.10875" bc="0 0 0"/>
+      <qcNode coords="48.51474 69.77685 28.66746" bc="0 0 0"/>
+      <qcNode coords="78.99507 80.5494 33.08648" bc="0 0 0"/>
+      <qcNode id="45" coords="100.0 67.12954 27.83164" bc="0 0 0"/>
+      <qcNode coords="0.0 100.0 25.11655" bc="0 0 0"/>
+      <qcNode coords="24.92736 100.0 24.87299" bc="0 0 0"/>
+      <qcNode coords="53.67647 100.0 25.37727" bc="0 0 0"/>
+      <qcNode coords="75.58647 100.0 24.91875" bc="0 0 0"/>
+      <qcNode id="50" coords="100.0 100.0 18.49454" bc="0 0 0"/>
+      <qcNode coords="0.0 0.0 48.85481" bc="0 0 0"/>
+      <qcNode coords="23.62059 0.0 51.09402" bc="0 0 0"/>
+      <qcNode coords="56.83233 0.0 45.49929" bc="0 0 0"/>
+      <qcNode coords="70.70932 0.0 42.34276" bc="0 0 0"/>
+      <qcNode id="55" coords="100.0 0.0 42.27799" bc="0 0 0"/>
+      <qcNode coords="0.0 31.43285 46.95378" bc="0 0 0"/>
+      <qcNode coords="30.11858 27.09272 50.78077" bc="0 0 0"/>
+      <qcNode coords="52.7403 33.70275 53.91194" bc="0 0 0"/>
+      <qcNode coords="69.07733 30.01987 53.21763" bc="0 0 0"/>
+      <qcNode id="60" coords="100.0 26.29498 48.32407" bc="0 0 0"/>
+      <qcNode coords="0.0 54.93581 47.7617" bc="0 0 0"/>
+      <qcNode coords="24.12082 42.22526 54.02354" bc="0 0 0"/>
+      <qcNode coords="47.63304 52.81012 50.64511" bc="0 0 0"/>
+      <qcNode coords="71.31852 51.88278 55.3008" bc="0 0 0"/>
+      <qcNode id="65" coords="100.0 53.46044 57.86504" bc="0 0 0"/>
+      <qcNode coords="0.0 75.7361 50.29017" bc="0 0 0"/>
+      <qcNode coords="27.16771 76.35882 45.16496" bc="0 0 0"/>
+      <qcNode coords="55.37059 66.7393 49.56428" bc="0 0 0"/>
+      <qcNode coords="69.5278 71.0549 48.11215" bc="0 0 0"/>
+      <qcNode id="70" coords="100.0 81.87309 41.77167" bc="0 0 0"/>
+      <qcNode coords="0.0 100.0 54.61551" bc="0 0 0"/>
+      <qcNode coords="32.07271 100.0 47.01913" bc="0 0 0"/>
+      <qcNode coords="44.96493 100.0 47.96648" bc="0 0 0"/>
+      <qcNode coords="67.58542 100.0 42.12166" bc="0 0 0"/>
+      <qcNode id="75" coords="100.0 100.0 43.61455" bc="0 0 0"/>
+      <qcNode coords="0.0 0.0 71.42496" bc="0 0 0"/>
+      <qcNode coords="32.58637 0.0 72.70428" bc="0 0 0"/>
+      <qcNode coords="57.23341 0.0 74.41326" bc="0 0 0"/>
+      <qcNode coords="80.98829 0.0 67.50446" bc="0 0 0"/>
+      <qcNode id="80" coords="100.0 0.0 78.01659" bc="0 0 0"/>
+      <qcNode coords="0.0 32.05975 82.40392" bc="0 0 0"/>
+      <qcNode coords="24.90413 16.84923 74.04712" bc="0 0 0"/>
+      <qcNode coords="51.22304 21.99334 70.323" bc="0 0 0"/>
+      <qcNode coords="69.7097 22.16671 70.64457" bc="0 0 0"/>
+      <qcNode id="85" coords="100.0 21.7714 77.98745" bc="0 0 0"/>
+      <qcNode coords="0.0 47.78554 80.32594" bc="0 0 0"/>
+      <qcNode coords="18.17502 42.50543 78.75983" bc="0 0 0"/>
+      <qcNode coords="47.20327 57.61556 69.45987" bc="0 0 0"/>
+      <qcNode coords="75.09745 48.00664 73.56901" bc="0 0 0"/>
+      <qcNode id="90" coords="100.0 49.04713 77.7044" bc="0 0 0"/>
+      <qcNode coords="0.0 78.40624 76.04987" bc="0 0 0"/>
+      <qcNode coords="19.70184 83.62054 67.38415" bc="0 0 0"/>
+      <qcNode coords="50.20997 74.16241 78.41827" bc="0 0 0"/>
+      <qcNode coords="76.41376 67.43085 80.86068" bc="0 0 0"/>
+      <qcNode id="95" coords="100.0 70.83553 83.42953" bc="0 0 0"/>
+      <qcNode coords="0.0 100.0 66.32543" bc="0 0 0"/>
+      <qcNode coords="25.78253 100.0 80.83042" bc="0 0 0"/>
+      <qcNode coords="45.14444 100.0 80.85977" bc="0 0 0"/>
+      <qcNode coords="71.58038 100.0 68.80919" bc="0 0 0"/>
+      <qcNode id="100" coords="100.0 100.0 75.49022" bc="0 0 0"/>
+      <qcNode coords="0.0 0.0 100.0" bc="0 0 2"/>
+      <qcNode coords="27.41046 0.0 100.0" bc="0 0 2"/>
+      <qcNode coords="41.73739 0.0 100.0" bc="0 0 2"/>
+      <qcNode coords="70.74844 0.0 100.0" bc="0 0 2"/>
+      <qcNode id="105" coords="100.0 0.0 100.0" bc="0 0 2"/>
+      <qcNode coords="0.0 24.20773 100.0" bc="0 0 2"/>
+      <qcNode coords="29.23563 25.25491 100.0" bc="0 0 2"/>
+      <qcNode coords="56.18166 23.58003 100.0" bc="0 0 2"/>
+      <qcNode coords="82.32362 20.38121 100.0" bc="0 0 2"/>
+      <qcNode id="110" coords="100.0 26.79055 100.0" bc="0 0 2"/>
+      <qcNode coords="0.0 49.76947 100.0" bc="0 0 2"/>
+      <qcNode coords="17.32297 41.4086 100.0" bc="0 0 2"/>
+      <qcNode coords="52.37508 41.40442 100.0" bc="0 0 2"/>
+      <qcNode coords="70.89569 43.82217 100.0" bc="0 0 2"/>
+      <qcNode id="115" coords="100.0 43.54914 100.0" bc="0 0 2"/>
+      <qcNode coords="0.0 82.57139 100.0" bc="0 0 2"/>
+      <qcNode coords="30.78973 72.24206 100.0" bc="0 0 2"/>
+      <qcNode coords="58.02586 81.3143 100.0" bc="0 0 2"/>
+      <qcNode coords="72.66703 76.36784 100.0" bc="0 0 2"/>
+      <qcNode id="120" coords="100.0 71.97724 100.0" bc="0 0 2"/>
+      <qcNode coords="0.0 100.0 100.0" bc="0 0 2"/>
+      <qcNode coords="30.91187 100.0 100.0" bc="0 0 2"/>
+      <qcNode coords="42.65763 100.0 100.0" bc="0 0 2"/>
+      <qcNode coords="79.00376 100.0 100.0" bc="0 0 2"/>
+      <qcNode id="125" coords="100.0 100.0 100.0" bc="0 0 2"/>
+    </Nodes>
+    <Elements>
+      <Truss3d nodes="1 2" mat="1" crosssect="1"/>
+      <Truss3d nodes="1 6" mat="1" crosssect="1"/>
+      <Truss3d nodes="1 7" mat="1" crosssect="1"/>
+      <Truss3d nodes="2 6" mat="1" crosssect="1"/>
+      <Truss3d id="5" nodes="1 26" mat="1" crosssect="1"/>
+      <Truss3d nodes="1 27" mat="1" crosssect="1"/>
+      <Truss3d nodes="26 2" mat="1" crosssect="1"/>
+      <Truss3d nodes="1 31" mat="1" crosssect="1"/>
+      <Truss3d nodes="26 6" mat="1" crosssect="1"/>
+      <Truss3d id="10" nodes="2 3" mat="1" crosssect="1"/>
+      <Truss3d nodes="2 7" mat="1" crosssect="1"/>
+      <Truss3d nodes="2 8" mat="1" crosssect="1"/>
+      <Truss3d nodes="3 7" mat="1" crosssect="1"/>
+      <Truss3d nodes="2 27" mat="1" crosssect="1"/>
+      <Truss3d id="15" nodes="2 28" mat="1" crosssect="1"/>
+      <Truss3d nodes="27 3" mat="1" crosssect="1"/>
+      <Truss3d nodes="2 32" mat="1" crosssect="1"/>
+      <Truss3d nodes="27 7" mat="1" crosssect="1"/>
+      <Truss3d nodes="3 4" mat="1" crosssect="1"/>
+      <Truss3d id="20" nodes="3 8" mat="1" crosssect="1"/>
+      <Truss3d nodes="3 9" mat="1" crosssect="1"/>
+      <Truss3d nodes="4 8" mat="1" crosssect="1"/>
+      <Truss3d nodes="3 28" mat="1" crosssect="1"/>
+      <Truss3d nodes="3 29" mat="1" crosssect="1"/>
+      <Truss3d id="25" nodes="28 4" mat="1" crosssect="1"/>
+      <Truss3d nodes="3 33" mat="1" crosssect="1"/>
+      <Truss3d nodes="28 8" mat="1" crosssect="1"/>
+      <Truss3d nodes="4 5" mat="1" crosssect="1"/>
+      <Truss3d nodes="4 9" mat="1" crosssect="1"/>
+      <Truss3d id="30" nodes="4 10" mat="1" crosssect="1"/>
+      <Truss3d nodes="5 9" mat="1" crosssect="1"/>
+      <Truss3d nodes="4 29" mat="1" crosssect="1"/>
+      <Truss3d nodes="4 30" mat="1" crosssect="1"/>
+      <Truss3d nodes="29 5" mat="1" crosssect="1"/>
+      <Truss3d id="35" nodes="4 34" mat="1" crosssect="1"/>
+      <Truss3d nodes="29 9" mat="1" crosssect="1"/>
+      <Truss3d nodes="5 10" mat="1" crosssect="1"/>
+      <Truss3d nodes="5 30" mat="1" crosssect="1"/>
+      <Truss3d nodes="5 35" mat="1" crosssect="1"/>
+      <Truss3d id="40" nodes="30 10" mat="1" crosssect="1"/>
+      <Truss3d nodes="6 7" mat="1" crosssect="1"/>
+      <Truss3d nodes="6 11" mat="1" crosssect="1"/>
+      <Truss3d nodes="6 12" mat="1" crosssect="1"/>
+      <Truss3d nodes="7 11" mat="1" crosssect="1"/>
+      <Truss3d id="45" nodes="6 31" mat="1" crosssect="1"/>
+      <Truss3d nodes="6 32" mat="1" crosssect="1"/>
+      <Truss3d nodes="31 7" mat="1" crosssect="1"/>
+      <Truss3d nodes="6 36" mat="1" crosssect="1"/>
+      <Truss3d nodes="31 11" mat="1" crosssect="1"/>
+      <Truss3d id="50" nodes="7 8" mat="1" crosssect="1"/>
+      <Truss3d nodes="7 12" mat="1" crosssect="1"/>
+      <Truss3d nodes="7 13" mat="1" crosssect="1"/>
+      <Truss3d nodes="8 12" mat="1" crosssect="1"/>
+      <Truss3d nodes="7 32" mat="1" crosssect="1"/>
+      <Truss3d id="55" nodes="7 33" mat="1" crosssect="1"/>
+      <Truss3d nodes="32 8" mat="1" crosssect="1"/>
+      <Truss3d nodes="7 37" mat="1" crosssect="1"/>
+      <Truss3d nodes="32 12" mat="1" crosssect="1"/>
+      <Truss3d nodes="8 9" mat="1" crosssect="1"/>
+      <Truss3d id="60" nodes="8 13" mat="1" crosssect="1"/>
+      <Truss3d nodes="8 14" mat="1" crosssect="1"/>
+      <Truss3d nodes="9 13" mat="1" crosssect="1"/>
+      <Truss3d nodes="8 33" mat="1" crosssect="1"/>
+      <Truss3d nodes="8 34" mat="1" crosssect="1"/>
+      <Truss3d id="65" nodes="33 9" mat="1" crosssect="1"/>
+      <Truss3d nodes="8 38" mat="1" crosssect="1"/>
+      <Truss3d nodes="33 13" mat="1" crosssect="1"/>
+      <Truss3d nodes="9 10" mat="1" crosssect="1"/>
+      <Truss3d nodes="9 14" mat="1" crosssect="1"/>
+      <Truss3d id="70" nodes="9 15" mat="1" crosssect="1"/>
+      <Truss3d nodes="10 14" mat="1" crosssect="1"/>
+      <Truss3d nodes="9 34" mat="1" crosssect="1"/>
+      <Truss3d nodes="9 35" mat="1" crosssect="1"/>
+      <Truss3d nodes="34 10" mat="1" crosssect="1"/>
+      <Truss3d id="75" nodes="9 39" mat="1" crosssect="1"/>
+      <Truss3d nodes="34 14" mat="1" crosssect="1"/>
+      <Truss3d nodes="10 15" mat="1" crosssect="1"/>
+      <Truss3d nodes="10 35" mat="1" crosssect="1"/>
+      <Truss3d nodes="10 40" mat="1" crosssect="1"/>
+      <Truss3d id="80" nodes="35 15" mat="1" crosssect="1"/>
+      <Truss3d nodes="11 12" mat="1" crosssect="1"/>
+      <Truss3d nodes="11 16" mat="1" crosssect="1"/>
+      <Truss3d nodes="11 17" mat="1" crosssect="1"/>
+      <Truss3d nodes="12 16" mat="1" crosssect="1"/>
+      <Truss3d id="85" nodes="11 36" mat="1" crosssect="1"/>
+      <Truss3d nodes="11 37" mat="1" crosssect="1"/>
+      <Truss3d nodes="36 12" mat="1" crosssect="1"/>
+      <Truss3d nodes="11 41" mat="1" crosssect="1"/>
+      <Truss3d nodes="36 16" mat="1" crosssect="1"/>
+      <Truss3d id="90" nodes="12 13" mat="1" crosssect="1"/>
+      <Truss3d nodes="12 17" mat="1" crosssect="1"/>
+      <Truss3d nodes="12 18" mat="1" crosssect="1"/>
+      <Truss3d nodes="13 17" mat="1" crosssect="1"/>
+      <Truss3d nodes="12 37" mat="1" crosssect="1"/>
+      <Truss3d id="95" nodes="12 38" mat="1" crosssect="1"/>
+      <Truss3d nodes="37 13" mat="1" crosssect="1"/>
+      <Truss3d nodes="12 42" mat="1" crosssect="1"/>
+      <Truss3d nodes="37 17" mat="1" crosssect="1"/>
+      <Truss3d nodes="13 14" mat="1" crosssect="1"/>
+      <Truss3d id="100" nodes="13 18" mat="1" crosssect="1"/>
+      <Truss3d nodes="13 19" mat="1" crosssect="1"/>
+      <Truss3d nodes="14 18" mat="1" crosssect="1"/>
+      <Truss3d nodes="13 38" mat="1" crosssect="1"/>
+      <Truss3d nodes="13 39" mat="1" crosssect="1"/>
+      <Truss3d id="105" nodes="38 14" mat="1" crosssect="1"/>
+      <Truss3d nodes="13 43" mat="1" crosssect="1"/>
+      <Truss3d nodes="38 18" mat="1" crosssect="1"/>
+      <Truss3d nodes="14 15" mat="1" crosssect="1"/>
+      <Truss3d nodes="14 19" mat="1" crosssect="1"/>
+      <Truss3d id="110" nodes="14 20" mat="1" crosssect="1"/>
+      <Truss3d nodes="15 19" mat="1" crosssect="1"/>
+      <Truss3d nodes="14 39" mat="1" crosssect="1"/>
+      <Truss3d nodes="14 40" mat="1" crosssect="1"/>
+      <Truss3d nodes="39 15" mat="1" crosssect="1"/>
+      <Truss3d id="115" nodes="14 44" mat="1" crosssect="1"/>
+      <Truss3d nodes="39 19" mat="1" crosssect="1"/>
+      <Truss3d nodes="15 20" mat="1" crosssect="1"/>
+      <Truss3d nodes="15 40" mat="1" crosssect="1"/>
+      <Truss3d nodes="15 45" mat="1" crosssect="1"/>
+      <Truss3d id="120" nodes="40 20" mat="1" crosssect="1"/>
+      <Truss3d nodes="16 17" mat="1" crosssect="1"/>
+      <Truss3d nodes="16 21" mat="1" crosssect="1"/>
+      <Truss3d nodes="16 22" mat="1" crosssect="1"/>
+      <Truss3d nodes="17 21" mat="1" crosssect="1"/>
+      <Truss3d id="125" nodes="16 41" mat="1" crosssect="1"/>
+      <Truss3d nodes="16 42" mat="1" crosssect="1"/>
+      <Truss3d nodes="41 17" mat="1" crosssect="1"/>
+      <Truss3d nodes="16 46" mat="1" crosssect="1"/>
+      <Truss3d nodes="41 21" mat="1" crosssect="1"/>
+      <Truss3d id="130" nodes="17 18" mat="1" crosssect="1"/>
+      <Truss3d nodes="17 22" mat="1" crosssect="1"/>
+      <Truss3d nodes="17 23" mat="1" crosssect="1"/>
+      <Truss3d nodes="18 22" mat="1" crosssect="1"/>
+      <Truss3d nodes="17 42" mat="1" crosssect="1"/>
+      <Truss3d id="135" nodes="17 43" mat="1" crosssect="1"/>
+      <Truss3d nodes="42 18" mat="1" crosssect="1"/>
+      <Truss3d nodes="17 47" mat="1" crosssect="1"/>
+      <Truss3d nodes="42 22" mat="1" crosssect="1"/>
+      <Truss3d nodes="18 19" mat="1" crosssect="1"/>
+      <Truss3d id="140" nodes="18 23" mat="1" crosssect="1"/>
+      <Truss3d nodes="18 24" mat="1" crosssect="1"/>
+      <Truss3d nodes="19 23" mat="1" crosssect="1"/>
+      <Truss3d nodes="18 43" mat="1" crosssect="1"/>
+      <Truss3d nodes="18 44" mat="1" crosssect="1"/>
+      <Truss3d id="145" nodes="43 19" mat="1" crosssect="1"/>
+      <Truss3d nodes="18 48" mat="1" crosssect="1"/>
+      <Truss3d nodes="43 23" mat="1" crosssect="1"/>
+      <Truss3d nodes="19 20" mat="1" crosssect="1"/>
+      <Truss3d nodes="19 24" mat="1" crosssect="1"/>
+      <Truss3d id="150" nodes="19 25" mat="1" crosssect="1"/>
+      <Truss3d nodes="20 24" mat="1" crosssect="1"/>
+      <Truss3d nodes="19 44" mat="1" crosssect="1"/>
+      <Truss3d nodes="19 45" mat="1" crosssect="1"/>
+      <Truss3d nodes="44 20" mat="1" crosssect="1"/>
+      <Truss3d id="155" nodes="19 49" mat="1" crosssect="1"/>
+      <Truss3d nodes="44 24" mat="1" crosssect="1"/>
+      <Truss3d nodes="20 25" mat="1" crosssect="1"/>
+      <Truss3d nodes="20 45" mat="1" crosssect="1"/>
+      <Truss3d nodes="20 50" mat="1" crosssect="1"/>
+      <Truss3d id="160" nodes="45 25" mat="1" crosssect="1"/>
+      <Truss3d nodes="21 22" mat="1" crosssect="1"/>
+      <Truss3d nodes="21 46" mat="1" crosssect="1"/>
+      <Truss3d nodes="21 47" mat="1" crosssect="1"/>
+      <Truss3d nodes="46 22" mat="1" crosssect="1"/>
+      <Truss3d id="165" nodes="22 23" mat="1" crosssect="1"/>
+      <Truss3d nodes="22 47" mat="1" crosssect="1"/>
+      <Truss3d nodes="22 48" mat="1" crosssect="1"/>
+      <Truss3d nodes="47 23" mat="1" crosssect="1"/>
+      <Truss3d nodes="23 24" mat="1" crosssect="1"/>
+      <Truss3d id="170" nodes="23 48" mat="1" crosssect="1"/>
+      <Truss3d nodes="23 49" mat="1" crosssect="1"/>
+      <Truss3d nodes="48 24" mat="1" crosssect="1"/>
+      <Truss3d nodes="24 25" mat="1" crosssect="1"/>
+      <Truss3d nodes="24 49" mat="1" crosssect="1"/>
+      <Truss3d id="175" nodes="24 50" mat="1" crosssect="1"/>
+      <Truss3d nodes="49 25" mat="1" crosssect="1"/>
+      <Truss3d nodes="25 50" mat="1" crosssect="1"/>
+      <Truss3d nodes="26 27" mat="1" crosssect="1"/>
+      <Truss3d nodes="26 31" mat="1" crosssect="1"/>
+      <Truss3d id="180" nodes="26 32" mat="1" crosssect="1"/>
+      <Truss3d nodes="27 31" mat="1" crosssect="1"/>
+      <Truss3d nodes="26 51" mat="1" crosssect="1"/>
+      <Truss3d nodes="26 52" mat="1" crosssect="1"/>
+      <Truss3d nodes="51 27" mat="1" crosssect="1"/>
+      <Truss3d id="185" nodes="26 56" mat="1" crosssect="1"/>
+      <Truss3d nodes="51 31" mat="1" crosssect="1"/>
+      <Truss3d nodes="27 28" mat="1" crosssect="1"/>
+      <Truss3d nodes="27 32" mat="1" crosssect="1"/>
+      <Truss3d nodes="27 33" mat="1" crosssect="1"/>
+      <Truss3d id="190" nodes="28 32" mat="1" crosssect="1"/>
+      <Truss3d nodes="27 52" mat="1" crosssect="1"/>
+      <Truss3d nodes="27 53" mat="1" crosssect="1"/>
+      <Truss3d nodes="52 28" mat="1" crosssect="1"/>
+      <Truss3d nodes="27 57" mat="1" crosssect="1"/>
+      <Truss3d id="195" nodes="52 32" mat="1" crosssect="1"/>
+      <Truss3d nodes="28 29" mat="1" crosssect="1"/>
+      <Truss3d nodes="28 33" mat="1" crosssect="1"/>
+      <Truss3d nodes="28 34" mat="1" crosssect="1"/>
+      <Truss3d nodes="29 33" mat="1" crosssect="1"/>
+      <Truss3d id="200" nodes="28 53" mat="1" crosssect="1"/>
+      <Truss3d nodes="28 54" mat="1" crosssect="1"/>
+      <Truss3d nodes="53 29" mat="1" crosssect="1"/>
+      <Truss3d nodes="28 58" mat="1" crosssect="1"/>
+      <Truss3d nodes="53 33" mat="1" crosssect="1"/>
+      <Truss3d id="205" nodes="29 30" mat="1" crosssect="1"/>
+      <Truss3d nodes="29 34" mat="1" crosssect="1"/>
+      <Truss3d nodes="29 35" mat="1" crosssect="1"/>
+      <Truss3d nodes="30 34" mat="1" crosssect="1"/>
+      <Truss3d nodes="29 54" mat="1" crosssect="1"/>
+      <Truss3d id="210" nodes="29 55" mat="1" crosssect="1"/>
+      <Truss3d nodes="54 30" mat="1" crosssect="1"/>
+      <Truss3d nodes="29 59" mat="1" crosssect="1"/>
+      <Truss3d nodes="54 34" mat="1" crosssect="1"/>
+      <Truss3d nodes="30 35" mat="1" crosssect="1"/>
+      <Truss3d id="215" nodes="30 55" mat="1" crosssect="1"/>
+      <Truss3d nodes="30 60" mat="1" crosssect="1"/>
+      <Truss3d nodes="55 35" mat="1" crosssect="1"/>
+      <Truss3d nodes="31 32" mat="1" crosssect="1"/>
+      <Truss3d nodes="31 36" mat="1" crosssect="1"/>
+      <Truss3d id="220" nodes="31 37" mat="1" crosssect="1"/>
+      <Truss3d nodes="32 36" mat="1" crosssect="1"/>
+      <Truss3d nodes="31 56" mat="1" crosssect="1"/>
+      <Truss3d nodes="31 57" mat="1" crosssect="1"/>
+      <Truss3d nodes="56 32" mat="1" crosssect="1"/>
+      <Truss3d id="225" nodes="31 61" mat="1" crosssect="1"/>
+      <Truss3d nodes="56 36" mat="1" crosssect="1"/>
+      <Truss3d nodes="32 33" mat="1" crosssect="1"/>
+      <Truss3d nodes="32 37" mat="1" crosssect="1"/>
+      <Truss3d nodes="32 38" mat="1" crosssect="1"/>
+      <Truss3d id="230" nodes="33 37" mat="1" crosssect="1"/>
+      <Truss3d nodes="32 57" mat="1" crosssect="1"/>
+      <Truss3d nodes="32 58" mat="1" crosssect="1"/>
+      <Truss3d nodes="57 33" mat="1" crosssect="1"/>
+      <Truss3d nodes="32 62" mat="1" crosssect="1"/>
+      <Truss3d id="235" nodes="57 37" mat="1" crosssect="1"/>
+      <Truss3d nodes="33 34" mat="1" crosssect="1"/>
+      <Truss3d nodes="33 38" mat="1" crosssect="1"/>
+      <Truss3d nodes="33 39" mat="1" crosssect="1"/>
+      <Truss3d nodes="34 38" mat="1" crosssect="1"/>
+      <Truss3d id="240" nodes="33 58" mat="1" crosssect="1"/>
+      <Truss3d nodes="33 59" mat="1" crosssect="1"/>
+      <Truss3d nodes="58 34" mat="1" crosssect="1"/>
+      <Truss3d nodes="33 63" mat="1" crosssect="1"/>
+      <Truss3d nodes="58 38" mat="1" crosssect="1"/>
+      <Truss3d id="245" nodes="34 35" mat="1" crosssect="1"/>
+      <Truss3d nodes="34 39" mat="1" crosssect="1"/>
+      <Truss3d nodes="34 40" mat="1" crosssect="1"/>
+      <Truss3d nodes="35 39" mat="1" crosssect="1"/>
+      <Truss3d nodes="34 59" mat="1" crosssect="1"/>
+      <Truss3d id="250" nodes="34 60" mat="1" crosssect="1"/>
+      <Truss3d nodes="59 35" mat="1" crosssect="1"/>
+      <Truss3d nodes="34 64" mat="1" crosssect="1"/>
+      <Truss3d nodes="59 39" mat="1" crosssect="1"/>
+      <Truss3d nodes="35 40" mat="1" crosssect="1"/>
+      <Truss3d id="255" nodes="35 60" mat="1" crosssect="1"/>
+      <Truss3d nodes="35 65" mat="1" crosssect="1"/>
+      <Truss3d nodes="60 40" mat="1" crosssect="1"/>
+      <Truss3d nodes="36 37" mat="1" crosssect="1"/>
+      <Truss3d nodes="36 41" mat="1" crosssect="1"/>
+      <Truss3d id="260" nodes="36 42" mat="1" crosssect="1"/>
+      <Truss3d nodes="37 41" mat="1" crosssect="1"/>
+      <Truss3d nodes="36 61" mat="1" crosssect="1"/>
+      <Truss3d nodes="36 62" mat="1" crosssect="1"/>
+      <Truss3d nodes="61 37" mat="1" crosssect="1"/>
+      <Truss3d id="265" nodes="36 66" mat="1" crosssect="1"/>
+      <Truss3d nodes="61 41" mat="1" crosssect="1"/>
+      <Truss3d nodes="37 38" mat="1" crosssect="1"/>
+      <Truss3d nodes="37 42" mat="1" crosssect="1"/>
+      <Truss3d nodes="37 43" mat="1" crosssect="1"/>
+      <Truss3d id="270" nodes="38 42" mat="1" crosssect="1"/>
+      <Truss3d nodes="37 62" mat="1" crosssect="1"/>
+      <Truss3d nodes="37 63" mat="1" crosssect="1"/>
+      <Truss3d nodes="62 38" mat="1" crosssect="1"/>
+      <Truss3d nodes="37 67" mat="1" crosssect="1"/>
+      <Truss3d id="275" nodes="62 42" mat="1" crosssect="1"/>
+      <Truss3d nodes="38 39" mat="1" crosssect="1"/>
+      <Truss3d nodes="38 43" mat="1" crosssect="1"/>
+      <Truss3d nodes="38 44" mat="1" crosssect="1"/>
+      <Truss3d nodes="39 43" mat="1" crosssect="1"/>
+      <Truss3d id="280" nodes="38 63" mat="1" crosssect="1"/>
+      <Truss3d nodes="38 64" mat="1" crosssect="1"/>
+      <Truss3d nodes="63 39" mat="1" crosssect="1"/>
+      <Truss3d nodes="38 68" mat="1" crosssect="1"/>
+      <Truss3d nodes="63 43" mat="1" crosssect="1"/>
+      <Truss3d id="285" nodes="39 40" mat="1" crosssect="1"/>
+      <Truss3d nodes="39 44" mat="1" crosssect="1"/>
+      <Truss3d nodes="39 45" mat="1" crosssect="1"/>
+      <Truss3d nodes="40 44" mat="1" crosssect="1"/>
+      <Truss3d nodes="39 64" mat="1" crosssect="1"/>
+      <Truss3d id="290" nodes="39 65" mat="1" crosssect="1"/>
+      <Truss3d nodes="64 40" mat="1" crosssect="1"/>
+      <Truss3d nodes="39 69" mat="1" crosssect="1"/>
+      <Truss3d nodes="64 44" mat="1" crosssect="1"/>
+      <Truss3d nodes="40 45" mat="1" crosssect="1"/>
+      <Truss3d id="295" nodes="40 65" mat="1" crosssect="1"/>
+      <Truss3d nodes="40 70" mat="1" crosssect="1"/>
+      <Truss3d nodes="65 45" mat="1" crosssect="1"/>
+      <Truss3d nodes="41 42" mat="1" crosssect="1"/>
+      <Truss3d nodes="41 46" mat="1" crosssect="1"/>
+      <Truss3d id="300" nodes="41 47" mat="1" crosssect="1"/>
+      <Truss3d nodes="42 46" mat="1" crosssect="1"/>
+      <Truss3d nodes="41 66" mat="1" crosssect="1"/>
+      <Truss3d nodes="41 67" mat="1" crosssect="1"/>
+      <Truss3d nodes="66 42" mat="1" crosssect="1"/>
+      <Truss3d id="305" nodes="41 71" mat="1" crosssect="1"/>
+      <Truss3d nodes="66 46" mat="1" crosssect="1"/>
+      <Truss3d nodes="42 43" mat="1" crosssect="1"/>
+      <Truss3d nodes="42 47" mat="1" crosssect="1"/>
+      <Truss3d nodes="42 48" mat="1" crosssect="1"/>
+      <Truss3d id="310" nodes="43 47" mat="1" crosssect="1"/>
+      <Truss3d nodes="42 67" mat="1" crosssect="1"/>
+      <Truss3d nodes="42 68" mat="1" crosssect="1"/>
+      <Truss3d nodes="67 43" mat="1" crosssect="1"/>
+      <Truss3d nodes="42 72" mat="1" crosssect="1"/>
+      <Truss3d id="315" nodes="67 47" mat="1" crosssect="1"/>
+      <Truss3d nodes="43 44" mat="1" crosssect="1"/>
+      <Truss3d nodes="43 48" mat="1" crosssect="1"/>
+      <Truss3d nodes="43 49" mat="1" crosssect="1"/>
+      <Truss3d nodes="44 48" mat="1" crosssect="1"/>
+      <Truss3d id="320" nodes="43 68" mat="1" crosssect="1"/>
+      <Truss3d nodes="43 69" mat="1" crosssect="1"/>
+      <Truss3d nodes="68 44" mat="1" crosssect="1"/>
+      <Truss3d nodes="43 73" mat="1" crosssect="1"/>
+      <Truss3d nodes="68 48" mat="1" crosssect="1"/>
+      <Truss3d id="325" nodes="44 45" mat="1" crosssect="1"/>
+      <Truss3d nodes="44 49" mat="1" crosssect="1"/>
+      <Truss3d nodes="44 50" mat="1" crosssect="1"/>
+      <Truss3d nodes="45 49" mat="1" crosssect="1"/>
+      <Truss3d nodes="44 69" mat="1" crosssect="1"/>
+      <Truss3d id="330" nodes="44 70" mat="1" crosssect="1"/>
+      <Truss3d nodes="69 45" mat="1" crosssect="1"/>
+      <Truss3d nodes="44 74" mat="1" crosssect="1"/>
+      <Truss3d nodes="69 49" mat="1" crosssect="1"/>
+      <Truss3d nodes="45 50" mat="1" crosssect="1"/>
+      <Truss3d id="335" nodes="45 70" mat="1" crosssect="1"/>
+      <Truss3d nodes="45 75" mat="1" crosssect="1"/>
+      <Truss3d nodes="70 50" mat="1" crosssect="1"/>
+      <Truss3d nodes="46 47" mat="1" crosssect="1"/>
+      <Truss3d nodes="46 71" mat="1" crosssect="1"/>
+      <Truss3d id="340" nodes="46 72" mat="1" crosssect="1"/>
+      <Truss3d nodes="71 47" mat="1" crosssect="1"/>
+      <Truss3d nodes="47 48" mat="1" crosssect="1"/>
+      <Truss3d nodes="47 72" mat="1" crosssect="1"/>
+      <Truss3d nodes="47 73" mat="1" crosssect="1"/>
+      <Truss3d id="345" nodes="72 48" mat="1" crosssect="1"/>
+      <Truss3d nodes="48 49" mat="1" crosssect="1"/>
+      <Truss3d nodes="48 73" mat="1" crosssect="1"/>
+      <Truss3d nodes="48 74" mat="1" crosssect="1"/>
+      <Truss3d nodes="73 49" mat="1" crosssect="1"/>
+      <Truss3d id="350" nodes="49 50" mat="1" crosssect="1"/>
+      <Truss3d nodes="49 74" mat="1" crosssect="1"/>
+      <Truss3d nodes="49 75" mat="1" crosssect="1"/>
+      <Truss3d nodes="74 50" mat="1" crosssect="1"/>
+      <Truss3d nodes="50 75" mat="1" crosssect="1"/>
+      <Truss3d id="355" nodes="51 52" mat="1" crosssect="1"/>
+      <Truss3d nodes="51 56" mat="1" crosssect="1"/>
+      <Truss3d nodes="51 57" mat="1" crosssect="1"/>
+      <Truss3d nodes="52 56" mat="1" crosssect="1"/>
+      <Truss3d nodes="51 76" mat="1" crosssect="1"/>
+      <Truss3d id="360" nodes="51 77" mat="1" crosssect="1"/>
+      <Truss3d nodes="76 52" mat="1" crosssect="1"/>
+      <Truss3d nodes="51 81" mat="1" crosssect="1"/>
+      <Truss3d nodes="76 56" mat="1" crosssect="1"/>
+      <Truss3d nodes="52 53" mat="1" crosssect="1"/>
+      <Truss3d id="365" nodes="52 57" mat="1" crosssect="1"/>
+      <Truss3d nodes="52 58" mat="1" crosssect="1"/>
+      <Truss3d nodes="53 57" mat="1" crosssect="1"/>
+      <Truss3d nodes="52 77" mat="1" crosssect="1"/>
+      <Truss3d nodes="52 78" mat="1" crosssect="1"/>
+      <Truss3d id="370" nodes="77 53" mat="1" crosssect="1"/>
+      <Truss3d nodes="52 82" mat="1" crosssect="1"/>
+      <Truss3d nodes="77 57" mat="1" crosssect="1"/>
+      <Truss3d nodes="53 54" mat="1" crosssect="1"/>
+      <Truss3d nodes="53 58" mat="1" crosssect="1"/>
+      <Truss3d id="375" nodes="53 59" mat="1" crosssect="1"/>
+      <Truss3d nodes="54 58" mat="1" crosssect="1"/>
+      <Truss3d nodes="53 78" mat="1" crosssect="1"/>
+      <Truss3d nodes="53 79" mat="1" crosssect="1"/>
+      <Truss3d nodes="78 54" mat="1" crosssect="1"/>
+      <Truss3d id="380" nodes="53 83" mat="1" crosssect="1"/>
+      <Truss3d nodes="78 58" mat="1" crosssect="1"/>
+      <Truss3d nodes="54 55" mat="1" crosssect="1"/>
+      <Truss3d nodes="54 59" mat="1" crosssect="1"/>
+      <Truss3d nodes="54 60" mat="1" crosssect="1"/>
+      <Truss3d id="385" nodes="55 59" mat="1" crosssect="1"/>
+      <Truss3d nodes="54 79" mat="1" crosssect="1"/>
+      <Truss3d nodes="54 80" mat="1" crosssect="1"/>
+      <Truss3d nodes="79 55" mat="1" crosssect="1"/>
+      <Truss3d nodes="54 84" mat="1" crosssect="1"/>
+      <Truss3d id="390" nodes="79 59" mat="1" crosssect="1"/>
+      <Truss3d nodes="55 60" mat="1" crosssect="1"/>
+      <Truss3d nodes="55 80" mat="1" crosssect="1"/>
+      <Truss3d nodes="55 85" mat="1" crosssect="1"/>
+      <Truss3d nodes="80 60" mat="1" crosssect="1"/>
+      <Truss3d id="395" nodes="56 57" mat="1" crosssect="1"/>
+      <Truss3d nodes="56 61" mat="1" crosssect="1"/>
+      <Truss3d nodes="56 62" mat="1" crosssect="1"/>
+      <Truss3d nodes="57 61" mat="1" crosssect="1"/>
+      <Truss3d nodes="56 81" mat="1" crosssect="1"/>
+      <Truss3d id="400" nodes="56 82" mat="1" crosssect="1"/>
+      <Truss3d nodes="81 57" mat="1" crosssect="1"/>
+      <Truss3d nodes="56 86" mat="1" crosssect="1"/>
+      <Truss3d nodes="81 61" mat="1" crosssect="1"/>
+      <Truss3d nodes="57 58" mat="1" crosssect="1"/>
+      <Truss3d id="405" nodes="57 62" mat="1" crosssect="1"/>
+      <Truss3d nodes="57 63" mat="1" crosssect="1"/>
+      <Truss3d nodes="58 62" mat="1" crosssect="1"/>
+      <Truss3d nodes="57 82" mat="1" crosssect="1"/>
+      <Truss3d nodes="57 83" mat="1" crosssect="1"/>
+      <Truss3d id="410" nodes="82 58" mat="1" crosssect="1"/>
+      <Truss3d nodes="57 87" mat="1" crosssect="1"/>
+      <Truss3d nodes="82 62" mat="1" crosssect="1"/>
+      <Truss3d nodes="58 59" mat="1" crosssect="1"/>
+      <Truss3d nodes="58 63" mat="1" crosssect="1"/>
+      <Truss3d id="415" nodes="58 64" mat="1" crosssect="1"/>
+      <Truss3d nodes="59 63" mat="1" crosssect="1"/>
+      <Truss3d nodes="58 83" mat="1" crosssect="1"/>
+      <Truss3d nodes="58 84" mat="1" crosssect="1"/>
+      <Truss3d nodes="83 59" mat="1" crosssect="1"/>
+      <Truss3d id="420" nodes="58 88" mat="1" crosssect="1"/>
+      <Truss3d nodes="83 63" mat="1" crosssect="1"/>
+      <Truss3d nodes="59 60" mat="1" crosssect="1"/>
+      <Truss3d nodes="59 64" mat="1" crosssect="1"/>
+      <Truss3d nodes="59 65" mat="1" crosssect="1"/>
+      <Truss3d id="425" nodes="60 64" mat="1" crosssect="1"/>
+      <Truss3d nodes="59 84" mat="1" crosssect="1"/>
+      <Truss3d nodes="59 85" mat="1" crosssect="1"/>
+      <Truss3d nodes="84 60" mat="1" crosssect="1"/>
+      <Truss3d nodes="59 89" mat="1" crosssect="1"/>
+      <Truss3d id="430" nodes="84 64" mat="1" crosssect="1"/>
+      <Truss3d nodes="60 65" mat="1" crosssect="1"/>
+      <Truss3d nodes="60 85" mat="1" crosssect="1"/>
+      <Truss3d nodes="60 90" mat="1" crosssect="1"/>
+      <Truss3d nodes="85 65" mat="1" crosssect="1"/>
+      <Truss3d id="435" nodes="61 62" mat="1" crosssect="1"/>
+      <Truss3d nodes="61 66" mat="1" crosssect="1"/>
+      <Truss3d nodes="61 67" mat="1" crosssect="1"/>
+      <Truss3d nodes="62 66" mat="1" crosssect="1"/>
+      <Truss3d nodes="61 86" mat="1" crosssect="1"/>
+      <Truss3d id="440" nodes="61 87" mat="1" crosssect="1"/>
+      <Truss3d nodes="86 62" mat="1" crosssect="1"/>
+      <Truss3d nodes="61 91" mat="1" crosssect="1"/>
+      <Truss3d nodes="86 66" mat="1" crosssect="1"/>
+      <Truss3d nodes="62 63" mat="1" crosssect="1"/>
+      <Truss3d id="445" nodes="62 67" mat="1" crosssect="1"/>
+      <Truss3d nodes="62 68" mat="1" crosssect="1"/>
+      <Truss3d nodes="63 67" mat="1" crosssect="1"/>
+      <Truss3d nodes="62 87" mat="1" crosssect="1"/>
+      <Truss3d nodes="62 88" mat="1" crosssect="1"/>
+      <Truss3d id="450" nodes="87 63" mat="1" crosssect="1"/>
+      <Truss3d nodes="62 92" mat="1" crosssect="1"/>
+      <Truss3d nodes="87 67" mat="1" crosssect="1"/>
+      <Truss3d nodes="63 64" mat="1" crosssect="1"/>
+      <Truss3d nodes="63 68" mat="1" crosssect="1"/>
+      <Truss3d id="455" nodes="63 69" mat="1" crosssect="1"/>
+      <Truss3d nodes="64 68" mat="1" crosssect="1"/>
+      <Truss3d nodes="63 88" mat="1" crosssect="1"/>
+      <Truss3d nodes="63 89" mat="1" crosssect="1"/>
+      <Truss3d nodes="88 64" mat="1" crosssect="1"/>
+      <Truss3d id="460" nodes="63 93" mat="1" crosssect="1"/>
+      <Truss3d nodes="88 68" mat="1" crosssect="1"/>
+      <Truss3d nodes="64 65" mat="1" crosssect="1"/>
+      <Truss3d nodes="64 69" mat="1" crosssect="1"/>
+      <Truss3d nodes="64 70" mat="1" crosssect="1"/>
+      <Truss3d id="465" nodes="65 69" mat="1" crosssect="1"/>
+      <Truss3d nodes="64 89" mat="1" crosssect="1"/>
+      <Truss3d nodes="64 90" mat="1" crosssect="1"/>
+      <Truss3d nodes="89 65" mat="1" crosssect="1"/>
+      <Truss3d nodes="64 94" mat="1" crosssect="1"/>
+      <Truss3d id="470" nodes="89 69" mat="1" crosssect="1"/>
+      <Truss3d nodes="65 70" mat="1" crosssect="1"/>
+      <Truss3d nodes="65 90" mat="1" crosssect="1"/>
+      <Truss3d nodes="65 95" mat="1" crosssect="1"/>
+      <Truss3d nodes="90 70" mat="1" crosssect="1"/>
+      <Truss3d id="475" nodes="66 67" mat="1" crosssect="1"/>
+      <Truss3d nodes="66 71" mat="1" crosssect="1"/>
+      <Truss3d nodes="66 72" mat="1" crosssect="1"/>
+      <Truss3d nodes="67 71" mat="1" crosssect="1"/>
+      <Truss3d nodes="66 91" mat="1" crosssect="1"/>
+      <Truss3d id="480" nodes="66 92" mat="1" crosssect="1"/>
+      <Truss3d nodes="91 67" mat="1" crosssect="1"/>
+      <Truss3d nodes="66 96" mat="1" crosssect="1"/>
+      <Truss3d nodes="91 71" mat="1" crosssect="1"/>
+      <Truss3d nodes="67 68" mat="1" crosssect="1"/>
+      <Truss3d id="485" nodes="67 72" mat="1" crosssect="1"/>
+      <Truss3d nodes="67 73" mat="1" crosssect="1"/>
+      <Truss3d nodes="68 72" mat="1" crosssect="1"/>
+      <Truss3d nodes="67 92" mat="1" crosssect="1"/>
+      <Truss3d nodes="67 93" mat="1" crosssect="1"/>
+      <Truss3d id="490" nodes="92 68" mat="1" crosssect="1"/>
+      <Truss3d nodes="67 97" mat="1" crosssect="1"/>
+      <Truss3d nodes="92 72" mat="1" crosssect="1"/>
+      <Truss3d nodes="68 69" mat="1" crosssect="1"/>
+      <Truss3d nodes="68 73" mat="1" crosssect="1"/>
+      <Truss3d id="495" nodes="68 74" mat="1" crosssect="1"/>
+      <Truss3d nodes="69 73" mat="1" crosssect="1"/>
+      <Truss3d nodes="68 93" mat="1" crosssect="1"/>
+      <Truss3d nodes="68 94" mat="1" crosssect="1"/>
+      <Truss3d nodes="93 69" mat="1" crosssect="1"/>
+      <Truss3d id="500" nodes="68 98" mat="1" crosssect="1"/>
+      <Truss3d nodes="93 73" mat="1" crosssect="1"/>
+      <Truss3d nodes="69 70" mat="1" crosssect="1"/>
+      <Truss3d nodes="69 74" mat="1" crosssect="1"/>
+      <Truss3d nodes="69 75" mat="1" crosssect="1"/>
+      <Truss3d id="505" nodes="70 74" mat="1" crosssect="1"/>
+      <Truss3d nodes="69 94" mat="1" crosssect="1"/>
+      <Truss3d nodes="69 95" mat="1" crosssect="1"/>
+      <Truss3d nodes="94 70" mat="1" crosssect="1"/>
+      <Truss3d nodes="69 99" mat="1" crosssect="1"/>
+      <Truss3d id="510" nodes="94 74" mat="1" crosssect="1"/>
+      <Truss3d nodes="70 75" mat="1" crosssect="1"/>
+      <Truss3d nodes="70 95" mat="1" crosssect="1"/>
+      <Truss3d nodes="70 100" mat="1" crosssect="1"/>
+      <Truss3d nodes="95 75" mat="1" crosssect="1"/>
+      <Truss3d id="515" nodes="71 72" mat="1" crosssect="1"/>
+      <Truss3d nodes="71 96" mat="1" crosssect="1"/>
+      <Truss3d nodes="71 97" mat="1" crosssect="1"/>
+      <Truss3d nodes="96 72" mat="1" crosssect="1"/>
+      <Truss3d nodes="72 73" mat="1" crosssect="1"/>
+      <Truss3d id="520" nodes="72 97" mat="1" crosssect="1"/>
+      <Truss3d nodes="72 98" mat="1" crosssect="1"/>
+      <Truss3d nodes="97 73" mat="1" crosssect="1"/>
+      <Truss3d nodes="73 74" mat="1" crosssect="1"/>
+      <Truss3d nodes="73 98" mat="1" crosssect="1"/>
+      <Truss3d id="525" nodes="73 99" mat="1" crosssect="1"/>
+      <Truss3d nodes="98 74" mat="1" crosssect="1"/>
+      <Truss3d nodes="74 75" mat="1" crosssect="1"/>
+      <Truss3d nodes="74 99" mat="1" crosssect="1"/>
+      <Truss3d nodes="74 100" mat="1" crosssect="1"/>
+      <Truss3d id="530" nodes="99 75" mat="1" crosssect="1"/>
+      <Truss3d nodes="75 100" mat="1" crosssect="1"/>
+      <Truss3d nodes="76 77" mat="1" crosssect="1"/>
+      <Truss3d nodes="76 81" mat="1" crosssect="1"/>
+      <Truss3d nodes="76 82" mat="1" crosssect="1"/>
+      <Truss3d id="535" nodes="77 81" mat="1" crosssect="1"/>
+      <Truss3d nodes="76 101" mat="1" crosssect="1"/>
+      <Truss3d nodes="76 102" mat="1" crosssect="1"/>
+      <Truss3d nodes="101 77" mat="1" crosssect="1"/>
+      <Truss3d nodes="76 106" mat="1" crosssect="1"/>
+      <Truss3d id="540" nodes="101 81" mat="1" crosssect="1"/>
+      <Truss3d nodes="77 78" mat="1" crosssect="1"/>
+      <Truss3d nodes="77 82" mat="1" crosssect="1"/>
+      <Truss3d nodes="77 83" mat="1" crosssect="1"/>
+      <Truss3d nodes="78 82" mat="1" crosssect="1"/>
+      <Truss3d id="545" nodes="77 102" mat="1" crosssect="1"/>
+      <Truss3d nodes="77 103" mat="1" crosssect="1"/>
+      <Truss3d nodes="102 78" mat="1" crosssect="1"/>
+      <Truss3d nodes="77 107" mat="1" crosssect="1"/>
+      <Truss3d nodes="102 82" mat="1" crosssect="1"/>
+      <Truss3d id="550" nodes="78 79" mat="1" crosssect="1"/>
+      <Truss3d nodes="78 83" mat="1" crosssect="1"/>
+      <Truss3d nodes="78 84" mat="1" crosssect="1"/>
+      <Truss3d nodes="79 83" mat="1" crosssect="1"/>
+      <Truss3d nodes="78 103" mat="1" crosssect="1"/>
+      <Truss3d id="555" nodes="78 104" mat="1" crosssect="1"/>
+      <Truss3d nodes="103 79" mat="1" crosssect="1"/>
+      <Truss3d nodes="78 108" mat="1" crosssect="1"/>
+      <Truss3d nodes="103 83" mat="1" crosssect="1"/>
+      <Truss3d nodes="79 80" mat="1" crosssect="1"/>
+      <Truss3d id="560" nodes="79 84" mat="1" crosssect="1"/>
+      <Truss3d nodes="79 85" mat="1" crosssect="1"/>
+      <Truss3d nodes="80 84" mat="1" crosssect="1"/>
+      <Truss3d nodes="79 104" mat="1" crosssect="1"/>
+      <Truss3d nodes="79 105" mat="1" crosssect="1"/>
+      <Truss3d id="565" nodes="104 80" mat="1" crosssect="1"/>
+      <Truss3d nodes="79 109" mat="1" crosssect="1"/>
+      <Truss3d nodes="104 84" mat="1" crosssect="1"/>
+      <Truss3d nodes="80 85" mat="1" crosssect="1"/>
+      <Truss3d nodes="80 105" mat="1" crosssect="1"/>
+      <Truss3d id="570" nodes="80 110" mat="1" crosssect="1"/>
+      <Truss3d nodes="105 85" mat="1" crosssect="1"/>
+      <Truss3d nodes="81 82" mat="1" crosssect="1"/>
+      <Truss3d nodes="81 86" mat="1" crosssect="1"/>
+      <Truss3d nodes="81 87" mat="1" crosssect="1"/>
+      <Truss3d id="575" nodes="82 86" mat="1" crosssect="1"/>
+      <Truss3d nodes="81 106" mat="1" crosssect="1"/>
+      <Truss3d nodes="81 107" mat="1" crosssect="1"/>
+      <Truss3d nodes="106 82" mat="1" crosssect="1"/>
+      <Truss3d nodes="81 111" mat="1" crosssect="1"/>
+      <Truss3d id="580" nodes="106 86" mat="1" crosssect="1"/>
+      <Truss3d nodes="82 83" mat="1" crosssect="1"/>
+      <Truss3d nodes="82 87" mat="1" crosssect="1"/>
+      <Truss3d nodes="82 88" mat="1" crosssect="1"/>
+      <Truss3d nodes="83 87" mat="1" crosssect="1"/>
+      <Truss3d id="585" nodes="82 107" mat="1" crosssect="1"/>
+      <Truss3d nodes="82 108" mat="1" crosssect="1"/>
+      <Truss3d nodes="107 83" mat="1" crosssect="1"/>
+      <Truss3d nodes="82 112" mat="1" crosssect="1"/>
+      <Truss3d nodes="107 87" mat="1" crosssect="1"/>
+      <Truss3d id="590" nodes="83 84" mat="1" crosssect="1"/>
+      <Truss3d nodes="83 88" mat="1" crosssect="1"/>
+      <Truss3d nodes="83 89" mat="1" crosssect="1"/>
+      <Truss3d nodes="84 88" mat="1" crosssect="1"/>
+      <Truss3d nodes="83 108" mat="1" crosssect="1"/>
+      <Truss3d id="595" nodes="83 109" mat="1" crosssect="1"/>
+      <Truss3d nodes="108 84" mat="1" crosssect="1"/>
+      <Truss3d nodes="83 113" mat="1" crosssect="1"/>
+      <Truss3d nodes="108 88" mat="1" crosssect="1"/>
+      <Truss3d nodes="84 85" mat="1" crosssect="1"/>
+      <Truss3d id="600" nodes="84 89" mat="1" crosssect="1"/>
+      <Truss3d nodes="84 90" mat="1" crosssect="1"/>
+      <Truss3d nodes="85 89" mat="1" crosssect="1"/>
+      <Truss3d nodes="84 109" mat="1" crosssect="1"/>
+      <Truss3d nodes="84 110" mat="1" crosssect="1"/>
+      <Truss3d id="605" nodes="109 85" mat="1" crosssect="1"/>
+      <Truss3d nodes="84 114" mat="1" crosssect="1"/>
+      <Truss3d nodes="109 89" mat="1" crosssect="1"/>
+      <Truss3d nodes="85 90" mat="1" crosssect="1"/>
+      <Truss3d nodes="85 110" mat="1" crosssect="1"/>
+      <Truss3d id="610" nodes="85 115" mat="1" crosssect="1"/>
+      <Truss3d nodes="110 90" mat="1" crosssect="1"/>
+      <Truss3d nodes="86 87" mat="1" crosssect="1"/>
+      <Truss3d nodes="86 91" mat="1" crosssect="1"/>
+      <Truss3d nodes="86 92" mat="1" crosssect="1"/>
+      <Truss3d id="615" nodes="87 91" mat="1" crosssect="1"/>
+      <Truss3d nodes="86 111" mat="1" crosssect="1"/>
+      <Truss3d nodes="86 112" mat="1" crosssect="1"/>
+      <Truss3d nodes="111 87" mat="1" crosssect="1"/>
+      <Truss3d nodes="86 116" mat="1" crosssect="1"/>
+      <Truss3d id="620" nodes="111 91" mat="1" crosssect="1"/>
+      <Truss3d nodes="87 88" mat="1" crosssect="1"/>
+      <Truss3d nodes="87 92" mat="1" crosssect="1"/>
+      <Truss3d nodes="87 93" mat="1" crosssect="1"/>
+      <Truss3d nodes="88 92" mat="1" crosssect="1"/>
+      <Truss3d id="625" nodes="87 112" mat="1" crosssect="1"/>
+      <Truss3d nodes="87 113" mat="1" crosssect="1"/>
+      <Truss3d nodes="112 88" mat="1" crosssect="1"/>
+      <Truss3d nodes="87 117" mat="1" crosssect="1"/>
+      <Truss3d nodes="112 92" mat="1" crosssect="1"/>
+      <Truss3d id="630" nodes="88 89" mat="1" crosssect="1"/>
+      <Truss3d nodes="88 93" mat="1" crosssect="1"/>
+      <Truss3d nodes="88 94" mat="1" crosssect="1"/>
+      <Truss3d nodes="89 93" mat="1" crosssect="1"/>
+      <Truss3d nodes="88 113" mat="1" crosssect="1"/>
+      <Truss3d id="635" nodes="88 114" mat="1" crosssect="1"/>
+      <Truss3d nodes="113 89" mat="1" crosssect="1"/>
+      <Truss3d nodes="88 118" mat="1" crosssect="1"/>
+      <Truss3d nodes="113 93" mat="1" crosssect="1"/>
+      <Truss3d nodes="89 90" mat="1" crosssect="1"/>
+      <Truss3d id="640" nodes="89 94" mat="1" crosssect="1"/>
+      <Truss3d nodes="89 95" mat="1" crosssect="1"/>
+      <Truss3d nodes="90 94" mat="1" crosssect="1"/>
+      <Truss3d nodes="89 114" mat="1" crosssect="1"/>
+      <Truss3d nodes="89 115" mat="1" crosssect="1"/>
+      <Truss3d id="645" nodes="114 90" mat="1" crosssect="1"/>
+      <Truss3d nodes="89 119" mat="1" crosssect="1"/>
+      <Truss3d nodes="114 94" mat="1" crosssect="1"/>
+      <Truss3d nodes="90 95" mat="1" crosssect="1"/>
+      <Truss3d nodes="90 115" mat="1" crosssect="1"/>
+      <Truss3d id="650" nodes="90 120" mat="1" crosssect="1"/>
+      <Truss3d nodes="115 95" mat="1" crosssect="1"/>
+      <Truss3d nodes="91 92" mat="1" crosssect="1"/>
+      <Truss3d nodes="91 96" mat="1" crosssect="1"/>
+      <Truss3d nodes="91 97" mat="1" crosssect="1"/>
+      <Truss3d id="655" nodes="92 96" mat="1" crosssect="1"/>
+      <Truss3d nodes="91 116" mat="1" crosssect="1"/>
+      <Truss3d nodes="91 117" mat="1" crosssect="1"/>
+      <Truss3d nodes="116 92" mat="1" crosssect="1"/>
+      <Truss3d nodes="91 121" mat="1" crosssect="1"/>
+      <Truss3d id="660" nodes="116 96" mat="1" crosssect="1"/>
+      <Truss3d nodes="92 93" mat="1" crosssect="1"/>
+      <Truss3d nodes="92 97" mat="1" crosssect="1"/>
+      <Truss3d nodes="92 98" mat="1" crosssect="1"/>
+      <Truss3d nodes="93 97" mat="1" crosssect="1"/>
+      <Truss3d id="665" nodes="92 117" mat="1" crosssect="1"/>
+      <Truss3d nodes="92 118" mat="1" crosssect="1"/>
+      <Truss3d nodes="117 93" mat="1" crosssect="1"/>
+      <Truss3d nodes="92 122" mat="1" crosssect="1"/>
+      <Truss3d nodes="117 97" mat="1" crosssect="1"/>
+      <Truss3d id="670" nodes="93 94" mat="1" crosssect="1"/>
+      <Truss3d nodes="93 98" mat="1" crosssect="1"/>
+      <Truss3d nodes="93 99" mat="1" crosssect="1"/>
+      <Truss3d nodes="94 98" mat="1" crosssect="1"/>
+      <Truss3d nodes="93 118" mat="1" crosssect="1"/>
+      <Truss3d id="675" nodes="93 119" mat="1" crosssect="1"/>
+      <Truss3d nodes="118 94" mat="1" crosssect="1"/>
+      <Truss3d nodes="93 123" mat="1" crosssect="1"/>
+      <Truss3d nodes="118 98" mat="1" crosssect="1"/>
+      <Truss3d nodes="94 95" mat="1" crosssect="1"/>
+      <Truss3d id="680" nodes="94 99" mat="1" crosssect="1"/>
+      <Truss3d nodes="94 100" mat="1" crosssect="1"/>
+      <Truss3d nodes="95 99" mat="1" crosssect="1"/>
+      <Truss3d nodes="94 119" mat="1" crosssect="1"/>
+      <Truss3d nodes="94 120" mat="1" crosssect="1"/>
+      <Truss3d id="685" nodes="119 95" mat="1" crosssect="1"/>
+      <Truss3d nodes="94 124" mat="1" crosssect="1"/>
+      <Truss3d nodes="119 99" mat="1" crosssect="1"/>
+      <Truss3d nodes="95 100" mat="1" crosssect="1"/>
+      <Truss3d nodes="95 120" mat="1" crosssect="1"/>
+      <Truss3d id="690" nodes="95 125" mat="1" crosssect="1"/>
+      <Truss3d nodes="120 100" mat="1" crosssect="1"/>
+      <Truss3d nodes="96 97" mat="1" crosssect="1"/>
+      <Truss3d nodes="96 121" mat="1" crosssect="1"/>
+      <Truss3d nodes="96 122" mat="1" crosssect="1"/>
+      <Truss3d id="695" nodes="121 97" mat="1" crosssect="1"/>
+      <Truss3d nodes="97 98" mat="1" crosssect="1"/>
+      <Truss3d nodes="97 122" mat="1" crosssect="1"/>
+      <Truss3d nodes="97 123" mat="1" crosssect="1"/>
+      <Truss3d nodes="122 98" mat="1" crosssect="1"/>
+      <Truss3d id="700" nodes="98 99" mat="1" crosssect="1"/>
+      <Truss3d nodes="98 123" mat="1" crosssect="1"/>
+      <Truss3d nodes="98 124" mat="1" crosssect="1"/>
+      <Truss3d nodes="123 99" mat="1" crosssect="1"/>
+      <Truss3d nodes="99 100" mat="1" crosssect="1"/>
+      <Truss3d id="705" nodes="99 124" mat="1" crosssect="1"/>
+      <Truss3d nodes="99 125" mat="1" crosssect="1"/>
+      <Truss3d nodes="124 100" mat="1" crosssect="1"/>
+      <Truss3d nodes="100 125" mat="1" crosssect="1"/>
+      <Truss3d nodes="101 102" mat="1" crosssect="1"/>
+      <Truss3d id="710" nodes="101 106" mat="1" crosssect="1"/>
+      <Truss3d nodes="101 107" mat="1" crosssect="1"/>
+      <Truss3d nodes="102 106" mat="1" crosssect="1"/>
+      <Truss3d nodes="102 103" mat="1" crosssect="1"/>
+      <Truss3d nodes="102 107" mat="1" crosssect="1"/>
+      <Truss3d id="715" nodes="102 108" mat="1" crosssect="1"/>
+      <Truss3d nodes="103 107" mat="1" crosssect="1"/>
+      <Truss3d nodes="103 104" mat="1" crosssect="1"/>
+      <Truss3d nodes="103 108" mat="1" crosssect="1"/>
+      <Truss3d nodes="103 109" mat="1" crosssect="1"/>
+      <Truss3d id="720" nodes="104 108" mat="1" crosssect="1"/>
+      <Truss3d nodes="104 105" mat="1" crosssect="1"/>
+      <Truss3d nodes="104 109" mat="1" crosssect="1"/>
+      <Truss3d nodes="104 110" mat="1" crosssect="1"/>
+      <Truss3d nodes="105 109" mat="1" crosssect="1"/>
+      <Truss3d id="725" nodes="105 110" mat="1" crosssect="1"/>
+      <Truss3d nodes="106 107" mat="1" crosssect="1"/>
+      <Truss3d nodes="106 111" mat="1" crosssect="1"/>
+      <Truss3d nodes="106 112" mat="1" crosssect="1"/>
+      <Truss3d nodes="107 111" mat="1" crosssect="1"/>
+      <Truss3d id="730" nodes="107 108" mat="1" crosssect="1"/>
+      <Truss3d nodes="107 112" mat="1" crosssect="1"/>
+      <Truss3d nodes="107 113" mat="1" crosssect="1"/>
+      <Truss3d nodes="108 112" mat="1" crosssect="1"/>
+      <Truss3d nodes="108 109" mat="1" crosssect="1"/>
+      <Truss3d id="735" nodes="108 113" mat="1" crosssect="1"/>
+      <Truss3d nodes="108 114" mat="1" crosssect="1"/>
+      <Truss3d nodes="109 113" mat="1" crosssect="1"/>
+      <Truss3d nodes="109 110" mat="1" crosssect="1"/>
+      <Truss3d nodes="109 114" mat="1" crosssect="1"/>
+      <Truss3d id="740" nodes="109 115" mat="1" crosssect="1"/>
+      <Truss3d nodes="110 114" mat="1" crosssect="1"/>
+      <Truss3d nodes="110 115" mat="1" crosssect="1"/>
+      <Truss3d nodes="111 112" mat="1" crosssect="1"/>
+      <Truss3d nodes="111 116" mat="1" crosssect="1"/>
+      <Truss3d id="745" nodes="111 117" mat="1" crosssect="1"/>
+      <Truss3d nodes="112 116" mat="1" crosssect="1"/>
+      <Truss3d nodes="112 113" mat="1" crosssect="1"/>
+      <Truss3d nodes="112 117" mat="1" crosssect="1"/>
+      <Truss3d nodes="112 118" mat="1" crosssect="1"/>
+      <Truss3d id="750" nodes="113 117" mat="1" crosssect="1"/>
+      <Truss3d nodes="113 114" mat="1" crosssect="1"/>
+      <Truss3d nodes="113 118" mat="1" crosssect="1"/>
+      <Truss3d nodes="113 119" mat="1" crosssect="1"/>
+      <Truss3d nodes="114 118" mat="1" crosssect="1"/>
+      <Truss3d id="755" nodes="114 115" mat="1" crosssect="1"/>
+      <Truss3d nodes="114 119" mat="1" crosssect="1"/>
+      <Truss3d nodes="114 120" mat="1" crosssect="1"/>
+      <Truss3d nodes="115 119" mat="1" crosssect="1"/>
+      <Truss3d nodes="115 120" mat="1" crosssect="1"/>
+      <Truss3d id="760" nodes="116 117" mat="1" crosssect="1"/>
+      <Truss3d nodes="116 121" mat="1" crosssect="1"/>
+      <Truss3d nodes="116 122" mat="1" crosssect="1"/>
+      <Truss3d nodes="117 121" mat="1" crosssect="1"/>
+      <Truss3d nodes="117 118" mat="1" crosssect="1"/>
+      <Truss3d id="765" nodes="117 122" mat="1" crosssect="1"/>
+      <Truss3d nodes="117 123" mat="1" crosssect="1"/>
+      <Truss3d nodes="118 122" mat="1" crosssect="1"/>
+      <Truss3d nodes="118 119" mat="1" crosssect="1"/>
+      <Truss3d nodes="118 123" mat="1" crosssect="1"/>
+      <Truss3d id="770" nodes="118 124" mat="1" crosssect="1"/>
+      <Truss3d nodes="119 123" mat="1" crosssect="1"/>
+      <Truss3d nodes="119 120" mat="1" crosssect="1"/>
+      <Truss3d nodes="119 124" mat="1" crosssect="1"/>
+      <Truss3d nodes="119 125" mat="1" crosssect="1"/>
+      <Truss3d id="775" nodes="120 124" mat="1" crosssect="1"/>
+      <Truss3d nodes="120 125" mat="1" crosssect="1"/>
+      <Truss3d nodes="121 122" mat="1" crosssect="1"/>
+      <Truss3d nodes="122 123" mat="1" crosssect="1"/>
+      <Truss3d nodes="123 124" mat="1" crosssect="1"/>
+      <Truss3d id="780" nodes="124 125" mat="1" crosssect="1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" width="1.0"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="0.0" e="1000.0" n="0.2" talpha="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+      <BoundaryCondition loadtimefunction="2" prescribedvalue="0.001"/>
+      <NodalLoad loadtimefunction="2" components="10.0 0.0"/>
+      <BoundaryCondition loadtimefunction="2" prescribedvalue="0.002"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction npoints="2" t="0.0 10000.0" f_t_="0.0 10000.0"/>
+    </LoadTimeFunctions>
+    <Sets/>
+  </Domain>
+</oofem>

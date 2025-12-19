@@ -1,0 +1,85 @@
+<oofem version="1">
+  <Output>layeredcs01.out</Output>
+  <Description>Comparing plane stress response for integral and layered cs</Description>
+  <Analysis type="NonLinearStatic" nsteps="1" profileopt="1">
+    <Metasteps>
+      <Metastep nsteps="2" controllmode="1" rtolf="0.001" rtold="0.001" maxiter="2000" refloadmode="1"/>
+    </Metasteps>
+  </Analysis>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.5 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0" load="2"/>
+      <Node coords="0.0 0.2 0.0"/>
+      <Node id="5" coords="0.5 0.2 0.0"/>
+      <Node coords="1.0 0.2 0.0" load="2"/>
+      <Node id="11" coords="0.0 0.0 0.0"/>
+      <Node coords="0.5 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0" load="2"/>
+      <Node coords="0.0 0.2 0.0"/>
+      <Node id="15" coords="0.5 0.2 0.0"/>
+      <Node coords="1.0 0.2 0.0" load="2"/>
+    </Nodes>
+    <Elements>
+      <trplanestress2d nodes="1 2 5"/>
+      <trplanestress2d nodes="5 4 1"/>
+      <trplanestress2d nodes="2 3 6"/>
+      <trplanestress2d nodes="6 5 2"/>
+      <trplanestress2d id="11" nodes="11 12 15"/>
+      <trplanestress2d nodes="15 14 11"/>
+      <trplanestress2d nodes="12 13 16"/>
+      <trplanestress2d nodes="16 15 12"/>
+    </Elements>
+    <CrossSections>
+      <!--CROSS SECTIONS-->
+      <SimpleCS thick="0.02" material="1" set="1" drillstiffness="1000000000.0"/>
+      <LayeredCS nlayers="2" layermaterials="1 1" widths="1.0 1.0" thicks="0.01 0.01" nintegrationpoints="2" set="2"/>
+    </CrossSections>
+    <Materials>
+      <!--MATERIALS-->
+      <IsoLE d="1.0" e="1000000000.0" n="0.0" talpha="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <!--BOUNDARY CONDITIONS-->
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3 4 5 6" values="0.0 0.0 0.0 0.0 0.0 0.0" set="3"/>
+      <nodalload loadtimefunction="2" components="0.0 1000.0"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <!--FUNCTIONS-->
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction npoints="3" t="-1.0 0.0 10.0" f_t_="0.0 0.0 10.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <!--SETS-->
+      <Set elementranges="1-4"/>
+      <Set elementranges="11-14"/>
+      <Set nodes="1 4 11 14"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-10">
+      <!--check load levels-->
+      <!--check node displacement at final step-->
+      <NODE tStep="2" number="1" dof="2" unknown="d" value="0.0"/>
+      <NODE tStep="2" number="2" dof="2" unknown="d" value="0.00166286569"/>
+      <NODE tStep="2" number="3" dof="2" unknown="d" value="0.00483735409"/>
+      <NODE tStep="2" number="11" dof="2" unknown="d" value="0.0"/>
+      <NODE tStep="2" number="12" dof="2" unknown="d" value="0.00166286569"/>
+      <NODE tStep="2" number="13" dof="2" unknown="d" value="0.00483735409"/>
+      <!--check some arbitrary element-->
+      <ELEMENT tStep="2" number="1" gp="1" keyword="1" component="1" value="918229.549" tolerance="0.01"/>
+      <ELEMENT tStep="2" number="2" gp="1" keyword="1" component="1" value="-918229.549" tolerance="0.01"/>
+      <ELEMENT tStep="2" number="3" gp="1" keyword="1" component="1" value="303073.976" tolerance="0.01"/>
+      <ELEMENT tStep="2" number="4" gp="1" keyword="1" component="1" value="-303073.976" tolerance="0.01"/>
+      <ELEMENT tStep="2" number="11" gp="1" keyword="1" component="1" value="918229.549" tolerance="0.01"/>
+      <ELEMENT tStep="2" number="12" gp="1" keyword="1" component="1" value="-918229.549" tolerance="0.01"/>
+      <ELEMENT tStep="2" number="13" gp="1" keyword="1" component="1" value="303073.976" tolerance="0.01"/>
+      <ELEMENT tStep="2" number="14" gp="1" keyword="1" component="1" value="-303073.976" tolerance="0.01"/>
+      <REACTION tStep="2" number="1" dof="2" value="1265.41636" tolerance="0.0001"/>
+      <REACTION tStep="2" number="4" dof="2" value="-3265.41636" tolerance="0.0001"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

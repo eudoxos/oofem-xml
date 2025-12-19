@@ -1,0 +1,38 @@
+<oofem version="1">
+  <Output>lattice2dboundary1.out</Output>
+  <Description>2D lattice boundary model</Description>
+  <Analysis type="NonLinearStatic" nsteps="1" contextoutputstep="1">
+    <Metasteps>
+      <Metastep nsteps="2" controllmode="1" rtolv="0.001" stiffmode="1" maxiter="200" ddm="2 31" ddv="0.001" ddltf="2"/>
+    </Metasteps>
+  </Analysis>
+  <Domain domain="2dlattice">
+    <OutputManager tstep_all="" dofman_all=""/>
+    <Nodes>
+      <Node coords="0.5 0.5" bc="1 1 1"/>
+      <Node coords="1.0 1.0" dofidmask="31 32 42" bc="0 0 1"/>
+    </Nodes>
+    <Elements>
+      <latticeboundary2D nodes="1 1 2" crosssect="1" mat="1" thick="1.0" width="0.5" gpcoords="1.0 1.0" location="2"/>
+    </Elements>
+    <CrossSections>
+      <latticecs material="1"/>
+    </CrossSections>
+    <Materials>
+      <latticedamage d="0.0" talpha="0.0" e="1.0" e0="1e+20" stype="1" wf="6e-05" a1="0.6" randomtype="1.0" cov="0.2"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+      <NodalLoad loadtimefunction="1" components="0.0 -1.0 0.0"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction npoints="2" t="0.0 1.0" f_t_="0.0 1.0"/>
+    </LoadTimeFunctions>
+    <Sets/>
+  </Domain>
+  <ExportModules>
+    <vtkxmlperiodic tstep_all="" primvars="1" stype="0"/>
+  </ExportModules>
+</oofem>

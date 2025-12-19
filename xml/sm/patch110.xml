@@ -1,0 +1,138 @@
+<oofem version="1">
+  <Output>patch110.out</Output>
+  <Description>Patch test of QPlaneStress2d elements -&gt; pure compression</Description>
+  <Analysis type="StaticStructural" nsteps="1"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 4.0 0.0"/>
+      <Node coords="2.0 2.0 0.0"/>
+      <Node coords="3.0 1.0 0.0"/>
+      <Node id="5" coords="8.0 0.8 0.0"/>
+      <Node coords="7.0 3.0 0.0"/>
+      <Node coords="9.0 0.0 0.0"/>
+      <Node coords="9.0 4.0 0.0"/>
+      <Node coords="4.5 0.0 0.0"/>
+      <Node id="10" coords="1.5 0.5 0.0"/>
+      <Node coords="5.5 0.9 0.0"/>
+      <Node coords="0.0 2.0 0.0"/>
+      <Node coords="2.5 1.5 0.0"/>
+      <Node coords="1.0 3.0 0.0"/>
+      <Node id="15" coords="4.5 2.5 0.0"/>
+      <Node coords="4.5 4.0 0.0"/>
+      <Node coords="8.0 3.5 0.0"/>
+      <Node coords="7.5 1.9 0.0"/>
+      <Node coords="8.5 0.4 0.0"/>
+      <Node id="20" coords="9.0 2.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <QPlaneStress2d nodes="1 4 3 2 10 13 14 12" nip="16"/>
+      <QPlaneStress2d nodes="1 7 5 4 9 19 11 10" nip="16"/>
+      <QPlaneStress2d nodes="4 5 6 3 11 18 15 13" nip="16"/>
+      <QPlaneStress2d nodes="3 6 8 2 15 17 16 14" nip="16"/>
+      <QPlaneStress2d id="5" nodes="5 7 8 6 19 20 17 18" nip="16"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="0.15" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE talpha="1.2e-05" d="1.0" e="15.0" n="0.25"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="2"/>
+      <NodalLoad loadtimefunction="1" dofs="1 2" components="-0.833333333333 0.0" set="3"/>
+      <NodalLoad loadtimefunction="1" dofs="1 2" components="-3.333333333333 0.0" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-5"/>
+      <Set nodes="1 2 12"/>
+      <Set nodes="7 8"/>
+      <Set nodes="20"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--exact solution-->
+    <!--DISPLACEMENT                   STRAIN                     STRESS-->
+    <!--Node 1   0.0                epsilon_x = -0.520833333   sigma_x = -8.333333333-->
+    <!--Node 2   0.0                epsilon_y =  0.0           sigma_y = -2.083333333-->
+    <!--Node 3  -1.041666666        gama_xy   =  0.0           tau_xy  =  0.0-->
+    <!--Node 4  -1.5625-->
+    <!--Node 5  -4.166666666-->
+    <!--Node 6  -3.645833333           REACTION-->
+    <!--Node 7  -4.6875             Node 1   R_u = 0.833333333  R_v =  0.46875-->
+    <!--Node 8  -4.6875             Node 2   R_u = 0.833333333  R_v = -0.46875-->
+    <!--Node 9  -2.34375            Node 7   R_u = 0.0          R_v =  0.46875-->
+    <!--Node 10 -0.78125            Node 8   R_u = 0.0          R_v = -0.46875-->
+    <!--Node 11 -2.864583333        Node 9   R_u = 0.0          R_v =  1.875-->
+    <!--Node 12  0.0                Node 12  R_u = 3.333333333  R_v =  0.0-->
+    <!--Node 13 -1.302083333        Node 16  R_u = 0.0          R_v = -1.875-->
+    <!--Node 14 -0.520833333-->
+    <!--Node 15 -2.34375-->
+    <!--Node 16 -2.34375-->
+    <!--Node 17 -4.166666666-->
+    <!--Node 18 -3.90625-->
+    <!--Node 19 -4.427083333-->
+    <!--Node 20 -4.6875-->
+    <errorcheck tolerance="1e-06">
+      <!--check reactions-->
+      <REACTION tStep="1" number="1" dof="1" value="0.833333333"/>
+      <REACTION tStep="1" number="1" dof="2" value="0.46875"/>
+      <REACTION tStep="1" number="2" dof="1" value="0.833333333"/>
+      <REACTION tStep="1" number="2" dof="2" value="-0.46875"/>
+      <REACTION tStep="1" number="7" dof="2" value="0.46875"/>
+      <REACTION tStep="1" number="8" dof="2" value="-0.46875"/>
+      <REACTION tStep="1" number="9" dof="2" value="1.875"/>
+      <REACTION tStep="1" number="12" dof="1" value="3.33333333"/>
+      <REACTION tStep="1" number="12" dof="2" value="0.0"/>
+      <REACTION tStep="1" number="16" dof="2" value="-1.875"/>
+      <!--check all nodes-->
+      <NODE tStep="1" number="3" dof="1" unknown="d" value="-1.04166667"/>
+      <NODE tStep="1" number="4" dof="1" unknown="d" value="-1.5625"/>
+      <NODE tStep="1" number="5" dof="1" unknown="d" value="-4.16666667"/>
+      <NODE tStep="1" number="6" dof="1" unknown="d" value="-3.64583333"/>
+      <NODE tStep="1" number="7" dof="1" unknown="d" value="-4.6875"/>
+      <NODE tStep="1" number="8" dof="1" unknown="d" value="-4.6875"/>
+      <NODE tStep="1" number="9" dof="1" unknown="d" value="-2.34375"/>
+      <NODE tStep="1" number="10" dof="1" unknown="d" value="-0.78125"/>
+      <NODE tStep="1" number="11" dof="1" unknown="d" value="-2.86458333"/>
+      <NODE tStep="1" number="12" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="13" dof="1" unknown="d" value="-1.30208333"/>
+      <NODE tStep="1" number="14" dof="1" unknown="d" value="-0.520833333"/>
+      <NODE tStep="1" number="15" dof="1" unknown="d" value="-2.34375"/>
+      <NODE tStep="1" number="16" dof="1" unknown="d" value="-2.34375"/>
+      <NODE tStep="1" number="17" dof="1" unknown="d" value="-4.16666667"/>
+      <NODE tStep="1" number="18" dof="1" unknown="d" value="-3.90625"/>
+      <NODE tStep="1" number="19" dof="1" unknown="d" value="-4.42708333"/>
+      <NODE tStep="1" number="20" dof="1" unknown="d" value="-4.6875"/>
+      <!--check element strain vector-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="-0.520833333"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="6" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="2" keyword="4" component="1" value="-0.520833333"/>
+      <ELEMENT tStep="1" number="1" gp="2" keyword="4" component="2" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="2" keyword="4" component="6" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="4" component="1" value="-0.520833333"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="4" component="2" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="4" component="6" value="0.0"/>
+      <ELEMENT tStep="1" number="2" gp="3" keyword="4" component="1" value="-0.520833333"/>
+      <ELEMENT tStep="1" number="2" gp="3" keyword="4" component="2" value="0.0"/>
+      <ELEMENT tStep="1" number="2" gp="3" keyword="4" component="6" value="0.0"/>
+      <!--check element stress vector-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="1" value="-8.33333333"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="2" value="-2.08333333"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="6" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="1" value="-8.33333333"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="2" value="-2.08333333"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="6" value="0.0"/>
+      <ELEMENT tStep="1" number="2" gp="3" keyword="1" component="1" value="-8.33333333"/>
+      <ELEMENT tStep="1" number="2" gp="3" keyword="1" component="2" value="-2.08333333"/>
+      <ELEMENT tStep="1" number="2" gp="3" keyword="1" component="6" value="0.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

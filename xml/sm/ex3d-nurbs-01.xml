@@ -1,0 +1,98 @@
+<oofem version="1">
+  <Output>ex3d-nurbs-01.out</Output>
+  <Description>tri-linear IGA brick, constant deformation</Description>
+  <Analysis type="LinearStatic" nsteps="1"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="4.0 0.0 0.0"/>
+      <Node coords="0.0 3.0 0.0"/>
+      <Node coords="4.0 3.0 0.0"/>
+      <Node id="5" coords="0.0 0.0 5.0"/>
+      <Node coords="4.0 0.0 5.0"/>
+      <Node coords="0.0 3.0 5.0"/>
+      <Node coords="4.0 3.0 5.0"/>
+    </Nodes>
+    <Elements>
+      <nurbs3delement crosssect="1" nodes="1 2 3 4 5 6 7 8" knotvectoru="0.0 1.0" weights="1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0" knotmultiplicityu="2 2" knotvectorv="0.0 1.0" knotmultiplicityv="2 2" knotvectorw="0.0 1.0" knotmultiplicityw="2 2" degree="1 1 1" nip="8"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS material="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="0.0" e="15000.0" n="0.25" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3" values="0.0 0.0 0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2 3" values="0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="3" values="0.0" set="3"/>
+      <BoundaryCondition loadtimefunction="1" dofs="3" values="1.0" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1"/>
+      <Set nodes="2"/>
+      <Set nodes="3 4"/>
+      <Set nodes="5 6 7 8"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-08">
+      <!--check all nodes-->
+      <NODE tStep="1" number="1" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="2" dof="1" unknown="d" value="-0.2"/>
+      <NODE tStep="1" number="3" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="4" dof="1" unknown="d" value="-0.2"/>
+      <NODE tStep="1" number="5" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="6" dof="1" unknown="d" value="-0.2"/>
+      <NODE tStep="1" number="7" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="8" dof="1" unknown="d" value="-0.2"/>
+      <NODE tStep="1" number="1" dof="2" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="2" dof="2" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="3" dof="2" unknown="d" value="-0.15"/>
+      <NODE tStep="1" number="4" dof="2" unknown="d" value="-0.15"/>
+      <NODE tStep="1" number="5" dof="2" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="6" dof="2" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="7" dof="2" unknown="d" value="-0.15"/>
+      <NODE tStep="1" number="8" dof="2" unknown="d" value="-0.15"/>
+      <NODE tStep="1" number="1" dof="3" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="2" dof="3" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="3" dof="3" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="4" dof="3" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="5" dof="3" unknown="d" value="1.0"/>
+      <NODE tStep="1" number="6" dof="3" unknown="d" value="1.0"/>
+      <NODE tStep="1" number="7" dof="3" unknown="d" value="1.0"/>
+      <NODE tStep="1" number="8" dof="3" unknown="d" value="1.0"/>
+      <!--check element no. 1 strain vector-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="-0.05"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="-0.05"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="3" value="0.2"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="4" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="5" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="6" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="4" component="1" value="-0.05"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="4" component="2" value="-0.05"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="4" component="3" value="0.2"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="4" component="4" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="4" component="5" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="4" component="6" value="0.0"/>
+      <!--check element no. 1 stress vector-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="1" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="2" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="3" value="3000.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="4" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="5" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="6" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="1" component="1" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="1" component="2" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="1" component="3" value="3000.0"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="1" component="4" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="1" component="5" value="0.0"/>
+      <ELEMENT tStep="1" number="1" gp="6" keyword="1" component="6" value="0.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

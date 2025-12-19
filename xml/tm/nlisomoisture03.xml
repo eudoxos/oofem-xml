@@ -1,0 +1,58 @@
+<oofem version="1">
+  <Output>nlisomoisture03.out</Output>
+  <Description>test of nonlinear isotropic material for moisture transport</Description>
+  <Analysis type="TransientTransport" nsteps="5" alpha="0.5" lumped="" forcescale="0.0" forcescaledofs="14" rtolf="1e-05" prescribedtimes="0.01 0.1 0.2 0.3 0.4"/>
+  <Domain domain="mass1transfer">
+    <OutputManager tsteps_out="5" dofman_output="1,7" element_output="1"/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.001 0.0 0.0"/>
+      <Node coords="0.002 0.0 0.0"/>
+      <Node coords="0.0 0.001 0.0"/>
+      <Node id="5" coords="0.001 0.001 0.0"/>
+      <Node coords="0.002 0.001 0.0"/>
+      <Node coords="0.0 0.002 0.0"/>
+      <Node coords="0.001 0.002 0.0"/>
+      <Node coords="0.002 0.002 0.0"/>
+      <Node id="10" coords="0.0 0.003 0.0"/>
+      <Node coords="0.001 0.003 0.0"/>
+      <Node coords="0.002 0.003 0.0"/>
+    </Nodes>
+    <Elements>
+      <quad1mt nodes="4 5 2 1" crosssect="1"/>
+      <quad1mt nodes="5 6 3 2" crosssect="1"/>
+      <quad1mt nodes="10 11 8 7" crosssect="2"/>
+      <quad1mt nodes="11 12 9 8" crosssect="2"/>
+    </Elements>
+    <CrossSections>
+      <SimpleTransportCS thickness="1.0" mat="1"/>
+      <SimpleTransportCS thickness="1.0" mat="2"/>
+    </CrossSections>
+    <Materials>
+      <!--vanGenuchten isotherm + Kunzel permeability + constant room temperature-->
+      <nlisomoisturemat d="0.0" isothermtype="7" wf="110.0" vg_b="6.126" vg_m="0.331" permeabilitytype="3" timescale="86400.0" capillarytransporttype="2" mu="400.0" abs="1.0" capil_coef="10000.0" t="293.15"/>
+      <!--vanGenuchten isotherm + Kunzel permeability + variable elevated temperature-->
+      <nlisomoisturemat d="0.0" isothermtype="7" wf="110.0" vg_b="6.126" vg_m="0.331" permeabilitytype="3" timescale="86400.0" capillarytransporttype="2" mu="400.0" abs="1.0" capil_coef="10000.0" ttf="2"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="14" values="1.0" set="2"/>
+    </BoundaryConditions>
+    <InitialConditions>
+      <InitialCondition conditions="u 0.99" dofs="14" set="1"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="0.5"/>
+      <PiecewiseLinfunction npoints="2" t="0.0 0.5" f_t_="323.15 303.15"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set noderanges="1-12"/>
+      <Set nodes="3 6 9 12"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-07">
+      <NODE tStep="5" number="1" dof="14" unknown="d" value="0.617066259"/>
+      <NODE tStep="5" number="7" dof="14" unknown="d" value="0.54587473"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

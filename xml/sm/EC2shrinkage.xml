@@ -1,0 +1,66 @@
+<oofem version="1">
+  <Output>EC2shrinkage.out</Output>
+  <Description>test on drying and autogenous shrinkage prolonged by casting time of the material</Description>
+  <Analysis type="StaticStructural" nsteps="40" prescribedtimes="0.0001 0.0002 0.0005 0.001 0.002 0.005 0.01 0.02 0.05 0.1 0.2 0.5 1.0 2.0 5.0 10.0 10.0001 10.0002 10.0005 10.001 10.002 10.005 10.01 10.02 10.05 10.1 10.2 10.5 11.0 12.0 15.0 20.0 50.0 100.0 200.0 500.0 1000.0 2000.0 5000.0 10000.0" miniter="1"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <!--NODES-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <Node id="5" coords="0.0 0.2 0.0"/>
+      <Node coords="0.1 0.2 0.0"/>
+      <Node coords="0.0 0.3 0.0"/>
+      <Node coords="0.1 0.3 0.0"/>
+    </Nodes>
+    <Elements>
+      <!--ELEMENTS-->
+      <planestress2d nodes="1 2 4 3" crosssect="1"/>
+      <planestress2d nodes="5 6 8 7" crosssect="2"/>
+    </Elements>
+    <CrossSections>
+      <!--CROSSECTION-->
+      <SimpleCS thick="1.0" width="1.0" material="1"/>
+      <SimpleCS thick="1.0" width="1.0" material="2"/>
+    </CrossSections>
+    <Materials>
+      <!--MATERIAL-->
+      <!--autogenous shrinkage only-->
+      <EC2CreepMat d="0.0" n="0.2" fcm28="30.0" stiffnessfactor="1000000.0" relmatage="0.0" t0="2.0" timefactor="1.0" cemtype="2" henv="0.5" h0="100.0" shtype="3" begoftimeofinterest="10.0" endoftimeofinterest="1000.0" castingtime="10.0"/>
+      <!--drying shrinkage only-->
+      <EC2CreepMat d="0.0" n="0.2" fcm28="30.0" stiffnessfactor="1000000.0" relmatage="0.0" t0="2.0" timefactor="1.0" cemtype="2" henv="0.5" h0="100.0" shtype="2" begoftimeofinterest="10.0" endoftimeofinterest="1000.0" castingtime="10.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="2"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <!--TIME FUNCTION-->
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1 5"/>
+      <Set nodes="3 7"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--NODE  number 4 dof 1 unknown d-->
+    <!--NODE  number 8 dof 1 unknown d-->
+    <!--TIME-->
+    <errorcheck tolerance="5e-12">
+      <NODE tStep="10" number="4" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="10" number="8" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="20" number="4" dof="1" unknown="d" value="-1.891379e-08"/>
+      <NODE tStep="20" number="8" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="30" number="4" dof="1" unknown="d" value="-7.390851e-07"/>
+      <NODE tStep="30" number="8" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="35" number="4" dof="1" unknown="d" value="-2.809518e-06"/>
+      <NODE tStep="35" number="8" dof="1" unknown="d" value="-4.377031e-05"/>
+      <NODE tStep="40" number="4" dof="1" unknown="d" value="-3e-06"/>
+      <NODE tStep="40" number="8" dof="1" unknown="d" value="-5.28714e-05"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

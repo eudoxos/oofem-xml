@@ -1,0 +1,282 @@
+<oofem version="1">
+  <Output>scctest01.out</Output>
+  <Description>scc specimen, gravity colapse</Description>
+  <!--supg nsteps 20 lstype 1 smtype 2 stype 1 lsprecond 2 deltaT 1.0e-2 rtolv 5.e-3 alpha 0.5 miflag 1 nmodules 0-->
+  <Analysis type="supg" nsteps="20" lstype="0" smtype="1" deltat="0.01" rtolv="0.005" alpha="0.5" miflag="1"/>
+  <Domain domain="2dincompflow">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="0.0 0.6 0.0"/>
+      <Node coords="1.0 0.6 0.0"/>
+      <Node id="5" coords="0.3 0.0 0.0"/>
+      <Node coords="0.3 0.5 0.0"/>
+      <Node coords="0.0 0.5 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.2 0.0 0.0"/>
+      <Node id="10" coords="0.4 0.0 0.0"/>
+      <Node coords="0.5 0.0 0.0"/>
+      <Node coords="0.6 0.0 0.0"/>
+      <Node coords="0.7 0.0 0.0"/>
+      <Node coords="0.8 0.0 0.0"/>
+      <Node id="15" coords="0.9 0.0 0.0"/>
+      <Node coords="1.0 0.1 0.0"/>
+      <Node coords="1.0 0.2 0.0"/>
+      <Node coords="1.0 0.3 0.0"/>
+      <Node coords="1.0 0.4 0.0"/>
+      <Node id="20" coords="1.0 0.5 0.0"/>
+      <Node coords="0.0 0.4 0.0"/>
+      <Node coords="0.0 0.3 0.0"/>
+      <Node coords="0.0 0.2 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node id="25" coords="0.9 0.6 0.0"/>
+      <Node coords="0.8 0.6 0.0"/>
+      <Node coords="0.7 0.6 0.0"/>
+      <Node coords="0.6 0.6 0.0"/>
+      <Node coords="0.5 0.6 0.0"/>
+      <Node id="30" coords="0.4 0.6 0.0"/>
+      <Node coords="0.3 0.6 0.0"/>
+      <Node coords="0.2 0.6 0.0"/>
+      <Node coords="0.1 0.6 0.0"/>
+      <Node coords="0.3 0.1 0.0"/>
+      <Node id="35" coords="0.3 0.2 0.0"/>
+      <Node coords="0.3 0.3 0.0"/>
+      <Node coords="0.3 0.4 0.0"/>
+      <Node coords="0.2 0.5 0.0"/>
+      <Node coords="0.1 0.5 0.0"/>
+      <Node id="40" coords="0.3660274 0.06588427 0.0"/>
+      <Node coords="0.4478756 0.08188671 0.0"/>
+      <Node coords="0.5494168 0.08930441 0.0"/>
+      <Node coords="0.6530039 0.08780763 0.0"/>
+      <Node coords="0.7551829 0.08708462 0.0"/>
+      <Node id="45" coords="0.8542806 0.07990612 0.0"/>
+      <Node coords="0.9347081 0.0650761 0.0"/>
+      <Node coords="0.9194401 0.1453831 0.0"/>
+      <Node coords="0.9112544 0.245358 0.0"/>
+      <Node coords="0.9102974 0.3505469 0.0"/>
+      <Node id="50" coords="0.9180528 0.4523256 0.0"/>
+      <Node coords="0.9341362 0.534086 0.0"/>
+      <Node coords="0.8524493 0.5180391 0.0"/>
+      <Node coords="0.7510242 0.510601 0.0"/>
+      <Node coords="0.6474595 0.5121121 0.0"/>
+      <Node id="55" coords="0.5451907 0.5128551 0.0"/>
+      <Node coords="0.4459388 0.5200514 0.0"/>
+      <Node coords="0.3653801 0.5349021 0.0"/>
+      <Node coords="0.3807693 0.4545716 0.0"/>
+      <Node coords="0.3890793 0.3545656 0.0"/>
+      <Node id="60" coords="0.3900852 0.2493499 0.0"/>
+      <Node coords="0.3822615 0.1475346 0.0"/>
+      <Node coords="0.4895158 0.1887213 0.0"/>
+      <Node coords="0.6061082 0.1776347 0.0"/>
+      <Node coords="0.7074651 0.1730476 0.0"/>
+      <Node id="65" coords="0.816637 0.1818342 0.0"/>
+      <Node coords="0.8212729 0.2943059 0.0"/>
+      <Node coords="0.8112501 0.4111443 0.0"/>
+      <Node coords="0.6947951 0.4222392 0.0"/>
+      <Node coords="0.5933768 0.426864 0.0"/>
+      <Node id="70" coords="0.4839635 0.4180628 0.0"/>
+      <Node coords="0.4795092 0.3055177 0.0"/>
+      <Node coords="0.5714772 0.2706643 0.0"/>
+      <Node coords="0.6663011 0.2568278 0.0"/>
+      <Node coords="0.7483441 0.2472235 0.0"/>
+      <Node id="75" coords="0.7296985 0.3292956 0.0"/>
+      <Node coords="0.6349371 0.3431239 0.0"/>
+      <Node coords="0.5527718 0.3527049 0.0"/>
+      <Node coords="0.06444744 0.06858823 0.0"/>
+      <Node coords="0.1496248 0.09137342 0.0"/>
+      <Node id="80" coords="0.2351191 0.06859574 0.0"/>
+      <Node coords="0.2263835 0.1515596 0.0"/>
+      <Node coords="0.2250543 0.250047 0.0"/>
+      <Node coords="0.2263328 0.3485227 0.0"/>
+      <Node coords="0.2350813 0.4314533 0.0"/>
+      <Node id="85" coords="0.1495444 0.4086984 0.0"/>
+      <Node coords="0.06437061 0.4314467 0.0"/>
+      <Node coords="0.07269265 0.3485167 0.0"/>
+      <Node coords="0.07381327 0.2500464 0.0"/>
+      <Node coords="0.0726124 0.1515677 0.0"/>
+      <Node id="90" coords="0.1490303 0.1992801 0.0"/>
+      <Node coords="0.1489495 0.3008869 0.0"/>
+    </Nodes>
+    <Elements>
+      <tr1supg nodes="5 10 40" vof="0.0"/>
+      <tr1supg nodes="10 11 41" vof="0.0"/>
+      <tr1supg nodes="11 12 42" vof="0.0"/>
+      <tr1supg nodes="12 13 43" vof="0.0"/>
+      <tr1supg id="5" nodes="13 14 44" vof="0.0"/>
+      <tr1supg nodes="14 15 45" vof="0.0"/>
+      <tr1supg nodes="15 2 46" vof="0.0"/>
+      <tr1supg nodes="2 16 46" vof="0.0"/>
+      <tr1supg nodes="16 17 47" vof="0.0"/>
+      <tr1supg id="10" nodes="17 18 48" vof="0.0"/>
+      <tr1supg nodes="18 19 49" vof="0.0"/>
+      <tr1supg nodes="19 20 50" vof="0.0"/>
+      <tr1supg nodes="20 4 51" vof="0.0"/>
+      <tr1supg nodes="4 25 51" vof="0.0"/>
+      <tr1supg id="15" nodes="25 26 52" vof="0.0"/>
+      <tr1supg nodes="26 27 53" vof="0.0"/>
+      <tr1supg nodes="27 28 54" vof="0.0"/>
+      <tr1supg nodes="28 29 55" vof="0.0"/>
+      <tr1supg nodes="29 30 56" vof="0.0"/>
+      <tr1supg id="20" nodes="30 31 57" vof="0.0"/>
+      <tr1supg nodes="31 32 6" vof="0.0"/>
+      <tr1supg nodes="32 33 38" vof="0.0"/>
+      <tr1supg nodes="33 3 7" vof="0.0"/>
+      <tr1supg nodes="6 37 58" vof="0.0"/>
+      <tr1supg id="25" nodes="37 36 59" vof="0.0"/>
+      <tr1supg nodes="36 35 60" vof="0.0"/>
+      <tr1supg nodes="35 34 61" vof="0.0"/>
+      <tr1supg nodes="34 5 40" vof="0.0"/>
+      <tr1supg nodes="7 39 33" vof="0.0"/>
+      <tr1supg id="30" nodes="39 38 33" vof="0.0"/>
+      <tr1supg nodes="38 6 32" vof="0.0"/>
+      <tr1supg nodes="40 10 41" vof="0.0"/>
+      <tr1supg nodes="41 11 42" vof="0.0"/>
+      <tr1supg nodes="42 12 43" vof="0.0"/>
+      <tr1supg id="35" nodes="43 13 44" vof="0.0"/>
+      <tr1supg nodes="44 14 45" vof="0.0"/>
+      <tr1supg nodes="45 15 46" vof="0.0"/>
+      <tr1supg nodes="46 16 47" vof="0.0"/>
+      <tr1supg nodes="47 17 48" vof="0.0"/>
+      <tr1supg id="40" nodes="48 18 49" vof="0.0"/>
+      <tr1supg nodes="49 19 50" vof="0.0"/>
+      <tr1supg nodes="50 20 51" vof="0.0"/>
+      <tr1supg nodes="51 25 52" vof="0.0"/>
+      <tr1supg nodes="52 26 53" vof="0.0"/>
+      <tr1supg id="45" nodes="53 27 54" vof="0.0"/>
+      <tr1supg nodes="54 28 55" vof="0.0"/>
+      <tr1supg nodes="55 29 56" vof="0.0"/>
+      <tr1supg nodes="56 30 57" vof="0.0"/>
+      <tr1supg nodes="57 31 6" vof="0.0"/>
+      <tr1supg id="50" nodes="6 58 57" vof="0.0"/>
+      <tr1supg nodes="58 37 59" vof="0.0"/>
+      <tr1supg nodes="59 36 60" vof="0.0"/>
+      <tr1supg nodes="60 35 61" vof="0.0"/>
+      <tr1supg nodes="61 34 40" vof="0.0"/>
+      <tr1supg id="55" nodes="40 41 61" vof="0.0"/>
+      <tr1supg nodes="41 42 62" vof="0.0"/>
+      <tr1supg nodes="42 43 63" vof="0.0"/>
+      <tr1supg nodes="43 44 64" vof="0.0"/>
+      <tr1supg nodes="44 45 65" vof="0.0"/>
+      <tr1supg id="60" nodes="45 46 47" vof="0.0"/>
+      <tr1supg nodes="47 48 65" vof="0.0"/>
+      <tr1supg nodes="48 49 66" vof="0.0"/>
+      <tr1supg nodes="49 50 67" vof="0.0"/>
+      <tr1supg nodes="50 51 52" vof="0.0"/>
+      <tr1supg id="65" nodes="52 53 67" vof="0.0"/>
+      <tr1supg nodes="53 54 68" vof="0.0"/>
+      <tr1supg nodes="54 55 69" vof="0.0"/>
+      <tr1supg nodes="55 56 70" vof="0.0"/>
+      <tr1supg nodes="56 57 58" vof="0.0"/>
+      <tr1supg id="70" nodes="58 59 70" vof="0.0"/>
+      <tr1supg nodes="59 60 71" vof="0.0"/>
+      <tr1supg nodes="60 61 62" vof="0.0"/>
+      <tr1supg nodes="61 41 62" vof="0.0"/>
+      <tr1supg nodes="62 42 63" vof="0.0"/>
+      <tr1supg id="75" nodes="63 43 64" vof="0.0"/>
+      <tr1supg nodes="64 44 65" vof="0.0"/>
+      <tr1supg nodes="65 45 47" vof="0.0"/>
+      <tr1supg nodes="65 48 66" vof="0.0"/>
+      <tr1supg nodes="66 49 67" vof="0.0"/>
+      <tr1supg id="80" nodes="67 50 52" vof="0.0"/>
+      <tr1supg nodes="67 53 68" vof="0.0"/>
+      <tr1supg nodes="68 54 69" vof="0.0"/>
+      <tr1supg nodes="69 55 70" vof="0.0"/>
+      <tr1supg nodes="70 56 58" vof="0.0"/>
+      <tr1supg id="85" nodes="70 59 71" vof="0.0"/>
+      <tr1supg nodes="71 60 62" vof="0.0"/>
+      <tr1supg nodes="62 63 72" vof="0.0"/>
+      <tr1supg nodes="63 64 73" vof="0.0"/>
+      <tr1supg nodes="64 65 74" vof="0.0"/>
+      <tr1supg id="90" nodes="65 66 74" vof="0.0"/>
+      <tr1supg nodes="66 67 75" vof="0.0"/>
+      <tr1supg nodes="67 68 75" vof="0.0"/>
+      <tr1supg nodes="68 69 76" vof="0.0"/>
+      <tr1supg nodes="69 70 77" vof="0.0"/>
+      <tr1supg id="95" nodes="70 71 77" vof="0.0"/>
+      <tr1supg nodes="71 62 72" vof="0.0"/>
+      <tr1supg nodes="72 63 73" vof="0.0"/>
+      <tr1supg nodes="73 64 74" vof="0.0"/>
+      <tr1supg nodes="74 66 75" vof="0.0"/>
+      <tr1supg id="100" nodes="75 68 76" vof="0.0"/>
+      <tr1supg nodes="76 69 77" vof="0.0"/>
+      <tr1supg nodes="77 71 72" vof="0.0"/>
+      <tr1supg nodes="72 73 76" vof="0.0"/>
+      <tr1supg nodes="73 74 75" vof="0.0"/>
+      <tr1supg id="105" nodes="75 76 73" vof="0.0"/>
+      <tr1supg nodes="76 77 72" vof="0.0"/>
+      <tr1supg nodes="1 8 78" vof="1.0"/>
+      <tr1supg nodes="8 9 79" vof="1.0"/>
+      <tr1supg nodes="9 5 80" vof="1.0"/>
+      <tr1supg id="110" nodes="5 34 80" vof="1.0"/>
+      <tr1supg nodes="34 35 81" vof="1.0"/>
+      <tr1supg nodes="35 36 82" vof="1.0"/>
+      <tr1supg nodes="36 37 83" vof="1.0"/>
+      <tr1supg nodes="37 6 84" vof="1.0"/>
+      <tr1supg id="115" nodes="6 38 84" vof="1.0"/>
+      <tr1supg nodes="38 39 85" vof="1.0"/>
+      <tr1supg nodes="39 7 86" vof="1.0"/>
+      <tr1supg nodes="7 21 86" vof="1.0"/>
+      <tr1supg nodes="21 22 87" vof="1.0"/>
+      <tr1supg id="120" nodes="22 23 88" vof="1.0"/>
+      <tr1supg nodes="23 24 89" vof="1.0"/>
+      <tr1supg nodes="24 1 78" vof="1.0"/>
+      <tr1supg nodes="78 8 79" vof="1.0"/>
+      <tr1supg nodes="79 9 80" vof="1.0"/>
+      <tr1supg id="125" nodes="80 34 81" vof="1.0"/>
+      <tr1supg nodes="81 35 82" vof="1.0"/>
+      <tr1supg nodes="82 36 83" vof="1.0"/>
+      <tr1supg nodes="83 37 84" vof="1.0"/>
+      <tr1supg nodes="84 38 85" vof="1.0"/>
+      <tr1supg id="130" nodes="85 39 86" vof="1.0"/>
+      <tr1supg nodes="86 21 87" vof="1.0"/>
+      <tr1supg nodes="87 22 88" vof="1.0"/>
+      <tr1supg nodes="88 23 89" vof="1.0"/>
+      <tr1supg nodes="89 24 78" vof="1.0"/>
+      <tr1supg id="135" nodes="78 79 89" vof="1.0"/>
+      <tr1supg nodes="79 80 81" vof="1.0"/>
+      <tr1supg nodes="81 82 90" vof="1.0"/>
+      <tr1supg nodes="82 83 91" vof="1.0"/>
+      <tr1supg nodes="83 84 85" vof="1.0"/>
+      <tr1supg id="140" nodes="85 86 87" vof="1.0"/>
+      <tr1supg nodes="87 88 91" vof="1.0"/>
+      <tr1supg nodes="88 89 90" vof="1.0"/>
+      <tr1supg nodes="89 79 90" vof="1.0"/>
+      <tr1supg nodes="79 81 90" vof="1.0"/>
+      <tr1supg id="145" nodes="90 82 91" vof="1.0"/>
+      <tr1supg nodes="91 83 85" vof="1.0"/>
+      <tr1supg nodes="85 87 91" vof="1.0"/>
+      <tr1supg nodes="91 88 90" vof="1.0"/>
+    </Elements>
+    <CrossSections>
+      <fluidcs mat="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <twofluidmat mat="2 3"/>
+      <!--air-->
+      <!--binghamfluid2 2 d 1.0 mu0 0.1 tau0 0.0 muinf 0.1-->
+      <newtonianfluid d="1.0" mu="0.1"/>
+      <!--concrete-->
+      <binghamfluid2 d="2450.0" mu0="100.0" tau0="25.0" muinf="1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <!--prescribed zero velocity - wall condition-->
+      <BoundaryCondition loadtimefunction="1" dofs="7" values="0.0" valtype="5" set="3"/>
+      <BoundaryCondition loadtimefunction="1" dofs="8" values="0.0" valtype="5" set="4"/>
+      <!--pressure-->
+      <BoundaryCondition loadtimefunction="1" dofs="11" values="0.0" valtype="3" set="2"/>
+      <!--gravity-->
+      <deadweight components="0.0 -9.81" loadtimefunction="1" valtype="2" set="1"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-148"/>
+      <Set nodes="3 4"/>
+      <Set noderanges="1-4,7,16-24"/>
+      <Set noderanges="1,2,5,8-15"/>
+    </Sets>
+  </Domain>
+</oofem>

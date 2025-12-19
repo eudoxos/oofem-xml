@@ -1,0 +1,97 @@
+<oofem version="1">
+  <Output>tutorialmaterial.out</Output>
+  <Description>description...</Description>
+  <Analysis type="StaticStructural" nsteps="1">
+    <Metasteps>
+      <Metastep nsteps="5" rtolf="1e-06"/>
+    </Metasteps>
+  </Analysis>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+      <Node coords="0.0 1.0 0.0"/>
+      <Node id="5" coords="0.0 0.0 1.0"/>
+      <Node coords="1.0 0.0 1.0"/>
+      <Node coords="1.0 1.0 1.0"/>
+      <Node coords="0.0 1.0 1.0"/>
+    </Nodes>
+    <Elements>
+      <lspace nodes="1 2 3 4 5 6 7 8" crosssect="1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS material="1"/>
+    </CrossSections>
+    <Materials>
+      <!--IsoLE 1 d 0. E 15.0 n 0.25 talpha 1.0-->
+      <tutorialmaterial d="0.0" e="200000000000.0" n="0.3" sigy="500000000.0" h="10000000000.0" talpha="-1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3" values="0.0 0.0 0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3" values="0.0 0.0 0.03" set="2"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <PiecewiseLinFunction t="1.0 5.0" f_t_="0.1 1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1 2 3 4"/>
+      <Set nodes="5 6 7 8"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="10000.0">
+      <!--error has the unit Pa => tolerance = 10 kPa-->
+      <ELEMENT tStep="5" number="1" gp="1" keyword="1" component="1" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="1" keyword="1" component="2" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="1" keyword="1" component="3" value="5447280000.0"/>
+      <ELEMENT tStep="5" number="1" gp="1" keyword="1" component="4" value="-2.45693e-09"/>
+      <ELEMENT tStep="5" number="1" gp="1" keyword="1" component="5" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="1" keyword="1" component="6" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="2" keyword="1" component="1" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="2" keyword="1" component="2" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="2" keyword="1" component="3" value="5447280000.0"/>
+      <ELEMENT tStep="5" number="1" gp="2" keyword="1" component="4" value="8.23711e-09"/>
+      <ELEMENT tStep="5" number="1" gp="2" keyword="1" component="5" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="2" keyword="1" component="6" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="3" keyword="1" component="1" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="3" keyword="1" component="2" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="3" keyword="1" component="3" value="5447280000.0"/>
+      <ELEMENT tStep="5" number="1" gp="3" keyword="1" component="4" value="-9.46558e-09"/>
+      <ELEMENT tStep="5" number="1" gp="3" keyword="1" component="5" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="3" keyword="1" component="6" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="4" keyword="1" component="1" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="4" keyword="1" component="2" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="4" keyword="1" component="3" value="5447280000.0"/>
+      <ELEMENT tStep="5" number="1" gp="4" keyword="1" component="4" value="1.704e-08"/>
+      <ELEMENT tStep="5" number="1" gp="4" keyword="1" component="5" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="4" keyword="1" component="6" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="5" keyword="1" component="1" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="5" keyword="1" component="2" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="5" keyword="1" component="3" value="5447280000.0"/>
+      <ELEMENT tStep="5" number="1" gp="5" keyword="1" component="4" value="-2.45693e-09"/>
+      <ELEMENT tStep="5" number="1" gp="5" keyword="1" component="5" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="5" keyword="1" component="6" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="6" keyword="1" component="1" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="6" keyword="1" component="2" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="6" keyword="1" component="3" value="5447280000.0"/>
+      <ELEMENT tStep="5" number="1" gp="6" keyword="1" component="4" value="8.23711e-09"/>
+      <ELEMENT tStep="5" number="1" gp="6" keyword="1" component="5" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="6" keyword="1" component="6" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="7" keyword="1" component="1" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="7" keyword="1" component="2" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="7" keyword="1" component="3" value="5447280000.0"/>
+      <ELEMENT tStep="5" number="1" gp="7" keyword="1" component="4" value="-9.46558e-09"/>
+      <ELEMENT tStep="5" number="1" gp="7" keyword="1" component="5" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="7" keyword="1" component="6" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="8" keyword="1" component="1" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="8" keyword="1" component="2" value="4776360000.0"/>
+      <ELEMENT tStep="5" number="1" gp="8" keyword="1" component="3" value="5447280000.0"/>
+      <ELEMENT tStep="5" number="1" gp="8" keyword="1" component="4" value="1.704e-08"/>
+      <ELEMENT tStep="5" number="1" gp="8" keyword="1" component="5" value="0.0"/>
+      <ELEMENT tStep="5" number="1" gp="8" keyword="1" component="6" value="0.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

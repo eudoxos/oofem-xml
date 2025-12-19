@@ -1,0 +1,67 @@
+<oofem version="1">
+  <Output>HeMoKunzel_1.out</Output>
+  <Description>Heat and moisture transport - Kunzel's model. Direct solver and unsymmetric skyline.</Description>
+  <Analysis type="transienttransport" nsteps="9" deltat="36000.0" alpha="0.5" lumped="" forcescale="0.0 0.0" forcescaledofs="10 14" rtolf="1e-05" lstype="0" smtype="1"/>
+  <Domain domain="hema1">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.05 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.15 0.0 0.0"/>
+      <Node id="5" coords="0.2 0.0 0.0"/>
+      <Node coords="0.0 0.05 0.0"/>
+      <Node coords="0.05 0.05 0.0"/>
+      <Node coords="0.1 0.05 0.0"/>
+      <Node coords="0.15 0.05 0.0"/>
+      <Node id="10" coords="0.2 0.05 0.0"/>
+    </Nodes>
+    <Elements>
+      <tr1hmt nodes="1 7 6"/>
+      <tr1hmt nodes="1 2 7"/>
+      <tr1hmt nodes="2 3 8"/>
+      <tr1hmt nodes="2 8 7"/>
+      <tr1hmt id="5" nodes="3 9 8"/>
+      <tr1hmt nodes="3 4 9"/>
+      <tr1hmt nodes="4 10 9"/>
+      <tr1hmt nodes="4 5 10"/>
+    </Elements>
+    <CrossSections>
+      <SimpleTransportCS thickness="1.0" mat="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <hemokunzel d="2000.0" iso_type="0" iso_a="4.83" iso_n="0.183" iso_wh="109.5" mu="10.0" permeability_type="2" a="0.001" lambda0="1.3" b="8.0" cs="880.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <!--temperature & humidity-->
+      <BoundaryCondition loadtimefunction="1" dofs="10 14" values="298.15 0.6" set="2"/>
+      <!--temperature-->
+      <BoundaryCondition loadtimefunction="1" dofs="10" values="323.15" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions>
+      <!--temparature ic-->
+      <InitialCondition conditions="u 293.15" dofs="10" set="1"/>
+      <!--humidity ic-->
+      <InitialCondition conditions="u 0.9" dofs="14" set="1"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <!--InitialCondition 3 Conditions 1 u 298.15 dofs 1 10 set 2-->
+      <!--InitialCondition 4 Conditions 1 u 0.6 dofs 1 14 set 2-->
+      <!--InitialCondition 5 Conditions 1 u 323.15 dofs 1 10 set 3-->
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-8"/>
+      <Set nodes="1 6"/>
+      <Set nodes="5 10"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-05">
+      <NODE tStep="5" number="3" dof="10" unknown="d" value="310.465057"/>
+      <NODE tStep="5" number="5" dof="14" unknown="d" value="0.821948984"/>
+      <NODE tStep="9" number="3" dof="10" unknown="d" value="310.807596"/>
+      <NODE tStep="9" number="5" dof="14" unknown="d" value="0.779642416"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

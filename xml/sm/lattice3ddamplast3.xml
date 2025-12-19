@@ -1,0 +1,41 @@
+<oofem version="1">
+  <Output>lattice3ddamplast3.out</Output>
+  <Description>Direct tension. 3D Model</Description>
+  <Analysis type="NonLinearStatic" nsteps="1" contextoutputstep="100">
+    <Metasteps>
+      <Metastep nsteps="3" rtolv="0.0001" maxiter="2000" stiffmode="1" controllmode="1" refloadmode="0" minsteplength="0.001" ddm="2 1" ddv="-1.0" ddltf="2"/>
+    </Metasteps>
+  </Analysis>
+  <Domain domain="3dlattice">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0" bc="1 1 1 1 1 1"/>
+      <Node coords="1.0 0.0 0.0" bc="0 0 1 1 1 1"/>
+    </Nodes>
+    <Elements>
+      <lattice3D nodes="1 2" crosssect="1" mat="1" polycoords="0.5 -0.5 -0.5 0.5 0.5 -0.5 0.5 0.5 0.5 0.5 -0.5 0.5"/>
+    </Elements>
+    <CrossSections>
+      <latticecs material="1"/>
+    </CrossSections>
+    <Materials>
+      <latticeplastdam talpha="0.0" d="0.0" e="1.0" ft="1.0" fc="10.0" angle1="0.5" angle2="0.5" flow="0.5" wf="5.0" a1="1.0" ahard="0.001" tol="1e-06"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction npoints="5" t="0.0 60.0 61.0 62.0 300.0" f_t_="0.0 40.0 18.8 40.0 100.0"/>
+    </LoadTimeFunctions>
+    <Sets/>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="138" component="1" value="0.0" tolerance="1e-05"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="139" component="1" value="0.0" tolerance="1e-05"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="139" component="1" value="-0.666666667" tolerance="1e-05"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

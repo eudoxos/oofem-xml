@@ -1,0 +1,98 @@
+<oofem version="1">
+  <Output>tmpatch38.out</Output>
+  <Description>Patch test of brick1ht elements (test of surfload on all edges)</Description>
+  <Analysis type="StationaryProblem" nsteps="1"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="3.0 0.0 0.0"/>
+      <Node coords="3.0 2.0 0.0"/>
+      <Node coords="3.0 4.0 0.0"/>
+      <Node coords="1.5 0.0 0.0"/>
+      <Node id="5" coords="1.5 2.0 0.0"/>
+      <Node coords="1.5 4.0 0.0"/>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 2.0 0.0"/>
+      <Node coords="0.0 4.0 0.0"/>
+      <Node id="10" coords="3.0 0.0 2.5"/>
+      <Node coords="3.0 2.0 2.5"/>
+      <Node coords="3.0 4.0 2.5"/>
+      <Node coords="1.5 0.0 2.5"/>
+      <Node coords="1.5 2.0 2.5"/>
+      <Node id="15" coords="1.5 4.0 2.5"/>
+      <Node coords="0.0 0.0 2.5"/>
+      <Node coords="0.0 2.0 2.5"/>
+      <Node coords="0.0 4.0 2.5"/>
+      <Node coords="3.0 0.0 5.0"/>
+      <Node id="20" coords="3.0 2.0 5.0"/>
+      <Node coords="3.0 4.0 5.0"/>
+      <Node coords="1.5 0.0 5.0"/>
+      <Node coords="1.5 2.0 5.0"/>
+      <Node coords="1.5 4.0 5.0"/>
+      <Node id="25" coords="0.0 0.0 5.0"/>
+      <Node coords="0.0 2.0 5.0"/>
+      <Node coords="0.0 4.0 5.0"/>
+      <Node coords="3.0 0.0 7.5"/>
+      <Node coords="3.0 2.0 7.5"/>
+      <Node id="30" coords="3.0 4.0 7.5"/>
+      <Node coords="1.5 0.0 7.5"/>
+      <Node coords="1.5 2.0 7.5"/>
+      <Node coords="1.5 4.0 7.5"/>
+      <Node coords="0.0 0.0 7.5"/>
+      <Node id="35" coords="0.0 2.0 7.5"/>
+      <Node coords="0.0 4.0 7.5"/>
+    </Nodes>
+    <Elements>
+      <brick1ht nodes="1 2 11 10 4 5 14 13"/>
+      <brick1ht nodes="6 5 14 15 3 2 11 12"/>
+      <brick1ht nodes="10 19 22 13 11 20 23 14"/>
+      <brick1ht nodes="23 20 21 24 14 11 12 15"/>
+      <brick1ht id="5" nodes="23 32 29 20 22 31 28 19"/>
+      <brick1ht nodes="20 23 24 21 29 32 33 30"/>
+      <brick1ht nodes="4 5 14 13 7 8 17 16"/>
+      <brick1ht nodes="5 6 15 14 8 9 18 17"/>
+      <brick1ht nodes="13 14 23 22 16 17 26 25"/>
+      <brick1ht id="10" nodes="14 15 24 23 17 18 27 26"/>
+      <brick1ht nodes="22 23 32 31 25 26 35 34"/>
+      <brick1ht nodes="23 24 33 32 26 27 36 35"/>
+    </Elements>
+    <CrossSections>
+      <SimpleTransportCS mat="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoHeat d="2400.0" k="3.0" c="1000.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="10" values="0.0" set="2"/>
+      <constantsurfaceload loadtimefunction="1" components="15.0" properties="a 0.8" loadtype="3" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-12"/>
+      <Set nodes="7 8 9 16 17 18 25 26 27 34 35 36"/>
+      <Set elementboundaries="1 1 2 2 3 3 4 4 5 5 6 6"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <NODE tStep="1" number="1" dof="10" unknown="d" value="6.66666667"/>
+      <NODE tStep="1" number="2" dof="10" unknown="d" value="6.66666667"/>
+      <NODE tStep="1" number="3" dof="10" unknown="d" value="6.66666667"/>
+      <NODE tStep="1" number="4" dof="10" unknown="d" value="3.33333333"/>
+      <NODE tStep="1" number="5" dof="10" unknown="d" value="3.33333333"/>
+      <NODE tStep="1" number="6" dof="10" unknown="d" value="3.33333333"/>
+      <NODE tStep="1" number="7" dof="10" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="8" dof="10" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="9" dof="10" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="10" dof="10" unknown="d" value="6.66666667"/>
+      <NODE tStep="1" number="11" dof="10" unknown="d" value="6.66666667"/>
+      <NODE tStep="1" number="12" dof="10" unknown="d" value="6.66666667"/>
+      <NODE tStep="1" number="13" dof="10" unknown="d" value="3.33333333"/>
+      <NODE tStep="1" number="14" dof="10" unknown="d" value="3.33333333"/>
+      <NODE tStep="1" number="15" dof="10" unknown="d" value="3.33333333"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

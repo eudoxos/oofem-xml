@@ -1,0 +1,46 @@
+<oofem version="1">
+  <Output>line02.out</Output>
+  <Description>Line1_ht element in nonstationary problem</Description>
+  <Analysis type="TransientTransport" nsteps="20" deltat="3600.0" alpha="0.5" lumped=""/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 1.0 0.0"/>
+      <Node coords="0.0 4.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <line1ht nodes="1 2"/>
+      <line1ht nodes="2 3"/>
+    </Elements>
+    <CrossSections>
+      <SimpleTransportCS area="0.15" mat="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoHeat d="24.0" k="2.0" c="900.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="10" values="10.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="10" values="40.0" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions>
+      <InitialCondition conditions="u 10.0" dofs="10" set="4"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-2"/>
+      <Set nodes="1"/>
+      <Set nodes="3"/>
+      <Set nodes="2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <NODE tStep="20" number="2" dof="10" unknown="d" value="17.3883107"/>
+      <ELEMENT tStep="20" number="1" gp="1" keyword="56" component="2" value="-14.7486991"/>
+      <ELEMENT tStep="20" number="2" gp="1" keyword="56" component="2" value="-15.083767"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

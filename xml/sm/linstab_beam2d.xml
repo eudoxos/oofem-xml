@@ -1,0 +1,54 @@
+<oofem version="1">
+  <Output>linstab_beam2d.out</Output>
+  <Description>Linear stability of cantiliver</Description>
+  <!--StaticStructural 1 nsteps 1-->
+  <Analysis type="LinearStability" nroot="9" rtolv="1e-08"/>
+  <Domain domain="2dbeam">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 0.0 1.0"/>
+      <Node coords="0.0 0.0 2.0"/>
+      <Node coords="0.0 0.0 3.0"/>
+    </Nodes>
+    <Elements>
+      <Beam2d nodes="1 2"/>
+      <Beam2d nodes="2 3"/>
+      <Beam2d nodes="3 4"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS area="0.0054" iy="8.5e-05" beamshearcoeff="1e+60" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="25.0" e="210000000.0" n="0.2" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 3 5" values="0.0 0.0 0.0" set="2"/>
+      <NodalLoad loadtimefunction="1" dofs="1 3 5" components="0.0 -1.0 0.0" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-3"/>
+      <Set nodes="1"/>
+      <Set nodes="4"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.05">
+      <!--check eigen values-->
+      <EIGVAL tStep="0" eignum="1" value="4894.18251"/>
+      <EIGVAL tStep="0" eignum="2" value="44374.4163"/>
+      <EIGVAL tStep="0" eignum="3" value="128120.733"/>
+      <EIGVAL tStep="0" eignum="4" value="288085.313"/>
+      <EIGVAL tStep="0" eignum="5" value="574425.584"/>
+      <EIGVAL tStep="0" eignum="6" value="980936.136"/>
+      <!--unble to compute 7,8,9-th eigval on SP02 (7,8 with -O2)-->
+      <EIGVAL tStep="0" eignum="7" value="8505000000.0"/>
+      <EIGVAL tStep="0" eignum="8" value="8505000000.0"/>
+      <EIGVAL tStep="0" eignum="9" value="8505000000.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

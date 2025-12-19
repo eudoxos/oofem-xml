@@ -1,0 +1,75 @@
+<oofem version="1">
+  <Output>bond_link_1.out</Output>
+  <Description>Bond test</Description>
+  <Analysis type="StaticStructural" nsteps="1" initialguess="1" lstype="0" smtype="1" stiffmode="2" rtolv="0.001"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.2 0.0 0.0"/>
+      <!--Four solid nodes for beam node 1-->
+      <Node coords="0.005 0.01 0.01"/>
+      <Node id="5" coords="-0.001 -0.008 0.012"/>
+      <Node coords="0.01 0.02 -0.008"/>
+      <Node coords="0.002 0.001 0.001"/>
+      <!--Four solid nodes for beam node 2-->
+      <Node coords="0.1 0.01 0.01"/>
+      <Node coords="0.104 -0.01 0.05"/>
+      <Node id="10" coords="0.09 -0.03 0.03"/>
+      <Node coords="0.12 0.01 0.01"/>
+      <!--Four solid nodes for beam node 3-->
+      <Node coords="0.21 0.01 0.01"/>
+      <Node coords="0.19 -0.01 0.01"/>
+      <Node coords="0.22 0.03 -0.01"/>
+      <Node id="15" coords="0.195 -0.02 0.01"/>
+      <!--Reference node for beams-->
+      <Node coords="0.0 0.01 0.0"/>
+    </Nodes>
+    <Elements>
+      <libeam3d2 nodes="1 2" refnode="16"/>
+      <libeam3d2 nodes="2 3" refnode="16"/>
+      <!--links for first node-->
+      <bondlink3d nodes="1 4" length="0.05" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
+      <bondlink3d nodes="1 5" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
+      <bondlink3d id="5" nodes="1 6" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
+      <bondlink3d nodes="1 7" length="0.05" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
+      <!--links for second node-->
+      <bondlink3d nodes="2 8" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.025"/>
+      <bondlink3d nodes="2 9" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.025"/>
+      <bondlink3d nodes="2 10" length="0.05" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.025"/>
+      <bondlink3d id="10" nodes="2 11" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.025"/>
+      <!--links for third node-->
+      <bondlink3d nodes="3 12" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
+      <bondlink3d nodes="3 13" length="0.05" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
+      <bondlink3d nodes="3 14" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
+      <bondlink3d nodes="3 15" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
+    </Elements>
+    <CrossSections>
+      <FiberedCS fibermaterials="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" thicks="0.003 0.003 0.003 0.003 0.0015 0.003 0.003 0.0015 0.003 0.003 0.003 0.003 0.0015 0.003 0.003 0.0015" widths="0.003 0.003 0.003 0.003 0.0015 0.003 0.003 0.0015 0.003 0.003 0.003 0.003 0.0015 0.003 0.003 0.0015" fiberycentrecoords="0.0045 0.0015 -0.0015 -0.0045 0.00375 0.0015 -0.0015 -0.00375 0.0045 0.0015 -0.0015 -0.0045 0.00375 0.0015 -0.0015 -0.00375" fiberzcentrecoords="-0.0015 -0.0015 -0.0015 -0.0015 -0.00375 -0.0045 -0.0045 -0.00375 0.0015 0.0015 0.0015 0.0015 0.00375 0.0045 0.0045 0.00375" thick="0.012" width="0.012" set="1"/>
+      <InterfaceCS material="2" set="3"/>
+    </CrossSections>
+    <Materials>
+      <isole d="0.0" e="200000000000.0" n="0.3" talpha="0.0"/>
+      <linkslip kn="30000000000.0" kl="30000000000000.0" t0="3000000.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3" values="0.0 0.0 0.0" set="4"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.001" set="2"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <PiecewiseLinFunction npoints="2" t="0.0 1.0" f_t_="0.0 1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elements="1 2"/>
+      <Set nodes="3"/>
+      <Set elements="3 4 5 6 7 8 9 10 11 12 13 14"/>
+      <Set nodes="4 5 6 7 8 9 10 11 12 13 14 15"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <vtkxmlperiodic tstep_all="" primvars="1" vars="4 1" stype="0" regionsets="1"/>
+    <vtkxmlperiodic tstep_all="" primvars="1" vars="4 1" stype="0" regionsets="3"/>
+  </ExportModules>
+</oofem>

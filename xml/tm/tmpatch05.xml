@@ -1,0 +1,49 @@
+<oofem version="1">
+  <Output>tmpatch05.out</Output>
+  <Description>Patch test of Quad1_ht elements. Convection as the Newton law (Cauchy's b.c.) via a heat transfer coefficient.</Description>
+  <Analysis type="StationaryProblem" nsteps="1"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="2.0 0.0 0.0"/>
+      <Node coords="0.0 1.0 0.0"/>
+      <Node coords="2.0 1.0 0.0"/>
+      <Node id="5" coords="0.0 8.0 0.0"/>
+      <Node coords="2.0 8.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <quad1ht nodes="1 2 4 3"/>
+      <quad1ht nodes="4 6 5 3"/>
+    </Elements>
+    <CrossSections>
+      <SimpleTransportCS mat="1" set="1" thickness="0.15"/>
+    </CrossSections>
+    <Materials>
+      <IsoHeat d="0.0" k="3.0" c="1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="10" values="0.0" set="2"/>
+      <!--BoundaryCondition  1 loadTimeFunction 1 dofs 1 10 values 1 15.0 set 3-->
+      <!--Newton bc-->
+      <constantedgeload loadtimefunction="1" components="15.0" properties="a 0.8" loadtype="3" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-2"/>
+      <Set nodes="1 2"/>
+      <Set elementedges="2 2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <NODE tStep="1" number="3" dof="10" unknown="d" value="1.2765957447"/>
+      <NODE tStep="1" number="4" dof="10" unknown="d" value="1.2765957447"/>
+      <NODE tStep="1" number="5" dof="10" unknown="d" value="10.212765957"/>
+      <NODE tStep="1" number="6" dof="10" unknown="d" value="10.212765957"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

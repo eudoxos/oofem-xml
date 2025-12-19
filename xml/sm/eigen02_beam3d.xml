@@ -1,0 +1,32 @@
+<oofem version="1">
+  <Output>eigen02_beam3d.out</Output>
+  <Description>Test of json interface</Description>
+  <Analysis type="eigenvaluedynamic" nroot="2" smtype="0" stype="1" rtolv="1e-08"/>
+  <Domain domain="3dshell">
+    <OutputManager dofman_all="" element_all="" tstep_all=""/>
+    <Nodes>
+      <Node coords="-1000.0 0.0 0.0" load=""/>
+      <Node coords="0.0 0.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <beam3d crosssect="1" mat="1" zaxis="0.0 0.0 -1.0" bodyloads="2" boundaryloads="" dofstocondense="" nodes="1 2"/>
+    </Elements>
+    <CrossSections>
+      <simplecs material="1" area="692.67374207" beamshearcoeff="0.56" ik="553293.9663" iy="276646.9832" iz="276646.9832" thick="60.3" width="60.3"/>
+    </CrossSections>
+    <Materials>
+      <isole d="7.85e-06" e="203395000.0" n="0.3" talpha="1.15e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <boundarycondition loadtimefunction="1" set="1" values="0.0 0.0 0.0 0.0 0.0 0.0" dofs="1 2 3 4 5 6"/>
+      <deadweight loadtimefunction="1" components="0.0 -9.81 0.0 0.0 0.0 0.0"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <constantfunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1"/>
+    </Sets>
+  </Domain>
+</oofem>

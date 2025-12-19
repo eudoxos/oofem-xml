@@ -1,0 +1,50 @@
+<oofem version="1">
+  <Output>latticelink1.out</Output>
+  <Description>Bond test for lattice elements</Description>
+  <Analysis type="StaticStructural" nsteps="1" initialguess="0" rtolv="0.001"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <!--Beam nodes-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.2 0.0 0.0"/>
+      <!--Lattice nodes-->
+      <Node coords="0.005 0.01 0.01"/>
+      <Node id="5" coords="-0.001 -0.008 0.012"/>
+      <Node coords="0.01 0.02 -0.008"/>
+      <Node coords="0.0 0.01 0.0"/>
+    </Nodes>
+    <Elements>
+      <!--BeamElements-->
+      <libeam3d2 nodes="1 2" refnode="7"/>
+      <libeam3d2 nodes="2 3" refnode="7"/>
+      <!--links for first node-->
+      <latticelink3d nodes="1 4" crosssect="2" mat="2" length="0.05" diameter="0.01" dirvector="1.0 0.0 0.0" l_end="0.2"/>
+      <latticelink3d nodes="2 5" crosssect="2" mat="2" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" l_end="0.15"/>
+      <latticelink3d id="5" nodes="3 6" crosssect="2" mat="2" length="0.05" diameter="0.01" dirvector="1.0 0.0 0.0" l_end="0.05"/>
+    </Elements>
+    <CrossSections>
+      <FiberedCS fibermaterials="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" thicks="0.003 0.003 0.003 0.003 0.0015 0.003 0.003 0.0015 0.003 0.003 0.003 0.003 0.0015 0.003 0.003 0.0015" widths="0.003 0.003 0.003 0.003 0.0015 0.003 0.003 0.0015 0.003 0.003 0.003 0.003 0.0015 0.003 0.003 0.0015" fiberycentrecoords="0.0045 0.0015 -0.0015 -0.0045 0.00375 0.0015 -0.0015 -0.00375 0.0045 0.0015 -0.0015 -0.0045 0.00375 0.0015 -0.0015 -0.00375" fiberzcentrecoords="-0.0015 -0.0015 -0.0015 -0.0015 -0.00375 -0.0045 -0.0045 -0.00375 0.0015 0.0015 0.0015 0.0015 0.00375 0.0045 0.0045 0.00375" thick="0.012" width="0.012" set="1"/>
+      <latticecs material="2"/>
+    </CrossSections>
+    <Materials>
+      <isole d="0.0" e="200000000000.0" n="0.3" talpha="0.0"/>
+      <latticeslip talpha="0.0" d="0.0" e="30000000000.0" a1="1000.0" t0="1000000.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3 4 5 6" values="0.0 0.0 0.0 0.0 0.0 0.0" set="4"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.001" set="2"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <PiecewiseLinFunction npoints="2" t="0.0 1.0" f_t_="0.0 1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elements="1 2"/>
+      <Set nodes="3"/>
+      <Set elements="3 4 5"/>
+      <Set nodes="4 5 6"/>
+    </Sets>
+  </Domain>
+</oofem>

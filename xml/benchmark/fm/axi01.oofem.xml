@@ -1,0 +1,691 @@
+<oofem version="1">
+  <Output>axi01.oofem.out</Output>
+  <Description>axisymmetric 2D pipe test in radial direction, inlet velocity (constant), outlet: pressure, no friction</Description>
+  <Analysis type="supg" nsteps="10" lstype="0" smtype="1" deltat="100.0" rtolv="0.0001" alpha="0.5" renumber="1"/>
+  <Domain domain="2dincompflow">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="5.0 0.0 0.0"/>
+      <Node coords="5.0 2.0 0.0"/>
+      <Node coords="1.0 2.0 0.0"/>
+      <Node id="5" coords="1.2 0.0 0.0"/>
+      <Node coords="1.4 0.0 0.0"/>
+      <Node coords="1.6 0.0 0.0"/>
+      <Node coords="1.8 0.0 0.0"/>
+      <Node coords="2.0 0.0 0.0"/>
+      <Node id="10" coords="2.2 0.0 0.0"/>
+      <Node coords="2.4 0.0 0.0"/>
+      <Node coords="2.6 0.0 0.0"/>
+      <Node coords="2.8 0.0 0.0"/>
+      <Node coords="3.0 0.0 0.0"/>
+      <Node id="15" coords="3.2 0.0 0.0"/>
+      <Node coords="3.4 0.0 0.0"/>
+      <Node coords="3.6 0.0 0.0"/>
+      <Node coords="3.8 0.0 0.0"/>
+      <Node coords="4.0 0.0 0.0"/>
+      <Node id="20" coords="4.2 0.0 0.0"/>
+      <Node coords="4.4 0.0 0.0"/>
+      <Node coords="4.6 0.0 0.0"/>
+      <Node coords="4.8 0.0 0.0"/>
+      <Node coords="5.0 0.2 0.0"/>
+      <Node id="25" coords="5.0 0.4 0.0"/>
+      <Node coords="5.0 0.6 0.0"/>
+      <Node coords="5.0 0.8 0.0"/>
+      <Node coords="5.0 1.0 0.0"/>
+      <Node coords="5.0 1.2 0.0"/>
+      <Node id="30" coords="5.0 1.4 0.0"/>
+      <Node coords="5.0 1.6 0.0"/>
+      <Node coords="5.0 1.8 0.0"/>
+      <Node coords="4.8 2.0 0.0"/>
+      <Node coords="4.6 2.0 0.0"/>
+      <Node id="35" coords="4.4 2.0 0.0"/>
+      <Node coords="4.2 2.0 0.0"/>
+      <Node coords="4.0 2.0 0.0"/>
+      <Node coords="3.8 2.0 0.0"/>
+      <Node coords="3.6 2.0 0.0"/>
+      <Node id="40" coords="3.4 2.0 0.0"/>
+      <Node coords="3.2 2.0 0.0"/>
+      <Node coords="3.0 2.0 0.0"/>
+      <Node coords="2.8 2.0 0.0"/>
+      <Node coords="2.6 2.0 0.0"/>
+      <Node id="45" coords="2.4 2.0 0.0"/>
+      <Node coords="2.2 2.0 0.0"/>
+      <Node coords="2.0 2.0 0.0"/>
+      <Node coords="1.8 2.0 0.0"/>
+      <Node coords="1.6 2.0 0.0"/>
+      <Node id="50" coords="1.4 2.0 0.0"/>
+      <Node coords="1.2 2.0 0.0"/>
+      <Node coords="1.0 1.8 0.0"/>
+      <Node coords="1.0 1.6 0.0"/>
+      <Node coords="1.0 1.4 0.0"/>
+      <Node id="55" coords="1.0 1.2 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+      <Node coords="1.0 0.8 0.0"/>
+      <Node coords="1.0 0.6 0.0"/>
+      <Node coords="1.0 0.4 0.0"/>
+      <Node id="60" coords="1.0 0.2 0.0"/>
+      <Node coords="1.2 0.2 0.0"/>
+      <Node coords="1.4 0.2 0.0"/>
+      <Node coords="1.6 0.2 0.0"/>
+      <Node coords="1.8 0.2 0.0"/>
+      <Node id="65" coords="2.0 0.2 0.0"/>
+      <Node coords="2.2 0.2 0.0"/>
+      <Node coords="2.4 0.2 0.0"/>
+      <Node coords="2.6 0.2 0.0"/>
+      <Node coords="2.8 0.2 0.0"/>
+      <Node id="70" coords="3.0 0.2 0.0"/>
+      <Node coords="3.2 0.2 0.0"/>
+      <Node coords="3.4 0.2 0.0"/>
+      <Node coords="3.6 0.2 0.0"/>
+      <Node coords="3.8 0.2 0.0"/>
+      <Node id="75" coords="4.0 0.2 0.0"/>
+      <Node coords="4.2 0.2 0.0"/>
+      <Node coords="4.4 0.2 0.0"/>
+      <Node coords="4.6 0.2 0.0"/>
+      <Node coords="4.8 0.2 0.0"/>
+      <Node id="80" coords="1.2 0.4 0.0"/>
+      <Node coords="1.4 0.4 0.0"/>
+      <Node coords="1.6 0.4 0.0"/>
+      <Node coords="1.8 0.4 0.0"/>
+      <Node coords="2.0 0.4 0.0"/>
+      <Node id="85" coords="2.2 0.4 0.0"/>
+      <Node coords="2.4 0.4 0.0"/>
+      <Node coords="2.6 0.4 0.0"/>
+      <Node coords="2.8 0.4 0.0"/>
+      <Node coords="3.0 0.4 0.0"/>
+      <Node id="90" coords="3.2 0.4 0.0"/>
+      <Node coords="3.4 0.4 0.0"/>
+      <Node coords="3.6 0.4 0.0"/>
+      <Node coords="3.8 0.4 0.0"/>
+      <Node coords="4.0 0.4 0.0"/>
+      <Node id="95" coords="4.2 0.4 0.0"/>
+      <Node coords="4.4 0.4 0.0"/>
+      <Node coords="4.6 0.4 0.0"/>
+      <Node coords="4.8 0.4 0.0"/>
+      <Node coords="1.2 0.6 0.0"/>
+      <Node id="100" coords="1.4 0.6 0.0"/>
+      <Node coords="1.6 0.6 0.0"/>
+      <Node coords="1.8 0.6 0.0"/>
+      <Node coords="2.0 0.6 0.0"/>
+      <Node coords="2.2 0.6 0.0"/>
+      <Node id="105" coords="2.4 0.6 0.0"/>
+      <Node coords="2.6 0.6 0.0"/>
+      <Node coords="2.8 0.6 0.0"/>
+      <Node coords="3.0 0.6 0.0"/>
+      <Node coords="3.2 0.6 0.0"/>
+      <Node id="110" coords="3.4 0.6 0.0"/>
+      <Node coords="3.6 0.6 0.0"/>
+      <Node coords="3.8 0.6 0.0"/>
+      <Node coords="4.0 0.6 0.0"/>
+      <Node coords="4.2 0.6 0.0"/>
+      <Node id="115" coords="4.4 0.6 0.0"/>
+      <Node coords="4.6 0.6 0.0"/>
+      <Node coords="4.8 0.6 0.0"/>
+      <Node coords="1.2 0.8 0.0"/>
+      <Node coords="1.4 0.8 0.0"/>
+      <Node id="120" coords="1.6 0.8 0.0"/>
+      <Node coords="1.8 0.8 0.0"/>
+      <Node coords="2.0 0.8 0.0"/>
+      <Node coords="2.2 0.8 0.0"/>
+      <Node coords="2.4 0.8 0.0"/>
+      <Node id="125" coords="2.6 0.8 0.0"/>
+      <Node coords="2.8 0.8 0.0"/>
+      <Node coords="3.0 0.8 0.0"/>
+      <Node coords="3.2 0.8 0.0"/>
+      <Node coords="3.4 0.8 0.0"/>
+      <Node id="130" coords="3.6 0.8 0.0"/>
+      <Node coords="3.8 0.8 0.0"/>
+      <Node coords="4.0 0.8 0.0"/>
+      <Node coords="4.2 0.8 0.0"/>
+      <Node coords="4.4 0.8 0.0"/>
+      <Node id="135" coords="4.6 0.8 0.0"/>
+      <Node coords="4.8 0.8 0.0"/>
+      <Node coords="1.2 1.0 0.0"/>
+      <Node coords="1.4 1.0 0.0"/>
+      <Node coords="1.6 1.0 0.0"/>
+      <Node id="140" coords="1.8 1.0 0.0"/>
+      <Node coords="2.0 1.0 0.0"/>
+      <Node coords="2.2 1.0 0.0"/>
+      <Node coords="2.4 1.0 0.0"/>
+      <Node coords="2.6 1.0 0.0"/>
+      <Node id="145" coords="2.8 1.0 0.0"/>
+      <Node coords="3.0 1.0 0.0"/>
+      <Node coords="3.2 1.0 0.0"/>
+      <Node coords="3.4 1.0 0.0"/>
+      <Node coords="3.6 1.0 0.0"/>
+      <Node id="150" coords="3.8 1.0 0.0"/>
+      <Node coords="4.0 1.0 0.0"/>
+      <Node coords="4.2 1.0 0.0"/>
+      <Node coords="4.4 1.0 0.0"/>
+      <Node coords="4.6 1.0 0.0"/>
+      <Node id="155" coords="4.8 1.0 0.0"/>
+      <Node coords="1.2 1.2 0.0"/>
+      <Node coords="1.4 1.2 0.0"/>
+      <Node coords="1.6 1.2 0.0"/>
+      <Node coords="1.8 1.2 0.0"/>
+      <Node id="160" coords="2.0 1.2 0.0"/>
+      <Node coords="2.2 1.2 0.0"/>
+      <Node coords="2.4 1.2 0.0"/>
+      <Node coords="2.6 1.2 0.0"/>
+      <Node coords="2.8 1.2 0.0"/>
+      <Node id="165" coords="3.0 1.2 0.0"/>
+      <Node coords="3.2 1.2 0.0"/>
+      <Node coords="3.4 1.2 0.0"/>
+      <Node coords="3.6 1.2 0.0"/>
+      <Node coords="3.8 1.2 0.0"/>
+      <Node id="170" coords="4.0 1.2 0.0"/>
+      <Node coords="4.2 1.2 0.0"/>
+      <Node coords="4.4 1.2 0.0"/>
+      <Node coords="4.6 1.2 0.0"/>
+      <Node coords="4.8 1.2 0.0"/>
+      <Node id="175" coords="1.2 1.4 0.0"/>
+      <Node coords="1.4 1.4 0.0"/>
+      <Node coords="1.6 1.4 0.0"/>
+      <Node coords="1.8 1.4 0.0"/>
+      <Node coords="2.0 1.4 0.0"/>
+      <Node id="180" coords="2.2 1.4 0.0"/>
+      <Node coords="2.4 1.4 0.0"/>
+      <Node coords="2.6 1.4 0.0"/>
+      <Node coords="2.8 1.4 0.0"/>
+      <Node coords="3.0 1.4 0.0"/>
+      <Node id="185" coords="3.2 1.4 0.0"/>
+      <Node coords="3.4 1.4 0.0"/>
+      <Node coords="3.6 1.4 0.0"/>
+      <Node coords="3.8 1.4 0.0"/>
+      <Node coords="4.0 1.4 0.0"/>
+      <Node id="190" coords="4.2 1.4 0.0"/>
+      <Node coords="4.4 1.4 0.0"/>
+      <Node coords="4.6 1.4 0.0"/>
+      <Node coords="4.8 1.4 0.0"/>
+      <Node coords="1.2 1.6 0.0"/>
+      <Node id="195" coords="1.4 1.6 0.0"/>
+      <Node coords="1.6 1.6 0.0"/>
+      <Node coords="1.8 1.6 0.0"/>
+      <Node coords="2.0 1.6 0.0"/>
+      <Node coords="2.2 1.6 0.0"/>
+      <Node id="200" coords="2.4 1.6 0.0"/>
+      <Node coords="2.6 1.6 0.0"/>
+      <Node coords="2.8 1.6 0.0"/>
+      <Node coords="3.0 1.6 0.0"/>
+      <Node coords="3.2 1.6 0.0"/>
+      <Node id="205" coords="3.4 1.6 0.0"/>
+      <Node coords="3.6 1.6 0.0"/>
+      <Node coords="3.8 1.6 0.0"/>
+      <Node coords="4.0 1.6 0.0"/>
+      <Node coords="4.2 1.6 0.0"/>
+      <Node id="210" coords="4.4 1.6 0.0"/>
+      <Node coords="4.6 1.6 0.0"/>
+      <Node coords="4.8 1.6 0.0"/>
+      <Node coords="1.2 1.8 0.0"/>
+      <Node coords="1.4 1.8 0.0"/>
+      <Node id="215" coords="1.6 1.8 0.0"/>
+      <Node coords="1.8 1.8 0.0"/>
+      <Node coords="2.0 1.8 0.0"/>
+      <Node coords="2.2 1.8 0.0"/>
+      <Node coords="2.4 1.8 0.0"/>
+      <Node id="220" coords="2.6 1.8 0.0"/>
+      <Node coords="2.8 1.8 0.0"/>
+      <Node coords="3.0 1.8 0.0"/>
+      <Node coords="3.2 1.8 0.0"/>
+      <Node coords="3.4 1.8 0.0"/>
+      <Node id="225" coords="3.6 1.8 0.0"/>
+      <Node coords="3.8 1.8 0.0"/>
+      <Node coords="4.0 1.8 0.0"/>
+      <Node coords="4.2 1.8 0.0"/>
+      <Node coords="4.4 1.8 0.0"/>
+      <Node id="230" coords="4.6 1.8 0.0"/>
+      <Node coords="4.8 1.8 0.0"/>
+    </Nodes>
+    <Elements>
+      <tr1supgaxi nodes="60 1 5"/>
+      <tr1supgaxi nodes="5 61 60"/>
+      <tr1supgaxi nodes="61 5 6"/>
+      <tr1supgaxi nodes="6 62 61"/>
+      <tr1supgaxi id="5" nodes="62 6 7"/>
+      <tr1supgaxi nodes="7 63 62"/>
+      <tr1supgaxi nodes="63 7 8"/>
+      <tr1supgaxi nodes="8 64 63"/>
+      <tr1supgaxi nodes="64 8 9"/>
+      <tr1supgaxi id="10" nodes="9 65 64"/>
+      <tr1supgaxi nodes="65 9 10"/>
+      <tr1supgaxi nodes="10 66 65"/>
+      <tr1supgaxi nodes="66 10 11"/>
+      <tr1supgaxi nodes="11 67 66"/>
+      <tr1supgaxi id="15" nodes="67 11 12"/>
+      <tr1supgaxi nodes="12 68 67"/>
+      <tr1supgaxi nodes="68 12 13"/>
+      <tr1supgaxi nodes="13 69 68"/>
+      <tr1supgaxi nodes="69 13 14"/>
+      <tr1supgaxi id="20" nodes="14 70 69"/>
+      <tr1supgaxi nodes="70 14 15"/>
+      <tr1supgaxi nodes="15 71 70"/>
+      <tr1supgaxi nodes="71 15 16"/>
+      <tr1supgaxi nodes="16 72 71"/>
+      <tr1supgaxi id="25" nodes="72 16 17"/>
+      <tr1supgaxi nodes="17 73 72"/>
+      <tr1supgaxi nodes="73 17 18"/>
+      <tr1supgaxi nodes="18 74 73"/>
+      <tr1supgaxi nodes="74 18 19"/>
+      <tr1supgaxi id="30" nodes="19 75 74"/>
+      <tr1supgaxi nodes="75 19 20"/>
+      <tr1supgaxi nodes="20 76 75"/>
+      <tr1supgaxi nodes="76 20 21"/>
+      <tr1supgaxi nodes="21 77 76"/>
+      <tr1supgaxi id="35" nodes="77 21 22"/>
+      <tr1supgaxi nodes="22 78 77"/>
+      <tr1supgaxi nodes="78 22 23"/>
+      <tr1supgaxi nodes="23 79 78"/>
+      <tr1supgaxi nodes="79 23 2"/>
+      <tr1supgaxi id="40" nodes="2 24 79"/>
+      <tr1supgaxi nodes="59 60 61"/>
+      <tr1supgaxi nodes="61 80 59"/>
+      <tr1supgaxi nodes="80 61 62"/>
+      <tr1supgaxi nodes="62 81 80"/>
+      <tr1supgaxi id="45" nodes="81 62 63"/>
+      <tr1supgaxi nodes="63 82 81"/>
+      <tr1supgaxi nodes="82 63 64"/>
+      <tr1supgaxi nodes="64 83 82"/>
+      <tr1supgaxi nodes="83 64 65"/>
+      <tr1supgaxi id="50" nodes="65 84 83"/>
+      <tr1supgaxi nodes="84 65 66"/>
+      <tr1supgaxi nodes="66 85 84"/>
+      <tr1supgaxi nodes="85 66 67"/>
+      <tr1supgaxi nodes="67 86 85"/>
+      <tr1supgaxi id="55" nodes="86 67 68"/>
+      <tr1supgaxi nodes="68 87 86"/>
+      <tr1supgaxi nodes="87 68 69"/>
+      <tr1supgaxi nodes="69 88 87"/>
+      <tr1supgaxi nodes="88 69 70"/>
+      <tr1supgaxi id="60" nodes="70 89 88"/>
+      <tr1supgaxi nodes="89 70 71"/>
+      <tr1supgaxi nodes="71 90 89"/>
+      <tr1supgaxi nodes="90 71 72"/>
+      <tr1supgaxi nodes="72 91 90"/>
+      <tr1supgaxi id="65" nodes="91 72 73"/>
+      <tr1supgaxi nodes="73 92 91"/>
+      <tr1supgaxi nodes="92 73 74"/>
+      <tr1supgaxi nodes="74 93 92"/>
+      <tr1supgaxi nodes="93 74 75"/>
+      <tr1supgaxi id="70" nodes="75 94 93"/>
+      <tr1supgaxi nodes="94 75 76"/>
+      <tr1supgaxi nodes="76 95 94"/>
+      <tr1supgaxi nodes="95 76 77"/>
+      <tr1supgaxi nodes="77 96 95"/>
+      <tr1supgaxi id="75" nodes="96 77 78"/>
+      <tr1supgaxi nodes="78 97 96"/>
+      <tr1supgaxi nodes="97 78 79"/>
+      <tr1supgaxi nodes="79 98 97"/>
+      <tr1supgaxi nodes="98 79 24"/>
+      <tr1supgaxi id="80" nodes="24 25 98"/>
+      <tr1supgaxi nodes="58 59 80"/>
+      <tr1supgaxi nodes="80 99 58"/>
+      <tr1supgaxi nodes="99 80 81"/>
+      <tr1supgaxi nodes="81 100 99"/>
+      <tr1supgaxi id="85" nodes="100 81 82"/>
+      <tr1supgaxi nodes="82 101 100"/>
+      <tr1supgaxi nodes="101 82 83"/>
+      <tr1supgaxi nodes="83 102 101"/>
+      <tr1supgaxi nodes="102 83 84"/>
+      <tr1supgaxi id="90" nodes="84 103 102"/>
+      <tr1supgaxi nodes="103 84 85"/>
+      <tr1supgaxi nodes="85 104 103"/>
+      <tr1supgaxi nodes="104 85 86"/>
+      <tr1supgaxi nodes="86 105 104"/>
+      <tr1supgaxi id="95" nodes="105 86 87"/>
+      <tr1supgaxi nodes="87 106 105"/>
+      <tr1supgaxi nodes="106 87 88"/>
+      <tr1supgaxi nodes="88 107 106"/>
+      <tr1supgaxi nodes="107 88 89"/>
+      <tr1supgaxi id="100" nodes="89 108 107"/>
+      <tr1supgaxi nodes="108 89 90"/>
+      <tr1supgaxi nodes="90 109 108"/>
+      <tr1supgaxi nodes="109 90 91"/>
+      <tr1supgaxi nodes="91 110 109"/>
+      <tr1supgaxi id="105" nodes="110 91 92"/>
+      <tr1supgaxi nodes="92 111 110"/>
+      <tr1supgaxi nodes="111 92 93"/>
+      <tr1supgaxi nodes="93 112 111"/>
+      <tr1supgaxi nodes="112 93 94"/>
+      <tr1supgaxi id="110" nodes="94 113 112"/>
+      <tr1supgaxi nodes="113 94 95"/>
+      <tr1supgaxi nodes="95 114 113"/>
+      <tr1supgaxi nodes="114 95 96"/>
+      <tr1supgaxi nodes="96 115 114"/>
+      <tr1supgaxi id="115" nodes="115 96 97"/>
+      <tr1supgaxi nodes="97 116 115"/>
+      <tr1supgaxi nodes="116 97 98"/>
+      <tr1supgaxi nodes="98 117 116"/>
+      <tr1supgaxi nodes="117 98 25"/>
+      <tr1supgaxi id="120" nodes="25 26 117"/>
+      <tr1supgaxi nodes="57 58 99"/>
+      <tr1supgaxi nodes="99 118 57"/>
+      <tr1supgaxi nodes="118 99 100"/>
+      <tr1supgaxi nodes="100 119 118"/>
+      <tr1supgaxi id="125" nodes="119 100 101"/>
+      <tr1supgaxi nodes="101 120 119"/>
+      <tr1supgaxi nodes="120 101 102"/>
+      <tr1supgaxi nodes="102 121 120"/>
+      <tr1supgaxi nodes="121 102 103"/>
+      <tr1supgaxi id="130" nodes="103 122 121"/>
+      <tr1supgaxi nodes="122 103 104"/>
+      <tr1supgaxi nodes="104 123 122"/>
+      <tr1supgaxi nodes="123 104 105"/>
+      <tr1supgaxi nodes="105 124 123"/>
+      <tr1supgaxi id="135" nodes="124 105 106"/>
+      <tr1supgaxi nodes="106 125 124"/>
+      <tr1supgaxi nodes="125 106 107"/>
+      <tr1supgaxi nodes="107 126 125"/>
+      <tr1supgaxi nodes="126 107 108"/>
+      <tr1supgaxi id="140" nodes="108 127 126"/>
+      <tr1supgaxi nodes="127 108 109"/>
+      <tr1supgaxi nodes="109 128 127"/>
+      <tr1supgaxi nodes="128 109 110"/>
+      <tr1supgaxi nodes="110 129 128"/>
+      <tr1supgaxi id="145" nodes="129 110 111"/>
+      <tr1supgaxi nodes="111 130 129"/>
+      <tr1supgaxi nodes="130 111 112"/>
+      <tr1supgaxi nodes="112 131 130"/>
+      <tr1supgaxi nodes="131 112 113"/>
+      <tr1supgaxi id="150" nodes="113 132 131"/>
+      <tr1supgaxi nodes="132 113 114"/>
+      <tr1supgaxi nodes="114 133 132"/>
+      <tr1supgaxi nodes="133 114 115"/>
+      <tr1supgaxi nodes="115 134 133"/>
+      <tr1supgaxi id="155" nodes="134 115 116"/>
+      <tr1supgaxi nodes="116 135 134"/>
+      <tr1supgaxi nodes="135 116 117"/>
+      <tr1supgaxi nodes="117 136 135"/>
+      <tr1supgaxi nodes="136 117 26"/>
+      <tr1supgaxi id="160" nodes="26 27 136"/>
+      <tr1supgaxi nodes="56 57 118"/>
+      <tr1supgaxi nodes="118 137 56"/>
+      <tr1supgaxi nodes="137 118 119"/>
+      <tr1supgaxi nodes="119 138 137"/>
+      <tr1supgaxi id="165" nodes="138 119 120"/>
+      <tr1supgaxi nodes="120 139 138"/>
+      <tr1supgaxi nodes="139 120 121"/>
+      <tr1supgaxi nodes="121 140 139"/>
+      <tr1supgaxi nodes="140 121 122"/>
+      <tr1supgaxi id="170" nodes="122 141 140"/>
+      <tr1supgaxi nodes="141 122 123"/>
+      <tr1supgaxi nodes="123 142 141"/>
+      <tr1supgaxi nodes="142 123 124"/>
+      <tr1supgaxi nodes="124 143 142"/>
+      <tr1supgaxi id="175" nodes="143 124 125"/>
+      <tr1supgaxi nodes="125 144 143"/>
+      <tr1supgaxi nodes="144 125 126"/>
+      <tr1supgaxi nodes="126 145 144"/>
+      <tr1supgaxi nodes="145 126 127"/>
+      <tr1supgaxi id="180" nodes="127 146 145"/>
+      <tr1supgaxi nodes="146 127 128"/>
+      <tr1supgaxi nodes="128 147 146"/>
+      <tr1supgaxi nodes="147 128 129"/>
+      <tr1supgaxi nodes="129 148 147"/>
+      <tr1supgaxi id="185" nodes="148 129 130"/>
+      <tr1supgaxi nodes="130 149 148"/>
+      <tr1supgaxi nodes="149 130 131"/>
+      <tr1supgaxi nodes="131 150 149"/>
+      <tr1supgaxi nodes="150 131 132"/>
+      <tr1supgaxi id="190" nodes="132 151 150"/>
+      <tr1supgaxi nodes="151 132 133"/>
+      <tr1supgaxi nodes="133 152 151"/>
+      <tr1supgaxi nodes="152 133 134"/>
+      <tr1supgaxi nodes="134 153 152"/>
+      <tr1supgaxi id="195" nodes="153 134 135"/>
+      <tr1supgaxi nodes="135 154 153"/>
+      <tr1supgaxi nodes="154 135 136"/>
+      <tr1supgaxi nodes="136 155 154"/>
+      <tr1supgaxi nodes="155 136 27"/>
+      <tr1supgaxi id="200" nodes="27 28 155"/>
+      <tr1supgaxi nodes="55 56 137"/>
+      <tr1supgaxi nodes="137 156 55"/>
+      <tr1supgaxi nodes="156 137 138"/>
+      <tr1supgaxi nodes="138 157 156"/>
+      <tr1supgaxi id="205" nodes="157 138 139"/>
+      <tr1supgaxi nodes="139 158 157"/>
+      <tr1supgaxi nodes="158 139 140"/>
+      <tr1supgaxi nodes="140 159 158"/>
+      <tr1supgaxi nodes="159 140 141"/>
+      <tr1supgaxi id="210" nodes="141 160 159"/>
+      <tr1supgaxi nodes="160 141 142"/>
+      <tr1supgaxi nodes="142 161 160"/>
+      <tr1supgaxi nodes="161 142 143"/>
+      <tr1supgaxi nodes="143 162 161"/>
+      <tr1supgaxi id="215" nodes="162 143 144"/>
+      <tr1supgaxi nodes="144 163 162"/>
+      <tr1supgaxi nodes="163 144 145"/>
+      <tr1supgaxi nodes="145 164 163"/>
+      <tr1supgaxi nodes="164 145 146"/>
+      <tr1supgaxi id="220" nodes="146 165 164"/>
+      <tr1supgaxi nodes="165 146 147"/>
+      <tr1supgaxi nodes="147 166 165"/>
+      <tr1supgaxi nodes="166 147 148"/>
+      <tr1supgaxi nodes="148 167 166"/>
+      <tr1supgaxi id="225" nodes="167 148 149"/>
+      <tr1supgaxi nodes="149 168 167"/>
+      <tr1supgaxi nodes="168 149 150"/>
+      <tr1supgaxi nodes="150 169 168"/>
+      <tr1supgaxi nodes="169 150 151"/>
+      <tr1supgaxi id="230" nodes="151 170 169"/>
+      <tr1supgaxi nodes="170 151 152"/>
+      <tr1supgaxi nodes="152 171 170"/>
+      <tr1supgaxi nodes="171 152 153"/>
+      <tr1supgaxi nodes="153 172 171"/>
+      <tr1supgaxi id="235" nodes="172 153 154"/>
+      <tr1supgaxi nodes="154 173 172"/>
+      <tr1supgaxi nodes="173 154 155"/>
+      <tr1supgaxi nodes="155 174 173"/>
+      <tr1supgaxi nodes="174 155 28"/>
+      <tr1supgaxi id="240" nodes="28 29 174"/>
+      <tr1supgaxi nodes="54 55 156"/>
+      <tr1supgaxi nodes="156 175 54"/>
+      <tr1supgaxi nodes="175 156 157"/>
+      <tr1supgaxi nodes="157 176 175"/>
+      <tr1supgaxi id="245" nodes="176 157 158"/>
+      <tr1supgaxi nodes="158 177 176"/>
+      <tr1supgaxi nodes="177 158 159"/>
+      <tr1supgaxi nodes="159 178 177"/>
+      <tr1supgaxi nodes="178 159 160"/>
+      <tr1supgaxi id="250" nodes="160 179 178"/>
+      <tr1supgaxi nodes="179 160 161"/>
+      <tr1supgaxi nodes="161 180 179"/>
+      <tr1supgaxi nodes="180 161 162"/>
+      <tr1supgaxi nodes="162 181 180"/>
+      <tr1supgaxi id="255" nodes="181 162 163"/>
+      <tr1supgaxi nodes="163 182 181"/>
+      <tr1supgaxi nodes="182 163 164"/>
+      <tr1supgaxi nodes="164 183 182"/>
+      <tr1supgaxi nodes="183 164 165"/>
+      <tr1supgaxi id="260" nodes="165 184 183"/>
+      <tr1supgaxi nodes="184 165 166"/>
+      <tr1supgaxi nodes="166 185 184"/>
+      <tr1supgaxi nodes="185 166 167"/>
+      <tr1supgaxi nodes="167 186 185"/>
+      <tr1supgaxi id="265" nodes="186 167 168"/>
+      <tr1supgaxi nodes="168 187 186"/>
+      <tr1supgaxi nodes="187 168 169"/>
+      <tr1supgaxi nodes="169 188 187"/>
+      <tr1supgaxi nodes="188 169 170"/>
+      <tr1supgaxi id="270" nodes="170 189 188"/>
+      <tr1supgaxi nodes="189 170 171"/>
+      <tr1supgaxi nodes="171 190 189"/>
+      <tr1supgaxi nodes="190 171 172"/>
+      <tr1supgaxi nodes="172 191 190"/>
+      <tr1supgaxi id="275" nodes="191 172 173"/>
+      <tr1supgaxi nodes="173 192 191"/>
+      <tr1supgaxi nodes="192 173 174"/>
+      <tr1supgaxi nodes="174 193 192"/>
+      <tr1supgaxi nodes="193 174 29"/>
+      <tr1supgaxi id="280" nodes="29 30 193"/>
+      <tr1supgaxi nodes="53 54 175"/>
+      <tr1supgaxi nodes="175 194 53"/>
+      <tr1supgaxi nodes="194 175 176"/>
+      <tr1supgaxi nodes="176 195 194"/>
+      <tr1supgaxi id="285" nodes="195 176 177"/>
+      <tr1supgaxi nodes="177 196 195"/>
+      <tr1supgaxi nodes="196 177 178"/>
+      <tr1supgaxi nodes="178 197 196"/>
+      <tr1supgaxi nodes="197 178 179"/>
+      <tr1supgaxi id="290" nodes="179 198 197"/>
+      <tr1supgaxi nodes="198 179 180"/>
+      <tr1supgaxi nodes="180 199 198"/>
+      <tr1supgaxi nodes="199 180 181"/>
+      <tr1supgaxi nodes="181 200 199"/>
+      <tr1supgaxi id="295" nodes="200 181 182"/>
+      <tr1supgaxi nodes="182 201 200"/>
+      <tr1supgaxi nodes="201 182 183"/>
+      <tr1supgaxi nodes="183 202 201"/>
+      <tr1supgaxi nodes="202 183 184"/>
+      <tr1supgaxi id="300" nodes="184 203 202"/>
+      <tr1supgaxi nodes="203 184 185"/>
+      <tr1supgaxi nodes="185 204 203"/>
+      <tr1supgaxi nodes="204 185 186"/>
+      <tr1supgaxi nodes="186 205 204"/>
+      <tr1supgaxi id="305" nodes="205 186 187"/>
+      <tr1supgaxi nodes="187 206 205"/>
+      <tr1supgaxi nodes="206 187 188"/>
+      <tr1supgaxi nodes="188 207 206"/>
+      <tr1supgaxi nodes="207 188 189"/>
+      <tr1supgaxi id="310" nodes="189 208 207"/>
+      <tr1supgaxi nodes="208 189 190"/>
+      <tr1supgaxi nodes="190 209 208"/>
+      <tr1supgaxi nodes="209 190 191"/>
+      <tr1supgaxi nodes="191 210 209"/>
+      <tr1supgaxi id="315" nodes="210 191 192"/>
+      <tr1supgaxi nodes="192 211 210"/>
+      <tr1supgaxi nodes="211 192 193"/>
+      <tr1supgaxi nodes="193 212 211"/>
+      <tr1supgaxi nodes="212 193 30"/>
+      <tr1supgaxi id="320" nodes="30 31 212"/>
+      <tr1supgaxi nodes="52 53 194"/>
+      <tr1supgaxi nodes="194 213 52"/>
+      <tr1supgaxi nodes="213 194 195"/>
+      <tr1supgaxi nodes="195 214 213"/>
+      <tr1supgaxi id="325" nodes="214 195 196"/>
+      <tr1supgaxi nodes="196 215 214"/>
+      <tr1supgaxi nodes="215 196 197"/>
+      <tr1supgaxi nodes="197 216 215"/>
+      <tr1supgaxi nodes="216 197 198"/>
+      <tr1supgaxi id="330" nodes="198 217 216"/>
+      <tr1supgaxi nodes="217 198 199"/>
+      <tr1supgaxi nodes="199 218 217"/>
+      <tr1supgaxi nodes="218 199 200"/>
+      <tr1supgaxi nodes="200 219 218"/>
+      <tr1supgaxi id="335" nodes="219 200 201"/>
+      <tr1supgaxi nodes="201 220 219"/>
+      <tr1supgaxi nodes="220 201 202"/>
+      <tr1supgaxi nodes="202 221 220"/>
+      <tr1supgaxi nodes="221 202 203"/>
+      <tr1supgaxi id="340" nodes="203 222 221"/>
+      <tr1supgaxi nodes="222 203 204"/>
+      <tr1supgaxi nodes="204 223 222"/>
+      <tr1supgaxi nodes="223 204 205"/>
+      <tr1supgaxi nodes="205 224 223"/>
+      <tr1supgaxi id="345" nodes="224 205 206"/>
+      <tr1supgaxi nodes="206 225 224"/>
+      <tr1supgaxi nodes="225 206 207"/>
+      <tr1supgaxi nodes="207 226 225"/>
+      <tr1supgaxi nodes="226 207 208"/>
+      <tr1supgaxi id="350" nodes="208 227 226"/>
+      <tr1supgaxi nodes="227 208 209"/>
+      <tr1supgaxi nodes="209 228 227"/>
+      <tr1supgaxi nodes="228 209 210"/>
+      <tr1supgaxi nodes="210 229 228"/>
+      <tr1supgaxi id="355" nodes="229 210 211"/>
+      <tr1supgaxi nodes="211 230 229"/>
+      <tr1supgaxi nodes="230 211 212"/>
+      <tr1supgaxi nodes="212 231 230"/>
+      <tr1supgaxi nodes="231 212 31"/>
+      <tr1supgaxi id="360" nodes="31 32 231"/>
+      <tr1supgaxi nodes="4 52 213"/>
+      <tr1supgaxi nodes="213 51 4"/>
+      <tr1supgaxi nodes="51 213 214"/>
+      <tr1supgaxi nodes="214 50 51"/>
+      <tr1supgaxi id="365" nodes="50 214 215"/>
+      <tr1supgaxi nodes="215 49 50"/>
+      <tr1supgaxi nodes="49 215 216"/>
+      <tr1supgaxi nodes="216 48 49"/>
+      <tr1supgaxi nodes="48 216 217"/>
+      <tr1supgaxi id="370" nodes="217 47 48"/>
+      <tr1supgaxi nodes="47 217 218"/>
+      <tr1supgaxi nodes="218 46 47"/>
+      <tr1supgaxi nodes="46 218 219"/>
+      <tr1supgaxi nodes="219 45 46"/>
+      <tr1supgaxi id="375" nodes="45 219 220"/>
+      <tr1supgaxi nodes="220 44 45"/>
+      <tr1supgaxi nodes="44 220 221"/>
+      <tr1supgaxi nodes="221 43 44"/>
+      <tr1supgaxi nodes="43 221 222"/>
+      <tr1supgaxi id="380" nodes="222 42 43"/>
+      <tr1supgaxi nodes="42 222 223"/>
+      <tr1supgaxi nodes="223 41 42"/>
+      <tr1supgaxi nodes="41 223 224"/>
+      <tr1supgaxi nodes="224 40 41"/>
+      <tr1supgaxi id="385" nodes="40 224 225"/>
+      <tr1supgaxi nodes="225 39 40"/>
+      <tr1supgaxi nodes="39 225 226"/>
+      <tr1supgaxi nodes="226 38 39"/>
+      <tr1supgaxi nodes="38 226 227"/>
+      <tr1supgaxi id="390" nodes="227 37 38"/>
+      <tr1supgaxi nodes="37 227 228"/>
+      <tr1supgaxi nodes="228 36 37"/>
+      <tr1supgaxi nodes="36 228 229"/>
+      <tr1supgaxi nodes="229 35 36"/>
+      <tr1supgaxi id="395" nodes="35 229 230"/>
+      <tr1supgaxi nodes="230 34 35"/>
+      <tr1supgaxi nodes="34 230 231"/>
+      <tr1supgaxi nodes="231 33 34"/>
+      <tr1supgaxi nodes="33 231 32"/>
+      <tr1supgaxi id="400" nodes="32 3 33"/>
+    </Elements>
+    <CrossSections>
+      <fluidcs mat="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <newtonianfluid d="1.0" mu="1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <!--prescribed inlet velocity v = 1m/s-->
+      <BoundaryCondition loadtimefunction="1" dofs="7" values="1.0" set="2"/>
+      <!--zero velocity (wall) condition-->
+      <BoundaryCondition loadtimefunction="1" dofs="8" values="0.0" set="3"/>
+      <!--pressure-->
+      <BoundaryCondition loadtimefunction="1" dofs="11" values="0.0" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-400"/>
+      <Set noderanges="1,4,52-60"/>
+      <Set noderanges="1-23,33-60"/>
+      <Set noderanges="2,3,24-32"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.1">
+      <NODE tStep="10" number="2" dof="7" unknown="d" value="0.2"/>
+      <NODE tStep="10" number="3" dof="7" unknown="d" value="0.2"/>
+      <NODE tStep="10" number="24" dof="7" unknown="d" value="0.2"/>
+      <NODE tStep="10" number="25" dof="7" unknown="d" value="0.2"/>
+      <NODE tStep="10" number="26" dof="7" unknown="d" value="0.2"/>
+      <NODE tStep="10" number="27" dof="7" unknown="d" value="0.2"/>
+      <NODE tStep="10" number="28" dof="7" unknown="d" value="0.2"/>
+      <NODE tStep="10" number="29" dof="7" unknown="d" value="0.2"/>
+      <NODE tStep="10" number="30" dof="7" unknown="d" value="0.2"/>
+      <NODE tStep="10" number="31" dof="7" unknown="d" value="0.2"/>
+      <NODE tStep="10" number="32" dof="7" unknown="d" value="0.2"/>
+      <NODE tStep="10" number="24" dof="8" unknown="d" value="0.0"/>
+      <NODE tStep="10" number="25" dof="8" unknown="d" value="0.0"/>
+      <NODE tStep="10" number="26" dof="8" unknown="d" value="0.0"/>
+      <NODE tStep="10" number="27" dof="8" unknown="d" value="0.0"/>
+      <NODE tStep="10" number="28" dof="8" unknown="d" value="0.0"/>
+      <NODE tStep="10" number="29" dof="8" unknown="d" value="0.0"/>
+      <NODE tStep="10" number="30" dof="8" unknown="d" value="0.0"/>
+      <NODE tStep="10" number="31" dof="8" unknown="d" value="0.0"/>
+      <NODE tStep="10" number="32" dof="8" unknown="d" value="0.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

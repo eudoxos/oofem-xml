@@ -1,0 +1,80 @@
+<oofem version="1">
+  <Output>beam2d_2.out</Output>
+  <Description>Homework www sm40 no. 7</Description>
+  <!--only momentum influence to the displacements is taken into account-->
+  <!--beamShearCoeff is artificially enlarged.-->
+  <Analysis type="StaticStructural" nsteps="1"/>
+  <Domain domain="2dbeam">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.7 0.0 0.0"/>
+      <Node coords="1.4 0.0 0.0"/>
+      <Node coords="1.4 0.0 3.2"/>
+      <Node id="5" coords="1.4 0.0 2.0"/>
+      <Node coords="2.4 0.0 0.0"/>
+      <Node coords="3.4 0.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <Beam2d nodes="1 2"/>
+      <Beam2d nodes="2 3"/>
+      <Beam2d nodes="4 5"/>
+      <Beam2d nodes="5 3"/>
+      <Beam2d id="5" nodes="3 6"/>
+      <Beam2d nodes="6 7"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS area="1000000.0" iy="0.002343466" beamshearcoeff="1e+18" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="1.0" e="25000000.0" n="0.2" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 3 5" values="0.0 0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="3" values="0.0" set="3"/>
+      <ConstantEdgeLoad loadtimefunction="1" components="0.0 2.5 0.0" loadtype="3" set="4"/>
+      <NodalLoad loadtimefunction="1" dofs="1 3 5" components="20.0 0.0 0.0" set="5"/>
+      <NodalLoad id="5" loadtimefunction="1" dofs="1 3 5" components="0.0 6.0 0.0" set="6"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-6"/>
+      <Set nodes="1 4"/>
+      <Set nodes="7"/>
+      <Set elementedges="1 1 2 1"/>
+      <Set id="5" nodes="5"/>
+      <Set nodes="6"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--exact solution-->
+    <errorcheck tolerance="1e-08">
+      <!--check reactions-->
+      <REACTION tStep="1" number="1" dof="1" value="-5.93277269"/>
+      <REACTION tStep="1" number="1" dof="3" value="-3.8155142"/>
+      <REACTION tStep="1" number="1" dof="5" value="1.37223999"/>
+      <REACTION tStep="1" number="4" dof="1" value="-14.0672273"/>
+      <REACTION tStep="1" number="4" dof="3" value="-4.31553673"/>
+      <REACTION tStep="1" number="4" dof="5" value="9.79670913"/>
+      <REACTION tStep="1" number="7" dof="3" value="-1.36894907"/>
+      <!--check all nodes-->
+      <NODE tStep="1" number="3" dof="5" unknown="d" value="1.15168659e-05"/>
+      <!--check element no. 1 force vector-->
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="1" value="-5.93277269"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="2" value="-3.8155142"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="3" value="1.37223999"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="4" value="5.93277269"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="5" value="2.0655142"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="6" value="0.686119947"/>
+      <BEAM_ELEMENT tStep="1" number="5" keyword="1" component="1" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="5" keyword="1" component="2" value="-4.63105093"/>
+      <BEAM_ELEMENT tStep="1" number="5" keyword="1" component="3" value="3.26210186"/>
+      <BEAM_ELEMENT tStep="1" number="5" keyword="1" component="4" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="5" keyword="1" component="5" value="4.63105093"/>
+      <BEAM_ELEMENT tStep="1" number="5" keyword="1" component="6" value="1.36894907"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

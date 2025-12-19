@@ -1,0 +1,34 @@
+<oofem version="1">
+  <Output>lattice2dcrackinput.out</Output>
+  <Description>Direct tension. 2D Model</Description>
+  <Analysis type="TransientTransport" nsteps="1" deltat="6.0" alpha="1.0"/>
+  <Domain domain="2dmasslatticetransport">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0"/>
+      <Node coords="1.0 1.0"/>
+    </Nodes>
+    <Elements>
+      <latticemt2d nodes="1 2" dim="2.0" mat="1" thick="1.0" width="1.0" gpcoords="0.5 0.5" crackwidth="5.0"/>
+    </Elements>
+    <CrossSections>
+      <simpletransportcs mat="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <latticetransmat d="1e-09" k="1e-13" vis="1e-09" thetas="0.0924" thetar="0.0" ctor="0.001"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="11" values="0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="11" values="1.0" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elements="1"/>
+      <Set nodes="1"/>
+      <Set nodes="2"/>
+    </Sets>
+  </Domain>
+</oofem>

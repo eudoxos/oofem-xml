@@ -1,0 +1,58 @@
+<oofem version="1">
+  <Output>test_wp5.out</Output>
+  <Description>Winkler pasternak model: test of constant surface load in step 1 on linear elements. The same load applies in step 2, using equivalent nodal load instead.</Description>
+  <Analysis type="StaticStructural" nsteps="2"/>
+  <Domain domain="2dmindlinplate">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.3 0.0 0.0"/>
+      <Node coords="0.8 0.0 0.0"/>
+      <Node coords="1.3 0.0 0.0"/>
+      <Node id="5" coords="0.0 0.5 0.0"/>
+      <Node coords="0.3 0.5 0.0"/>
+      <Node coords="0.8 0.5 0.0"/>
+      <Node coords="1.3 0.5 0.0"/>
+    </Nodes>
+    <Elements>
+      <quad1platesubsoil nodes="1 2 6 5"/>
+      <tria1platesubsoil nodes="2 3 6"/>
+      <tria1platesubsoil nodes="3 7 6"/>
+      <quad1platesubsoil nodes="3 4 8 7"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <winklerpasternak d="2500.0" c1="3.0" c2="0.4"/>
+    </Materials>
+    <BoundaryConditions>
+      <ConstantSurfaceLoad loadtimefunction="1" dofs="3" components="7.0" set="2"/>
+      <NodalLoad loadtimefunction="2" dofs="3" components="0.2625" set="3"/>
+      <NodalLoad loadtimefunction="2" dofs="3" components="0.29166666666" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <PeakFunction t="1.0" f_t_="1.0"/>
+      <PeakFunction t="2.0" f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set allelements=""/>
+      <Set elementboundaries="1 1 2 1"/>
+      <Set nodes="1 2 6 5"/>
+      <Set nodes="2 3 6"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.0005">
+      <NODE tStep="1" number="1" dof="3" unknown="d" value="1.82823013"/>
+      <NODE tStep="1" number="2" dof="3" unknown="d" value="1.71134657"/>
+      <NODE tStep="1" number="3" dof="3" unknown="d" value="0.675361433"/>
+      <NODE tStep="1" number="4" dof="3" unknown="d" value="0.230473551"/>
+      <NODE tStep="2" number="1" dof="3" unknown="d" value="1.82823013"/>
+      <NODE tStep="2" number="2" dof="3" unknown="d" value="1.71134657"/>
+      <NODE tStep="2" number="3" dof="3" unknown="d" value="0.675361433"/>
+      <NODE tStep="2" number="4" dof="3" unknown="d" value="0.230473551"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

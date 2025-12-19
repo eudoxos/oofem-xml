@@ -1,0 +1,62 @@
+<oofem version="1">
+  <Output>stressbasedaveraging.out</Output>
+  <Description>test of 4 triangles - Idmnl distance-based function</Description>
+  <Analysis type="StaticStructural" nsteps="4" rtolf="1e-06"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0"/>
+      <Node coords="1.0 0.0"/>
+      <Node coords="4.0 1.0"/>
+      <Node coords="0.0 1.0"/>
+      <Node id="5" coords="4.0 11.0"/>
+      <Node coords="0.0 11.0"/>
+    </Nodes>
+    <Elements>
+      <TrPlaneStress2d nodes="1 2 4" mat="1" crosssect="1"/>
+      <TrPlaneStress2d nodes="2 3 4" mat="1" crosssect="1"/>
+      <TrPlaneStress2d nodes="4 3 5" mat="2" crosssect="1"/>
+      <TrPlaneStress2d nodes="4 5 6" mat="2" crosssect="1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1000.0"/>
+    </CrossSections>
+    <Materials>
+      <idmnl1 d="0.0" e="29600000000.0" n="0.0" talpha="0.0" r="2.0" equivstraintype="4" scaling="1" damlaw="7" ft="1000000.0" ep="0.000198" e1="0.00023" e2="0.007" nd="0.85" wft="3" nlvariation="2" beta="0.2"/>
+      <idmnl1 d="0.0" e="29600000000.0" n="0.2" talpha="0.0" r="2.0" equivstraintype="4" scaling="1" damlaw="7" ft="1000000.0" ep="0.000198" e1="0.00023" e2="0.007" nd="0.85" wft="3" nlvariation="2" beta="0.2"/>
+    </Materials>
+    <NonlocalBarriers>
+      <PolyLineBarrier vertexnodes="1 2"/>
+    </NonlocalBarriers>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="2" dofs="2" values="-1.0" set="2"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction t="0.0 5.0" f_t_="0.0 5e-05"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1 2"/>
+      <Set nodes="5 6"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--Used for Extractor-->
+    <errorcheck tolerance="0.0001">
+      <ELEMENT tStep="4" number="1" gp="1" keyword="52" component="1" value="0.044992"/>
+      <ELEMENT tStep="4" number="2" gp="1" keyword="52" component="1" value="0.046443"/>
+      <ELEMENT tStep="4" number="3" gp="1" keyword="52" component="1" value="0.014846"/>
+      <ELEMENT tStep="4" number="4" gp="1" keyword="52" component="1" value="0.041563"/>
+      <ELEMENT tStep="3" number="1" gp="1" keyword="52" component="1" value="0.038361"/>
+      <ELEMENT tStep="3" number="2" gp="1" keyword="52" component="1" value="0.039638"/>
+      <ELEMENT tStep="3" number="3" gp="1" keyword="52" component="1" value="0.012594"/>
+      <ELEMENT tStep="3" number="4" gp="1" keyword="52" component="1" value="0.035316"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="52" component="1" value="0.030619"/>
+      <ELEMENT tStep="2" number="2" gp="1" keyword="52" component="1" value="0.031672"/>
+      <ELEMENT tStep="2" number="3" gp="1" keyword="52" component="1" value="0.009993"/>
+      <ELEMENT tStep="2" number="4" gp="1" keyword="52" component="1" value="0.028077"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

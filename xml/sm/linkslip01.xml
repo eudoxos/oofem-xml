@@ -1,0 +1,69 @@
+<oofem version="1">
+  <Output>linkslip01.out</Output>
+  <Description>Test case for LinkSlip interface material - rebar pull-out in 3D.</Description>
+  <Analysis type="StaticStructural" nsteps="20" deltat="1.0" rtolf="0.001" maxiter="500" initialguess="1"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="-0.1 -0.1 0.1"/>
+      <Node coords="-0.1 0.0 0.1"/>
+      <Node coords="0.1 0.0 0.1"/>
+      <Node coords="0.1 -0.1 0.1"/>
+      <Node id="5" coords="-0.1 -0.1 -0.1"/>
+      <Node coords="-0.1 0.0 -0.1"/>
+      <Node coords="0.1 0.0 -0.1"/>
+      <Node coords="0.1 -0.1 -0.1"/>
+      <Node coords="-0.1 0.1 0.1"/>
+      <Node id="10" coords="0.1 0.1 0.1"/>
+      <Node coords="-0.1 0.1 -0.1"/>
+      <Node coords="0.1 0.1 -0.1"/>
+      <Node coords="-0.1 0.0 0.2" dofidmask="1 2 3 4 5 6"/>
+      <Node coords="0.1 0.0 0.2" dofidmask="1 2 3 4 5 6"/>
+    </Nodes>
+    <Elements>
+      <lspace nodes="1 2 3 4 5 6 7 8"/>
+      <lspace nodes="2 9 10 3 6 11 12 7"/>
+      <libeam3d nodes="13 14" refnode="9"/>
+      <bondlink3d nodes="13 2" dirvector="1.0 0.0 0.0" length="0.1" length_end="0.05" diameter="0.02"/>
+      <bondlink3d id="5" nodes="14 3" dirvector="1.0 0.0 0.0" length="0.1" length_end="0.0716199" diameter="0.02"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS material="1" set="1"/>
+      <SimpleCS area="0.00031416" material="2" set="2"/>
+      <interfacecs material="3" set="3"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="1.0" e="33600000000.0" n="0.2" talpha="1.0"/>
+      <IsoLE d="1.0" e="200000000000.0" n="0.3" talpha="1.0"/>
+      <linkslip kn="61350000000.0" kl="61350000000000.0" type="2" alpha="0.4" s1="0.001" s2="0.002" s3="0.0065" t0="15410000.0" tf="6164000.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3" values="0.0 0.0 0.0" set="4"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2 3" values="0.0 0.0" set="5"/>
+      <BoundaryCondition loadtimefunction="1" dofs="4 5 6" values="0.0 0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.008" set="6"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <PiecewiseLinFunction t="0.0 20.0" f_t_="0.0 1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elements="1 2"/>
+      <Set elements="3"/>
+      <Set elements="4 5"/>
+      <Set nodes="1"/>
+      <Set id="5" nodes="1 4"/>
+      <Set nodes="14"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="10.0">
+      <!--Bond stress values check-->
+      <ELEMENT tStep="1" number="5" gp="1" keyword="99" component="1" value="9543322.68"/>
+      <ELEMENT tStep="5" number="5" gp="1" keyword="99" component="1" value="15410000.0"/>
+      <ELEMENT tStep="8" number="5" gp="1" keyword="99" component="1" value="13237537.9"/>
+      <ELEMENT tStep="15" number="5" gp="1" keyword="99" component="1" value="7354178.46"/>
+      <ELEMENT tStep="19" number="5" gp="1" keyword="99" component="1" value="6164000.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

@@ -1,0 +1,657 @@
+<oofem version="1">
+  <Output>dg3d01.out</Output>
+  <Description>Sample 3D scalar advection problem; initial condition is a sine wave, homogenous BC, natural input (3D and 2D boundary elements), strip of 20 elements in x-direction</Description>
+  <Analysis type="DGproblem" nsteps="40" deltat="0.01" alpha="1.0" smtype="1">
+    <Fields>
+      <exprfield f="f[1]=1.0;f[2]=0.0;f[3]=0.0" type="1"/>
+      <exprfield f="f=(x&lt;0.40)*(sin(x*pi/0.4))" type="7"/>
+    </Fields>
+  </Analysis>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.0 0.1 0.1"/>
+      <Node coords="0.0 0.0 0.1"/>
+      <Node id="5" coords="1.0 0.0 0.0"/>
+      <Node coords="1.0 0.1 0.0"/>
+      <Node coords="1.0 0.1 0.1"/>
+      <Node coords="1.0 0.0 0.1"/>
+      <Node coords="0.0 0.0 0.1"/>
+      <Node id="10" coords="0.05 0.0 0.1"/>
+      <Node coords="0.05 0.0 0.0"/>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.1"/>
+      <Node coords="0.05 0.1 0.1"/>
+      <Node id="15" coords="0.05 0.1 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.05 0.0 0.1"/>
+      <Node coords="0.1 0.0 0.1"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node id="20" coords="0.05 0.0 0.0"/>
+      <Node coords="0.05 0.1 0.1"/>
+      <Node coords="0.1 0.1 0.1"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <Node coords="0.05 0.1 0.0"/>
+      <Node id="25" coords="0.1 0.0 0.1"/>
+      <Node coords="0.15 0.0 0.1"/>
+      <Node coords="0.15 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.1 0.1 0.1"/>
+      <Node id="30" coords="0.15 0.1 0.1"/>
+      <Node coords="0.15 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <Node coords="0.15 0.0 0.1"/>
+      <Node coords="0.2 0.0 0.1"/>
+      <Node id="35" coords="0.2 0.0 0.0"/>
+      <Node coords="0.15 0.0 0.0"/>
+      <Node coords="0.15 0.1 0.1"/>
+      <Node coords="0.2 0.1 0.1"/>
+      <Node coords="0.2 0.1 0.0"/>
+      <Node id="40" coords="0.15 0.1 0.0"/>
+      <Node coords="0.2 0.0 0.1"/>
+      <Node coords="0.25 0.0 0.1"/>
+      <Node coords="0.25 0.0 0.0"/>
+      <Node coords="0.2 0.0 0.0"/>
+      <Node id="45" coords="0.2 0.1 0.1"/>
+      <Node coords="0.25 0.1 0.1"/>
+      <Node coords="0.25 0.1 0.0"/>
+      <Node coords="0.2 0.1 0.0"/>
+      <Node coords="0.25 0.0 0.1"/>
+      <Node id="50" coords="0.3 0.0 0.1"/>
+      <Node coords="0.3 0.0 0.0"/>
+      <Node coords="0.25 0.0 0.0"/>
+      <Node coords="0.25 0.1 0.1"/>
+      <Node coords="0.3 0.1 0.1"/>
+      <Node id="55" coords="0.3 0.1 0.0"/>
+      <Node coords="0.25 0.1 0.0"/>
+      <Node coords="0.3 0.0 0.1"/>
+      <Node coords="0.35 0.0 0.1"/>
+      <Node coords="0.35 0.0 0.0"/>
+      <Node id="60" coords="0.3 0.0 0.0"/>
+      <Node coords="0.3 0.1 0.1"/>
+      <Node coords="0.35 0.1 0.1"/>
+      <Node coords="0.35 0.1 0.0"/>
+      <Node coords="0.3 0.1 0.0"/>
+      <Node id="65" coords="0.35 0.0 0.1"/>
+      <Node coords="0.4 0.0 0.1"/>
+      <Node coords="0.4 0.0 0.0"/>
+      <Node coords="0.35 0.0 0.0"/>
+      <Node coords="0.35 0.1 0.1"/>
+      <Node id="70" coords="0.4 0.1 0.1"/>
+      <Node coords="0.4 0.1 0.0"/>
+      <Node coords="0.35 0.1 0.0"/>
+      <Node coords="0.4 0.0 0.1"/>
+      <Node coords="0.45 0.0 0.1"/>
+      <Node id="75" coords="0.45 0.0 0.0"/>
+      <Node coords="0.4 0.0 0.0"/>
+      <Node coords="0.4 0.1 0.1"/>
+      <Node coords="0.45 0.1 0.1"/>
+      <Node coords="0.45 0.1 0.0"/>
+      <Node id="80" coords="0.4 0.1 0.0"/>
+      <Node coords="0.45 0.0 0.1"/>
+      <Node coords="0.5 0.0 0.1"/>
+      <Node coords="0.5 0.0 0.0"/>
+      <Node coords="0.45 0.0 0.0"/>
+      <Node id="85" coords="0.45 0.1 0.1"/>
+      <Node coords="0.5 0.1 0.1"/>
+      <Node coords="0.5 0.1 0.0"/>
+      <Node coords="0.45 0.1 0.0"/>
+      <Node coords="0.5 0.0 0.1"/>
+      <Node id="90" coords="0.55 0.0 0.1"/>
+      <Node coords="0.55 0.0 0.0"/>
+      <Node coords="0.5 0.0 0.0"/>
+      <Node coords="0.5 0.1 0.1"/>
+      <Node coords="0.55 0.1 0.1"/>
+      <Node id="95" coords="0.55 0.1 0.0"/>
+      <Node coords="0.5 0.1 0.0"/>
+      <Node coords="0.55 0.0 0.1"/>
+      <Node coords="0.6 0.0 0.1"/>
+      <Node coords="0.6 0.0 0.0"/>
+      <Node id="100" coords="0.55 0.0 0.0"/>
+      <Node coords="0.55 0.1 0.1"/>
+      <Node coords="0.6 0.1 0.1"/>
+      <Node coords="0.6 0.1 0.0"/>
+      <Node coords="0.55 0.1 0.0"/>
+      <Node id="105" coords="0.6 0.0 0.1"/>
+      <Node coords="0.65 0.0 0.1"/>
+      <Node coords="0.65 0.0 0.0"/>
+      <Node coords="0.6 0.0 0.0"/>
+      <Node coords="0.6 0.1 0.1"/>
+      <Node id="110" coords="0.65 0.1 0.1"/>
+      <Node coords="0.65 0.1 0.0"/>
+      <Node coords="0.6 0.1 0.0"/>
+      <Node coords="0.65 0.0 0.1"/>
+      <Node coords="0.7 0.0 0.1"/>
+      <Node id="115" coords="0.7 0.0 0.0"/>
+      <Node coords="0.65 0.0 0.0"/>
+      <Node coords="0.65 0.1 0.1"/>
+      <Node coords="0.7 0.1 0.1"/>
+      <Node coords="0.7 0.1 0.0"/>
+      <Node id="120" coords="0.65 0.1 0.0"/>
+      <Node coords="0.7 0.0 0.1"/>
+      <Node coords="0.75 0.0 0.1"/>
+      <Node coords="0.75 0.0 0.0"/>
+      <Node coords="0.7 0.0 0.0"/>
+      <Node id="125" coords="0.7 0.1 0.1"/>
+      <Node coords="0.75 0.1 0.1"/>
+      <Node coords="0.75 0.1 0.0"/>
+      <Node coords="0.7 0.1 0.0"/>
+      <Node coords="0.75 0.0 0.1"/>
+      <Node id="130" coords="0.8 0.0 0.1"/>
+      <Node coords="0.8 0.0 0.0"/>
+      <Node coords="0.75 0.0 0.0"/>
+      <Node coords="0.75 0.1 0.1"/>
+      <Node coords="0.8 0.1 0.1"/>
+      <Node id="135" coords="0.8 0.1 0.0"/>
+      <Node coords="0.75 0.1 0.0"/>
+      <Node coords="0.8 0.0 0.1"/>
+      <Node coords="0.85 0.0 0.1"/>
+      <Node coords="0.85 0.0 0.0"/>
+      <Node id="140" coords="0.8 0.0 0.0"/>
+      <Node coords="0.8 0.1 0.1"/>
+      <Node coords="0.85 0.1 0.1"/>
+      <Node coords="0.85 0.1 0.0"/>
+      <Node coords="0.8 0.1 0.0"/>
+      <Node id="145" coords="0.85 0.0 0.1"/>
+      <Node coords="0.9 0.0 0.1"/>
+      <Node coords="0.9 0.0 0.0"/>
+      <Node coords="0.85 0.0 0.0"/>
+      <Node coords="0.85 0.1 0.1"/>
+      <Node id="150" coords="0.9 0.1 0.1"/>
+      <Node coords="0.9 0.1 0.0"/>
+      <Node coords="0.85 0.1 0.0"/>
+      <Node coords="0.9 0.0 0.1"/>
+      <Node coords="0.95 0.0 0.1"/>
+      <Node id="155" coords="0.95 0.0 0.0"/>
+      <Node coords="0.9 0.0 0.0"/>
+      <Node coords="0.9 0.1 0.1"/>
+      <Node coords="0.95 0.1 0.1"/>
+      <Node coords="0.95 0.1 0.0"/>
+      <Node id="160" coords="0.9 0.1 0.0"/>
+      <Node coords="0.95 0.0 0.1"/>
+      <Node coords="1.0 0.0 0.1"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="0.95 0.0 0.0"/>
+      <Node id="165" coords="0.95 0.1 0.1"/>
+      <Node coords="1.0 0.1 0.1"/>
+      <Node coords="1.0 0.1 0.0"/>
+      <Node coords="0.95 0.1 0.0"/>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node id="170" coords="0.05 0.0 0.0"/>
+      <Node coords="0.05 0.1 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.0 0.0 0.1"/>
+      <Node coords="0.05 0.0 0.1"/>
+      <Node id="175" coords="0.05 0.1 0.1"/>
+      <Node coords="0.0 0.1 0.1"/>
+      <Node coords="0.05 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <Node id="180" coords="0.05 0.1 0.0"/>
+      <Node coords="0.05 0.0 0.1"/>
+      <Node coords="0.1 0.0 0.1"/>
+      <Node coords="0.1 0.1 0.1"/>
+      <Node coords="0.05 0.1 0.1"/>
+      <Node id="185" coords="0.1 0.0 0.0"/>
+      <Node coords="0.15 0.0 0.0"/>
+      <Node coords="0.15 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <Node coords="0.1 0.0 0.1"/>
+      <Node id="190" coords="0.15 0.0 0.1"/>
+      <Node coords="0.15 0.1 0.1"/>
+      <Node coords="0.1 0.1 0.1"/>
+      <Node coords="0.15 0.0 0.0"/>
+      <Node coords="0.2 0.0 0.0"/>
+      <Node id="195" coords="0.2 0.1 0.0"/>
+      <Node coords="0.15 0.1 0.0"/>
+      <Node coords="0.15 0.0 0.1"/>
+      <Node coords="0.2 0.0 0.1"/>
+      <Node coords="0.2 0.1 0.1"/>
+      <Node id="200" coords="0.15 0.1 0.1"/>
+      <Node coords="0.2 0.0 0.0"/>
+      <Node coords="0.25 0.0 0.0"/>
+      <Node coords="0.25 0.1 0.0"/>
+      <Node coords="0.2 0.1 0.0"/>
+      <Node id="205" coords="0.2 0.0 0.1"/>
+      <Node coords="0.25 0.0 0.1"/>
+      <Node coords="0.25 0.1 0.1"/>
+      <Node coords="0.2 0.1 0.1"/>
+      <Node coords="0.25 0.0 0.0"/>
+      <Node id="210" coords="0.3 0.0 0.0"/>
+      <Node coords="0.3 0.1 0.0"/>
+      <Node coords="0.25 0.1 0.0"/>
+      <Node coords="0.25 0.0 0.1"/>
+      <Node coords="0.3 0.0 0.1"/>
+      <Node id="215" coords="0.3 0.1 0.1"/>
+      <Node coords="0.25 0.1 0.1"/>
+      <Node coords="0.3 0.0 0.0"/>
+      <Node coords="0.35 0.0 0.0"/>
+      <Node coords="0.35 0.1 0.0"/>
+      <Node id="220" coords="0.3 0.1 0.0"/>
+      <Node coords="0.3 0.0 0.1"/>
+      <Node coords="0.35 0.0 0.1"/>
+      <Node coords="0.35 0.1 0.1"/>
+      <Node coords="0.3 0.1 0.1"/>
+      <Node id="225" coords="0.35 0.0 0.0"/>
+      <Node coords="0.4 0.0 0.0"/>
+      <Node coords="0.4 0.1 0.0"/>
+      <Node coords="0.35 0.1 0.0"/>
+      <Node coords="0.35 0.0 0.1"/>
+      <Node id="230" coords="0.4 0.0 0.1"/>
+      <Node coords="0.4 0.1 0.1"/>
+      <Node coords="0.35 0.1 0.1"/>
+      <Node coords="0.4 0.0 0.0"/>
+      <Node coords="0.45 0.0 0.0"/>
+      <Node id="235" coords="0.45 0.1 0.0"/>
+      <Node coords="0.4 0.1 0.0"/>
+      <Node coords="0.4 0.0 0.1"/>
+      <Node coords="0.45 0.0 0.1"/>
+      <Node coords="0.45 0.1 0.1"/>
+      <Node id="240" coords="0.4 0.1 0.1"/>
+      <Node coords="0.45 0.0 0.0"/>
+      <Node coords="0.5 0.0 0.0"/>
+      <Node coords="0.5 0.1 0.0"/>
+      <Node coords="0.45 0.1 0.0"/>
+      <Node id="245" coords="0.45 0.0 0.1"/>
+      <Node coords="0.5 0.0 0.1"/>
+      <Node coords="0.5 0.1 0.1"/>
+      <Node coords="0.45 0.1 0.1"/>
+      <Node coords="0.5 0.0 0.0"/>
+      <Node id="250" coords="0.55 0.0 0.0"/>
+      <Node coords="0.55 0.1 0.0"/>
+      <Node coords="0.5 0.1 0.0"/>
+      <Node coords="0.5 0.0 0.1"/>
+      <Node coords="0.55 0.0 0.1"/>
+      <Node id="255" coords="0.55 0.1 0.1"/>
+      <Node coords="0.5 0.1 0.1"/>
+      <Node coords="0.55 0.0 0.0"/>
+      <Node coords="0.6 0.0 0.0"/>
+      <Node coords="0.6 0.1 0.0"/>
+      <Node id="260" coords="0.55 0.1 0.0"/>
+      <Node coords="0.55 0.0 0.1"/>
+      <Node coords="0.6 0.0 0.1"/>
+      <Node coords="0.6 0.1 0.1"/>
+      <Node coords="0.55 0.1 0.1"/>
+      <Node id="265" coords="0.6 0.0 0.0"/>
+      <Node coords="0.65 0.0 0.0"/>
+      <Node coords="0.65 0.1 0.0"/>
+      <Node coords="0.6 0.1 0.0"/>
+      <Node coords="0.6 0.0 0.1"/>
+      <Node id="270" coords="0.65 0.0 0.1"/>
+      <Node coords="0.65 0.1 0.1"/>
+      <Node coords="0.6 0.1 0.1"/>
+      <Node coords="0.65 0.0 0.0"/>
+      <Node coords="0.7 0.0 0.0"/>
+      <Node id="275" coords="0.7 0.1 0.0"/>
+      <Node coords="0.65 0.1 0.0"/>
+      <Node coords="0.65 0.0 0.1"/>
+      <Node coords="0.7 0.0 0.1"/>
+      <Node coords="0.7 0.1 0.1"/>
+      <Node id="280" coords="0.65 0.1 0.1"/>
+      <Node coords="0.7 0.0 0.0"/>
+      <Node coords="0.75 0.0 0.0"/>
+      <Node coords="0.75 0.1 0.0"/>
+      <Node coords="0.7 0.1 0.0"/>
+      <Node id="285" coords="0.7 0.0 0.1"/>
+      <Node coords="0.75 0.0 0.1"/>
+      <Node coords="0.75 0.1 0.1"/>
+      <Node coords="0.7 0.1 0.1"/>
+      <Node coords="0.75 0.0 0.0"/>
+      <Node id="290" coords="0.8 0.0 0.0"/>
+      <Node coords="0.8 0.1 0.0"/>
+      <Node coords="0.75 0.1 0.0"/>
+      <Node coords="0.75 0.0 0.1"/>
+      <Node coords="0.8 0.0 0.1"/>
+      <Node id="295" coords="0.8 0.1 0.1"/>
+      <Node coords="0.75 0.1 0.1"/>
+      <Node coords="0.8 0.0 0.0"/>
+      <Node coords="0.85 0.0 0.0"/>
+      <Node coords="0.85 0.1 0.0"/>
+      <Node id="300" coords="0.8 0.1 0.0"/>
+      <Node coords="0.8 0.0 0.1"/>
+      <Node coords="0.85 0.0 0.1"/>
+      <Node coords="0.85 0.1 0.1"/>
+      <Node coords="0.8 0.1 0.1"/>
+      <Node id="305" coords="0.85 0.0 0.0"/>
+      <Node coords="0.9 0.0 0.0"/>
+      <Node coords="0.9 0.1 0.0"/>
+      <Node coords="0.85 0.1 0.0"/>
+      <Node coords="0.85 0.0 0.1"/>
+      <Node id="310" coords="0.9 0.0 0.1"/>
+      <Node coords="0.9 0.1 0.1"/>
+      <Node coords="0.85 0.1 0.1"/>
+      <Node coords="0.9 0.0 0.0"/>
+      <Node coords="0.95 0.0 0.0"/>
+      <Node id="315" coords="0.95 0.1 0.0"/>
+      <Node coords="0.9 0.1 0.0"/>
+      <Node coords="0.9 0.0 0.1"/>
+      <Node coords="0.95 0.0 0.1"/>
+      <Node coords="0.95 0.1 0.1"/>
+      <Node id="320" coords="0.9 0.1 0.1"/>
+      <Node coords="0.95 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="1.0 0.1 0.0"/>
+      <Node coords="0.95 0.1 0.0"/>
+      <Node id="325" coords="0.95 0.0 0.1"/>
+      <Node coords="1.0 0.0 0.1"/>
+      <Node coords="1.0 0.1 0.1"/>
+      <Node coords="0.95 0.1 0.1"/>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node id="330" coords="0.05 0.0 0.0"/>
+      <Node coords="0.05 0.1 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.0 0.0 0.1"/>
+      <Node coords="0.05 0.0 0.1"/>
+      <Node id="335" coords="0.05 0.1 0.1"/>
+      <Node coords="0.0 0.1 0.1"/>
+      <Node coords="0.05 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <Node id="340" coords="0.05 0.1 0.0"/>
+      <Node coords="0.05 0.0 0.1"/>
+      <Node coords="0.1 0.0 0.1"/>
+      <Node coords="0.1 0.1 0.1"/>
+      <Node coords="0.05 0.1 0.1"/>
+      <Node id="345" coords="0.1 0.0 0.0"/>
+      <Node coords="0.15 0.0 0.0"/>
+      <Node coords="0.15 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <Node coords="0.1 0.0 0.1"/>
+      <Node id="350" coords="0.15 0.0 0.1"/>
+      <Node coords="0.15 0.1 0.1"/>
+      <Node coords="0.1 0.1 0.1"/>
+      <Node coords="0.15 0.0 0.0"/>
+      <Node coords="0.2 0.0 0.0"/>
+      <Node id="355" coords="0.2 0.1 0.0"/>
+      <Node coords="0.15 0.1 0.0"/>
+      <Node coords="0.15 0.0 0.1"/>
+      <Node coords="0.2 0.0 0.1"/>
+      <Node coords="0.2 0.1 0.1"/>
+      <Node id="360" coords="0.15 0.1 0.1"/>
+      <Node coords="0.2 0.0 0.0"/>
+      <Node coords="0.25 0.0 0.0"/>
+      <Node coords="0.25 0.1 0.0"/>
+      <Node coords="0.2 0.1 0.0"/>
+      <Node id="365" coords="0.2 0.0 0.1"/>
+      <Node coords="0.25 0.0 0.1"/>
+      <Node coords="0.25 0.1 0.1"/>
+      <Node coords="0.2 0.1 0.1"/>
+      <Node coords="0.25 0.0 0.0"/>
+      <Node id="370" coords="0.3 0.0 0.0"/>
+      <Node coords="0.3 0.1 0.0"/>
+      <Node coords="0.25 0.1 0.0"/>
+      <Node coords="0.25 0.0 0.1"/>
+      <Node coords="0.3 0.0 0.1"/>
+      <Node id="375" coords="0.3 0.1 0.1"/>
+      <Node coords="0.25 0.1 0.1"/>
+      <Node coords="0.3 0.0 0.0"/>
+      <Node coords="0.35 0.0 0.0"/>
+      <Node coords="0.35 0.1 0.0"/>
+      <Node id="380" coords="0.3 0.1 0.0"/>
+      <Node coords="0.3 0.0 0.1"/>
+      <Node coords="0.35 0.0 0.1"/>
+      <Node coords="0.35 0.1 0.1"/>
+      <Node coords="0.3 0.1 0.1"/>
+      <Node id="385" coords="0.35 0.0 0.0"/>
+      <Node coords="0.4 0.0 0.0"/>
+      <Node coords="0.4 0.1 0.0"/>
+      <Node coords="0.35 0.1 0.0"/>
+      <Node coords="0.35 0.0 0.1"/>
+      <Node id="390" coords="0.4 0.0 0.1"/>
+      <Node coords="0.4 0.1 0.1"/>
+      <Node coords="0.35 0.1 0.1"/>
+      <Node coords="0.4 0.0 0.0"/>
+      <Node coords="0.45 0.0 0.0"/>
+      <Node id="395" coords="0.45 0.1 0.0"/>
+      <Node coords="0.4 0.1 0.0"/>
+      <Node coords="0.4 0.0 0.1"/>
+      <Node coords="0.45 0.0 0.1"/>
+      <Node coords="0.45 0.1 0.1"/>
+      <Node id="400" coords="0.4 0.1 0.1"/>
+      <Node coords="0.45 0.0 0.0"/>
+      <Node coords="0.5 0.0 0.0"/>
+      <Node coords="0.5 0.1 0.0"/>
+      <Node coords="0.45 0.1 0.0"/>
+      <Node id="405" coords="0.45 0.0 0.1"/>
+      <Node coords="0.5 0.0 0.1"/>
+      <Node coords="0.5 0.1 0.1"/>
+      <Node coords="0.45 0.1 0.1"/>
+      <Node coords="0.5 0.0 0.0"/>
+      <Node id="410" coords="0.55 0.0 0.0"/>
+      <Node coords="0.55 0.1 0.0"/>
+      <Node coords="0.5 0.1 0.0"/>
+      <Node coords="0.5 0.0 0.1"/>
+      <Node coords="0.55 0.0 0.1"/>
+      <Node id="415" coords="0.55 0.1 0.1"/>
+      <Node coords="0.5 0.1 0.1"/>
+      <Node coords="0.55 0.0 0.0"/>
+      <Node coords="0.6 0.0 0.0"/>
+      <Node coords="0.6 0.1 0.0"/>
+      <Node id="420" coords="0.55 0.1 0.0"/>
+      <Node coords="0.55 0.0 0.1"/>
+      <Node coords="0.6 0.0 0.1"/>
+      <Node coords="0.6 0.1 0.1"/>
+      <Node coords="0.55 0.1 0.1"/>
+      <Node id="425" coords="0.6 0.0 0.0"/>
+      <Node coords="0.65 0.0 0.0"/>
+      <Node coords="0.65 0.1 0.0"/>
+      <Node coords="0.6 0.1 0.0"/>
+      <Node coords="0.6 0.0 0.1"/>
+      <Node id="430" coords="0.65 0.0 0.1"/>
+      <Node coords="0.65 0.1 0.1"/>
+      <Node coords="0.6 0.1 0.1"/>
+      <Node coords="0.65 0.0 0.0"/>
+      <Node coords="0.7 0.0 0.0"/>
+      <Node id="435" coords="0.7 0.1 0.0"/>
+      <Node coords="0.65 0.1 0.0"/>
+      <Node coords="0.65 0.0 0.1"/>
+      <Node coords="0.7 0.0 0.1"/>
+      <Node coords="0.7 0.1 0.1"/>
+      <Node id="440" coords="0.65 0.1 0.1"/>
+      <Node coords="0.7 0.0 0.0"/>
+      <Node coords="0.75 0.0 0.0"/>
+      <Node coords="0.75 0.1 0.0"/>
+      <Node coords="0.7 0.1 0.0"/>
+      <Node id="445" coords="0.7 0.0 0.1"/>
+      <Node coords="0.75 0.0 0.1"/>
+      <Node coords="0.75 0.1 0.1"/>
+      <Node coords="0.7 0.1 0.1"/>
+      <Node coords="0.75 0.0 0.0"/>
+      <Node id="450" coords="0.8 0.0 0.0"/>
+      <Node coords="0.8 0.1 0.0"/>
+      <Node coords="0.75 0.1 0.0"/>
+      <Node coords="0.75 0.0 0.1"/>
+      <Node coords="0.8 0.0 0.1"/>
+      <Node id="455" coords="0.8 0.1 0.1"/>
+      <Node coords="0.75 0.1 0.1"/>
+      <Node coords="0.8 0.0 0.0"/>
+      <Node coords="0.85 0.0 0.0"/>
+      <Node coords="0.85 0.1 0.0"/>
+      <Node id="460" coords="0.8 0.1 0.0"/>
+      <Node coords="0.8 0.0 0.1"/>
+      <Node coords="0.85 0.0 0.1"/>
+      <Node coords="0.85 0.1 0.1"/>
+      <Node coords="0.8 0.1 0.1"/>
+      <Node id="465" coords="0.85 0.0 0.0"/>
+      <Node coords="0.9 0.0 0.0"/>
+      <Node coords="0.9 0.1 0.0"/>
+      <Node coords="0.85 0.1 0.0"/>
+      <Node coords="0.85 0.0 0.1"/>
+      <Node id="470" coords="0.9 0.0 0.1"/>
+      <Node coords="0.9 0.1 0.1"/>
+      <Node coords="0.85 0.1 0.1"/>
+      <Node coords="0.9 0.0 0.0"/>
+      <Node coords="0.95 0.0 0.0"/>
+      <Node id="475" coords="0.95 0.1 0.0"/>
+      <Node coords="0.9 0.1 0.0"/>
+      <Node coords="0.9 0.0 0.1"/>
+      <Node coords="0.95 0.0 0.1"/>
+      <Node coords="0.95 0.1 0.1"/>
+      <Node id="480" coords="0.9 0.1 0.1"/>
+      <Node coords="0.95 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="1.0 0.1 0.0"/>
+      <Node coords="0.95 0.1 0.0"/>
+      <Node id="485" coords="0.95 0.0 0.1"/>
+      <Node coords="1.0 0.0 0.1"/>
+      <Node coords="1.0 0.1 0.1"/>
+      <Node coords="0.95 0.1 0.1"/>
+    </Nodes>
+    <Elements>
+      <sadgbrick1 nodes="329 330 331 332 333 334 335 336"/>
+      <sadgbquad1 nodes="1 2 3 4 329 332 336 333"/>
+      <sadgbquad1 nodes="9 10 11 12 333 334 330 329"/>
+      <sadgbquad1 nodes="336 335 331 332 13 14 15 16"/>
+      <sadgbquad1 id="5" nodes="169 170 171 172 329 330 331 332"/>
+      <sadgbquad1 nodes="333 334 335 336 173 174 175 176"/>
+      <sadgbrick1 nodes="337 338 339 340 341 342 343 344"/>
+      <sadgBquad1 nodes="330 331 335 334 337 340 344 341"/>
+      <sadgbquad1 nodes="17 18 19 20 341 342 338 337"/>
+      <sadgbquad1 id="10" nodes="344 343 339 340 21 22 23 24"/>
+      <sadgbquad1 nodes="177 178 179 180 337 338 339 340"/>
+      <sadgbquad1 nodes="341 342 343 344 181 182 183 184"/>
+      <sadgbrick1 nodes="345 346 347 348 349 350 351 352"/>
+      <sadgBquad1 nodes="338 339 343 342 345 348 352 349"/>
+      <sadgbquad1 id="15" nodes="25 26 27 28 349 350 346 345"/>
+      <sadgbquad1 nodes="352 351 347 348 29 30 31 32"/>
+      <sadgbquad1 nodes="185 186 187 188 345 346 347 348"/>
+      <sadgbquad1 nodes="349 350 351 352 189 190 191 192"/>
+      <sadgbrick1 nodes="353 354 355 356 357 358 359 360"/>
+      <sadgBquad1 id="20" nodes="346 347 351 350 353 356 360 357"/>
+      <sadgbquad1 nodes="33 34 35 36 357 358 354 353"/>
+      <sadgbquad1 nodes="360 359 355 356 37 38 39 40"/>
+      <sadgbquad1 nodes="193 194 195 196 353 354 355 356"/>
+      <sadgbquad1 nodes="357 358 359 360 197 198 199 200"/>
+      <sadgbrick1 id="25" nodes="361 362 363 364 365 366 367 368"/>
+      <sadgBquad1 nodes="354 355 359 358 361 364 368 365"/>
+      <sadgbquad1 nodes="41 42 43 44 365 366 362 361"/>
+      <sadgbquad1 nodes="368 367 363 364 45 46 47 48"/>
+      <sadgbquad1 nodes="201 202 203 204 361 362 363 364"/>
+      <sadgbquad1 id="30" nodes="365 366 367 368 205 206 207 208"/>
+      <sadgbrick1 nodes="369 370 371 372 373 374 375 376"/>
+      <sadgBquad1 nodes="362 363 367 366 369 372 376 373"/>
+      <sadgbquad1 nodes="49 50 51 52 373 374 370 369"/>
+      <sadgbquad1 nodes="376 375 371 372 53 54 55 56"/>
+      <sadgbquad1 id="35" nodes="209 210 211 212 369 370 371 372"/>
+      <sadgbquad1 nodes="373 374 375 376 213 214 215 216"/>
+      <sadgbrick1 nodes="377 378 379 380 381 382 383 384"/>
+      <sadgBquad1 nodes="370 371 375 374 377 380 384 381"/>
+      <sadgbquad1 nodes="57 58 59 60 381 382 378 377"/>
+      <sadgbquad1 id="40" nodes="384 383 379 380 61 62 63 64"/>
+      <sadgbquad1 nodes="217 218 219 220 377 378 379 380"/>
+      <sadgbquad1 nodes="381 382 383 384 221 222 223 224"/>
+      <sadgbrick1 nodes="385 386 387 388 389 390 391 392"/>
+      <sadgBquad1 nodes="378 379 383 382 385 388 392 389"/>
+      <sadgbquad1 id="45" nodes="65 66 67 68 389 390 386 385"/>
+      <sadgbquad1 nodes="392 391 387 388 69 70 71 72"/>
+      <sadgbquad1 nodes="225 226 227 228 385 386 387 388"/>
+      <sadgbquad1 nodes="389 390 391 392 229 230 231 232"/>
+      <sadgbrick1 nodes="393 394 395 396 397 398 399 400"/>
+      <sadgBquad1 id="50" nodes="386 387 391 390 393 396 400 397"/>
+      <sadgbquad1 nodes="73 74 75 76 397 398 394 393"/>
+      <sadgbquad1 nodes="400 399 395 396 77 78 79 80"/>
+      <sadgbquad1 nodes="233 234 235 236 393 394 395 396"/>
+      <sadgbquad1 nodes="397 398 399 400 237 238 239 240"/>
+      <sadgbrick1 id="55" nodes="401 402 403 404 405 406 407 408"/>
+      <sadgBquad1 nodes="394 395 399 398 401 404 408 405"/>
+      <sadgbquad1 nodes="81 82 83 84 405 406 402 401"/>
+      <sadgbquad1 nodes="408 407 403 404 85 86 87 88"/>
+      <sadgbquad1 nodes="241 242 243 244 401 402 403 404"/>
+      <sadgbquad1 id="60" nodes="405 406 407 408 245 246 247 248"/>
+      <sadgbrick1 nodes="409 410 411 412 413 414 415 416"/>
+      <sadgBquad1 nodes="402 403 407 406 409 412 416 413"/>
+      <sadgbquad1 nodes="89 90 91 92 413 414 410 409"/>
+      <sadgbquad1 nodes="416 415 411 412 93 94 95 96"/>
+      <sadgbquad1 id="65" nodes="249 250 251 252 409 410 411 412"/>
+      <sadgbquad1 nodes="413 414 415 416 253 254 255 256"/>
+      <sadgbrick1 nodes="417 418 419 420 421 422 423 424"/>
+      <sadgBquad1 nodes="410 411 415 414 417 420 424 421"/>
+      <sadgbquad1 nodes="97 98 99 100 421 422 418 417"/>
+      <sadgbquad1 id="70" nodes="424 423 419 420 101 102 103 104"/>
+      <sadgbquad1 nodes="257 258 259 260 417 418 419 420"/>
+      <sadgbquad1 nodes="421 422 423 424 261 262 263 264"/>
+      <sadgbrick1 nodes="425 426 427 428 429 430 431 432"/>
+      <sadgBquad1 nodes="418 419 423 422 425 428 432 429"/>
+      <sadgbquad1 id="75" nodes="105 106 107 108 429 430 426 425"/>
+      <sadgbquad1 nodes="432 431 427 428 109 110 111 112"/>
+      <sadgbquad1 nodes="265 266 267 268 425 426 427 428"/>
+      <sadgbquad1 nodes="429 430 431 432 269 270 271 272"/>
+      <sadgbrick1 nodes="433 434 435 436 437 438 439 440"/>
+      <sadgBquad1 id="80" nodes="426 427 431 430 433 436 440 437"/>
+      <sadgbquad1 nodes="113 114 115 116 437 438 434 433"/>
+      <sadgbquad1 nodes="440 439 435 436 117 118 119 120"/>
+      <sadgbquad1 nodes="273 274 275 276 433 434 435 436"/>
+      <sadgbquad1 nodes="437 438 439 440 277 278 279 280"/>
+      <sadgbrick1 id="85" nodes="441 442 443 444 445 446 447 448"/>
+      <sadgBquad1 nodes="434 435 439 438 441 444 448 445"/>
+      <sadgbquad1 nodes="121 122 123 124 445 446 442 441"/>
+      <sadgbquad1 nodes="448 447 443 444 125 126 127 128"/>
+      <sadgbquad1 nodes="281 282 283 284 441 442 443 444"/>
+      <sadgbquad1 id="90" nodes="445 446 447 448 285 286 287 288"/>
+      <sadgbrick1 nodes="449 450 451 452 453 454 455 456"/>
+      <sadgBquad1 nodes="442 443 447 446 449 452 456 453"/>
+      <sadgbquad1 nodes="129 130 131 132 453 454 450 449"/>
+      <sadgbquad1 nodes="456 455 451 452 133 134 135 136"/>
+      <sadgbquad1 id="95" nodes="289 290 291 292 449 450 451 452"/>
+      <sadgbquad1 nodes="453 454 455 456 293 294 295 296"/>
+      <sadgbrick1 nodes="457 458 459 460 461 462 463 464"/>
+      <sadgBquad1 nodes="450 451 455 454 457 460 464 461"/>
+      <sadgbquad1 nodes="137 138 139 140 461 462 458 457"/>
+      <sadgbquad1 id="100" nodes="464 463 459 460 141 142 143 144"/>
+      <sadgbquad1 nodes="297 298 299 300 457 458 459 460"/>
+      <sadgbquad1 nodes="461 462 463 464 301 302 303 304"/>
+      <sadgbrick1 nodes="465 466 467 468 469 470 471 472"/>
+      <sadgBquad1 nodes="458 459 463 462 465 468 472 469"/>
+      <sadgbquad1 id="105" nodes="145 146 147 148 469 470 466 465"/>
+      <sadgbquad1 nodes="472 471 467 468 149 150 151 152"/>
+      <sadgbquad1 nodes="305 306 307 308 465 466 467 468"/>
+      <sadgbquad1 nodes="469 470 471 472 309 310 311 312"/>
+      <sadgbrick1 nodes="473 474 475 476 477 478 479 480"/>
+      <sadgBquad1 id="110" nodes="466 467 471 470 473 476 480 477"/>
+      <sadgbquad1 nodes="153 154 155 156 477 478 474 473"/>
+      <sadgbquad1 nodes="480 479 475 476 157 158 159 160"/>
+      <sadgbquad1 nodes="313 314 315 316 473 474 475 476"/>
+      <sadgbquad1 nodes="477 478 479 480 317 318 319 320"/>
+      <sadgbrick1 id="115" nodes="481 482 483 484 485 486 487 488"/>
+      <sadgBquad1 nodes="474 475 479 478 481 484 488 485"/>
+      <sadgbquad1 nodes="482 483 487 486 5 6 7 8"/>
+      <sadgbquad1 nodes="161 162 163 164 485 486 482 481"/>
+      <sadgbquad1 nodes="488 487 483 484 165 166 167 168"/>
+      <sadgbquad1 id="120" nodes="321 322 323 324 481 482 483 484"/>
+      <sadgbquad1 nodes="485 486 487 488 325 326 327 328"/>
+    </Elements>
+    <CrossSections>
+      <dummycs mat="1" set="2"/>
+    </CrossSections>
+    <Materials>
+      <dummymat/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="14" values="0.0" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions>
+      <InitialCondition dofs="14" set="1" field="7"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set noderanges="1-488"/>
+      <Set elementranges="1-121"/>
+      <!--boundary nodes-->
+      <Set noderanges="1-328"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.09">
+      <!--check nodes (against exact solution - sine function)-->
+      <NODE tStep="40" number="329" dof="14" unknown="d" value="0.0"/>
+      <NODE tStep="40" number="354" dof="14" unknown="d" value="0.0"/>
+      <NODE tStep="40" number="386" dof="14" unknown="d" value="0.0"/>
+      <NODE tStep="40" number="418" dof="14" unknown="d" value="1.0"/>
+      <NODE tStep="40" number="450" dof="14" unknown="d" value="0.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

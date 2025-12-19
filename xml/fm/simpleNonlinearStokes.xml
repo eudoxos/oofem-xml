@@ -1,0 +1,48 @@
+<oofem version="1">
+  <Output>simpleNonlinearStokes.out</Output>
+  <Description>Test for stokes flow on triangular Taylor-Hood element</Description>
+  <Analysis type="stokesflow" nsteps="1" rtolf="1e-05" lstype="0" smtype="0" linesearch="1" maxiter="50"/>
+  <Domain domain="2dincompflow">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+      <Node coords="0.0 1.0 0.0"/>
+      <Node id="5" coords="0.5 0.0 0.0"/>
+      <Node coords="0.5 0.5 0.0"/>
+      <Node coords="0.0 0.5 0.0"/>
+      <Node coords="1.0 0.5 0.0"/>
+      <Node coords="0.5 1.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <tr21stokes nodes="1 2 4 5 6 7"/>
+      <tr21stokes nodes="2 3 4 8 9 6"/>
+    </Elements>
+    <CrossSections>
+      <fluidcs mat="1" set="3"/>
+    </CrossSections>
+    <Materials>
+      <nonlinearfluid mu="1.0" d="1.0" c="1.0" alpha="0.5"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" values="1.0 1.0 1.0" dofs="7 8 11" set="1"/>
+      <BoundaryCondition loadtimefunction="1" values="0.0" dofs="7" set="2"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="2 3"/>
+      <Set nodes="1 4"/>
+      <Set elementranges="1-2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <NODE tStep="1" number="4" dof="8" unknown="d" value="0.6939245"/>
+      <NODE tStep="1" number="4" dof="11" unknown="d" value="-2.845086"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

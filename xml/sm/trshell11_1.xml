@@ -1,0 +1,114 @@
+<oofem version="1">
+  <Output>trshell11_1.out</Output>
+  <Description>Cantilever beam, comparing two models (integral cross section and layared cross section)</Description>
+  <Analysis type="NonLinearStatic" nsteps="2" profileopt="1">
+    <Metasteps>
+      <Metastep nsteps="2" controllmode="1" rtolf="0.001" rtold="0.001" maxiter="2000" refloadmode="1"/>
+    </Metasteps>
+  </Analysis>
+  <Domain domain="3dshell">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 0.5 0.0"/>
+      <Node coords="1.0 0.5 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node id="11" coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 0.5 0.0"/>
+      <Node coords="1.0 0.5 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <tr_shell11 nodes="1 2 3"/>
+      <tr_shell11 nodes="1 3 4"/>
+      <tr_shell11 id="11" nodes="11 12 13"/>
+      <tr_shell11 nodes="11 13 14"/>
+    </Elements>
+    <CrossSections>
+      <!--CROSS SECTIONS-->
+      <SimpleCS thick="0.02" material="1" drilltype="1.0" reldrillstiffness="0.01" drillstiffness="10000000000.0" set="1"/>
+      <LayeredCS nlayers="2" layermaterials="1 1" thicks="0.01 0.01" widths="1.0 1.0" nintegrationpoints="2" drilltype="1.0" reldrillstiffness="0.01" set="2" drillstiffness="10000000000.0"/>
+    </CrossSections>
+    <Materials>
+      <!--MATERIALS-->
+      <IsoLE d="1.0" e="1000000000.0" n="0.2" talpha="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <!--ConcreteDPM 1 d 0. E 30.e9 n 0.2 talpha 0. fc 30.e6 ft 3.e6 ecc 0.525 Ahard 8.e-2 Bhard 3.e-3 Chard 2. Dhard 1.e-6 Asoft 35. dilation -0.85 yieldtol 1.e-8 newtoniter 300 wf 300.e-6-->
+      <!--BOUNDARY CONDITIONS-->
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3 4 5 6" values="0.0 0.0 0.0 0.0 0.0 0.0" set="3"/>
+      <!--BoundaryCondition 2 loadTimeFunction 2 dofs 2 4 5 values 2 0 0.05  set 4-->
+      <NodalLoad loadtimefunction="2" dofs="1 5" components="1.0 1.0" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <!--FUNCTIONS-->
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction npoints="3" t="-1.0 0.0 9.0" f_t_="0.0 0.0 1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <!--SETS-->
+      <Set elements="1 2"/>
+      <Set elements="11 12"/>
+      <!--Set 2-->
+      <Set nodes="1 2 11 12"/>
+      <Set nodes="3 4 13 14"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-08">
+      <NODE tStep="2" number="3" dof="1" unknown="d" value="2.11247616e-08" tolerance="1e-10"/>
+      <NODE tStep="2" number="3" dof="2" unknown="d" value="-1.07008715e-09" tolerance="1e-10"/>
+      <NODE tStep="2" number="3" dof="3" unknown="d" value="-0.000329602674" tolerance="1e-10"/>
+      <NODE tStep="2" number="3" dof="4" unknown="d" value="5.92956839e-07" tolerance="1e-10"/>
+      <NODE tStep="2" number="3" dof="5" unknown="d" value="0.000659199446" tolerance="1e-10"/>
+      <NODE tStep="2" number="4" dof="1" unknown="d" value="2.43231379e-08" tolerance="1e-10"/>
+      <NODE tStep="2" number="4" dof="2" unknown="d" value="5.03243457e-09" tolerance="1e-10"/>
+      <NODE tStep="2" number="4" dof="3" unknown="d" value="-0.000319019099" tolerance="1e-10"/>
+      <NODE tStep="2" number="4" dof="4" unknown="d" value="-4.38462023e-05" tolerance="1e-10"/>
+      <NODE tStep="2" number="4" dof="5" unknown="d" value="0.000638576218" tolerance="1e-10"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="104" component="1" value="2.0989e-08" tolerance="1e-10"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="104" component="4" value="-9.8826e-08" tolerance="1e-10"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="11" component="1" value="-0.0006592" tolerance="1e-07"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="11" component="6" value="5.9296e-07" tolerance="1e-10"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="10" component="1" value="0.0087454" tolerance="1e-06"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="10" component="2" value="0.0017491" tolerance="1e-06"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="10" component="4" value="-0.68629" tolerance="0.0001"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="10" component="5" value="-0.36364" tolerance="0.0001"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="9" component="1" value="-0.45778" tolerance="0.0001"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="9" component="2" value="-0.091555" tolerance="1e-05"/>
+      <!--check reactions-->
+      <!--REACTION tStep 2 number 1 dof 1 value  -9.0824e-02 tolerance 1.e-5-->
+      <!--REACTION tStep 2 number 1 dof 2 value  -3.4883e-02 tolerance 1.e-5-->
+      <!--REACTION tStep 2 number 1 dof 3 value  2.5224e-01 tolerance 1.e-4-->
+      <!--REACTION tStep 2 number 1 dof 4 value 1.2232e-01 tolerance 1.e-4-->
+      <!--REACTION tStep 2 number 1 dof 5 value  -1.3458e-01 tolerance 1.e-4-->
+      <!--REACTION tStep 2 number 2 dof 1 value -1.3140e-01 tolerance 1.e-5-->
+      <!--REACTION tStep 2 number 2 dof 2 value 3.4883e-02 tolerance 1.e-5-->
+      <!--REACTION tStep 2 number 2 dof 3 value -2.5224e-01 tolerance 1.e-4-->
+      <!--REACTION tStep 2 number 2 dof 4 value  3.7963e-03 tolerance 1.e-4-->
+      <!--REACTION tStep 2 number 2 dof 5 value  -8.7639e-02 tolerance 1.e-4-->
+      <!--layered model-->
+      <NODE tStep="2" number="13" dof="1" unknown="d" value="2.11247616e-08" tolerance="1e-10"/>
+      <NODE tStep="2" number="13" dof="2" unknown="d" value="-1.07008715e-09" tolerance="1e-10"/>
+      <NODE tStep="2" number="13" dof="3" unknown="d" value="-0.000329602674" tolerance="1e-10"/>
+      <NODE tStep="2" number="13" dof="4" unknown="d" value="5.92956839e-07" tolerance="1e-10"/>
+      <NODE tStep="2" number="13" dof="5" unknown="d" value="0.000659199446" tolerance="1e-10"/>
+      <NODE tStep="2" number="14" dof="1" unknown="d" value="2.43231379e-08" tolerance="1e-10"/>
+      <NODE tStep="2" number="14" dof="2" unknown="d" value="5.03243457e-09" tolerance="1e-10"/>
+      <NODE tStep="2" number="14" dof="3" unknown="d" value="-0.000319019099" tolerance="1e-10"/>
+      <NODE tStep="2" number="14" dof="4" unknown="d" value="-4.38462023e-05" tolerance="1e-10"/>
+      <NODE tStep="2" number="14" dof="5" unknown="d" value="0.000638576218" tolerance="1e-10"/>
+      <ELEMENT tStep="2" number="11" gp="1" keyword="104" component="1" value="2.0989e-08" tolerance="1e-10"/>
+      <ELEMENT tStep="2" number="11" gp="1" keyword="104" component="4" value="-9.8826e-08" tolerance="1e-10"/>
+      <ELEMENT tStep="2" number="11" gp="1" keyword="11" component="1" value="-0.0006592" tolerance="1e-07"/>
+      <ELEMENT tStep="2" number="11" gp="1" keyword="11" component="6" value="5.9296e-07" tolerance="1e-10"/>
+      <ELEMENT tStep="2" number="11" gp="1" keyword="10" component="1" value="0.0087454" tolerance="1e-06"/>
+      <ELEMENT tStep="2" number="11" gp="1" keyword="10" component="2" value="0.0017491" tolerance="1e-06"/>
+      <ELEMENT tStep="2" number="11" gp="1" keyword="10" component="4" value="-0.68629" tolerance="0.0001"/>
+      <ELEMENT tStep="2" number="11" gp="1" keyword="10" component="5" value="-0.36364" tolerance="0.0001"/>
+      <ELEMENT tStep="2" number="11" gp="1" keyword="9" component="1" value="-0.45778" tolerance="0.0001"/>
+      <ELEMENT tStep="2" number="11" gp="1" keyword="9" component="2" value="-0.091555" tolerance="1e-05"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

@@ -1,0 +1,60 @@
+<oofem version="1">
+  <Output>mp04.out</Output>
+  <Description>Test of mpm uptetra21 element</Description>
+  <Analysis type="mpmproblem" nsteps="1" deltat="0.1" alpha="0.5" rtolv="1e-06"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="0.0 1.0 0.0"/>
+      <Node coords="0.0 0.0 1.0"/>
+      <Node id="5" coords="1.0 0.0 1.0"/>
+      <Node coords="0.0 1.0 1.0"/>
+      <Node coords="0.5 0.0 0.0"/>
+      <Node coords="0.5 0.5 0.0"/>
+      <Node coords="0.0 0.5 0.0"/>
+      <Node id="10" coords="0.5 0.0 1.0"/>
+      <Node coords="0.5 0.5 1.0"/>
+      <Node coords="0.0 0.5 1.0"/>
+      <Node coords="0.0 0.0 0.5"/>
+      <Node coords="1.0 0.0 0.5"/>
+      <Node id="15" coords="0.0 1.0 0.5"/>
+      <Node coords="0.5 0.0 0.5"/>
+      <Node coords="0.0 0.5 0.5"/>
+      <Node coords="0.5 0.5 0.5"/>
+    </Nodes>
+    <Elements>
+      <uptetra21 nodes="1 2 3 4 7 8 9 13 16 17"/>
+      <uptetra21 nodes="4 5 2 3 10 14 16 17 18 8"/>
+      <uptetra21 nodes="4 6 5 3 12 11 10 17 15 18"/>
+    </Elements>
+    <CrossSections>
+      <dummycs mat="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <upm d="1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <!--displacement bottom-->
+      <boundarycondition loadtimefunction="1" set="2" values="0.0 0.0 0.0" dofs="1 2 3"/>
+      <!--pressure top-->
+      <boundarycondition loadtimefunction="1" set="3" values="0.0" dofs="11"/>
+      <!--load on top-->
+      <nodalload loadtimefunction="1" set="5" dofs="3" components="2.0"/>
+    </BoundaryConditions>
+    <InitialConditions>
+      <InitialCondition conditions="u 0.0" dofs="11" set="4"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <constantfunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elements="1 2 3"/>
+      <Set nodes="1 2 3 7 8 9"/>
+      <Set nodes="4 5 6"/>
+      <Set nodes="1 2 3 4 5 6"/>
+      <Set id="5" nodes="4 5 6 10 11 12"/>
+    </Sets>
+  </Domain>
+</oofem>

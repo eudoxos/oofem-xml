@@ -1,0 +1,46 @@
+<oofem version="1">
+  <Output>idm04.out</Output>
+  <Description>Test of damage law with linear softening on a 1D truss element, fracturing strain</Description>
+  <Analysis type="StaticStructural" nsteps="12" solvertype="calm" rtolf="0.0001" maxiter="20" psi="0.0" hpcmode="1" hpc="2 1" steplength="0.05" minsteplength="0.05"/>
+  <Domain domain="1dtruss">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.5 0.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <truss1d nodes="1 2" mat="1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" width="10.0" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <!--linear softening, fracturing strain-->
+      <idm1 d="1.0" e="10.0" n="0.2" e0="0.5" ef="1.2" equivstraintype="0" talpha="0.0" damlaw="1"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="2"/>
+      <NodalLoad loadtimefunction="1" dofs="1" components="1.0" set="3" reference=""/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1"/>
+      <Set nodes="1"/>
+      <Set nodes="2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--Used for Extractor-->
+    <errorcheck tolerance="0.0001">
+      <NODE tStep="11" number="2" dof="1" unknown="d" value="0.55"/>
+      <LOADLEVEL tStep="8" value="28.57143"/>
+      <LOADLEVEL tStep="9" value="21.42857"/>
+      <LOADLEVEL tStep="10" value="14.28571"/>
+      <LOADLEVEL tStep="11" value="7.142857"/>
+      <LOADLEVEL tStep="12" value="0.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

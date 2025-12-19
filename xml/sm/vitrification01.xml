@@ -1,0 +1,80 @@
+<oofem version="1">
+  <Output>vitrification01.out</Output>
+  <Description>Test of vitrification material model</Description>
+  <Analysis type="StaticStructural" nsteps="2" deltat="1.0"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="-1.0 -1.0 1.0"/>
+      <Node coords="-1.0 1.0 1.0"/>
+      <Node coords="1.0 1.0 1.0"/>
+      <Node coords="1.0 -1.0 1.0"/>
+      <Node id="5" coords="-1.0 -1.0 -1.0"/>
+      <Node coords="-1.0 1.0 -1.0"/>
+      <Node coords="1.0 1.0 -1.0"/>
+      <Node coords="1.0 -1.0 -1.0"/>
+      <Node coords="-1.0 0.0 1.0"/>
+      <Node id="10" coords="0.0 1.0 1.0"/>
+      <Node coords="1.0 0.0 1.0"/>
+      <Node coords="0.0 -1.0 1.0"/>
+      <Node coords="-1.0 0.0 -1.0"/>
+      <Node coords="0.0 1.0 -1.0"/>
+      <Node id="15" coords="1.0 0.0 -1.0"/>
+      <Node coords="0.0 -1.0 -1.0"/>
+      <Node coords="-1.0 -1.0 0.0"/>
+      <Node coords="-1.0 1.0 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+      <Node id="20" coords="1.0 -1.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <QSpace nodes="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <!--IsoLE 1 d 0. E 100. n 0.3 tAlpha 0.-->
+      <SimpleVitrificationMaterial d="0.0" vitrificationtime="0.99" e="130000.0 9500.0 9500.0" g="4500.0 4500.0 4500.0" nu="0.45 0.3 0.3" alpha="2e-08 3.2e-05 3.2e-05" e_r="130000.0 165.0 165.0" g_r="41.0 44.0 44.0" nu_r="0.98 0.345 0.345" alpha_r="2e-08 6.4e-05 6.4e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" values="0.0" dofs="1" set="2"/>
+      <ConstantSurfaceLoad loadtimefunction="1" components="1.0 0.0 0.0" set="3"/>
+      <BoundaryCondition loadtimefunction="1" values="0.0 0.0" dofs="2 3" set="5"/>
+      <BoundaryCondition loadtimefunction="1" values="0.0" dofs="3" set="6"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-1"/>
+      <Set elementboundaries="1 3"/>
+      <Set elementboundaries="1 5"/>
+      <Set nodes="10 12 14 16"/>
+      <Set id="5" nodes="1"/>
+      <Set nodes="2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.001">
+      <NODE tStep="1" number="20" dof="1" unknown="d" value="-0.000170304"/>
+      <NODE tStep="1" number="20" dof="2" unknown="d" value="1.34437e-15"/>
+      <NODE tStep="1" number="20" dof="3" unknown="d" value="-2.93774e-05"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="1" value="1.0"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="2" value="-2.01823e-13"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="3" value="-1.83298e-13"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="4" value="4.64465e-14"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="5" value="9.26542e-14"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="6" value="-1.51822e-14"/>
+      <NODE tStep="2" number="20" dof="1" unknown="d" value="-0.000170304"/>
+      <NODE tStep="2" number="20" dof="2" unknown="d" value="1.34437e-15"/>
+      <NODE tStep="2" number="20" dof="3" unknown="d" value="-2.93774e-05"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="1" component="1" value="1.0"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="1" component="2" value="-2.01823e-13"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="1" component="3" value="-1.83298e-13"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="1" component="4" value="4.64465e-14"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="1" component="5" value="9.26542e-14"/>
+      <ELEMENT tStep="2" number="1" gp="1" keyword="1" component="6" value="-1.51822e-14"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

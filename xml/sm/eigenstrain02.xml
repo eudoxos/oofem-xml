@@ -1,0 +1,56 @@
+<oofem version="1">
+  <Output>eigenstrain02.out</Output>
+  <Description>Eigenstrain test of PlaneStress2d elements -&gt; imposed shear with horizontal strain</Description>
+  <Analysis type="LinearStatic" nsteps="1"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="4.0 0.0 0.0"/>
+      <Node coords="6.0 0.0 0.0"/>
+      <Node coords="6.0 2.0 0.0"/>
+      <Node id="5" coords="4.0 2.0 0.0"/>
+      <Node coords="0.0 2.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <PlaneStress2d nodes="1 2 5 6"/>
+      <PlaneStress2d nodes="2 3 4 5"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="0.15" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="0.0" e="12.0" n="0.25" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="2"/>
+      <StructEigenstrainLoad loadtimefunction="1" components="0.1 0.0 0.2" set="1"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-2"/>
+      <Set nodes="1 2 5 6"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-08">
+      <!--check selected nodes-->
+      <NODE tStep="1" number="3" dof="1" unknown="d" value="0.2"/>
+      <NODE tStep="1" number="3" dof="2" unknown="d" value="0.4"/>
+      <NODE tStep="1" number="4" dof="1" unknown="d" value="0.2"/>
+      <NODE tStep="1" number="4" dof="2" unknown="d" value="0.4"/>
+      <!--check element strain vector-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="0.0"/>
+      <ELEMENT tStep="1" number="2" gp="1" keyword="4" component="1" value="0.1"/>
+      <ELEMENT tStep="1" number="2" gp="1" keyword="4" component="6" value="0.2"/>
+      <!--check element stress vector-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="1" value="-1.28"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="2" value="-0.32"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="6" value="-0.96"/>
+      <ELEMENT tStep="1" number="2" gp="1" keyword="1" component="1" value="0.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

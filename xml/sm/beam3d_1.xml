@@ -1,0 +1,97 @@
+<oofem version="1">
+  <Output>beam3d_1.out</Output>
+  <Description>Homework www sm40 no. 10</Description>
+  <!--only momentum influence to the displacements is taken into account-->
+  <!--beamShearCoeff is artificially enlarged.-->
+  <Analysis type="StaticStructural" nsteps="1"/>
+  <Domain domain="3dshell">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 4.0 0.0"/>
+      <Node coords="0.6 4.0 0.0"/>
+      <Node coords="4.3 4.0 0.0"/>
+      <Node coords="0.6 7.5 0.0"/>
+      <Node id="5" coords="0.6 0.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <Beam3d nodes="1 2" refnode="4"/>
+      <Beam3d nodes="2 3" refnode="4"/>
+      <Beam3d nodes="4 2" refnode="3"/>
+      <Beam3d nodes="2 5" refnode="3"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS area="0.1575" iy="0.002657812" iz="0.001607812" ik="0.003606447115384616" beamshearcoeff="1e+30" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="1.0" e="25000000.0" n="0.15" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3 4 5 6" values="0.0 0.0 0.0 0.0 0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="3 5" values="0.0 0.0" set="3"/>
+      <ConstantEdgeLoad loadtimefunction="1" dofs="1 2 3 4 5 6" components="0.0 0.0 3.0 0.0 0.0 0.0" loadtype="3" set="4"/>
+      <NodalLoad loadtimefunction="1" dofs="1 2 3 4 5 6" components="0.0 0.0 15.0 0.0 0.0 0.0" set="5"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <PeakFunction t="1.0" f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-4"/>
+      <Set nodes="3 4"/>
+      <Set nodes="5"/>
+      <Set elementedges="3 1"/>
+      <Set id="5" nodes="1"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--exact solution-->
+    <errorcheck tolerance="1e-06">
+      <!--check reactions-->
+      <REACTION tStep="1" number="3" dof="1" value="0.0"/>
+      <REACTION tStep="1" number="3" dof="2" value="0.0"/>
+      <REACTION tStep="1" number="3" dof="3" value="-3.069812"/>
+      <REACTION tStep="1" number="3" dof="4" value="1.154203"/>
+      <REACTION tStep="1" number="3" dof="5" value="-12.4456148"/>
+      <REACTION tStep="1" number="3" dof="6" value="0.0"/>
+      <REACTION tStep="1" number="4" dof="1" value="0.0"/>
+      <REACTION tStep="1" number="4" dof="2" value="0.0"/>
+      <REACTION tStep="1" number="4" dof="3" value="-18.2944584"/>
+      <REACTION tStep="1" number="4" dof="4" value="27.9584829"/>
+      <REACTION tStep="1" number="4" dof="5" value="-4.220101"/>
+      <REACTION tStep="1" number="4" dof="6" value="0.0"/>
+      <REACTION tStep="1" number="5" dof="3" value="-4.13573"/>
+      <REACTION tStep="1" number="5" dof="5" value="-3.692588"/>
+      <!--check all nodes-->
+      <NODE tStep="1" number="2" dof="3" unknown="d" value="0.000892077684" tolerance="1e-10"/>
+      <NODE tStep="1" number="2" dof="4" unknown="d" value="-0.000108941223" tolerance="1e-10"/>
+      <NODE tStep="1" number="2" dof="5" unknown="d" value="0.000376789811" tolerance="1e-10"/>
+      <!--check element no. 1 force vector-->
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="1" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="2" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="3" value="15.0"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="4" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="5" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="6" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="9" value="-15.0"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="11" value="-9.0"/>
+      <BEAM_ELEMENT tStep="1" number="2" keyword="1" component="1" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="2" keyword="1" component="2" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="2" keyword="1" component="3" value="3.06981196"/>
+      <BEAM_ELEMENT tStep="1" number="2" keyword="1" component="4" value="-1.15420317"/>
+      <BEAM_ELEMENT tStep="1" number="2" keyword="1" component="5" value="1.08731059"/>
+      <BEAM_ELEMENT tStep="1" number="2" keyword="1" component="6" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="3" keyword="1" component="1" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="3" keyword="1" component="2" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="3" keyword="1" component="3" value="-18.2944584"/>
+      <BEAM_ELEMENT tStep="1" number="3" keyword="1" component="4" value="4.22010102"/>
+      <BEAM_ELEMENT tStep="1" number="3" keyword="1" component="5" value="27.9584829"/>
+      <BEAM_ELEMENT tStep="1" number="3" keyword="1" component="6" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="4" keyword="1" component="1" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="4" keyword="1" component="2" value="0.0"/>
+      <BEAM_ELEMENT tStep="1" number="4" keyword="1" component="3" value="4.13572961"/>
+      <BEAM_ELEMENT tStep="1" number="4" keyword="1" component="4" value="-3.69258839"/>
+      <BEAM_ELEMENT tStep="1" number="4" keyword="1" component="5" value="-16.5429184"/>
+      <BEAM_ELEMENT tStep="1" number="4" keyword="1" component="6" value="0.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

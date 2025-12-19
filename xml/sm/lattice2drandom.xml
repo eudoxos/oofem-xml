@@ -1,0 +1,40 @@
+<oofem version="1">
+  <Output>lattice2drandom.out</Output>
+  <Description>Direct tension. 2D Lattice Model with random input</Description>
+  <Analysis type="StaticStructural" nsteps="1" solvertype="calm" rtolf="1e-05" maxiter="10" steplength="1e-05" minsteplength="1e-05" hpcmode="2" hpc="2 1" hpcw="1.0"/>
+  <Domain domain="2dlattice">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0"/>
+      <Node coords="0.001 0.0"/>
+    </Nodes>
+    <Elements>
+      <lattice2D nodes="1 2" crosssect="1" mat="1" gpcoords="0.0005 0.0" width="0.001" thick="1.0"/>
+    </Elements>
+    <CrossSections>
+      <latticecs material="1"/>
+    </CrossSections>
+    <Materials>
+      <latticedamage d="0.0" talpha="0.0" e="30000000000.0" e0="0.0001" wf="0.01" coh="2.0" ec="10.0" stype="1" randvars="800" randgen="2"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 6" values="0.0 0.0 0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="6" values="0.0" set="2"/>
+      <NodalLoad loadtimefunction="1" dofs="1 2 6" components="1.0 0.0 0.0" set="2" reference=""/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <InterpolatingFunction name="lattice2drandom.dat"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1"/>
+      <Set nodes="2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.01">
+      <LOADLEVEL tStep="1" value="2931.192"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

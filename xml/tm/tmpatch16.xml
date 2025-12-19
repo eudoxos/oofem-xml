@@ -1,0 +1,58 @@
+<oofem version="1">
+  <Output>tmpatch16.out</Output>
+  <Description>Test of Quad1_ht elements, heat transfer coefficient depending on temperature</Description>
+  <!--5==a(T)=6-->
+  <!--|     |-->
+  <!--|     |-->
+  <!--|  2  |-->
+  <!--|     |-->
+  <!--3|&#8212;&#8212;-|4-->
+  <!--|  1  |-->
+  <!--1|_____|2-->
+  <Analysis type="StationaryProblem" nsteps="1"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="2.0 0.0 0.0"/>
+      <Node coords="0.0 1.0 0.0"/>
+      <Node coords="2.0 1.0 0.0"/>
+      <Node id="5" coords="0.0 8.0 0.0"/>
+      <Node coords="2.0 8.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <quad1ht nodes="1 3 4 2"/>
+      <quad1ht nodes="3 5 6 4"/>
+    </Elements>
+    <CrossSections>
+      <SimpleTransportCS mat="1" set="1" thickness="0.15"/>
+    </CrossSections>
+    <Materials>
+      <IsoHeat d="2400.0" k="3.0" c="1000.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="10" values="5.0" set="2"/>
+      <!--Heat transfer coefficient depending on temperature-->
+      <constantedgeload loadtimefunction="1" components="15.0" properties="a 1.0" propertymultexpr="$(273 + u)*0.01$" loadtype="3" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions>
+      <InitialCondition conditions="u 5.0" dofs="10" set="1"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-2"/>
+      <Set nodes="1 2"/>
+      <Set elementedges="2 2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <NODE tStep="1" number="3" dof="10" unknown="d" value="6.10573968"/>
+      <NODE tStep="1" number="4" dof="10" unknown="d" value="6.10573968"/>
+      <NODE tStep="1" number="5" dof="10" unknown="d" value="13.8459174"/>
+      <NODE tStep="1" number="6" dof="10" unknown="d" value="13.8459174"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

@@ -1,0 +1,71 @@
+<oofem version="1">
+  <Output>eigen_beam3d.out</Output>
+  <Description>eigen vibration analysis of simple suported beam</Description>
+  <Analysis type="EigenValueDynamic" nroot="4" rtolv="1e-06" stype="0"/>
+  <Domain domain="3dshell">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 0.0 0.25"/>
+      <Node coords="0.0 0.0 0.5"/>
+      <Node coords="0.0 0.0 0.75"/>
+      <Node id="5" coords="0.0 0.0 1.0"/>
+      <Node coords="0.0 0.0 1.25"/>
+      <Node coords="0.0 0.0 1.5"/>
+      <Node coords="0.0 0.0 1.75"/>
+      <Node coords="0.0 0.0 2.0"/>
+      <Node id="10" coords="0.0 0.0 2.25"/>
+      <Node coords="0.0 0.0 2.5"/>
+      <Node coords="0.0 0.0 2.75"/>
+      <Node coords="0.0 0.0 3.0"/>
+      <Node coords="0.0 0.0 3.25"/>
+      <Node id="15" coords="0.0 0.0 3.5"/>
+      <Node coords="0.0 0.0 3.75"/>
+      <Node coords="0.0 0.0 4.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <Beam3d nodes="1 2" refnode="18"/>
+      <Beam3d nodes="2 3" refnode="18"/>
+      <Beam3d nodes="3 4" refnode="18"/>
+      <Beam3d nodes="4 5" refnode="18"/>
+      <Beam3d id="5" nodes="5 6" refnode="18"/>
+      <Beam3d nodes="6 7" refnode="18"/>
+      <Beam3d nodes="7 8" refnode="18"/>
+      <Beam3d nodes="8 9" refnode="18"/>
+      <Beam3d nodes="9 10" refnode="18"/>
+      <Beam3d id="10" nodes="10 11" refnode="18"/>
+      <Beam3d nodes="11 12" refnode="18"/>
+      <Beam3d nodes="12 13" refnode="18"/>
+      <Beam3d nodes="13 14" refnode="18"/>
+      <Beam3d nodes="14 15" refnode="18"/>
+      <Beam3d id="15" nodes="15 16" refnode="18"/>
+      <Beam3d nodes="16 17" refnode="18"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS area="0.06" iy="0.00045" iz="0.0002" ik="0.000498461" beamshearcoeff="1e+60" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="25.0" e="25000000.0" n="0.15" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3 6" values="0.0 0.0 0.0 0.0" set="2"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-16"/>
+      <Set nodes="1 17"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.0001">
+      <!--check eigen values-->
+      <EIGVAL tStep="1" eignum="1" value="1268.35015"/>
+      <EIGVAL tStep="1" eignum="2" value="2853.78786"/>
+      <EIGVAL tStep="1" eignum="3" value="20294.228"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

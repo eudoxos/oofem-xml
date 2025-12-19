@@ -1,0 +1,52 @@
+<oofem version="1">
+  <Output>tmpatch44-3.out</Output>
+  <Description>Patch test of axisymmetric linear triangle elements, steady-state solution, prescribed constant heat source</Description>
+  <Analysis type="StationaryProblem" nsteps="1"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="2.2 0.0 0.0"/>
+      <Node coords="4.0 0.0 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+      <Node id="5" coords="2.2 1.0 0.0"/>
+      <Node coords="4.0 1.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <Traxisym1ht nodes="1 2 4"/>
+      <Traxisym1ht nodes="2 5 4"/>
+      <Traxisym1ht nodes="2 3 5"/>
+      <Traxisym1ht nodes="3 6 5"/>
+    </Elements>
+    <CrossSections>
+      <SimpleTransportCS mat="1" set="1" thickness="0.15"/>
+    </CrossSections>
+    <Materials>
+      <IsoHeat d="0.0" k="3.0" c="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="10" values="10.0" set="2"/>
+      <!--Internal source-->
+      <deadweight loadtimefunction="1" components="50.0" set="1"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-4"/>
+      <Set nodes="1 4"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--exact solution for this case is -4.1666666*x^2+133.33333333*log(x)+14.1666666, T(2.2)=99.127648, T(4.)=132.339249-->
+    <errorcheck>
+      <NODE tStep="1" number="2" dof="10" unknown="d" value="93.3332036"/>
+      <NODE tStep="1" number="5" dof="10" unknown="d" value="93.1852861"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="56" component="1" value="-208.333009"/>
+      <ELEMENT tStep="1" number="2" gp="1" keyword="56" component="1" value="-207.963215"/>
+      <ELEMENT tStep="1" number="3" gp="1" keyword="56" component="1" value="-51.9147254"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="56" component="1" value="-47.2466968"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

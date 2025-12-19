@@ -1,0 +1,82 @@
+<oofem version="1">
+  <Output>test_wp1.out</Output>
+  <Description>Winkler pasternak model: test of settlement profile</Description>
+  <Analysis type="StaticStructural" nsteps="1"/>
+  <Domain domain="2dmindlinplate">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <!--pure bending along x axis-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="2.0 0.0 0.0"/>
+      <Node coords="3.0 0.0 0.0"/>
+      <Node id="5" coords="4.0 0.0 0.0"/>
+      <Node coords="5.0 0.0 0.0"/>
+      <Node coords="6.0 0.0 0.0"/>
+      <Node coords="7.0 0.0 0.0"/>
+      <Node coords="8.0 0.0 0.0"/>
+      <Node id="10" coords="9.0 0.0 0.0"/>
+      <Node coords="10.0 0.0 0.0"/>
+      <Node coords="11.0 0.0 0.0"/>
+      <Node id="21" coords="0.0 1.0 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+      <Node coords="2.0 1.0 0.0"/>
+      <Node coords="3.0 1.0 0.0"/>
+      <Node id="25" coords="4.0 1.0 0.0"/>
+      <Node coords="5.0 1.0 0.0"/>
+      <Node coords="6.0 1.0 0.0"/>
+      <Node coords="7.0 1.0 0.0"/>
+      <Node coords="8.0 1.0 0.0"/>
+      <Node id="30" coords="9.0 1.0 0.0"/>
+      <Node coords="10.0 1.0 0.0"/>
+      <Node coords="11.0 1.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <quad1platesubsoil nodes="1 2 22 21"/>
+      <quad1platesubsoil nodes="2 3 23 22"/>
+      <quad1platesubsoil nodes="3 4 24 23"/>
+      <quad1platesubsoil nodes="4 5 25 24"/>
+      <quad1platesubsoil id="5" nodes="5 6 26 25"/>
+      <quad1platesubsoil nodes="6 7 27 26"/>
+      <quad1platesubsoil nodes="7 8 28 27"/>
+      <quad1platesubsoil nodes="8 9 29 28"/>
+      <quad1platesubsoil nodes="9 10 30 29"/>
+      <quad1platesubsoil id="10" nodes="10 11 31 30"/>
+      <quad1platesubsoil nodes="11 12 32 31"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <winklerpasternak d="2500.0" c1="1.0" c2="2.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="3" values="0.1" set="2"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-11"/>
+      <Set nodes="1 21"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--Exact solution: w = 0.1*exp(-sqrt(c1/c2)*x-->
+    <errorcheck tolerance="0.0005">
+      <NODE tStep="1" number="1" dof="3" unknown="d" value="0.1"/>
+      <NODE tStep="1" number="2" dof="3" unknown="d" value="0.0485431647"/>
+      <NODE tStep="1" number="3" dof="3" unknown="d" value="0.0235644192"/>
+      <NODE tStep="1" number="4" dof="3" unknown="d" value="0.0114389933"/>
+      <NODE tStep="1" number="5" dof="3" unknown="d" value="0.00555301838"/>
+      <NODE tStep="1" number="6" dof="3" unknown="d" value="0.00269596252"/>
+      <NODE tStep="1" number="7" dof="3" unknown="d" value="0.00130943168"/>
+      <NODE tStep="1" number="8" dof="3" unknown="d" value="0.000637136294"/>
+      <NODE tStep="1" number="9" dof="3" unknown="d" value="0.000312369798"/>
+      <NODE tStep="1" number="10" dof="3" unknown="d" value="0.000157986829"/>
+      <NODE tStep="1" number="11" dof="3" unknown="d" value="8.97784931e-05"/>
+      <NODE tStep="1" number="12" dof="3" unknown="d" value="7.05402446e-05"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

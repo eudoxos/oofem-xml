@@ -1,0 +1,64 @@
+<oofem version="1">
+  <Output>spring06.out</Output>
+  <Description>Patch test of torsional spring element in 3D space</Description>
+  <Analysis type="StaticStructural" nsteps="1"/>
+  <Domain domain="3dshell">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="3.0 0.0 0.0"/>
+      <!--reference node (has no DOFs)-->
+      <Node coords="0.0 1.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <beam3d nodes="2 3" crosssect="1" refnode="4"/>
+      <Spring nodes="1 2" crosssect="2" mode="5" orientation="0.0 1.0 0.0" k="5.0"/>
+      <Spring nodes="1 2" crosssect="2" mode="5" orientation="0.0 0.0 1.0" k="4.0"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS area="2.0" iy="15.0" iz="12.0" beamshearcoeff="1e+18" material="1"/>
+      <SimpleCS material="2"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="1.0" e="1.0" n="0.2" talpha="1.2e-05"/>
+      <DummyMat/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3 4 5 6" values="0.0 0.0 0.0 0.0 0.0 0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2 3 4" values="0.0 0.0 0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2 3 4" values="0.0 0.0 0.0" set="3"/>
+      <ConstantEdgeLoad loadtimefunction="1" dofs="1 2 3" components="0.0 0.0 10.0" loadtype="3" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1"/>
+      <Set nodes="2"/>
+      <Set nodes="3"/>
+      <Set elementedges="1 1"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--Solution:-->
+    <!--Stiffness matrix of the system (dofs: rotation_at_node_1, rotation_at_node_2)-->
+    <!--K=[2EI/l+k EI/l; EI/l 2EI/l];-->
+    <!--f=[-f*l*l/12; f*l*l/12];-->
+    <!--=> r = [-0.56250; 0.65625];-->
+    <!--=> spring force = -0.5625*5= -2.8125-->
+    <errorcheck tolerance="1e-05">
+      <!--check nodal displacements-->
+      <NODE tStep="1" number="2" dof="5" unknown="d" value="-0.5625"/>
+      <NODE tStep="1" number="3" dof="5" unknown="d" value="0.65625"/>
+      <!--element stresses and strains-->
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="3" value="-15.9375"/>
+      <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="5" value="2.8125"/>
+      <!--ELEMENT tStep 1 number 2 keyword "moment" component 1  value  -2.8125-->
+      <REACTION tStep="1" number="1" dof="5" value="2.8125"/>
+      <REACTION tStep="1" number="2" dof="3" value="-15.9375"/>
+      <REACTION tStep="1" number="3" dof="3" value="-14.0625"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

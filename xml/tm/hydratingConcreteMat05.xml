@@ -1,0 +1,49 @@
+<oofem version="1">
+  <Output>hydratingConcreteMat05.out</Output>
+  <Description>Test of hydrating concrete material, two linear triangluar element with two heat sources, transient nonlinear solver, isothermal conditions, affinity hydration model with ordinary and slag cement</Description>
+  <Analysis type="TransientTransport" nsteps="30" deltat="7200.0" alpha="0.5"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="2.2 0.0 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+      <Node coords="3.0 0.0 0.0"/>
+      <Node id="5" coords="4.2 0.0 0.0"/>
+      <Node coords="3.0 1.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <tr1ht nodes="1 2 3" crosssect="1"/>
+      <tr1ht nodes="3 4 5" crosssect="2"/>
+    </Elements>
+    <CrossSections>
+      <SimpleTransportCS thickness="0.15" mat="1"/>
+      <SimpleTransportCS thickness="0.15" mat="2"/>
+    </CrossSections>
+    <Materials>
+      <!--Standard concrete k(conductivity)=1.7 W/m/K   c(capacity)=870 J/kg/K-->
+      <HydratingConcreteMat d="2458.0" k="1.7" c="870.0" hydrationmodeltype="2" qpot="509.0" masscement="400.0" b1="0.000351861" b2="8e-06" eta="7.4" dohinf="0.85" activationenergy="38300.0" minmodeltimestepintegrations="30.0" castingtime="7200.0" maturityt0="20.0"/>
+      <HydratingConcreteMat d="2458.0" k="1.7" c="870.0" hydrationmodeltype="2" qpot="509.0" masscement="400.0" b1="0.000351861" b2="8e-06" eta="7.4" doh1="0.2" p1="8.0" dohinf="0.85" activationenergy="38300.0" minmodeltimestepintegrations="30.0" castingtime="7200.0" maturityt0="20.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="10" values="25.0" set="1"/>
+    </BoundaryConditions>
+    <InitialConditions>
+      <InitialCondition conditions="u 25.0" dofs="10" set="1"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elements="1 2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.001">
+      <ELEMENT tStep="6" number="1" gp="1" keyword="39" component="1" value="0.107180394"/>
+      <ELEMENT tStep="30" number="1" gp="1" keyword="39" component="1" value="0.520334463"/>
+      <ELEMENT tStep="6" number="2" gp="1" keyword="39" component="1" value="0.107180394"/>
+      <ELEMENT tStep="30" number="2" gp="1" keyword="39" component="1" value="0.648537723"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

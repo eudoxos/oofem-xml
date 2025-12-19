@@ -1,0 +1,203 @@
+<oofem version="1">
+  <Output>concrete_fcm_shear.out</Output>
+  <Description>fixed crack model for concrete - separate tests on a single finite element</Description>
+  <Analysis type="NonLinearStatic" nsteps="31" deltat="1.0" rtolv="1e-06" maxiter="10000" controllmode="1" stiffmode="0" renumber="1"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <!--1: concrete_fcm_shear_none_dominant-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <!--2: concrete_fcm_shear_none_multiple-->
+      <Node id="5" coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <!--3: concrete_fcm_shear_beta_dominant-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node id="10" coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <!--4: concrete_fcm_shear_beta_multiple-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node id="15" coords="0.0 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <!--5: concrete_fcm_shear_sf_dominant-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node id="20" coords="0.1 0.1 0.0"/>
+      <!--6: concrete_fcm_shear_sf_multiple-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <!--7: concrete_fcm_shear_userbeta_dominant-->
+      <Node id="25" coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <!--8: concrete_fcm_shear_userbeta_multiple-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node id="30" coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <!--9: concrete_fcm_shear_crack_spacing_beta_multiple-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node id="35" coords="0.0 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <!--10: concrete_fcm_shear_strength_ft-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node id="40" coords="0.1 0.1 0.0"/>
+      <!--11: concrete_fcm_shear_strength_collins-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+    </Nodes>
+    <Elements>
+      <PlaneStress2D nodes="1 2 4 3"/>
+      <PlaneStress2D nodes="5 6 8 7"/>
+      <PlaneStress2D nodes="9 10 12 11"/>
+      <PlaneStress2D nodes="13 14 16 15"/>
+      <PlaneStress2D id="5" nodes="17 18 20 19"/>
+      <PlaneStress2D nodes="21 22 24 23"/>
+      <PlaneStress2D nodes="25 26 28 27"/>
+      <PlaneStress2D nodes="29 30 32 31"/>
+      <PlaneStress2D nodes="33 34 36 35"/>
+      <PlaneStress2D id="10" nodes="37 38 40 39"/>
+      <PlaneStress2D nodes="41 42 44 43"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" width="1.0" material="1" set="11"/>
+      <SimpleCS thick="1.0" width="1.0" material="2" set="12"/>
+      <SimpleCS thick="1.0" width="1.0" material="3" set="13"/>
+      <SimpleCS thick="1.0" width="1.0" material="4" set="14"/>
+      <SimpleCS id="5" thick="1.0" width="1.0" material="5" set="15"/>
+      <SimpleCS thick="1.0" width="1.0" material="6" set="16"/>
+      <SimpleCS thick="1.0" width="1.0" material="7" set="17"/>
+      <SimpleCS thick="1.0" width="1.0" material="8" set="18"/>
+      <SimpleCS thick="1.0" width="1.0" material="9" set="19"/>
+      <SimpleCS id="10" thick="1.0" width="1.0" material="10" set="20"/>
+      <SimpleCS thick="1.0" width="1.0" material="11" set="21"/>
+    </CrossSections>
+    <Materials>
+      <concretefcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="0"/>
+      <concretefcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="0" multiplecrackshear=""/>
+      <concretefcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="1" beta="0.2"/>
+      <concretefcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="1" beta="0.2" multiplecrackshear=""/>
+      <concretefcm id="5" d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="2" sf="10.0"/>
+      <concretefcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="2" sf="10.0" multiplecrackshear=""/>
+      <concretefcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="3" beta_w="0.0 1e-06 5e-06 1e-05 5e-05 0.001" beta_w_="1.0 1.0 0.5 0.5 0.1 0.1"/>
+      <concretefcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="3" beta_w="0.0 1e-06 5e-06 1e-05 5e-05 0.001" beta_w_="1.0 1.0 0.5 0.5 0.1 0.1" multiplecrackshear=""/>
+      <concretefcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="1" multiplecrackshear="" beta="0.5" crackspacing="0.025"/>
+      <concretefcm id="10" d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="1" beta="0.8" shearstrengthtype="1" multiplecrackshear=""/>
+      <concretefcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="1" beta="0.8" shearstrengthtype="2" fc="30.0" ag="0.01" lengthscale="1.0" multiplecrackshear=""/>
+    </Materials>
+    <BoundaryConditions>
+      <!--horizontal restraint-->
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="1"/>
+      <!--vertical restraint-->
+      <BoundaryCondition loadtimefunction="2" dofs="2" values="0.0" set="2"/>
+      <!--lower right node - creating first crack-->
+      <BoundaryCondition loadtimefunction="3" dofs="1" values="1e-05" set="3"/>
+      <!--upper right node - creating first crack and then shearing-->
+      <BoundaryCondition loadtimefunction="4" dofs="1" values="1e-05" set="4"/>
+      <!--left upper node - shearing-->
+      <BoundaryCondition id="5" loadtimefunction="5" dofs="1" values="1e-05" set="5"/>
+      <!--upper nodes - creating second crack-->
+      <BoundaryCondition loadtimefunction="6" dofs="2" values="1e-05" set="6"/>
+      <!--ft-->
+      <!--upper right node - creating first crack and then shearing-->
+      <BoundaryCondition loadtimefunction="7" dofs="1" values="1e-05" set="7"/>
+      <!--left upper node - shearing-->
+      <BoundaryCondition loadtimefunction="8" dofs="1" values="1e-05" set="8"/>
+      <!--collins-->
+      <!--upper right node - creating first crack and then shearing-->
+      <BoundaryCondition loadtimefunction="9" dofs="1" values="1e-05" set="9"/>
+      <!--left upper node - shearing-->
+      <BoundaryCondition id="10" loadtimefunction="10" dofs="1" values="1e-05" set="10"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinfunction npoints="4" t="0.0 5.0 10.0 100.0" f_t_="0.0 2.0 2.0 2.0"/>
+      <!--0  5 10 15 20 25 30-->
+      <PiecewiseLinfunction npoints="7" t="0.0 5.0 10.0 15.0 20.0 25.0 30.0" f_t_="0.0 2.0 4.0 2.0 2.0 4.0 2.0"/>
+      <PiecewiseLinfunction id="5" npoints="7" t="0.0 5.0 10.0 15.0 20.0 25.0 30.0" f_t_="0.0 0.0 2.0 0.0 0.0 2.0 0.0"/>
+      <PiecewiseLinfunction npoints="7" t="0.0 5.0 10.0 15.0 20.0 25.0 30.0" f_t_="0.0 0.0 0.0 0.0 3.0 3.0 3.0"/>
+      <!--ft:-->
+      <PiecewiseLinfunction npoints="7" t="0.0 5.0 10.0 15.0 20.0 25.0 30.0" f_t_="0.0 2.0 7.0 2.0 2.0 7.0 2.0"/>
+      <PiecewiseLinfunction npoints="7" t="0.0 5.0 10.0 15.0 20.0 25.0 30.0" f_t_="0.0 0.0 5.0 0.0 0.0 5.0 0.0"/>
+      <!--collins:-->
+      <PiecewiseLinfunction npoints="7" t="0.0 5.0 10.0 15.0 20.0 25.0 30.0" f_t_="0.0 2.0 10.0 2.0 2.0 10.0 2.0"/>
+      <PiecewiseLinfunction id="10" npoints="7" t="0.0 5.0 10.0 15.0 20.0 25.0 30.0" f_t_="0.0 0.0 8.0 0.0 0.0 8.0 0.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <!--horizontal restraint-->
+      <Set nodes="1 5 9 13 17 21 25 29 33 37 41"/>
+      <!--vertical restraint-->
+      <Set nodes="1 2 5 6 9 10 13 14 17 18 21 22 25 26 29 30 33 34 37 38 41 42"/>
+      <!--lower right node - creating first crack-->
+      <Set nodes="2 6 10 14 18 22 26 30 34 38 42"/>
+      <!--upper right node - creating first crack and then shearing-->
+      <Set nodes="4 8 12 16 20 24 28 32 36"/>
+      <!--left upper node - shearing-->
+      <Set id="5" nodes="3 7 11 15 19 23 27 31 35"/>
+      <!--upper nodes - creating second crack-->
+      <Set nodes="3 4 7 8 11 12 15 16 19 20 23 24 27 28 31 32 35 36 39 40 43 44"/>
+      <Set nodes="40"/>
+      <Set nodes="39"/>
+      <Set nodes="44"/>
+      <Set id="10" nodes="43"/>
+      <Set elementranges="1"/>
+      <Set elementranges="2"/>
+      <Set elementranges="3"/>
+      <Set elementranges="4"/>
+      <Set id="15" elementranges="5"/>
+      <Set elementranges="6"/>
+      <Set elementranges="7"/>
+      <Set elementranges="8"/>
+      <Set elementranges="9"/>
+      <Set id="20" elementranges="10"/>
+      <Set elementranges="11"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <ELEMENT tStep="11" number="1" gp="1" keyword="1" component="6" value="1.66667" tolerance="1e-05"/>
+      <ELEMENT tStep="26" number="1" gp="1" keyword="1" component="6" value="1.66667" tolerance="1e-05"/>
+      <ELEMENT tStep="11" number="2" gp="1" keyword="1" component="6" value="1.66667" tolerance="1e-05"/>
+      <ELEMENT tStep="26" number="2" gp="1" keyword="1" component="6" value="1.66667" tolerance="1e-05"/>
+      <ELEMENT tStep="11" number="3" gp="1" keyword="1" component="6" value="0.3333333" tolerance="1e-05"/>
+      <ELEMENT tStep="26" number="3" gp="1" keyword="1" component="6" value="0.3333333" tolerance="1e-05"/>
+      <ELEMENT tStep="11" number="4" gp="1" keyword="1" component="6" value="0.3333333" tolerance="1e-05"/>
+      <ELEMENT tStep="26" number="4" gp="1" keyword="1" component="6" value="0.18519" tolerance="1e-05"/>
+      <ELEMENT tStep="11" number="5" gp="1" keyword="1" component="6" value="1.581" tolerance="5e-05"/>
+      <ELEMENT tStep="26" number="5" gp="1" keyword="1" component="6" value="1.4718" tolerance="5e-05"/>
+      <ELEMENT tStep="11" number="6" gp="1" keyword="1" component="6" value="1.581" tolerance="5e-05"/>
+      <ELEMENT tStep="26" number="6" gp="1" keyword="1" component="6" value="1.3935" tolerance="5e-05"/>
+      <ELEMENT tStep="11" number="7" gp="1" keyword="1" component="6" value="0.80826" tolerance="5e-05"/>
+      <ELEMENT tStep="26" number="7" gp="1" keyword="1" component="6" value="0.59808" tolerance="5e-05"/>
+      <ELEMENT tStep="11" number="8" gp="1" keyword="1" component="6" value="0.80826" tolerance="5e-05"/>
+      <ELEMENT tStep="26" number="8" gp="1" keyword="1" component="6" value="0.42459" tolerance="5e-05"/>
+      <ELEMENT tStep="11" number="9" gp="1" keyword="1" component="6" value="0.33333" tolerance="5e-05"/>
+      <ELEMENT tStep="26" number="9" gp="1" keyword="1" component="6" value="0.18519" tolerance="5e-05"/>
+      <ELEMENT tStep="8" number="10" gp="1" keyword="1" component="6" value="1.333333" tolerance="5e-05"/>
+      <ELEMENT tStep="11" number="10" gp="1" keyword="1" component="6" value="2.0" tolerance="5e-05"/>
+      <ELEMENT tStep="23" number="10" gp="1" keyword="1" component="6" value="1.111111" tolerance="5e-05"/>
+      <ELEMENT tStep="26" number="10" gp="1" keyword="1" component="6" value="2.0" tolerance="5e-05"/>
+      <ELEMENT tStep="8" number="11" gp="1" keyword="1" component="6" value="2.133333" tolerance="5e-05"/>
+      <ELEMENT tStep="11" number="11" gp="1" keyword="1" component="6" value="3.074988" tolerance="5e-05"/>
+      <ELEMENT tStep="23" number="11" gp="1" keyword="1" component="6" value="1.777778" tolerance="5e-05"/>
+      <ELEMENT tStep="26" number="11" gp="1" keyword="1" component="6" value="2.967257" tolerance="5e-05"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

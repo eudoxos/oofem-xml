@@ -1,0 +1,59 @@
+<oofem version="1">
+  <Output>lattice3d1.out</Output>
+  <Description>3d lattice model for periodic cell</Description>
+  <Analysis type="StaticStructural" nsteps="1" rtolv="1e-10"/>
+  <Domain domain="3dlattice">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="1.4 1.4 1.4" bc="1 1 1 1 1 1"/>
+      <Node coords="1.4 2.1 1.4"/>
+      <Node coords="1.75 1.75 1.75"/>
+      <Node coords="1.4 1.4 2.1"/>
+      <Node id="5" coords="1.4 2.1 2.1"/>
+      <Node coords="0.7 0.7 0.7" dofidmask="31 32 33 40 41 42" bc="2 0 0 0 0 2"/>
+    </Nodes>
+    <Elements>
+      <lattice3D nodes="1 2" crosssect="1" mat="1" polycoords="1.225 1.75 1.4 1.4 1.75 1.225 1.575 1.75 1.4 1.4 1.75 1.575"/>
+      <lattice3D nodes="1 3" crosssect="1" mat="1" polycoords="1.4 1.575 1.75 1.575 1.4 1.75 1.75 1.4 1.575 1.75 1.575 1.4 1.575 1.75 1.4 1.4 1.75 1.575"/>
+      <lattice3D nodes="1 4" crosssect="1" mat="1" polycoords="1.4 1.575 1.75 1.575 1.4 1.75 1.4 1.225 1.75 1.225 1.4 1.75"/>
+      <lattice3Dboundary nodes="1 5 6" crosssect="1" mat="1" polycoords="1.75 1.225 1.4 1.75 1.4 1.575 1.75 1.575 1.4 1.75 1.4 1.225" location="0 18"/>
+      <lattice3dboundary id="5" nodes="5 4 6" crosssect="1" mat="1" polycoords="2.275 1.75 1.4 2.1 1.75 1.225 1.925 1.75 1.4 2.1 1.75 1.575" location="18 24"/>
+      <lattice3dboundary nodes="5 3 6" crosssect="1" mat="1" polycoords="1.925 1.75 1.4 1.75 1.575 1.4 1.75 1.4 1.575 1.925 1.4 1.75 2.1 1.575 1.75 2.1 1.75 1.575" location="18 0"/>
+      <lattice3dboundary nodes="5 2 6" crosssect="1" mat="1" polycoords="2.275 1.4 1.75 2.1 1.225 1.75 1.925 1.4 1.75 2.1 1.575 1.75" location="18 20"/>
+      <lattice3dboundary nodes="2 4 6" crosssect="1" mat="1" polycoords="1.75 2.1 1.225 1.75 2.275 1.4 1.75 2.1 1.575 1.75 1.925 1.4" location="0 24"/>
+      <lattice3D nodes="2 3" crosssect="1" mat="1" polycoords="1.75 2.1 1.575 1.575 2.1 1.75 1.4 1.925 1.75 1.4 1.75 1.575 1.575 1.75 1.4 1.75 1.925 1.4"/>
+      <lattice3D id="10" nodes="2 5" crosssect="1" mat="1" polycoords="1.225 2.1 1.75 1.4 2.275 1.75 1.575 2.1 1.75 1.4 1.925 1.75"/>
+      <lattice3dboundary nodes="4 1 6" crosssect="1" mat="1" polycoords="2.275 2.1 1.75 2.1 2.275 1.75 1.925 2.1 1.75 2.1 1.925 1.75" location="24 26"/>
+      <lattice3dboundary nodes="4 3 6" crosssect="1" mat="1" polycoords="1.925 2.1 1.75 1.75 2.1 1.575 1.75 1.925 1.4 1.925 1.75 1.4 2.1 1.75 1.575 2.1 1.925 1.75" location="24 0"/>
+      <lattice3D nodes="3 5" crosssect="1" mat="1" polycoords="1.75 1.925 2.1 1.75 2.1 1.925 1.575 2.1 1.75 1.4 1.925 1.75 1.4 1.75 1.925 1.575 1.75 2.1"/>
+      <lattice3D nodes="3 4" crosssect="1" mat="1" polycoords="1.4 1.75 1.925 1.4 1.575 1.75 1.575 1.4 1.75 1.75 1.4 1.925 1.75 1.575 2.1 1.575 1.75 2.1"/>
+      <lattice3dboundary id="15" nodes="3 1 6" crosssect="1" mat="1" polycoords="1.75 2.1 1.925 1.925 2.1 1.75 2.1 1.925 1.75 2.1 1.75 1.925 1.925 1.75 2.1 1.75 1.925 2.1" location="0 26"/>
+      <lattice3dboundary nodes="3 2 6" crosssect="1" mat="1" polycoords="1.925 1.4 1.75 1.75 1.4 1.925 1.75 1.575 2.1 1.925 1.75 2.1 2.1 1.75 1.925 2.1 1.575 1.75" location="0 20"/>
+      <lattice3D nodes="4 5" crosssect="1" mat="1" polycoords="1.4 1.75 2.275 1.225 1.75 2.1 1.4 1.75 1.925 1.575 1.75 2.1"/>
+      <lattice3dboundary nodes="4 2 6" crosssect="1" mat="1" polycoords="1.75 1.4 2.275 1.75 1.225 2.1 1.75 1.4 1.925 1.75 1.575 2.1" location="0 20"/>
+      <lattice3dboundary nodes="2 1 6" crosssect="1" mat="1" polycoords="2.275 1.75 2.1 2.1 1.75 2.275 1.925 1.75 2.1 2.1 1.75 1.925" location="20 26"/>
+      <lattice3dboundary id="20" nodes="5 1 6" crosssect="1" mat="1" polycoords="1.75 2.1 2.275 1.75 2.275 2.1 1.75 2.1 1.925 1.75 1.925 2.1" location="0 26"/>
+    </Elements>
+    <CrossSections>
+      <latticecs material="1"/>
+    </CrossSections>
+    <Materials>
+      <latticedamage d="0.0" talpha="0.0" e="1.0" e0="100000.0" wf="100000.0" a1="1.0" a2="1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.001"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets/>
+  </Domain>
+  <ExportModules>
+    <vtkxmllattice tstep_all="" primvars="1" cross="1" cellvars="60 90" domain_all=""/>
+    <errorcheck tolerance="1e-08">
+      <REACTION tStep="1" number="6" dof="31" value="0.00071839616"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

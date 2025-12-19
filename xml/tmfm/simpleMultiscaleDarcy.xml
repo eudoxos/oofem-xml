@@ -1,0 +1,46 @@
+<oofem version="1">
+  <Output>simpleMultiscaleDarcy.out</Output>
+  <Description>Test for stokes flow on triangular Taylor-Hood element</Description>
+  <Analysis type="stationaryproblem" nsteps="1" rtolf="1e-05" manrmsteps="1"/>
+  <Domain domain="2dincompflow">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+      <Node coords="0.0 1.0 0.0"/>
+      <Node id="5" coords="0.5 0.5 0.0"/>
+    </Nodes>
+    <Elements>
+      <tr1darcy nodes="1 5 4"/>
+      <tr1darcy nodes="1 2 5"/>
+      <tr1darcy nodes="2 3 5"/>
+      <tr1darcy nodes="3 4 5"/>
+    </Elements>
+    <CrossSections>
+      <SimpleTransportCS mat="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <!--unprocessed field on the next line: supressoutput 1-->
+      <rvestokesflow file="simpleRVEStokes.rvein"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="11" values="0.0" set="3"/>
+      <BoundaryCondition loadtimefunction="1" dofs="11" values="1.0" set="2"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-4"/>
+      <Set nodes="1"/>
+      <Set nodes="2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <NODE tStep="1" number="3" dof="11" unknown="d" value="0.710990907"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

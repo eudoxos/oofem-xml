@@ -1,0 +1,101 @@
+<oofem version="1">
+  <Output>xFemCrackValBranch.out</Output>
+  <Description>XFEM simulation: A crack with branch functions. Written by Erik Svenning, Chalmers University of Technology.</Description>
+  <Analysis type="StaticStructural" nsteps="3" deltat="1.0" rtolf="1e-06" maxiter="20" miniter="2"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0"/>
+      <Node coords="2.0 0.0"/>
+      <Node coords="2.0 2.0"/>
+      <Node coords="0.0 2.0"/>
+      <Node id="5" coords="0.666667 0.0"/>
+      <Node coords="1.33333 0.0"/>
+      <Node coords="2.0 0.666667"/>
+      <Node coords="2.0 1.33333"/>
+      <Node coords="1.33333 2.0"/>
+      <Node id="10" coords="0.666667 2.0"/>
+      <Node coords="0.0 1.33333"/>
+      <Node coords="0.0 0.666667"/>
+      <Node coords="1.33333 0.666667"/>
+      <Node coords="1.33333 1.33333"/>
+      <Node id="15" coords="0.666667 0.66668"/>
+      <Node coords="0.666667 1.33335"/>
+    </Nodes>
+    <Elements>
+      <PlaneStress2DXfem id="13" nodes="2 6 13 7" mat="1" nip="9" nlgeo="0"/>
+      <PlaneStress2DXfem nodes="7 13 14 8" mat="1" nip="9" nlgeo="0"/>
+      <PlaneStress2DXfem id="15" nodes="8 14 9 3" mat="1" nip="9" nlgeo="0"/>
+      <PlaneStress2DXfem nodes="6 5 15 13" mat="1" nip="9" nlgeo="0"/>
+      <PlaneStress2DXfem nodes="13 15 16 14" mat="1" nip="9" nlgeo="0"/>
+      <PlaneStress2DXfem nodes="14 16 10 9" mat="1" nip="9" nlgeo="0"/>
+      <PlaneStress2DXfem nodes="5 1 12 15" mat="1" nip="9" nlgeo="0"/>
+      <PlaneStress2DXfem id="20" nodes="15 12 11 16" mat="1" nip="9" nlgeo="0"/>
+      <PlaneStress2DXfem nodes="16 11 4 10" mat="1" nip="9" nlgeo="0"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="0.001" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <!--Linear elasticity-->
+      <IsoLE d="0.0" e="10000.0" n="0.3" talpha="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="5.66353275479e-05 -0.00020447150274" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="6.57089407543e-05 -0.000158635415938" set="6"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="7.45081185944e-05 -0.000103374492509" set="7"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="7.60549569053e-05 -5.48173114204e-05" set="3"/>
+      <BoundaryCondition id="5" loadtimefunction="1" dofs="1 2" values="4.50638159004e-05 -1.86660437182e-05" set="8"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="4.50638159004e-05 1.86660437182e-05" set="9"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="7.60549569053e-05 5.48173114204e-05" set="4"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="7.45081185944e-05 0.000103374492509" set="10"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="6.57089407543e-05 0.000158635415938" set="11"/>
+      <BoundaryCondition id="10" loadtimefunction="1" dofs="1 2" values="5.66353275479e-05 0.00020447150274" set="5"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="2.03706640257e-05 0.000205723733501" set="12"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="2.03706640257e-05 -0.000205723733501" set="13"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <!--UserDefDirichletBC 1 loadTimeFunction 1 filename userdefbc-->
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="13-21"/>
+      <Set nodes="1"/>
+      <Set nodes="2"/>
+      <Set nodes="3"/>
+      <Set id="5" nodes="4"/>
+      <Set nodes="5"/>
+      <Set nodes="6"/>
+      <Set nodes="7"/>
+      <Set nodes="8"/>
+      <Set id="10" nodes="9"/>
+      <Set nodes="10"/>
+      <Set nodes="11"/>
+      <Set nodes="12"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-08">
+      <!--Node displacements-->
+      <NODE tStep="3" number="7" dof="1" unknown="d" value="4.50638159e-05"/>
+      <NODE tStep="3" number="7" dof="2" unknown="d" value="-1.86660437e-05"/>
+      <NODE tStep="3" number="7" dof="500" unknown="d" value="-6.27467174e-05"/>
+      <NODE tStep="3" number="7" dof="501" unknown="d" value="9.16976083e-05"/>
+      <NODE tStep="3" number="7" dof="502" unknown="d" value="-3.11213305e-05"/>
+      <NODE tStep="3" number="7" dof="503" unknown="d" value="1.43042924e-06"/>
+      <NODE tStep="3" number="7" dof="504" unknown="d" value="-3.61969364e-06"/>
+      <NODE tStep="3" number="7" dof="505" unknown="d" value="3.00146746e-05"/>
+      <NODE tStep="3" number="7" dof="506" unknown="d" value="-5.01824534e-05"/>
+      <NODE tStep="3" number="7" dof="507" unknown="d" value="-5.90330599e-05"/>
+      <NODE tStep="3" number="12" dof="1" unknown="d" value="2.0370664e-05"/>
+      <NODE tStep="3" number="12" dof="2" unknown="d" value="-0.000205723734"/>
+      <NODE tStep="3" number="12" dof="500" unknown="d" value="-2.09874544e-05"/>
+      <NODE tStep="3" number="12" dof="501" unknown="d" value="0.000205774314"/>
+      <NODE tStep="3" number="15" dof="1" unknown="d" value="2.58181092e-05"/>
+      <NODE tStep="3" number="15" dof="2" unknown="d" value="-0.000156830857"/>
+      <NODE tStep="3" number="15" dof="500" unknown="d" value="-2.37294598e-05"/>
+      <NODE tStep="3" number="15" dof="501" unknown="d" value="0.000157563142"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

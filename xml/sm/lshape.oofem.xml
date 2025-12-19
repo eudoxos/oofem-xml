@@ -1,0 +1,145 @@
+<oofem version="1">
+  <Output>lshape.oofem.out</Output>
+  <Description>Plane stress example</Description>
+  <Analysis type="adaptlinearstatic" nsteps="1" meshpackage="3" eetype="1" normtype="1" requirederror="0.1" minelemsize="0.0001"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="1.5 0.0 0.0"/>
+      <Node coords="1.5 1.5 0.0"/>
+      <Node coords="0.0 1.5 0.0"/>
+      <Node id="5" coords="0.0 1.0 0.0"/>
+      <Node coords="1.25 0.0 0.0"/>
+      <Node coords="1.5 0.336008 0.0"/>
+      <Node coords="1.5 0.6720159 0.0"/>
+      <Node coords="1.5 1.037634 0.0"/>
+      <Node id="10" coords="1.037634 1.5 0.0"/>
+      <Node coords="0.6720159 1.5 0.0"/>
+      <Node coords="0.336008 1.5 0.0"/>
+      <Node coords="0.0 1.25 0.0"/>
+      <Node coords="0.312026 0.9500736 0.0"/>
+      <Node id="15" coords="0.5884672 0.8085211 0.0"/>
+      <Node coords="0.8085211 0.5884672 0.0"/>
+      <Node coords="0.9500736 0.312026 0.0"/>
+      <Node coords="1.147966 0.2581076 0.0"/>
+      <Node coords="1.338799 0.2132158 0.0"/>
+      <Node id="20" coords="0.2131268 1.338646 0.0"/>
+      <Node coords="0.258158 1.147875 0.0"/>
+      <Node coords="1.295495 0.4713718 0.0"/>
+      <Node coords="1.232061 0.7960337 0.0"/>
+      <Node coords="1.158501 1.158413 0.0"/>
+      <Node id="25" coords="0.7960917 1.231909 0.0"/>
+      <Node coords="0.4714681 1.295353 0.0"/>
+      <Node coords="0.5519953 1.053103 0.0"/>
+      <Node coords="0.8844667 0.8842802 0.0"/>
+      <Node coords="1.053431 0.5520322 0.0"/>
+    </Nodes>
+    <Elements>
+      <TrPlaneStress2d nodes="1 6 18"/>
+      <TrPlaneStress2d nodes="6 2 19"/>
+      <TrPlaneStress2d nodes="4 13 20"/>
+      <TrPlaneStress2d nodes="13 5 21"/>
+      <TrPlaneStress2d id="5" nodes="2 7 19"/>
+      <TrPlaneStress2d nodes="7 8 22"/>
+      <TrPlaneStress2d nodes="8 9 23"/>
+      <TrPlaneStress2d nodes="9 3 24"/>
+      <TrPlaneStress2d nodes="3 10 24"/>
+      <TrPlaneStress2d id="10" nodes="10 11 25"/>
+      <TrPlaneStress2d nodes="11 12 26"/>
+      <TrPlaneStress2d nodes="12 4 20"/>
+      <TrPlaneStress2d nodes="5 14 21"/>
+      <TrPlaneStress2d nodes="14 15 27"/>
+      <TrPlaneStress2d id="15" nodes="15 16 28"/>
+      <TrPlaneStress2d nodes="16 17 29"/>
+      <TrPlaneStress2d nodes="17 1 18"/>
+      <TrPlaneStress2d nodes="18 6 19"/>
+      <TrPlaneStress2d nodes="20 13 21"/>
+      <TrPlaneStress2d id="20" nodes="19 7 22"/>
+      <TrPlaneStress2d nodes="22 8 23"/>
+      <TrPlaneStress2d nodes="23 9 24"/>
+      <TrPlaneStress2d nodes="24 10 25"/>
+      <TrPlaneStress2d nodes="25 11 26"/>
+      <TrPlaneStress2d id="25" nodes="26 12 20"/>
+      <TrPlaneStress2d nodes="21 14 27"/>
+      <TrPlaneStress2d nodes="27 15 28"/>
+      <TrPlaneStress2d nodes="28 16 29"/>
+      <TrPlaneStress2d nodes="29 17 18"/>
+      <TrPlaneStress2d id="30" nodes="18 19 22"/>
+      <TrPlaneStress2d nodes="20 21 26"/>
+      <TrPlaneStress2d nodes="22 23 29"/>
+      <TrPlaneStress2d nodes="23 24 28"/>
+      <TrPlaneStress2d nodes="24 25 28"/>
+      <TrPlaneStress2d id="35" nodes="25 26 27"/>
+      <TrPlaneStress2d nodes="21 27 26"/>
+      <TrPlaneStress2d nodes="27 28 25"/>
+      <TrPlaneStress2d nodes="28 29 23"/>
+      <TrPlaneStress2d nodes="29 18 22"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="1.0" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE e="210000.0" n="0.3" d="1.0" talpha="1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="3"/>
+      <Constantedgeload loadtimefunction="1" loadtype="2" dofs="1 2" components="1.0 0.0" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-39"/>
+      <Set nodes="4 5 13"/>
+      <Set nodes="1 2 6"/>
+      <Set elementedges="5 1 6 1 7 1 8 1"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.0001">
+      <!--ERRORESTIMATE tStep 1 value 38.63-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="32" component="1" value="0.000571994"/>
+      <ELEMENT tStep="1" number="2" gp="1" keyword="32" component="1" value="0.000370381"/>
+      <ELEMENT tStep="1" number="3" gp="1" keyword="32" component="1" value="0.000368235"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="32" component="1" value="0.000606187"/>
+      <ELEMENT tStep="1" number="5" gp="1" keyword="32" component="1" value="0.000921584"/>
+      <ELEMENT tStep="1" number="6" gp="1" keyword="32" component="1" value="0.000534946"/>
+      <ELEMENT tStep="1" number="7" gp="1" keyword="32" component="1" value="0.000153139"/>
+      <ELEMENT tStep="1" number="8" gp="1" keyword="32" component="1" value="6.40333e-05"/>
+      <ELEMENT tStep="1" number="9" gp="1" keyword="32" component="1" value="0.000137147"/>
+      <ELEMENT tStep="1" number="10" gp="1" keyword="32" component="1" value="0.000254306"/>
+      <ELEMENT tStep="1" number="11" gp="1" keyword="32" component="1" value="0.000541737"/>
+      <ELEMENT tStep="1" number="12" gp="1" keyword="32" component="1" value="0.000804436"/>
+      <ELEMENT tStep="1" number="13" gp="1" keyword="32" component="1" value="0.00133789"/>
+      <ELEMENT tStep="1" number="14" gp="1" keyword="32" component="1" value="0.000723566"/>
+      <ELEMENT tStep="1" number="15" gp="1" keyword="32" component="1" value="0.00014037"/>
+      <ELEMENT tStep="1" number="16" gp="1" keyword="32" component="1" value="0.000498725"/>
+      <ELEMENT tStep="1" number="17" gp="1" keyword="32" component="1" value="0.0012754"/>
+      <ELEMENT tStep="1" number="18" gp="1" keyword="32" component="1" value="0.000619201"/>
+      <ELEMENT tStep="1" number="19" gp="1" keyword="32" component="1" value="0.000559778"/>
+      <ELEMENT tStep="1" number="20" gp="1" keyword="32" component="1" value="0.000397925"/>
+      <ELEMENT tStep="1" number="21" gp="1" keyword="32" component="1" value="0.000145453"/>
+      <ELEMENT tStep="1" number="22" gp="1" keyword="32" component="1" value="0.000164799"/>
+      <ELEMENT tStep="1" number="23" gp="1" keyword="32" component="1" value="0.000170869"/>
+      <ELEMENT tStep="1" number="24" gp="1" keyword="32" component="1" value="0.000138412"/>
+      <ELEMENT tStep="1" number="25" gp="1" keyword="32" component="1" value="0.000354673"/>
+      <ELEMENT tStep="1" number="26" gp="1" keyword="32" component="1" value="0.000377469"/>
+      <ELEMENT tStep="1" number="27" gp="1" keyword="32" component="1" value="0.000242053"/>
+      <ELEMENT tStep="1" number="28" gp="1" keyword="32" component="1" value="0.000234716"/>
+      <ELEMENT tStep="1" number="29" gp="1" keyword="32" component="1" value="0.000438446"/>
+      <ELEMENT tStep="1" number="30" gp="1" keyword="32" component="1" value="0.000566697"/>
+      <ELEMENT tStep="1" number="31" gp="1" keyword="32" component="1" value="0.000508455"/>
+      <ELEMENT tStep="1" number="32" gp="1" keyword="32" component="1" value="0.000419725"/>
+      <ELEMENT tStep="1" number="33" gp="1" keyword="32" component="1" value="0.000252578"/>
+      <ELEMENT tStep="1" number="34" gp="1" keyword="32" component="1" value="0.000234995"/>
+      <ELEMENT tStep="1" number="35" gp="1" keyword="32" component="1" value="0.000385143"/>
+      <ELEMENT tStep="1" number="36" gp="1" keyword="32" component="1" value="0.000323419"/>
+      <ELEMENT tStep="1" number="37" gp="1" keyword="32" component="1" value="0.000400668"/>
+      <ELEMENT tStep="1" number="38" gp="1" keyword="32" component="1" value="0.000332213"/>
+      <ELEMENT tStep="1" number="39" gp="1" keyword="32" component="1" value="0.000288429"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

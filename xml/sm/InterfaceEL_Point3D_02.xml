@@ -1,0 +1,65 @@
+<oofem version="1">
+  <Output>InterfaceEL_Point3D_02.out</Output>
+  <Description>One brick element with one contact element. The contact is linear with a constant stiffness. Brick is loaded in uniaxial tension in y direction. Node 6 has higher stiffness due to the added interface element.</Description>
+  <Analysis type="StaticStructural" nsteps="2" rtolf="0.0001" manrmsteps="30" deltat="1.0"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 2.0"/>
+      <Node coords="0.0 2.0 2.0"/>
+      <Node coords="2.0 2.0 2.0"/>
+      <Node coords="2.0 0.0 2.0"/>
+      <Node id="5" coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 2.0 0.0"/>
+      <Node coords="2.0 2.0 0.0"/>
+      <Node coords="2.0 0.0 0.0"/>
+      <Node coords="0.0 2.0 3.0"/>
+    </Nodes>
+    <Elements>
+      <lspace nodes="1 2 3 4 5 6 7 8" crosssect="1"/>
+      <IntELPoint nodes="9 6" normal="0.0 1.0 0.0"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS material="1"/>
+      <InterfaceCS material="2" set="5"/>
+    </CrossSections>
+    <Materials>
+      <IsoLe d="2500.0" e="40000.0" n="0.15" talpha="2.4e-06"/>
+      <!--IntMatElastic 2 k 1.e+4-it would assign stiffness in all direction-->
+      <!--IntMatDummyCZ 2-->
+      <CohInt kn="10000.0" ks="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="2" dofs="1 2 3" values="0.0 0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="2" dofs="2 3" values="0.0 0.0" set="3"/>
+      <nodalload loadtimefunction="2" dofs="1 2 3" components="0.0 1000.0 0.0" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction t="1.0 2.0" f_t_="1.0 3.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1 4"/>
+      <Set nodes="5 9"/>
+      <Set nodes="8"/>
+      <Set nodes="2 3 6 7"/>
+      <Set id="5" elementranges="2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-05">
+      <!--Step 1-->
+      <NODE tStep="1" number="2" dof="2" unknown="d" value="0.0546830137"/>
+      <NODE tStep="1" number="2" dof="3" unknown="d" value="-0.0154046679"/>
+      <NODE tStep="1" number="6" dof="2" unknown="d" value="0.0257320427"/>
+      <REACTION tStep="1" number="9" dof="2" value="-257.320427"/>
+      <!--Step 2-->
+      <NODE tStep="2" number="2" dof="2" unknown="d" value="0.164049041"/>
+      <NODE tStep="2" number="2" dof="3" unknown="d" value="-0.0462140036"/>
+      <NODE tStep="2" number="6" dof="2" unknown="d" value="0.0771961281"/>
+      <REACTION tStep="2" number="9" dof="2" value="-771.961281"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

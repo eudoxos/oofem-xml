@@ -1,0 +1,53 @@
+<oofem version="1">
+  <Output>latticeplastdamvisco3drandom.out</Output>
+  <Description>Single element loaded in uniaxial tension. Nonuniform loading rate, damage initiation, partial relaxation, damage growth, end of loading, stress relaxation. MPS model used for viscoelasticity, basic creep only, no shrinkage. With random material parameters</Description>
+  <Analysis type="nonlinearstatic" nsteps="25" rtolv="1e-08" maxiter="5000" controllmode="1" stiffmode="1" renumber="1" updateelasticstiffnessflag="" manrmsteps="5" deltatfunction="4"/>
+  <Domain domain="2dlattice">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="100.0 0.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <Lattice2D nodes="1 2" crosssect="1" mat="2" gpcoords="50.0 0.0" width="1000.0" thick="1000.0"/>
+    </Elements>
+    <CrossSections>
+      <latticecs material="2"/>
+    </CrossSections>
+    <Materials>
+      <mps d="0.0" lattice="" a1="1.0" a2="1.0" talpha="0.0" referencetemperature="296.0" mode="0" fc="30.0" cc="350.0" w_c="0.5" a_c="6.0" stiffnessfactor="1000000.0" timefactor="1.0" lambda0="1.0" begoftimeofinterest="1e-06" endoftimeofinterest="1000.0" relmatage="28.0" coupledanalysistype="0"/>
+      <latticeplasticitydamageviscoelastic d="0.0" talpha="0.0" viscomat="1" e="20000.0" a1="1.0" a2="1.0" ft="3.0" fc="30.0" angle1="0.5" angle2="0.5" flow="0.25" wf="0.05" ahard="0.001" iter="100" tol="1e-06" timefactor="1.0" randvars="806 807" randgen="5 5"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="2 6" values="0.0 0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="3" dofs="1" values="1.0" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction npoints="4" t="0.0 0.1 100.0 10000.0" f_t_="0.0 0.015 0.03 0.03"/>
+      <PiecewiseLinfunction npoints="25" t="1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0 22.0 23.0 24.0 25.0" f_t_="0.0001 0.0002 0.0003 0.0005 0.001 0.003 0.005 0.01 0.03 0.05 0.1 0.3 0.5 1.0 3.0 5.0 10.0 30.0 50.0 100.0 300.0 500.0 1000.0 3000.0 5000.0"/>
+      <InterpolatingFunction id="5" name="latticeplastdamvisco3drandom.dat" dim="3"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1 2"/>
+      <Set nodes="1"/>
+      <Set nodes="2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--TIME-->
+    <!--ELEMENT number 1 gp 1 keyword "latticestrain" component 1-->
+    <!--ELEMENT number 1 gp 1 keyword "latticestress" component 1-->
+    <errorcheck>
+      <ELEMENT tStep="10" number="1" gp="1" keyword="139" component="1" value="2.53647629" tolerance="1e-06"/>
+      <ELEMENT tStep="13" number="1" gp="1" keyword="139" component="1" value="2.32538054" tolerance="1e-06"/>
+      <ELEMENT tStep="16" number="1" gp="1" keyword="139" component="1" value="2.34832514" tolerance="1e-06"/>
+      <ELEMENT tStep="19" number="1" gp="1" keyword="139" component="1" value="1.97660943" tolerance="1e-06"/>
+      <ELEMENT tStep="22" number="1" gp="1" keyword="139" component="1" value="1.57507356" tolerance="1e-06"/>
+      <ELEMENT tStep="25" number="1" gp="1" keyword="139" component="1" value="1.22398865" tolerance="1e-06"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

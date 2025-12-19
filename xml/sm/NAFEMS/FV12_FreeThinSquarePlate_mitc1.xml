@@ -1,0 +1,271 @@
+<oofem version="1">
+  <Output>FV12_mitc1.out</Output>
+  <Description>Eigen vibration of free thin rectangular plate (10x10x0.05), E=200GPa, nu=0.3</Description>
+  <Analysis type="EigenValueDynamic" nroot="12" rtolv="1e-06" stype="1"/>
+  <Domain domain="3dshell">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <!--Nodes-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="2.0 0.0 0.0"/>
+      <Node coords="3.0 0.0 0.0"/>
+      <Node id="5" coords="4.0 0.0 0.0"/>
+      <Node coords="5.0 0.0 0.0"/>
+      <Node coords="6.0 0.0 0.0"/>
+      <Node coords="7.0 0.0 0.0"/>
+      <Node coords="8.0 0.0 0.0"/>
+      <Node id="10" coords="9.0 0.0 0.0"/>
+      <Node coords="10.0 0.0 0.0"/>
+      <Node coords="0.0 1.0 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+      <Node coords="2.0 1.0 0.0"/>
+      <Node id="15" coords="3.0 1.0 0.0"/>
+      <Node coords="4.0 1.0 0.0"/>
+      <Node coords="5.0 1.0 0.0"/>
+      <Node coords="6.0 1.0 0.0"/>
+      <Node coords="7.0 1.0 0.0"/>
+      <Node id="20" coords="8.0 1.0 0.0"/>
+      <Node coords="9.0 1.0 0.0"/>
+      <Node coords="10.0 1.0 0.0"/>
+      <Node coords="0.0 2.0 0.0"/>
+      <Node coords="1.0 2.0 0.0"/>
+      <Node id="25" coords="2.0 2.0 0.0"/>
+      <Node coords="3.0 2.0 0.0"/>
+      <Node coords="4.0 2.0 0.0"/>
+      <Node coords="5.0 2.0 0.0"/>
+      <Node coords="6.0 2.0 0.0"/>
+      <Node id="30" coords="7.0 2.0 0.0"/>
+      <Node coords="8.0 2.0 0.0"/>
+      <Node coords="9.0 2.0 0.0"/>
+      <Node coords="10.0 2.0 0.0"/>
+      <Node coords="0.0 3.0 0.0"/>
+      <Node id="35" coords="1.0 3.0 0.0"/>
+      <Node coords="2.0 3.0 0.0"/>
+      <Node coords="3.0 3.0 0.0"/>
+      <Node coords="4.0 3.0 0.0"/>
+      <Node coords="5.0 3.0 0.0"/>
+      <Node id="40" coords="6.0 3.0 0.0"/>
+      <Node coords="7.0 3.0 0.0"/>
+      <Node coords="8.0 3.0 0.0"/>
+      <Node coords="9.0 3.0 0.0"/>
+      <Node coords="10.0 3.0 0.0"/>
+      <Node id="45" coords="0.0 4.0 0.0"/>
+      <Node coords="1.0 4.0 0.0"/>
+      <Node coords="2.0 4.0 0.0"/>
+      <Node coords="3.0 4.0 0.0"/>
+      <Node coords="4.0 4.0 0.0"/>
+      <Node id="50" coords="5.0 4.0 0.0"/>
+      <Node coords="6.0 4.0 0.0"/>
+      <Node coords="7.0 4.0 0.0"/>
+      <Node coords="8.0 4.0 0.0"/>
+      <Node coords="9.0 4.0 0.0"/>
+      <Node id="55" coords="10.0 4.0 0.0"/>
+      <Node coords="0.0 5.0 0.0"/>
+      <Node coords="1.0 5.0 0.0"/>
+      <Node coords="2.0 5.0 0.0"/>
+      <Node coords="3.0 5.0 0.0"/>
+      <Node id="60" coords="4.0 5.0 0.0"/>
+      <Node coords="5.0 5.0 0.0"/>
+      <Node coords="6.0 5.0 0.0"/>
+      <Node coords="7.0 5.0 0.0"/>
+      <Node coords="8.0 5.0 0.0"/>
+      <Node id="65" coords="9.0 5.0 0.0"/>
+      <Node coords="10.0 5.0 0.0"/>
+      <Node coords="0.0 6.0 0.0"/>
+      <Node coords="1.0 6.0 0.0"/>
+      <Node coords="2.0 6.0 0.0"/>
+      <Node id="70" coords="3.0 6.0 0.0"/>
+      <Node coords="4.0 6.0 0.0"/>
+      <Node coords="5.0 6.0 0.0"/>
+      <Node coords="6.0 6.0 0.0"/>
+      <Node coords="7.0 6.0 0.0"/>
+      <Node id="75" coords="8.0 6.0 0.0"/>
+      <Node coords="9.0 6.0 0.0"/>
+      <Node coords="10.0 6.0 0.0"/>
+      <Node coords="0.0 7.0 0.0"/>
+      <Node coords="1.0 7.0 0.0"/>
+      <Node id="80" coords="2.0 7.0 0.0"/>
+      <Node coords="3.0 7.0 0.0"/>
+      <Node coords="4.0 7.0 0.0"/>
+      <Node coords="5.0 7.0 0.0"/>
+      <Node coords="6.0 7.0 0.0"/>
+      <Node id="85" coords="7.0 7.0 0.0"/>
+      <Node coords="8.0 7.0 0.0"/>
+      <Node coords="9.0 7.0 0.0"/>
+      <Node coords="10.0 7.0 0.0"/>
+      <Node coords="0.0 8.0 0.0"/>
+      <Node id="90" coords="1.0 8.0 0.0"/>
+      <Node coords="2.0 8.0 0.0"/>
+      <Node coords="3.0 8.0 0.0"/>
+      <Node coords="4.0 8.0 0.0"/>
+      <Node coords="5.0 8.0 0.0"/>
+      <Node id="95" coords="6.0 8.0 0.0"/>
+      <Node coords="7.0 8.0 0.0"/>
+      <Node coords="8.0 8.0 0.0"/>
+      <Node coords="9.0 8.0 0.0"/>
+      <Node coords="10.0 8.0 0.0"/>
+      <Node id="100" coords="0.0 9.0 0.0"/>
+      <Node coords="1.0 9.0 0.0"/>
+      <Node coords="2.0 9.0 0.0"/>
+      <Node coords="3.0 9.0 0.0"/>
+      <Node coords="4.0 9.0 0.0"/>
+      <Node id="105" coords="5.0 9.0 0.0"/>
+      <Node coords="6.0 9.0 0.0"/>
+      <Node coords="7.0 9.0 0.0"/>
+      <Node coords="8.0 9.0 0.0"/>
+      <Node coords="9.0 9.0 0.0"/>
+      <Node id="110" coords="10.0 9.0 0.0"/>
+      <Node coords="0.0 10.0 0.0"/>
+      <Node coords="1.0 10.0 0.0"/>
+      <Node coords="2.0 10.0 0.0"/>
+      <Node coords="3.0 10.0 0.0"/>
+      <Node id="115" coords="4.0 10.0 0.0"/>
+      <Node coords="5.0 10.0 0.0"/>
+      <Node coords="6.0 10.0 0.0"/>
+      <Node coords="7.0 10.0 0.0"/>
+      <Node coords="8.0 10.0 0.0"/>
+      <Node id="120" coords="9.0 10.0 0.0"/>
+      <Node coords="10.0 10.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <!--Elements-->
+      <mitc4shell nodes="1 2 13 12" nip="9"/>
+      <mitc4shell nodes="2 3 14 13" nip="9"/>
+      <mitc4shell nodes="3 4 15 14" nip="9"/>
+      <mitc4shell nodes="4 5 16 15" nip="9"/>
+      <mitc4shell id="5" nodes="5 6 17 16" nip="9"/>
+      <mitc4shell nodes="6 7 18 17" nip="9"/>
+      <mitc4shell nodes="7 8 19 18" nip="9"/>
+      <mitc4shell nodes="8 9 20 19" nip="9"/>
+      <mitc4shell nodes="9 10 21 20" nip="9"/>
+      <mitc4shell id="10" nodes="10 11 22 21" nip="9"/>
+      <mitc4shell nodes="12 13 24 23" nip="9"/>
+      <mitc4shell nodes="13 14 25 24" nip="9"/>
+      <mitc4shell nodes="14 15 26 25" nip="9"/>
+      <mitc4shell nodes="15 16 27 26" nip="9"/>
+      <mitc4shell id="15" nodes="16 17 28 27" nip="9"/>
+      <mitc4shell nodes="17 18 29 28" nip="9"/>
+      <mitc4shell nodes="18 19 30 29" nip="9"/>
+      <mitc4shell nodes="19 20 31 30" nip="9"/>
+      <mitc4shell nodes="20 21 32 31" nip="9"/>
+      <mitc4shell id="20" nodes="21 22 33 32" nip="9"/>
+      <mitc4shell nodes="23 24 35 34" nip="9"/>
+      <mitc4shell nodes="24 25 36 35" nip="9"/>
+      <mitc4shell nodes="25 26 37 36" nip="9"/>
+      <mitc4shell nodes="26 27 38 37" nip="9"/>
+      <mitc4shell id="25" nodes="27 28 39 38" nip="9"/>
+      <mitc4shell nodes="28 29 40 39" nip="9"/>
+      <mitc4shell nodes="29 30 41 40" nip="9"/>
+      <mitc4shell nodes="30 31 42 41" nip="9"/>
+      <mitc4shell nodes="31 32 43 42" nip="9"/>
+      <mitc4shell id="30" nodes="32 33 44 43" nip="9"/>
+      <mitc4shell nodes="34 35 46 45" nip="9"/>
+      <mitc4shell nodes="35 36 47 46" nip="9"/>
+      <mitc4shell nodes="36 37 48 47" nip="9"/>
+      <mitc4shell nodes="37 38 49 48" nip="9"/>
+      <mitc4shell id="35" nodes="38 39 50 49" nip="9"/>
+      <mitc4shell nodes="39 40 51 50" nip="9"/>
+      <mitc4shell nodes="40 41 52 51" nip="9"/>
+      <mitc4shell nodes="41 42 53 52" nip="9"/>
+      <mitc4shell nodes="42 43 54 53" nip="9"/>
+      <mitc4shell id="40" nodes="43 44 55 54" nip="9"/>
+      <mitc4shell nodes="45 46 57 56" nip="9"/>
+      <mitc4shell nodes="46 47 58 57" nip="9"/>
+      <mitc4shell nodes="47 48 59 58" nip="9"/>
+      <mitc4shell nodes="48 49 60 59" nip="9"/>
+      <mitc4shell id="45" nodes="49 50 61 60" nip="9"/>
+      <mitc4shell nodes="50 51 62 61" nip="9"/>
+      <mitc4shell nodes="51 52 63 62" nip="9"/>
+      <mitc4shell nodes="52 53 64 63" nip="9"/>
+      <mitc4shell nodes="53 54 65 64" nip="9"/>
+      <mitc4shell id="50" nodes="54 55 66 65" nip="9"/>
+      <mitc4shell nodes="56 57 68 67" nip="9"/>
+      <mitc4shell nodes="57 58 69 68" nip="9"/>
+      <mitc4shell nodes="58 59 70 69" nip="9"/>
+      <mitc4shell nodes="59 60 71 70" nip="9"/>
+      <mitc4shell id="55" nodes="60 61 72 71" nip="9"/>
+      <mitc4shell nodes="61 62 73 72" nip="9"/>
+      <mitc4shell nodes="62 63 74 73" nip="9"/>
+      <mitc4shell nodes="63 64 75 74" nip="9"/>
+      <mitc4shell nodes="64 65 76 75" nip="9"/>
+      <mitc4shell id="60" nodes="65 66 77 76" nip="9"/>
+      <mitc4shell nodes="67 68 79 78" nip="9"/>
+      <mitc4shell nodes="68 69 80 79" nip="9"/>
+      <mitc4shell nodes="69 70 81 80" nip="9"/>
+      <mitc4shell nodes="70 71 82 81" nip="9"/>
+      <mitc4shell id="65" nodes="71 72 83 82" nip="9"/>
+      <mitc4shell nodes="72 73 84 83" nip="9"/>
+      <mitc4shell nodes="73 74 85 84" nip="9"/>
+      <mitc4shell nodes="74 75 86 85" nip="9"/>
+      <mitc4shell nodes="75 76 87 86" nip="9"/>
+      <mitc4shell id="70" nodes="76 77 88 87" nip="9"/>
+      <mitc4shell nodes="78 79 90 89" nip="9"/>
+      <mitc4shell nodes="79 80 91 90" nip="9"/>
+      <mitc4shell nodes="80 81 92 91" nip="9"/>
+      <mitc4shell nodes="81 82 93 92" nip="9"/>
+      <mitc4shell id="75" nodes="82 83 94 93" nip="9"/>
+      <mitc4shell nodes="83 84 95 94" nip="9"/>
+      <mitc4shell nodes="84 85 96 95" nip="9"/>
+      <mitc4shell nodes="85 86 97 96" nip="9"/>
+      <mitc4shell nodes="86 87 98 97" nip="9"/>
+      <mitc4shell id="80" nodes="87 88 99 98" nip="9"/>
+      <mitc4shell nodes="89 90 101 100" nip="9"/>
+      <mitc4shell nodes="90 91 102 101" nip="9"/>
+      <mitc4shell nodes="91 92 103 102" nip="9"/>
+      <mitc4shell nodes="92 93 104 103" nip="9"/>
+      <mitc4shell id="85" nodes="93 94 105 104" nip="9"/>
+      <mitc4shell nodes="94 95 106 105" nip="9"/>
+      <mitc4shell nodes="95 96 107 106" nip="9"/>
+      <mitc4shell nodes="96 97 108 107" nip="9"/>
+      <mitc4shell nodes="97 98 109 108" nip="9"/>
+      <mitc4shell id="90" nodes="98 99 110 109" nip="9"/>
+      <mitc4shell nodes="100 101 112 111" nip="9"/>
+      <mitc4shell nodes="101 102 113 112" nip="9"/>
+      <mitc4shell nodes="102 103 114 113" nip="9"/>
+      <mitc4shell nodes="103 104 115 114" nip="9"/>
+      <mitc4shell id="95" nodes="104 105 116 115" nip="9"/>
+      <mitc4shell nodes="105 106 117 116" nip="9"/>
+      <mitc4shell nodes="106 107 118 117" nip="9"/>
+      <mitc4shell nodes="107 108 119 118" nip="9"/>
+      <mitc4shell nodes="108 109 120 119" nip="9"/>
+      <mitc4shell id="100" nodes="109 110 121 120" nip="9"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="0.05" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <isole d="8000.0" e="200000000000.0" n="0.3" talpha="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <Boundarycondition loadtimefunction="1" dofs="1 2 6" values="0.0 0.0 0.0" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <Constantfunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set allelements=""/>
+      <Set nodes="1 2 3 4 5 6 7 8 9 10 11 12 22 23 33 34 44 45 55 56 66 67 77 78 88 89 99 100 110 111 112 113 114 115 116 117 118 119 120 121"/>
+      <Set allnodes=""/>
+      <Set nodes="1 11 12 22 23 33 34 44 45 55 56 66 67 77 78 88 89 99 100 110 111 121"/>
+      <Set id="5" nodes="1 111 2 112 3 113 4 114 5 115 6 116 7 117 8 118 9 119 10 120 11 121"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--NAFEMS Reference solution eigen frequencies(f): (3x0) RBM, 1.622, 2.360, 2.922, 4.233, 4.233, 7.416-->
+    <!--corresponding eigen values (omega^2): 3x0, 103.863, 219.879, 337.070, 707.386, 707.386, 2171.197-->
+    <errorcheck tolerance="0.01">
+      <!--check eigen values-->
+      <EIGVAL tStep="1" eignum="1" value="0.0"/>
+      <EIGVAL tStep="1" eignum="2" value="0.0"/>
+      <EIGVAL tStep="1" eignum="3" value="0.0"/>
+      <EIGVAL tStep="1" eignum="4" value="104.76"/>
+      <EIGVAL tStep="1" eignum="5" value="225.049"/>
+      <EIGVAL tStep="1" eignum="6" value="349.86"/>
+      <EIGVAL tStep="1" eignum="7" value="713.845"/>
+      <EIGVAL tStep="1" eignum="8" value="713.845"/>
+      <EIGVAL tStep="1" eignum="9" value="2394.08" tolerance="0.2"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

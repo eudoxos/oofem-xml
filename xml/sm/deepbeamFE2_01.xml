@@ -1,0 +1,126 @@
+<oofem version="1">
+  <Output>deepbeamFE2_01.out</Output>
+  <Description>FE2 analysis of a reinforced concrete deep beam - Dirichlet-Dirichlet BC. Added by Adam Sciegaj</Description>
+  <Analysis type="StaticStructural" nsteps="2" deltat="1.0" constrainednrminiter="5" rtolf="0.001" maxiter="20" miniter="1" initialguess="1"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <rigidarmnode coords="3.32 4.0 0.0" master="19" dofidmask="1 2 6" doftype="2 2 2" mastermask="1 1 1"/>
+      <rigidarmnode coords="4.08 4.0 0.0" master="19" dofidmask="1 2 6" doftype="2 2 2" mastermask="1 1 1"/>
+      <Node coords="5.7 4.0 0.0"/>
+      <Node coords="5.7 0.0 0.0"/>
+      <rigidarmnode id="5" coords="0.9 0.0 0.0" master="11" dofidmask="1 2 6" doftype="2 2 2" mastermask="1 1 1"/>
+      <rigidarmnode coords="0.0 0.0 0.0" master="11" dofidmask="1 2 6" doftype="2 2 2" mastermask="1 1 1"/>
+      <Node coords="0.0 4.0 0.0"/>
+      <Node coords="0.0 2.0 0.0"/>
+      <Node coords="0.0 3.0 0.0"/>
+      <Node id="10" coords="0.0 1.0 0.0"/>
+      <Node coords="0.45 0.0 0.0" dofidmask="1 2 6"/>
+      <Node coords="3.3 0.0 0.0"/>
+      <Node coords="2.1 0.0 0.0"/>
+      <Node coords="4.5 0.0 0.0"/>
+      <Node id="15" coords="5.7 2.0 0.0"/>
+      <Node coords="5.7 1.0 0.0"/>
+      <Node coords="5.7 3.0 0.0"/>
+      <Node coords="4.89 4.0 0.0"/>
+      <Node coords="3.7 4.0 0.0" dofidmask="1 2 6"/>
+      <Node id="20" coords="1.66 4.0 0.0"/>
+      <Node coords="2.49 4.0 0.0"/>
+      <Node coords="0.83 4.0 0.0"/>
+      <Node coords="0.903826 1.23156 0.0"/>
+      <Node coords="4.23313 1.48258 0.0"/>
+      <Node id="25" coords="3.60783 2.82575 0.0"/>
+      <Node coords="2.43967 1.44487 0.0"/>
+      <Node coords="1.3001 2.53433 0.0"/>
+      <Node coords="2.55749 3.04749 0.0"/>
+      <Node coords="4.65873 2.91318 0.0"/>
+      <Node id="30" coords="3.46391 3.41287 0.0"/>
+      <Node coords="2.93875 3.52375 0.0"/>
+      <Node coords="3.84391 3.41287 0.0"/>
+      <Node coords="4.36937 3.45659 0.0"/>
+      <Node coords="5.17937 3.45659 0.0"/>
+      <Node id="35" coords="4.96656 0.741292 0.0"/>
+      <Node coords="0.901913 0.61578 0.0"/>
+      <Node coords="1.66983 0.722433 0.0"/>
+      <Node coords="0.451913 0.61578 0.0"/>
+      <Node coords="0.650049 3.26717 0.0"/>
+      <Node id="40" coords="0.451913 1.61578 0.0"/>
+      <Node coords="0.650049 2.26717 0.0"/>
+      <Node coords="3.76656 0.741292 0.0"/>
+      <Node coords="2.86983 0.722433 0.0"/>
+      <Node coords="4.96656 1.74129 0.0"/>
+      <Node id="45" coords="5.17937 2.45659 0.0"/>
+      <Node coords="1.48005 3.26717 0.0"/>
+      <Node coords="2.10875 3.52375 0.0"/>
+      <Node coords="1.67175 1.33821 0.0"/>
+      <Node coords="1.10196 1.88295 0.0"/>
+      <Node id="50" coords="3.92048 2.15417 0.0"/>
+      <Node coords="3.3364 1.46372 0.0"/>
+      <Node coords="4.44593 2.19788 0.0"/>
+      <Node coords="3.02375 2.13531 0.0"/>
+      <Node coords="3.08266 2.93662 0.0"/>
+      <Node id="55" coords="4.13328 2.86947 0.0"/>
+      <Node coords="1.86988 1.9896 0.0"/>
+      <Node coords="2.49858 2.24618 0.0"/>
+      <Node coords="1.92879 2.79091 0.0"/>
+    </Nodes>
+    <Elements>
+      <qtrplstr nodes="8 27 7 41 39 9"/>
+      <qtrplstr nodes="29 25 24 55 50 52"/>
+      <qtrplstr nodes="29 15 3 45 17 34"/>
+      <qtrplstr nodes="27 8 23 41 40 49"/>
+      <qtrplstr id="5" nodes="25 2 1 32 19 30"/>
+      <qtrplstr nodes="28 1 20 31 21 47"/>
+      <qtrplstr nodes="28 20 27 47 46 58"/>
+      <qtrplstr nodes="28 27 26 58 56 57"/>
+      <qtrplstr nodes="26 12 24 43 42 51"/>
+      <qtrplstr id="10" nodes="28 25 1 54 30 31"/>
+      <qtrplstr nodes="26 24 25 51 50 53"/>
+      <qtrplstr nodes="24 4 15 35 16 44"/>
+      <qtrplstr nodes="29 3 2 34 18 33"/>
+      <qtrplstr nodes="23 5 26 36 37 48"/>
+      <qtrplstr id="15" nodes="29 2 25 33 32 55"/>
+      <qtrplstr nodes="23 8 6 40 10 38"/>
+      <qtrplstr nodes="23 6 5 38 11 36"/>
+      <qtrplstr nodes="23 26 27 48 56 49"/>
+      <qtrplstr nodes="27 20 7 46 22 39"/>
+      <qtrplstr id="20" nodes="24 12 4 42 14 35"/>
+      <qtrplstr nodes="29 24 15 52 44 45"/>
+      <qtrplstr nodes="26 5 12 37 13 43"/>
+      <qtrplstr nodes="28 26 25 57 53 54"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="0.2" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <structslipfe2material d="1.0" filename="deepbeamfe2_01.in.rve" use_ext_stiffness="" dsde="36251586730.0 6935152559.0 24701.03608; 6935152559.0 34927108630.0 29875.04531; 24701.03608 29875.04531 13870797370.0" output_selected_el_gps="22 4 21 2 20 3"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="4"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="2"/>
+      <Boundarycondition loadtimefunction="2" dofs="2" values="-0.0001" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction t="1.0 3.0" f_t_="1.0 3.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-23"/>
+      <!--support-->
+      <Set nodes="11"/>
+      <!--point load-->
+      <Set nodes="19"/>
+      <!--symmetry line nodes-->
+      <Set nodes="3 4 15 16 17"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.01">
+      <NODE tStep="1" number="19" dof="2" unknown="d" value="-0.0001"/>
+      <REACTION tStep="1" number="19" dof="2" value="-72953.5322"/>
+      <NODE tStep="2" number="19" dof="2" unknown="d" value="-0.0002"/>
+      <REACTION tStep="2" number="19" dof="2" value="-145907.064"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

@@ -1,0 +1,52 @@
+<oofem version="1">
+  <Output>quadaxisym02.out</Output>
+  <Description>Test of one QuadAxisym1_ht element, stationary case, prescribed flux at right edge</Description>
+  <Analysis type="StationaryProblem" nsteps="1"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.1 0.3 0.0"/>
+      <Node coords="1.1 0.3 0.0"/>
+      <Node coords="1.1 1.5 0.0"/>
+      <Node coords="0.1 1.5 0.0"/>
+    </Nodes>
+    <Elements>
+      <quadaxisym1ht nodes="1 2 3 4"/>
+    </Elements>
+    <CrossSections>
+      <!--quadaxisym1ht 1 nodes 4 1 2 3 4-->
+      <!--quad1ht 1 nodes 4 1 2 3 4-->
+      <SimpleTransportCS thickness="0.6" mat="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoHeat d="2400.0" k="1.5" c="800.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="10" values="0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="10" values="20.0"/>
+      <!--Newton bc-->
+      <!--constantedgeload 3 loadTimeFunction 1 components 1 15.0 properties 1 a 0.85 loadtype 3-->
+      <!--Neumann bc-->
+      <constantedgeload loadtimefunction="1" components="-15.0" loadtype="2" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elements="1"/>
+      <Set elementboundaries="1 4"/>
+      <Set elementedges="1 2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <NODE tStep="1" number="2" dof="10" unknown="d" value="18.3333333"/>
+      <NODE tStep="1" number="3" dof="10" unknown="d" value="18.3333333"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="56" component="1" value="-27.5"/>
+      <ELEMENT tStep="1" number="1" gp="2" keyword="56" component="1" value="-27.5"/>
+      <ELEMENT tStep="1" number="1" gp="3" keyword="56" component="1" value="-27.5"/>
+      <ELEMENT tStep="1" number="1" gp="4" keyword="56" component="1" value="-27.5"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

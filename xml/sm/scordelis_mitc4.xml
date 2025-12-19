@@ -1,0 +1,98 @@
+<oofem version="1">
+  <Output>scordelis_mitc4.out</Output>
+  <Description>"Cylindrical Scordelis-Lo shell"</Description>
+  <Analysis type="StaticStructural" nsteps="1"/>
+  <Domain domain="3dshell">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 300.0"/>
+      <Node coords="0.0 52.094453 295.442326"/>
+      <Node coords="0.0 102.606043 281.907786"/>
+      <Node coords="0.0 150.0 259.807621"/>
+      <Node id="5" coords="0.0 192.836283 229.813333" lcs="1.0 0.0 0.0 0.0 0.766044 -0.642788"/>
+      <Node coords="75.0 0.0 300.0"/>
+      <Node coords="75.0 52.094453 295.442326"/>
+      <Node coords="75.0 102.606043 281.907786"/>
+      <Node coords="75.0 150.0 259.807621"/>
+      <Node id="10" coords="75.0 192.836283 229.813333" lcs="1.0 0.0 0.0 0.0 0.766044 -0.642788"/>
+      <Node coords="150.0 0.0 300.0"/>
+      <Node coords="150.0 52.094453 295.442326"/>
+      <Node coords="150.0 102.606043 281.907786"/>
+      <Node coords="150.0 150.0 259.807621"/>
+      <Node id="15" coords="150.0 192.836283 229.813333" lcs="1.0 0.0 0.0 0.0 0.766044 -0.642788"/>
+      <Node coords="225.0 0.0 300.0"/>
+      <Node coords="225.0 52.094453 295.442326"/>
+      <Node coords="225.0 102.606043 281.907786"/>
+      <Node coords="225.0 150.0 259.807621"/>
+      <Node id="20" coords="225.0 192.836283 229.813333" lcs="1.0 0.0 0.0 0.0 0.766044 -0.642788"/>
+      <Node coords="300.0 0.0 300.0"/>
+      <Node coords="300.0 52.094453 295.442326"/>
+      <Node coords="300.0 102.606043 281.907786"/>
+      <Node coords="300.0 150.0 259.807621"/>
+      <Node id="25" coords="300.0 192.836283 229.813333" lcs="1.0 0.0 0.0 0.0 0.766044 -0.642788"/>
+    </Nodes>
+    <Elements>
+      <mitc4shell nodes="1 6 7 2" crosssect="1" directortype="2"/>
+      <mitc4shell nodes="2 7 8 3" crosssect="2" directortype="2"/>
+      <mitc4shell nodes="3 8 9 4" crosssect="3" directortype="2"/>
+      <mitc4shell nodes="4 9 10 5" crosssect="4" directortype="2"/>
+      <mitc4shell id="5" nodes="6 11 12 7" crosssect="1" directortype="2"/>
+      <mitc4shell nodes="7 12 13 8" crosssect="2" directortype="2"/>
+      <mitc4shell nodes="8 13 14 9" crosssect="3" directortype="2"/>
+      <mitc4shell nodes="9 14 15 10" crosssect="4" directortype="2"/>
+      <mitc4shell nodes="11 16 17 12" crosssect="1" directortype="2"/>
+      <mitc4shell id="10" nodes="12 17 18 13" crosssect="2" directortype="2"/>
+      <mitc4shell nodes="13 18 19 14" crosssect="3" directortype="2"/>
+      <mitc4shell nodes="14 19 20 15" crosssect="4" directortype="2"/>
+      <mitc4shell nodes="16 21 22 17" crosssect="1" directortype="2"/>
+      <mitc4shell nodes="17 22 23 18" crosssect="2" directortype="2"/>
+      <mitc4shell id="15" nodes="18 23 24 19" crosssect="3" directortype="2"/>
+      <mitc4shell nodes="19 24 25 20" crosssect="4" directortype="2"/>
+    </Elements>
+    <CrossSections>
+      <VariableCS thick="3." directorx="0.0" directory="$sin(1/8*40*3.14/180)$" directorz="$cos(1/8*40*3.14/180)$" material="1"/>
+      <VariableCS thick="3." directorx="0.0" directory="$sin(3/8*40*3.14/180)$" directorz="$cos(3/8*40*3.14/180)$" material="1"/>
+      <VariableCS thick="3." directorx="0.0" directory="$sin(5/8*40*3.14/180)$" directorz="$cos(5/8*40*3.14/180)$" material="1"/>
+      <VariableCS thick="3." directorx="0.0" directory="$sin(7/8*40*3.14/180)$" directorz="$cos(7/8*40*3.14/180)$" material="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="0.208333" e="3000000.0" n="0.0" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 5" values="0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2 4" values="0.0 0.0" set="3"/>
+      <BoundaryCondition loadtimefunction="1" dofs="3" values="0.0" set="4"/>
+      <BoundaryCondition loadtimefunction="1" dofs="6" values="0.0" set="5"/>
+      <Deadweight id="5" loadtimefunction="1" components="0.0 0.0 -1.0 0.0 0.0 0.0" set="1"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-16"/>
+      <Set noderanges="1-5"/>
+      <Set noderanges="1,6,11,16,21-25"/>
+      <Set noderanges="21-25"/>
+      <Set id="5" noderanges="1-6,10,11,15,16,20,21,25"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.5">
+      <!--cylindrical (Scordelis-Lo) shell-->
+      <!--reference solution - node 5 dof 3 -> 3.60 (in global c.s.)-->
+      <NODE tStep="1" number="5" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="5" dof="2" unknown="d" value="0.814231098"/>
+      <NODE tStep="1" number="5" dof="3" unknown="d" value="-3.77798996"/>
+      <NODE tStep="1" number="5" dof="4" unknown="d" value="-0.0305587987"/>
+      <NODE tStep="1" number="5" dof="5" unknown="d" value="0.0"/>
+      <NODE tStep="1" number="5" dof="6" unknown="d" value="0.0"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="1" component="1" value="1483.3"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="1" component="2" value="-40.193"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="1" component="3" value="-15.73"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="1" component="4" value="25.304"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="1" component="5" value="-250.54"/>
+      <ELEMENT tStep="1" number="4" gp="1" keyword="1" component="6" value="364.59"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

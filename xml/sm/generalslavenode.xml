@@ -1,0 +1,78 @@
+<oofem version="1">
+  <Output>generalslavenode.out</Output>
+  <Description>Rectangle made of 9 elements and 16 nodes, some of them setup as general slave nodes leading to periodic boundary conditions</Description>
+  <Analysis type="StaticStructural" nsteps="1" stiffmode="0" manrmsteps="1" rtolv="1e-08"/>
+  <Domain domain="planestrain">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <!--NODES ###################################################################-->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="2.0 0.0 0.0"/>
+      <Node coords="3.0 0.0 0.0"/>
+      <Node id="5" coords="0.0 1.0 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+      <Node coords="2.0 1.0 0.0"/>
+      <GeneralSlaveNode coords="3.0 1.0 0.0" doftype="2 2" mastersizes="2 2" masterlist="5 1 4 1 5 2 4 2" masterweights="1 1 1 1"/>
+      <Node coords="0.0 2.0 0.0"/>
+      <Node id="10" coords="1.0 2.0 0.0"/>
+      <Node coords="2.0 2.0 0.0"/>
+      <GeneralSlaveNode coords="3.0 2.0 0.0" doftype="2 2" mastersizes="2 2" masterlist="9 1 4 1 9 2 4 2" masterweights="1 1 1 1"/>
+      <Node coords="0.0 3.0 0.0"/>
+      <GeneralSlaveNode coords="1.0 3.0 0.0" doftype="2 2" mastersizes="2 2" masterlist="2 1 13 1 2 2 13 2" masterweights="1 1 1 1"/>
+      <GeneralSlaveNode id="15" coords="2.0 3.0 0.0" doftype="2 2" mastersizes="2 2" masterlist="3 1 13 1 3 2 13 2" masterweights="1 1 1 1"/>
+      <GeneralSlaveNode coords="3.0 3.0 0.0" doftype="2 2" mastersizes="2 2" masterlist="4 1 13 1 4 2 13 2" masterweights="1 1 1 1"/>
+    </Nodes>
+    <Elements>
+      <!--Elements ####################################################################################-->
+      <quad1planestrain nodes="1 2 6 5" crosssect="1"/>
+      <quad1planestrain nodes="2 3 7 6" crosssect="1"/>
+      <quad1planestrain nodes="3 4 8 7" crosssect="1"/>
+      <quad1planestrain nodes="5 6 10 9" crosssect="1"/>
+      <quad1planestrain id="5" nodes="6 7 11 10" crosssect="1"/>
+      <quad1planestrain nodes="7 8 12 11" crosssect="1"/>
+      <quad1planestrain nodes="9 10 14 13" crosssect="1"/>
+      <quad1planestrain nodes="10 11 15 14" crosssect="1"/>
+      <quad1planestrain nodes="11 12 16 15" crosssect="1"/>
+    </Elements>
+    <CrossSections>
+      <!--MATERIALS AND CROSS-SECTIONS-->
+      <SimpleCS thick="1.0" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="1.0" e="500.0" n="0.0" talpha="1e-06"/>
+    </Materials>
+    <BoundaryConditions>
+      <!--BCS-->
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.5 0.0" set="3"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.1 0.2" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <!--LOAD TIME FUNCTIONS-->
+      <PiecewiseLinFunction npoints="2" t="0.0 100.0" f_t_="0.0 100.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <!--SETS-->
+      <Set allelements=""/>
+      <Set nodes="1"/>
+      <Set nodes="4"/>
+      <Set nodes="13"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-06">
+      <NODE tStep="1" number="8" dof="1" unknown="d" value="0.533333333"/>
+      <NODE tStep="1" number="8" dof="2" unknown="d" value="0.0666666667"/>
+      <NODE tStep="1" number="12" dof="1" unknown="d" value="0.566666667"/>
+      <NODE tStep="1" number="12" dof="2" unknown="d" value="0.133333333"/>
+      <NODE tStep="1" number="14" dof="1" unknown="d" value="0.266666667"/>
+      <NODE tStep="1" number="14" dof="2" unknown="d" value="0.2"/>
+      <NODE tStep="1" number="15" dof="1" unknown="d" value="0.433333333"/>
+      <NODE tStep="1" number="15" dof="2" unknown="d" value="0.2"/>
+      <NODE tStep="1" number="16" dof="1" unknown="d" value="0.6"/>
+      <NODE tStep="1" number="16" dof="2" unknown="d" value="0.2"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

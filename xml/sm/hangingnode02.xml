@@ -1,0 +1,60 @@
+<oofem version="1">
+  <Output>hangingnode02.out</Output>
+  <Description>Test of hanging node in PlaneStress2d element, offset numbering, results are the same as in hangingnode01.in</Description>
+  <Analysis type="LinearStatic" nsteps="1"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node id="11" coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 4.0 0.0"/>
+      <Node coords="8.0 4.0 0.0"/>
+      <Node coords="8.0 0.0 0.0"/>
+      <hangingnode id="15" coords="6.0 1.8 0.0" masterelement="1" doftype="2 2"/>
+    </Nodes>
+    <Elements>
+      <PlaneStress2d nodes="11 14 13 12"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="0.15" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="0.0" e="15.0" n="0.25" talpha="1.2e-05"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="3"/>
+      <NodalLoad loadtimefunction="1" dofs="1 2" components="2.5 0.0" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1"/>
+      <Set nodes="11"/>
+      <Set nodes="12"/>
+      <Set nodes="15"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.0001">
+      <!--check reactions-->
+      <REACTION tStep="1" number="11" dof="1" value="-1.375"/>
+      <REACTION tStep="1" number="12" dof="1" value="-1.125"/>
+      <!--check nodes-->
+      <NODE tStep="1" number="12" dof="2" unknown="d" value="-0.208333333"/>
+      <NODE tStep="1" number="13" dof="1" unknown="d" value="1.19791667"/>
+      <NODE tStep="1" number="13" dof="2" unknown="d" value="0.729166667"/>
+      <NODE tStep="1" number="14" dof="1" unknown="d" value="2.13541667"/>
+      <NODE tStep="1" number="14" dof="2" unknown="d" value="0.9375"/>
+      <!--NODE tStep 1 number 15 dof 1 unknown d value 1.28515625e+00-->
+      <!--NODE tStep 1 number 15 dof 2 unknown d value 6.09375000e-01-->
+      <!--check element no. 1 strain vector-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="0.1745"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="-0.052083"/>
+      <!--check element no. 1 stress vector-->
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="1" value="2.5837"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="2" value="-0.13532"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

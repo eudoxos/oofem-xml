@@ -1,0 +1,49 @@
+<oofem version="1">
+  <Output>idm08.out</Output>
+  <Description>Test of PlaneStress2d element -&gt; pure compression in y direction, Griffith/Rankine criteria</Description>
+  <Analysis type="StaticStructural" nsteps="1" rtolf="0.0001"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="2.0 0.0 0.0"/>
+      <Node coords="2.0 3.0 0.0"/>
+      <Node coords="0.0 3.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <PlaneStress2d nodes="1 2 3 4" mat="1"/>
+    </Elements>
+    <CrossSections>
+      <!--L4axisymm 1 nodes 4 1 2 3 4  mat 1-->
+      <SimpleCS thick="0.15" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <idm1 d="1.0" e="10.0" n="0.2" e0="0.0001" gf="1.5" equivstraintype="7" griff_n="10.0" talpha="0.0" damlaw="1"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="3"/>
+      <BoundaryCondition loadtimefunction="2" dofs="2" values="-0.01" set="4"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction t="0.0 200.0" f_t_="0.0 200.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1"/>
+      <Set nodes="1"/>
+      <Set nodes="1 2"/>
+      <Set nodes="3 4"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!--Used for Extractor-->
+    <errorcheck tolerance="0.0001">
+      <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="-0.0033333"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="2" value="-0.01"/>
+      <ELEMENT tStep="1" number="1" gp="1" keyword="52" component="1" value="0.7"/>
+    </errorcheck>
+    <vtkxml tstep_step="1" cellvars="46" vars="1 4 13 82 90" primvars="1" stype="2"/>
+  </ExportModules>
+</oofem>

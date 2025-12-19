@@ -1,0 +1,87 @@
+<oofem version="1">
+  <Output>qTrxFemCrackVal.out</Output>
+  <Description>Test case for xfem: a crack through 6-node triangle elements. Added by Erik Svenning.</Description>
+  <Analysis type="StaticStructural" nsteps="3" deltat="1.0" rtolf="1e-06" maxiter="20" miniter="2"/>
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0"/>
+      <Node coords="1.0 0.0"/>
+      <Node coords="2.0 0.0"/>
+      <Node coords="3.0 0.0"/>
+      <Node id="5" coords="3.0 1.0"/>
+      <Node coords="2.0 1.0"/>
+      <Node coords="1.0 1.0"/>
+      <Node coords="0.0 1.0"/>
+      <Node coords="0.5 0.0"/>
+      <Node id="10" coords="1.5 0.0"/>
+      <Node coords="2.5 0.0"/>
+      <Node coords="3.0 0.5"/>
+      <Node coords="2.5 1.0"/>
+      <Node coords="1.5 1.0"/>
+      <Node id="15" coords="0.5 1.0"/>
+      <Node coords="0.0 0.5"/>
+      <Node coords="0.5 0.5"/>
+      <Node coords="1.0 0.5"/>
+      <Node coords="1.5 0.5"/>
+      <Node id="20" coords="2.0 0.5"/>
+      <Node coords="2.5 0.5"/>
+    </Nodes>
+    <Elements>
+      <QTrPlaneStress2dXFEM nodes="1 2 8 9 17 16" mat="1" nip="12" nlgeo="0" reg_coeff="1e-12" reg_coeff_tol="1e-12"/>
+      <QTrPlaneStress2dXFEM nodes="2 7 8 18 15 17" mat="1" nip="12" nlgeo="0" reg_coeff="1e-12" reg_coeff_tol="1e-12"/>
+      <QTrPlaneStress2dXFEM nodes="2 6 7 19 14 18" mat="1" nip="12" nlgeo="0" reg_coeff="1e-12" reg_coeff_tol="1e-12"/>
+      <QTrPlaneStress2dXFEM nodes="2 3 6 10 20 19" mat="1" nip="12" nlgeo="0" reg_coeff="1e-12" reg_coeff_tol="1e-12"/>
+      <QTrPlaneStress2dXFEM id="5" nodes="3 4 6 11 21 20" mat="1" nip="12" nlgeo="0" reg_coeff="1e-12" reg_coeff_tol="1e-12"/>
+      <QTrPlaneStress2dXFEM nodes="4 5 6 12 13 21" mat="1" nip="12" nlgeo="0" reg_coeff="1e-12" reg_coeff_tol="1e-12"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS thick="0.001" material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <IsoLE d="0.0" e="210000000000.0" n="0.3" talpha="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="2"/>
+      <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.2 -0.3" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1-6"/>
+      <Set nodes="1 8"/>
+      <Set nodes="4 5"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-08">
+      <!--Node displacements-->
+      <NODE tStep="2" number="1" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="2" number="1" dof="2" unknown="d" value="0.0"/>
+      <NODE tStep="2" number="2" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="2" number="2" dof="2" unknown="d" value="0.0"/>
+      <NODE tStep="2" number="2" dof="500" unknown="d" value="0.1"/>
+      <NODE tStep="2" number="2" dof="501" unknown="d" value="-0.15"/>
+      <NODE tStep="2" number="3" dof="1" unknown="d" value="0.2"/>
+      <NODE tStep="2" number="3" dof="2" unknown="d" value="-0.3"/>
+      <NODE tStep="2" number="3" dof="500" unknown="d" value="0.1"/>
+      <NODE tStep="2" number="3" dof="501" unknown="d" value="-0.15"/>
+      <NODE tStep="2" number="4" dof="1" unknown="d" value="0.2"/>
+      <NODE tStep="2" number="4" dof="2" unknown="d" value="-0.3"/>
+      <NODE tStep="2" number="5" dof="1" unknown="d" value="0.2"/>
+      <NODE tStep="2" number="5" dof="2" unknown="d" value="-0.3"/>
+      <NODE tStep="2" number="6" dof="1" unknown="d" value="0.2"/>
+      <NODE tStep="2" number="6" dof="2" unknown="d" value="-0.3"/>
+      <NODE tStep="2" number="6" dof="500" unknown="d" value="0.1"/>
+      <NODE tStep="2" number="6" dof="501" unknown="d" value="-0.15"/>
+      <NODE tStep="2" number="7" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="2" number="7" dof="2" unknown="d" value="0.0"/>
+      <NODE tStep="2" number="7" dof="500" unknown="d" value="0.1"/>
+      <NODE tStep="2" number="7" dof="501" unknown="d" value="-0.15"/>
+      <NODE tStep="2" number="8" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="2" number="8" dof="2" unknown="d" value="0.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>
