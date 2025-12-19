@@ -62,19 +62,19 @@
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
     <Sets>
-      <!--Positive X-->
+      <!-- Positive X -->
       <Set elementboundaries="3 1"/>
-      <!--Negative X-->
+      <!-- Negative X -->
       <Set elementboundaries="6 1 8 1"/>
-      <!--Positive Y-->
+      <!-- Positive Y -->
       <Set elementboundaries="5 1"/>
-      <!--Negative Y-->
+      <!-- Negative Y -->
       <Set elementboundaries="1 1"/>
-      <!--Prescribed pressure-->
+      <!-- Prescribed pressure -->
       <Set id="5" nodes="5"/>
-      <!--Prescribed velocities-->
+      <!-- Prescribed velocities -->
       <Set nodes="6 7 8 22 23 24"/>
-      <!--All elements-->
+      <!-- All elements -->
       <Set elementranges="1-8"/>
     </Sets>
   </Domain>

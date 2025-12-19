@@ -53,7 +53,7 @@
       <REACTION tStep="1" number="11" dof="31" value="75.40953415"/>
       <REACTION tStep="1" number="11" dof="32" value="-125.6751341"/>
       <ELEMENT tStep="1" number="4" gp="1" keyword="7" component="1" value="-314.1878"/>
-      <!--TIME-->
+      <!-- TIME -->
       <ELEMENT tStep="1" number="8" gp="1" keyword="7" component="1" value="188.5238"/>
     </errorcheck>
   </ExportModules>

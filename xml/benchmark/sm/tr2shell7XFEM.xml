@@ -47,11 +47,11 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--EnrFrontDoNothing 1-->
-    <!--PLDoNothing 1-->
+    <!-- EnrFrontDoNothing 1 -->
+    <!-- PLDoNothing 1 -->
     <errorcheck tolerance="1e-11">
-      <!--Check unknowns in node 13 (mid edge node)-->
-      <!--with XFEM dofs scaled with 1.0e-3-->
+      <!-- Check unknowns in node 13 (mid edge node) -->
+      <!-- with XFEM dofs scaled with 1.0e-3 -->
       <NODE tStep="1" number="13" dof="500" unknown="d" value="2.13801213e-05"/>
       <NODE tStep="1" number="13" dof="501" unknown="d" value="3.1607313e-07"/>
       <NODE tStep="1" number="13" dof="502" unknown="d" value="0.00375487293"/>

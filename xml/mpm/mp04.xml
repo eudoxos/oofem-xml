@@ -36,11 +36,11 @@
       <upm d="1.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--displacement bottom-->
+      <!-- displacement bottom -->
       <boundarycondition loadtimefunction="1" set="2" values="0.0 0.0 0.0" dofs="1 2 3"/>
-      <!--pressure top-->
+      <!-- pressure top -->
       <boundarycondition loadtimefunction="1" set="3" values="0.0" dofs="11"/>
-      <!--load on top-->
+      <!-- load on top -->
       <nodalload loadtimefunction="1" set="5" dofs="3" components="2.0"/>
     </BoundaryConditions>
     <InitialConditions>

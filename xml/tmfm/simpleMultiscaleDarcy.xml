@@ -21,7 +21,7 @@
       <SimpleTransportCS mat="1" set="1"/>
     </CrossSections>
     <Materials>
-      <!--unprocessed field on the next line: supressoutput 1-->
+      <!-- unprocessed field on the next line: supressoutput 1 -->
       <rvestokesflow file="simpleRVEStokes.rvein"/>
     </Materials>
     <BoundaryConditions>

@@ -26,7 +26,7 @@
     </Materials>
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" dofs="10" values="10.0" set="2"/>
-      <!--Internal source-->
+      <!-- Internal source -->
       <deadweight loadtimefunction="1" components="50.0" set="1"/>
     </BoundaryConditions>
     <InitialConditions/>
@@ -39,7 +39,7 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--exact solution is -25*x^2/k+50*4*x/k-48.3333333, T(4.)=85.0-->
+    <!-- exact solution is -25*x^2/k+50*4*x/k-48.3333333, T(4.)=85.0 -->
     <errorcheck>
       <NODE tStep="1" number="2" dof="10" unknown="d" value="57.8635311"/>
       <NODE tStep="1" number="3" dof="10" unknown="d" value="86.1849641"/>

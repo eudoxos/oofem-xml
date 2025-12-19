@@ -14,8 +14,8 @@
       <quadaxisym1ht nodes="1 2 3 4"/>
     </Elements>
     <CrossSections>
-      <!--quadaxisym1ht 1 nodes 4 1 2 3 4-->
-      <!--quad1ht 1 nodes 4 1 2 3 4-->
+      <!-- quadaxisym1ht 1 nodes 4 1 2 3 4 -->
+      <!-- quad1ht 1 nodes 4 1 2 3 4 -->
       <SimpleTransportCS thickness="0.6" mat="1" set="1"/>
     </CrossSections>
     <Materials>
@@ -24,9 +24,9 @@
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" dofs="10" values="0.0" set="2"/>
       <BoundaryCondition loadtimefunction="1" dofs="10" values="20.0"/>
-      <!--Newton bc-->
-      <!--constantedgeload 3 loadTimeFunction 1 components 1 15.0 properties 1 a 0.85 loadtype 3-->
-      <!--Neumann bc-->
+      <!-- Newton bc -->
+      <!-- constantedgeload 3 loadTimeFunction 1 components 1 15.0 properties 1 a 0.85 loadtype 3 -->
+      <!-- Neumann bc -->
       <constantedgeload loadtimefunction="1" components="-15.0" loadtype="2" set="3"/>
     </BoundaryConditions>
     <InitialConditions/>

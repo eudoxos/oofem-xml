@@ -5,7 +5,7 @@
   <Domain domain="2dmindlinplate">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
-      <!--pure bending along x axis-->
+      <!-- pure bending along x axis -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="4.0 0.0 0.0"/>
       <Node coords="4.0 4.0 0.0"/>
@@ -39,14 +39,14 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--exact solution-->
+    <!-- exact solution -->
     <errorcheck tolerance="1e-05">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="1" number="1" dof="3" value="-8.0"/>
       <REACTION tStep="1" number="4" dof="3" value="-8.0"/>
       <REACTION tStep="1" number="1" dof="5" value="16.0"/>
       <REACTION tStep="1" number="4" dof="5" value="16.0"/>
-      <!--check all nodes-->
+      <!-- check all nodes -->
       <NODE tStep="1" number="2" dof="3" unknown="d" value="970.999598"/>
       <NODE tStep="1" number="3" dof="3" unknown="d" value="970.999598"/>
       <NODE tStep="1" number="2" dof="4" unknown="d" value="23.543133"/>

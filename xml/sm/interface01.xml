@@ -42,11 +42,11 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.0001">
-      <!--Step 1-->
+      <!-- Step 1 -->
       <NODE tStep="2" number="4" dof="1" unknown="d" value="-0.00139973869"/>
       <ELEMENT tStep="2" number="2" gp="1" keyword="99" component="1" value="-1.1003"/>
       <REACTION tStep="2" number="5" dof="1" value="-1.1003"/>
-      <!--Step 10-->
+      <!-- Step 10 -->
       <NODE tStep="10" number="4" dof="1" unknown="d" value="0.00202829954"/>
       <ELEMENT tStep="10" number="2" gp="1" keyword="99" component="1" value="1.5943"/>
       <REACTION tStep="10" number="5" dof="1" value="1.5943"/>

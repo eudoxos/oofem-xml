@@ -1,8 +1,8 @@
 <oofem version="1">
   <Output>compoDamMat.out</Output>
   <Description>test of orthotropic damage material on one LSpace element stretched in the y direction</Description>
-  <!--This test is either extremely sensitive to initial guesses, or has a bug in the material model (!)-->
-  <!--I set the initialguess to 0 (which is a bad guess) to get the same behavior as before.-->
+  <!-- This test is either extremely sensitive to initial guesses, or has a bug in the material model (!) -->
+  <!-- I set the initialguess to 0 (which is a bad guess) to get the same behavior as before. -->
   <Analysis type="StaticStructural" nsteps="46" rtolf="1e-05" miniter="30" maxiter="30" deltat="1.0" initialguess="0"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -27,7 +27,7 @@
       <compdammat d="0.0" exx="10.0" eyyezz="2.0" nuxynuxz="0.2" nuyz="0.1" gxygxz="8.0" tension_f0_gf="100.0 2000.0 7.0 100.0 130.0 11000.0 140.0 13000.0 150.0 13000.0 100.0 13000.0" compres_f0_gf="-10.5 11000.0 -4.0 120.0 -10.3 11000.0 -10.4 11000.0 -10.5 11000.0 -10.0 11000.0" allowsnapback="2"/>
     </Materials>
     <BoundaryConditions>
-      <!--isole 1 E 10. n 0.2 talpha 0.0 d 0.0-->
+      <!-- isole 1 E 10. n 0.2 talpha 0.0 d 0.0 -->
       <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="3"/>
       <BoundaryCondition loadtimefunction="2" dofs="2" values="2.0" set="2"/>
       <BoundaryCondition loadtimefunction="1" dofs="1 2 3" values="0.0 0.0 0.0" set="4"/>
@@ -48,9 +48,9 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-05">
-      <!--check element no. 1 strain vector-->
+      <!-- check element no. 1 strain vector -->
       <ELEMENT tStep="2" number="1" gp="1" keyword="4" component="2" value="0.7"/>
-      <!--check element no. 1 stress vector-->
+      <!-- check element no. 1 stress vector -->
       <ELEMENT tStep="2" number="1" gp="1" keyword="1" component="2" value="1.4"/>
       <ELEMENT tStep="5" number="1" gp="1" keyword="1" component="2" value="5.6"/>
       <ELEMENT tStep="46" number="1" gp="1" keyword="1" component="2" value="0.17645"/>

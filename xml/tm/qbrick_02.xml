@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>qbrick_02.out</Output>
   <Description>Patch test of QBrick1ht element, constant heat source, both ends fixed at 0</Description>
-  <!--Exact solution for 1D is T(x)=source/2/lambda*x(L-x) where lambda is the conductivity and L is the bar length-->
+  <!-- Exact solution for 1D is T(x)=source/2/lambda*x(L-x) where lambda is the conductivity and L is the bar length -->
   <Analysis type="StationaryProblem" nsteps="1"/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -65,7 +65,7 @@
     <BoundaryConditions>
       <boundarycondition loadtimefunction="1" dofs="10" values="0.0" set="2"/>
       <boundarycondition loadtimefunction="1" dofs="10" values="0.0" set="3"/>
-      <!--Internal source-->
+      <!-- Internal source -->
       <deadweight loadtimefunction="1" components="6.0" set="1"/>
     </BoundaryConditions>
     <InitialConditions/>

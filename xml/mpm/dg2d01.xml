@@ -179,7 +179,7 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.1">
-      <!--check nodes (against exact solution - sine function)-->
+      <!-- check nodes (against exact solution - sine function) -->
       <NODE tStep="40" number="25" dof="14" unknown="d" value="0.0"/>
       <NODE tStep="40" number="33" dof="14" unknown="d" value="0.0"/>
       <NODE tStep="40" number="45" dof="14" unknown="d" value="0.0" tolerance="0.13"/>

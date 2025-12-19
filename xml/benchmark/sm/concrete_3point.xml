@@ -3,11 +3,11 @@
   <Description>Test: 3-point bending, triangular elements, 1 loaded point</Description>
   <Analysis type="StaticStructural" nsteps="20" solvertype="calm" steplength="0.025" rtolf="0.0001" psi="0.0" maxiter="200" reqiterations="80" hpc="1 2" stiffmode="1"/>
   <Domain domain="2dplanestress">
-    <!--zkracena verze vypoctu z me disertace-->
-    <!--Monitored 2-->
-    <!--1 node 1 displacement 2 *-->
-    <!--2 node 1 force        2 *-->
-    <!--**-->
+    <!-- zkracena verze vypoctu z me disertace -->
+    <!-- Monitored 2 -->
+    <!-- 1 node 1 displacement 2 * -->
+    <!-- 2 node 1 force        2 * -->
+    <!-- ** -->
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
       <Node coords="1000.0 500.0"/>
@@ -456,9 +456,9 @@
       <Node coords="1750.158691 168.39357"/>
     </Nodes>
     <Elements>
-      <!--**-->
-      <!--Element 799-->
-      <!--TrPlaneStress2d Elements-->
+      <!-- ** -->
+      <!-- Element 799 -->
+      <!-- TrPlaneStress2d Elements -->
       <TrPlaneStress2d nodes="14 48 15"/>
       <TrPlaneStress2d nodes="15 49 16"/>
       <TrPlaneStress2d nodes="16 50 17"/>
@@ -1260,7 +1260,7 @@
       <TrPlaneStress2d nodes="347 441 332"/>
     </Elements>
     <CrossSections>
-      <!--**-->
+      <!-- ** -->
       <SimpleCS thick="1.0" material="1" set="1"/>
       <SimpleCS thick="1.0" material="2" set="2"/>
     </CrossSections>
@@ -1271,7 +1271,7 @@
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="3"/>
       <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="4"/>
-      <!--BoundaryCondition 3 loadTimeFunction 2 dofs 1 2 values 1 -0.025 set 5-->
+      <!-- BoundaryCondition 3 loadTimeFunction 2 dofs 1 2 values 1 -0.025 set 5 -->
       <NodalLoad loadtimefunction="1" dofs="1 2" components="0.0 -1.0" set="5" reference=""/>
     </BoundaryConditions>
     <InitialConditions/>
@@ -1288,7 +1288,7 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-06">
-      <!--check load levels-->
+      <!-- check load levels -->
       <LOADLEVEL tStep="1" value="6.105389"/>
       <LOADLEVEL tStep="2" value="12.210779"/>
       <LOADLEVEL tStep="3" value="18.160715"/>
@@ -1309,7 +1309,7 @@
       <LOADLEVEL tStep="18" value="23.58197"/>
       <LOADLEVEL tStep="19" value="22.329408"/>
       <LOADLEVEL tStep="20" value="21.473918"/>
-      <!--check node displacement at final step-->
+      <!-- check node displacement at final step -->
       <NODE tStep="1" number="1" dof="2" unknown="d" value="-0.025" tolerance="1e-09"/>
       <NODE tStep="2" number="1" dof="2" unknown="d" value="-0.05" tolerance="1e-09"/>
       <NODE tStep="3" number="1" dof="2" unknown="d" value="-0.075" tolerance="1e-09"/>
@@ -1330,7 +1330,7 @@
       <NODE tStep="18" number="1" dof="2" unknown="d" value="-0.365945211" tolerance="1e-09"/>
       <NODE tStep="19" number="1" dof="2" unknown="d" value="-0.380153237" tolerance="1e-09"/>
       <NODE tStep="20" number="1" dof="2" unknown="d" value="-0.396213669" tolerance="1e-09"/>
-      <!--check some arbitrary element-->
+      <!-- check some arbitrary element -->
       <ELEMENT tStep="10" number="338" gp="1" keyword="4" component="1" value="0.00193951745" tolerance="1e-08"/>
       <ELEMENT tStep="10" number="338" gp="1" keyword="4" component="2" value="1.26544635e-05" tolerance="1e-08"/>
       <ELEMENT tStep="10" number="338" gp="1" keyword="4" component="6" value="0.000340924245" tolerance="1e-08"/>

@@ -32,10 +32,10 @@
     <Sets/>
   </Domain>
   <ExportModules>
-    <!--%BEGIN_CHECK%-->
-    <!--ELEMENT number 1 gp 1 record 0 keyword strains component 1-->
-    <!--ELEMENT number 1 gp 1 record 1 keyword stresses component 1-->
-    <!--%END_CHECK%-->
+    <!-- %BEGIN_CHECK% -->
+    <!-- ELEMENT number 1 gp 1 record 0 keyword strains component 1 -->
+    <!-- ELEMENT number 1 gp 1 record 1 keyword stresses component 1 -->
+    <!-- %END_CHECK% -->
     <errorcheck>
       <ELEMENT tStep="1" number="1" gp="1" keyword="138" component="1" value="0.0" tolerance="1e-05"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="139" component="1" value="0.0" tolerance="1e-05"/>

@@ -1,8 +1,8 @@
 <oofem version="1">
   <Output>pdelta02.out</Output>
   <Description>pdelta analysis of simple cantilever beam</Description>
-  <!--only momentum influence to the displacements is taken into account-->
-  <!--beamShearCoeff is artificially enlarged.-->
+  <!-- only momentum influence to the displacements is taken into account -->
+  <!-- beamShearCoeff is artificially enlarged. -->
   <Analysis type="pdelta" nsteps="1" rtolv="0.001" maxiter="1"/>
   <Domain domain="2dbeam">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -34,7 +34,7 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--exact solution-->
+    <!-- exact solution -->
     <errorcheck tolerance="0.005">
       <NODE tStep="1" number="2" dof="1" unknown="d" value="0.771430584"/>
       <REACTION tStep="1" number="1" dof="3" value="50000.0"/>

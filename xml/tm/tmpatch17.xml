@@ -24,12 +24,12 @@
     </Materials>
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" dofs="10" values="0.0" set="2"/>
-      <!--Radiation with emmisivity, temperature in C by default-->
+      <!-- Radiation with emmisivity, temperature in C by default -->
       <constantedgeload loadtimefunction="1" components="15.0" properties="e 0.8" loadtype="7" set="3"/>
     </BoundaryConditions>
     <InitialConditions/>
     <LoadTimeFunctions>
-      <!--constantedgeload 2 loadTimeFunction 1 components 1 15.0 properties 1 a 0.5 loadtype 3 set 3-->
+      <!-- constantedgeload 2 loadTimeFunction 1 components 1 15.0 properties 1 a 0.5 loadtype 3 set 3 -->
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
     <Sets>

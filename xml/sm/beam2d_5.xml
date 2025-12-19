@@ -14,7 +14,7 @@
       <Beam2d nodes="1 2" crosssect="1"/>
     </Elements>
     <CrossSections>
-      <!--beam cross section: 0.1 x 0.1-->
+      <!-- beam cross section: 0.1 x 0.1 -->
       <SimpleCS area="0.01" iy="8.333e-06" iz="8.333e-06" ik="0.003606447115384616" beamshearcoeff="0.83333333" material="1"/>
     </CrossSections>
     <Materials>
@@ -36,7 +36,7 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-08">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="1" number="1" dof="1" value="0.0"/>
       <REACTION tStep="1" number="1" dof="3" value="-1.0"/>
       <REACTION tStep="1" number="1" dof="5" value="2.5"/>

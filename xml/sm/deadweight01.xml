@@ -1,11 +1,11 @@
 <oofem version="1">
   <Output>deadweight01.out</Output>
   <Description>Test of deadweight on quadratic QPlaneStress2d element</Description>
-  <!--The analytical solution (x is the coordinate from the right edge oriented leftwards) reads:-->
-  <!--F(x) = 2x-->
-  <!--sigma(x)=10x-->
-  <!--epsilon(x)=0.1x-->
-  <!--displacement_x(x)=0.05x^2-0.8-->
+  <!-- The analytical solution (x is the coordinate from the right edge oriented leftwards) reads: -->
+  <!-- F(x) = 2x -->
+  <!-- sigma(x)=10x -->
+  <!-- epsilon(x)=0.1x -->
+  <!-- displacement_x(x)=0.05x^2-0.8 -->
   <Analysis type="StaticStructural" nsteps="1"/>
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -45,20 +45,20 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.001">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="1" number="1" dof="1" value="-1.3303"/>
       <REACTION tStep="1" number="4" dof="1" value="-1.3303"/>
       <REACTION tStep="1" number="8" dof="1" value="-5.3393"/>
-      <!--check displacements in right nodes-->
+      <!-- check displacements in right nodes -->
       <NODE tStep="1" number="2" dof="1" unknown="d" value="0.799872412"/>
       <NODE tStep="1" number="3" dof="1" unknown="d" value="0.799872412"/>
       <NODE tStep="1" number="4" dof="2" unknown="d" value="-0.00195877842"/>
       <NODE tStep="1" number="6" dof="1" unknown="d" value="0.800063794"/>
-      <!--check element No. 1 strain vector-->
+      <!-- check element No. 1 strain vector -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="0.045068"/>
       <ELEMENT tStep="1" number="1" gp="4" keyword="4" component="1" value="0.19999"/>
       <ELEMENT tStep="1" number="1" gp="7" keyword="4" component="1" value="0.35491"/>
-      <!--check element No. 1 stress vector-->
+      <!-- check element No. 1 stress vector -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="1" value="4.5068"/>
       <ELEMENT tStep="1" number="1" gp="4" keyword="1" component="1" value="19.999"/>
       <ELEMENT tStep="1" number="1" gp="7" keyword="1" component="1" value="35.491"/>

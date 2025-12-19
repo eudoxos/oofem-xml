@@ -107,11 +107,11 @@
     </LoadTimeFunctions>
     <Sets>
       <Set elementranges="1-23"/>
-      <!--support-->
+      <!-- support -->
       <Set nodes="11"/>
-      <!--point load-->
+      <!-- point load -->
       <Set nodes="19"/>
-      <!--symmetry line nodes-->
+      <!-- symmetry line nodes -->
       <Set nodes="3 4 15 16 17"/>
     </Sets>
   </Domain>

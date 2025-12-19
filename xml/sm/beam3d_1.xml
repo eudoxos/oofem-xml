@@ -1,8 +1,8 @@
 <oofem version="1">
   <Output>beam3d_1.out</Output>
   <Description>Homework www sm40 no. 10</Description>
-  <!--only momentum influence to the displacements is taken into account-->
-  <!--beamShearCoeff is artificially enlarged.-->
+  <!-- only momentum influence to the displacements is taken into account -->
+  <!-- beamShearCoeff is artificially enlarged. -->
   <Analysis type="StaticStructural" nsteps="1"/>
   <Domain domain="3dshell">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -44,9 +44,9 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--exact solution-->
+    <!-- exact solution -->
     <errorcheck tolerance="1e-06">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="1" number="3" dof="1" value="0.0"/>
       <REACTION tStep="1" number="3" dof="2" value="0.0"/>
       <REACTION tStep="1" number="3" dof="3" value="-3.069812"/>
@@ -61,11 +61,11 @@
       <REACTION tStep="1" number="4" dof="6" value="0.0"/>
       <REACTION tStep="1" number="5" dof="3" value="-4.13573"/>
       <REACTION tStep="1" number="5" dof="5" value="-3.692588"/>
-      <!--check all nodes-->
+      <!-- check all nodes -->
       <NODE tStep="1" number="2" dof="3" unknown="d" value="0.000892077684" tolerance="1e-10"/>
       <NODE tStep="1" number="2" dof="4" unknown="d" value="-0.000108941223" tolerance="1e-10"/>
       <NODE tStep="1" number="2" dof="5" unknown="d" value="0.000376789811" tolerance="1e-10"/>
-      <!--check element no. 1 force vector-->
+      <!-- check element no. 1 force vector -->
       <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="1" value="0.0"/>
       <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="2" value="0.0"/>
       <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="3" value="15.0"/>

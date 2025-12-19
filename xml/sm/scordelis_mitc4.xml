@@ -79,8 +79,8 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.5">
-      <!--cylindrical (Scordelis-Lo) shell-->
-      <!--reference solution - node 5 dof 3 -> 3.60 (in global c.s.)-->
+      <!-- cylindrical (Scordelis-Lo) shell -->
+      <!-- reference solution - node 5 dof 3 -> 3.60 (in global c.s.) -->
       <NODE tStep="1" number="5" dof="1" unknown="d" value="0.0"/>
       <NODE tStep="1" number="5" dof="2" unknown="d" value="0.814231098"/>
       <NODE tStep="1" number="5" dof="3" unknown="d" value="-3.77798996"/>

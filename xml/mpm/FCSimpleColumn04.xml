@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>FCSimpleColumn04.out</Output>
   <Description>Test of mpm upbrick11 element and distributed pressure boundary condition</Description>
-  <!--final time 500, initial time step 1-->
+  <!-- final time 500, initial time step 1 -->
   <Analysis type="mpmproblem" nsteps="500" deltat="1.0" alpha="0.5" manrmsteps="0" keeptangent=""/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -37,21 +37,21 @@
       <dummycs mat="1" set="1"/>
     </CrossSections>
     <Materials>
-      <!--ks = inifinity, kw=1e+09-->
-      <!--1/Q = n/Kt+(b-n)/Ks = 0.3333/1.e9+(1-0.3333)/inf = 3.333333e-10-->
-      <!--The porosity (n) and the void ratio (e) are inter-related as follows: n = e / (1+e), n=0.5/(1+0.5)= 0.333-->
+      <!-- ks = inifinity, kw=1e+09 -->
+      <!-- 1/Q = n/Kt+(b-n)/Ks = 0.3333/1.e9+(1-0.3333)/inf = 3.333333e-10 -->
+      <!-- The porosity (n) and the void ratio (e) are inter-related as follows: n = e / (1+e), n=0.5/(1+0.5)= 0.333 -->
       <upm d="1.0" e="10000000.0" nu="0.3" k="1e-15" c="3.33333333e-10" alpha="1.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--x-displacement-->
+      <!-- x-displacement -->
       <boundarycondition loadtimefunction="1" set="2" values="0.0" dofs="1"/>
-      <!--y-displacement-->
+      <!-- y-displacement -->
       <boundarycondition loadtimefunction="1" set="3" values="0.0" dofs="2"/>
-      <!--z-displacement-->
+      <!-- z-displacement -->
       <boundarycondition loadtimefunction="1" set="4" values="0.0" dofs="3"/>
-      <!--pressure top (bleeding=pressure set to zero?)-->
+      <!-- pressure top (bleeding=pressure set to zero?) -->
       <boundarycondition loadtimefunction="1" set="5" values="0.0" dofs="11"/>
-      <!--prescriber mass flux normal to the boundary-->
+      <!-- prescriber mass flux normal to the boundary -->
       <constantsurfaceload id="5" loadtimefunction="2" dofs="11" cstype="0" components="1.0" set="6"/>
     </BoundaryConditions>
     <InitialConditions/>
@@ -61,17 +61,17 @@
     </LoadTimeFunctions>
     <Sets>
       <Set elements="1 2 3 4"/>
-      <!--x-bc-->
+      <!-- x-bc -->
       <Set noderanges="1-20"/>
-      <!--y-bc-->
+      <!-- y-bc -->
       <Set noderanges="1-20"/>
-      <!--z-bc-->
+      <!-- z-bc -->
       <Set nodes="9 10 19 20"/>
-      <!--top surface nodes-->
+      <!-- top surface nodes -->
       <Set id="5" nodes="11 12 1 2"/>
-      <!--bottom surface (load + )-->
-      <!--%BEGIN_CHECK%-->
-      <!--%END_CHECK%-->
+      <!-- bottom surface (load + ) -->
+      <!-- %BEGIN_CHECK% -->
+      <!-- %END_CHECK% -->
       <Set elementboundaries="4 5"/>
     </Sets>
   </Domain>

@@ -32,15 +32,15 @@
       <newtonianfluid d="1.0" mu="1.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--prescribed inlet velocity v = 1m/s-->
+      <!-- prescribed inlet velocity v = 1m/s -->
       <BoundaryCondition loadtimefunction="1" values="1.0" set="1" dofs="7"/>
-      <!--zero velocity (wall) condition-->
+      <!-- zero velocity (wall) condition -->
       <BoundaryCondition loadtimefunction="1" values="0.0 0.0" set="2" dofs="7 8"/>
-      <!--pressure-->
+      <!-- pressure -->
       <BoundaryCondition loadtimefunction="1" values="0.0" set="3" dofs="11"/>
     </BoundaryConditions>
     <InitialConditions>
-      <!--ic for velocity at inlet-->
+      <!-- ic for velocity at inlet -->
       <InitialCondition conditions="u 1.0"/>
     </InitialConditions>
     <LoadTimeFunctions>
@@ -56,9 +56,9 @@
   <ExportModules>
     <errorcheck>
       <NODE tStep="10" number="5" dof="7" unknown="d" value="0.951117852"/>
-      <!--3  6   9-->
-      <!--2  5   8-->
-      <!--1  4   7-->
+      <!-- 3  6   9 -->
+      <!-- 2  5   8 -->
+      <!-- 1  4   7 -->
       <NODE tStep="10" number="8" dof="7" unknown="d" value="1.04809149"/>
     </errorcheck>
   </ExportModules>

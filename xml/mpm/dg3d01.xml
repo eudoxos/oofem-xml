@@ -640,13 +640,13 @@
     <Sets>
       <Set noderanges="1-488"/>
       <Set elementranges="1-121"/>
-      <!--boundary nodes-->
+      <!-- boundary nodes -->
       <Set noderanges="1-328"/>
     </Sets>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.09">
-      <!--check nodes (against exact solution - sine function)-->
+      <!-- check nodes (against exact solution - sine function) -->
       <NODE tStep="40" number="329" dof="14" unknown="d" value="0.0"/>
       <NODE tStep="40" number="354" dof="14" unknown="d" value="0.0"/>
       <NODE tStep="40" number="386" dof="14" unknown="d" value="0.0"/>

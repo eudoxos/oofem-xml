@@ -42,7 +42,7 @@
     </Materials>
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" dofs="10" values="0.0" set="2"/>
-      <!--Newton bc-->
+      <!-- Newton bc -->
       <constantedgeload loadtimefunction="1" components="15.0" properties="a 0.85" loadtype="3" set="0"/>
     </BoundaryConditions>
     <InitialConditions>

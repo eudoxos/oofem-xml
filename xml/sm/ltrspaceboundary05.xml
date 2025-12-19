@@ -104,7 +104,7 @@
   <ExportModules>
     <errorcheck tolerance="0.01">
       <REACTION tStep="1" number="126" dof="31" value="7500000.0"/>
-      <!--TIME-->
+      <!-- TIME -->
       <REACTION tStep="1" number="126" dof="43" value="-315069.385"/>
     </errorcheck>
   </ExportModules>

@@ -1,17 +1,17 @@
 <oofem version="1">
   <Output>TwoStepCasting_01.out</Output>
   <Description>Simulates continuous casting of concrete with changing boundary conditions.</Description>
-  <!--Geometrical representation-->
-  <!--2 &#8212;&#8212;&#8212;- 4 &#8212;&#8212;&#8212;-6-->
-  <!--|         |        |-->
-  <!--|  MAT1  HC1 MAT2 HC2-->
-  <!--|         |        |-->
-  <!--1 &#8212;&#8212;&#8212;- 3 &#8212;&#8212;&#8212;-5-->
-  <!--MAT1 is cast with HC1 condition. After 10 hours, MAT2 is cast, HC1 cancelled and HC2 imposed.-->
-  <!--Nodes 5,6 need to be fixed with Dirichlet boundary condition up 10 hours since MAT2 is inactive and-->
-  <!--there is zero capacity and zero conductivity.-->
-  <!--Boundary condition on nodes 5,6 represents in fact an initial condition once MAT2 appears.-->
-  <!--HC1 needs to be deactivated after inposing HC2.-->
+  <!-- Geometrical representation -->
+  <!-- 2 &#8212;&#8212;&#8212;- 4 &#8212;&#8212;&#8212;-6 -->
+  <!-- |         |        | -->
+  <!-- |  MAT1  HC1 MAT2 HC2 -->
+  <!-- |         |        | -->
+  <!-- 1 &#8212;&#8212;&#8212;- 3 &#8212;&#8212;&#8212;-5 -->
+  <!-- MAT1 is cast with HC1 condition. After 10 hours, MAT2 is cast, HC1 cancelled and HC2 imposed. -->
+  <!-- Nodes 5,6 need to be fixed with Dirichlet boundary condition up 10 hours since MAT2 is inactive and -->
+  <!-- there is zero capacity and zero conductivity. -->
+  <!-- Boundary condition on nodes 5,6 represents in fact an initial condition once MAT2 appears. -->
+  <!-- HC1 needs to be deactivated after inposing HC2. -->
   <Analysis type="TransientTransport" nsteps="10" deltat="7200.0" alpha="0.5" miniter="5"/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>

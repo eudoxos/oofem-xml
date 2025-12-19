@@ -8,38 +8,38 @@
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="0.1 0.0 0.0"/>
       <Node coords="0.2 0.0 0.0"/>
-      <!--Four solid nodes for beam node 1-->
+      <!-- Four solid nodes for beam node 1 -->
       <Node coords="0.005 0.01 0.01"/>
       <Node id="5" coords="-0.001 -0.008 0.012"/>
       <Node coords="0.01 0.02 -0.008"/>
       <Node coords="0.002 0.001 0.001"/>
-      <!--Four solid nodes for beam node 2-->
+      <!-- Four solid nodes for beam node 2 -->
       <Node coords="0.1 0.01 0.01"/>
       <Node coords="0.104 -0.01 0.05"/>
       <Node id="10" coords="0.09 -0.03 0.03"/>
       <Node coords="0.12 0.01 0.01"/>
-      <!--Four solid nodes for beam node 3-->
+      <!-- Four solid nodes for beam node 3 -->
       <Node coords="0.21 0.01 0.01"/>
       <Node coords="0.19 -0.01 0.01"/>
       <Node coords="0.22 0.03 -0.01"/>
       <Node id="15" coords="0.195 -0.02 0.01"/>
-      <!--Reference node for beams-->
+      <!-- Reference node for beams -->
       <Node coords="0.0 0.01 0.0"/>
     </Nodes>
     <Elements>
       <libeam3d2 nodes="1 2" refnode="16"/>
       <libeam3d2 nodes="2 3" refnode="16"/>
-      <!--links for first node-->
+      <!-- links for first node -->
       <bondlink3d nodes="1 4" length="0.05" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
       <bondlink3d nodes="1 5" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
       <bondlink3d id="5" nodes="1 6" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
       <bondlink3d nodes="1 7" length="0.05" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
-      <!--links for second node-->
+      <!-- links for second node -->
       <bondlink3d nodes="2 8" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.025"/>
       <bondlink3d nodes="2 9" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.025"/>
       <bondlink3d nodes="2 10" length="0.05" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.025"/>
       <bondlink3d id="10" nodes="2 11" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.025"/>
-      <!--links for third node-->
+      <!-- links for third node -->
       <bondlink3d nodes="3 12" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
       <bondlink3d nodes="3 13" length="0.05" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>
       <bondlink3d nodes="3 14" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" length_end="0.0125"/>

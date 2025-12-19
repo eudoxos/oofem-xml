@@ -16,7 +16,7 @@
       <SimpleTransportCS thickness="0.15" mat="1" set="1"/>
     </CrossSections>
     <Materials>
-      <!--Standard concrete k(conductivity)=1.7 W/m/K   c(capacity)=870 J/kg/K-->
+      <!-- Standard concrete k(conductivity)=1.7 W/m/K   c(capacity)=870 J/kg/K -->
       <HydratingConcreteMat d="2458.0" k="1.7" c="870.0" hydrationmodeltype="1" qpot="509.0" masscement="409.0" referencetemperature="25.0" tau="48600.0" beta="0.9" dohinf="0.85" activationenergy="38300.0" castingtime="7200.0"/>
     </Materials>
     <BoundaryConditions/>

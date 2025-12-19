@@ -24,8 +24,8 @@
     </Materials>
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" dofs="10" values="0.0" set="2"/>
-      <!--BoundaryCondition  1 loadTimeFunction 1 dofs 1 10 values 1 15.0 set 3-->
-      <!--Internal source-->
+      <!-- BoundaryCondition  1 loadTimeFunction 1 dofs 1 10 values 1 15.0 set 3 -->
+      <!-- Internal source -->
       <deadweight loadtimefunction="1" components="0.5" set="1"/>
     </BoundaryConditions>
     <InitialConditions/>

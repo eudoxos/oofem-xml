@@ -5,7 +5,7 @@
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
-      <!--the size of macroelement should physically correspond to underlying microproblem, although the algorithm is robust enough to accomodate any size-->
+      <!-- the size of macroelement should physically correspond to underlying microproblem, although the algorithm is robust enough to accomodate any size -->
       <Node coords="0.0 0.0 3.0"/>
       <Node coords="0.0 4.5 3.0"/>
       <Node coords="2.0 4.5 3.0"/>
@@ -19,14 +19,14 @@
       <macrolspace nodes="1 2 3 4 5 6 7 8" crosssect="1" mat="1" micromasternodes="25 34 36 27 1 10 12 3" microboundarynodes="1 13 25 4 16 28 7 19 31 10 22 34 2 14 26 5 29 8 32 11 23 35 3 15 27 6 18 30 9 21 33 12 24 36"/>
     </Elements>
     <CrossSections>
-      <!--lspace 1 nodes 8 1 2 3 4 5 6 7 8 crossSect 1-->
+      <!-- lspace 1 nodes 8 1 2 3 4 5 6 7 8 crossSect 1 -->
       <SimpleCS material="1"/>
     </CrossSections>
     <Materials>
       <micromat file="microMaterial01.in.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--IsoLE 1 d 0.0 E 10.0 n 0.2 tAlpha 0.000012-->
+      <!-- IsoLE 1 d 0.0 E 10.0 n 0.2 tAlpha 0.000012 -->
       <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="1"/>
       <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="2"/>
       <BoundaryCondition loadtimefunction="2" dofs="2" values="0.1" set="3"/>
@@ -45,7 +45,7 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--strains and stresses are not transferred from the subproblem, check only reactions.-->
+    <!-- strains and stresses are not transferred from the subproblem, check only reactions. -->
     <errorcheck tolerance="0.0001">
       <REACTION tStep="2" number="1" dof="2" value="-0.33333"/>
       <REACTION tStep="2" number="2" dof="2" value="0.33333"/>

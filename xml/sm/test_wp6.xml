@@ -33,9 +33,9 @@
     </Materials>
     <BoundaryConditions>
       <ConstantSurfaceLoad loadtimefunction="1" dofs="3" components="7.0" set="2"/>
-      <!--Quadratic triangle - equivalent nodal load is just at mid-points of edges. Corver vertices have zero load.-->
+      <!-- Quadratic triangle - equivalent nodal load is just at mid-points of edges. Corver vertices have zero load. -->
       <NodalLoad loadtimefunction="2" dofs="3" components="0.29166666666" set="3"/>
-      <!--Quadratic rectangle - equivalent nodal load at mid-nodes A*q/3 (total 4*A*q), at corner vertices -A*q/12 (total -A*q*3)-->
+      <!-- Quadratic rectangle - equivalent nodal load at mid-nodes A*q/3 (total 4*A*q), at corner vertices -A*q/12 (total -A*q*3) -->
       <NodalLoad loadtimefunction="2" dofs="3" components="0.35" set="4"/>
       <NodalLoad loadtimefunction="2" dofs="3" components="-0.0875" set="5"/>
     </BoundaryConditions>

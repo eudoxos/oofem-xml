@@ -5,27 +5,27 @@
   <Domain domain="2dmindlinplate">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
-      <!--pure bending along x axis-->
+      <!-- pure bending along x axis -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="4.0 0.0 0.0"/>
       <Node coords="4.0 4.0 0.0"/>
       <Node coords="0.0 4.0 0.0"/>
-      <!--pure bending along y axis-->
+      <!-- pure bending along y axis -->
       <Node id="11" coords="5.0 0.0 0.0"/>
       <Node coords="9.0 0.0 0.0"/>
       <Node coords="9.0 4.0 0.0"/>
       <Node coords="5.0 4.0 0.0"/>
-      <!--pure twist-->
+      <!-- pure twist -->
       <Node id="21" coords="10.0 0.0 0.0"/>
       <Node coords="14.0 0.0 0.0"/>
       <Node coords="14.0 4.0 0.0"/>
       <Node coords="10.0 4.0 0.0"/>
-      <!--shear x-->
+      <!-- shear x -->
       <Node id="31" coords="15.0 0.0 0.0"/>
       <Node coords="19.0 0.0 0.0"/>
       <Node coords="19.0 4.0 0.0"/>
       <Node coords="15.0 4.0 0.0"/>
-      <!--shear y-->
+      <!-- shear y -->
       <Node id="41" coords="20.0 0.0 0.0"/>
       <Node coords="24.0 0.0 0.0"/>
       <Node coords="24.0 4.0 0.0"/>
@@ -67,10 +67,10 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--exact solution-->
+    <!-- exact solution -->
     <errorcheck tolerance="0.0005">
-      <!--check reactions-->
-      <!--pure bending along x axis-->
+      <!-- check reactions -->
+      <!-- pure bending along x axis -->
       <REACTION tStep="1" number="1" dof="3" value="0.0"/>
       <REACTION tStep="1" number="1" dof="4" value="2.5"/>
       <REACTION tStep="1" number="2" dof="3" value="0.0"/>
@@ -99,7 +99,7 @@
       <ELEMENT tStep="1" number="1" gp="4" keyword="1" component="4" value="0.3125"/>
       <ELEMENT tStep="1" number="1" gp="4" keyword="1" component="5" value="1.25"/>
       <ELEMENT tStep="1" number="1" gp="4" keyword="1" component="6" value="0.0"/>
-      <!--pure bending along y axis-->
+      <!-- pure bending along y axis -->
       <REACTION tStep="1" number="11" dof="3" value="0.0"/>
       <REACTION tStep="1" number="11" dof="5" value="2.5"/>
       <REACTION tStep="1" number="14" dof="3" value="0.0"/>
@@ -128,7 +128,7 @@
       <ELEMENT tStep="1" number="2" gp="4" keyword="1" component="4" value="-1.25"/>
       <ELEMENT tStep="1" number="2" gp="4" keyword="1" component="5" value="-0.3125"/>
       <ELEMENT tStep="1" number="2" gp="4" keyword="1" component="6" value="0.0"/>
-      <!--pure twist-->
+      <!-- pure twist -->
       <REACTION tStep="1" number="21" dof="3" value="0.5"/>
       <REACTION tStep="1" number="22" dof="3" value="-0.5"/>
       <REACTION tStep="1" number="24" dof="3" value="-0.5"/>
@@ -156,12 +156,12 @@
       <ELEMENT tStep="1" number="3" gp="4" keyword="1" component="4" value="0.0"/>
       <ELEMENT tStep="1" number="3" gp="4" keyword="1" component="5" value="0.0"/>
       <ELEMENT tStep="1" number="3" gp="4" keyword="1" component="6" value="-0.25"/>
-      <!--shear x-->
+      <!-- shear x -->
       <REACTION tStep="1" number="31" dof="3" value="-0.5"/>
       <REACTION tStep="1" number="31" dof="5" value="2.0"/>
       <REACTION tStep="1" number="34" dof="3" value="-0.5"/>
       <REACTION tStep="1" number="31" dof="5" value="2.0"/>
-      <!--shear y-->
+      <!-- shear y -->
       <REACTION tStep="1" number="41" dof="3" value="-0.5"/>
       <REACTION tStep="1" number="41" dof="4" value="-2.0"/>
       <REACTION tStep="1" number="42" dof="3" value="-0.5"/>

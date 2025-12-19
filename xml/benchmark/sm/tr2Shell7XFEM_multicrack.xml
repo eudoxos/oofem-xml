@@ -16,39 +16,39 @@
       <Node coords="1.0 1.0 0.0"/>
     </Nodes>
     <Elements>
-      <!--Elements-->
+      <!-- Elements -->
       <Tr2Shell7XFEM nodes="1 3 9 2 6 5" boundaryloads="2 2"/>
       <Tr2Shell7XFEM nodes="1 9 7 5 8 4" boundaryloads="3 2"/>
     </Elements>
     <CrossSections>
-      <!--Cross sections-->
+      <!-- Cross sections -->
       <layeredCS nlayers="3" layermaterials="1 1 1" thicks="0.01 0.01 0.01" nintegrationpoints="2" set="1" interfacematerials="0 0"/>
     </CrossSections>
     <Materials>
-      <!--Materials-->
+      <!-- Materials -->
       <IsoLE d="1.0" e="126000000000.0" n="0.0" talpha="1.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--Boundary consitions-->
+      <!-- Boundary consitions -->
       <BoundaryCondition loadtimefunction="1" values="0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0" dofs="1 2 3 15 16 17 18 500 501 502 503 504 505 506 507 508 509 510 511 512 513 514 515 516 517 518 519 520 521 522 523" set="4"/>
       <ConstantEdgeLoad loadtype="2" loadtimefunction="1" components="0.0 0.0 -100.0 0.0 0.0 0.0 0.0 -1.0"/>
       <ConstantEdgeLoad loadtype="2" loadtimefunction="1" components="0.0 0.0 100.0 0.0 0.0 0.0 0.0 1.0"/>
     </BoundaryConditions>
     <InitialConditions/>
     <LoadTimeFunctions>
-      <!--Load time functions-->
+      <!-- Load time functions -->
       <ConstantFunction f_t_="1.0"/>
       <PiecewiseLinFunction t="0.0 1.0" f_t_="0.0 0.1"/>
     </LoadTimeFunctions>
     <Sets>
-      <!--Sets-->
-      <!--crackedEl-->
+      <!-- Sets -->
+      <!-- crackedEl -->
       <Set elements="1 2"/>
-      <!--enrichedNodes-->
+      <!-- enrichedNodes -->
       <Set nodes="1 2 3 4 5 6 7 8 9"/>
-      <!--load-->
+      <!-- load -->
       <Set nodes="9"/>
-      <!--support-->
+      <!-- support -->
       <Set nodes="1 2 3 4 7"/>
       <Set id="5" nodes="9"/>
     </Sets>

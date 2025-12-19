@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>linstab_beam2d.out</Output>
   <Description>Linear stability of cantiliver</Description>
-  <!--StaticStructural 1 nsteps 1-->
+  <!-- StaticStructural 1 nsteps 1 -->
   <Analysis type="LinearStability" nroot="9" rtolv="1e-08"/>
   <Domain domain="2dbeam">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -38,14 +38,14 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.05">
-      <!--check eigen values-->
+      <!-- check eigen values -->
       <EIGVAL tStep="0" eignum="1" value="4894.18251"/>
       <EIGVAL tStep="0" eignum="2" value="44374.4163"/>
       <EIGVAL tStep="0" eignum="3" value="128120.733"/>
       <EIGVAL tStep="0" eignum="4" value="288085.313"/>
       <EIGVAL tStep="0" eignum="5" value="574425.584"/>
       <EIGVAL tStep="0" eignum="6" value="980936.136"/>
-      <!--unble to compute 7,8,9-th eigval on SP02 (7,8 with -O2)-->
+      <!-- unble to compute 7,8,9-th eigval on SP02 (7,8 with -O2) -->
       <EIGVAL tStep="0" eignum="7" value="8505000000.0"/>
       <EIGVAL tStep="0" eignum="8" value="8505000000.0"/>
       <EIGVAL tStep="0" eignum="9" value="8505000000.0"/>

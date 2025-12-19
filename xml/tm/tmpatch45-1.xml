@@ -19,7 +19,7 @@
       <IsoHeat d="1.0" k="1.0" c="1.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--Internal source-->
+      <!-- Internal source -->
       <deadweight loadtimefunction="1" components="0.001" set="0"/>
     </BoundaryConditions>
     <InitialConditions>
@@ -29,7 +29,7 @@
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
     <Sets>
-      <!--PiecewiseLinFunction 1 t 2 -3600 36000 f(t) 2 1.0 36.0-->
+      <!-- PiecewiseLinFunction 1 t 2 -3600 36000 f(t) 2 1.0 36.0 -->
       <Set elementranges="1"/>
     </Sets>
   </Domain>

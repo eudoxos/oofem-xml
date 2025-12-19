@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>tmpatch34.out</Output>
   <Description>Patch test of Quad1_ht elements</Description>
-  <!--StationaryProblem nsteps 1-->
+  <!-- StationaryProblem nsteps 1 -->
   <Analysis type="TransientTransport" nsteps="200" deltat="600000.0" alpha="0.5" miniter="1"/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>

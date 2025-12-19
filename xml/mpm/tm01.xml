@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>tm01.out</Output>
   <Description>Test of mpm tm mpm formulation, single element, stationary (c=0.0)</Description>
-  <!--final time 500, initial time step 1-->
+  <!-- final time 500, initial time step 1 -->
   <Analysis type="mpmproblem" nsteps="1" deltat="1.0" alpha="1.0" manrmsteps="0" keeptangent="" ptype="tm" smtype="1"/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -22,19 +22,19 @@
       <dummycs mat="1" set="1"/>
     </CrossSections>
     <Materials>
-      <!--thermo-mechanical material model-->
+      <!-- thermo-mechanical material model -->
       <tmm d="1.0" e="5.0" nu="0.3" lambda="0.2" c="0.0" alpha="1.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--x-displacement-->
+      <!-- x-displacement -->
       <boundarycondition loadtimefunction="1" set="2" values="0.0" dofs="1"/>
-      <!--y-displacement-->
+      <!-- y-displacement -->
       <boundarycondition loadtimefunction="1" set="3" values="0.0" dofs="2"/>
-      <!--z-displacement-->
+      <!-- z-displacement -->
       <boundarycondition loadtimefunction="1" set="4" values="0.0" dofs="3"/>
-      <!--temperature prescribed (bleeding=pressure set to zero?)-->
+      <!-- temperature prescribed (bleeding=pressure set to zero?) -->
       <boundarycondition loadtimefunction="1" set="5" values="2.0" dofs="10"/>
-      <!--temperature  dicrete nodal flux (q=4*0.25/A = 5/6 = 0.8333333333333334)-->
+      <!-- temperature  dicrete nodal flux (q=4*0.25/A = 5/6 = 0.8333333333333334) -->
       <nodalload id="5" loadtimefunction="2" dofs="10" components="0.25" set="6"/>
     </BoundaryConditions>
     <InitialConditions/>
@@ -44,15 +44,15 @@
     </LoadTimeFunctions>
     <Sets>
       <Set elements="1"/>
-      <!--x-bc-->
+      <!-- x-bc -->
       <Set noderanges="1-4"/>
-      <!--y-bc-->
+      <!-- y-bc -->
       <Set noderanges="1-4"/>
-      <!--z-bc-->
+      <!-- z-bc -->
       <Set noderanges="1-4"/>
-      <!--top surface (load + )-->
+      <!-- top surface (load + ) -->
       <Set id="5" noderanges="1-4"/>
-      <!--flux-->
+      <!-- flux -->
       <Set nodes="5 6 7 8"/>
     </Sets>
   </Domain>

@@ -5,21 +5,21 @@
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
-      <!--Beam nodes-->
+      <!-- Beam nodes -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="0.1 0.0 0.0"/>
       <Node coords="0.2 0.0 0.0"/>
-      <!--Lattice nodes-->
+      <!-- Lattice nodes -->
       <Node coords="0.005 0.01 0.01"/>
       <Node id="5" coords="-0.001 -0.008 0.012"/>
       <Node coords="0.01 0.02 -0.008"/>
       <Node coords="0.0 0.01 0.0"/>
     </Nodes>
     <Elements>
-      <!--BeamElements-->
+      <!-- BeamElements -->
       <libeam3d2 nodes="1 2" refnode="7"/>
       <libeam3d2 nodes="2 3" refnode="7"/>
-      <!--links for first node-->
+      <!-- links for first node -->
       <latticelink3d nodes="1 4" crosssect="2" mat="2" length="0.05" diameter="0.01" dirvector="1.0 0.0 0.0" l_end="0.2"/>
       <latticelink3d nodes="2 5" crosssect="2" mat="2" length="0.1" diameter="0.01" dirvector="1.0 0.0 0.0" l_end="0.15"/>
       <latticelink3d id="5" nodes="3 6" crosssect="2" mat="2" length="0.05" diameter="0.01" dirvector="1.0 0.0 0.0" l_end="0.05"/>

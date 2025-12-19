@@ -32,15 +32,15 @@
       <newtonianfluid d="1.0" mu="1.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--prescribed inlet velocity v = 1m/s-->
+      <!-- prescribed inlet velocity v = 1m/s -->
       <BoundaryCondition loadtimefunction="1" values="1.0" valtype="5" set="1" dofs="7"/>
-      <!--zero velocity (wall) condition-->
+      <!-- zero velocity (wall) condition -->
       <BoundaryCondition loadtimefunction="1" values="0.0" valtype="5" set="2" dofs="8"/>
-      <!--pressure-->
+      <!-- pressure -->
       <BoundaryCondition loadtimefunction="1" values="0.0" valtype="3" set="3" dofs="11"/>
     </BoundaryConditions>
     <InitialConditions>
-      <!--ic for velocity at inlet-->
+      <!-- ic for velocity at inlet -->
       <InitialCondition conditions="u 1.0" valtype="5"/>
     </InitialConditions>
     <LoadTimeFunctions>
@@ -54,13 +54,13 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--Note: tests checks unscaled variables!-->
+    <!-- Note: tests checks unscaled variables! -->
     <errorcheck>
       <NODE tStep="10" number="5" dof="7" unknown="d" value="0.485587536"/>
       <NODE tStep="10" number="8" dof="7" unknown="d" value="0.481448118"/>
-      <!--3  6   9-->
-      <!--2  5   8-->
-      <!--1  4   7-->
+      <!-- 3  6   9 -->
+      <!-- 2  5   8 -->
+      <!-- 1  4   7 -->
       <NODE tStep="10" number="5" dof="11" unknown="d" value="-25.3024069"/>
     </errorcheck>
   </ExportModules>

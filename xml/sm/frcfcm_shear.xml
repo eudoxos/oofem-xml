@@ -5,17 +5,17 @@
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
-      <!--1: frcfcm_shear_CAF_beta_multiple-->
+      <!-- 1: frcfcm_shear_CAF_beta_multiple -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="0.1 0.0 0.0"/>
       <Node coords="0.0 0.1 0.0"/>
       <Node coords="0.1 0.1 0.0"/>
-      <!--2: frcfcm_shear_SRF_beta_multiple-->
+      <!-- 2: frcfcm_shear_SRF_beta_multiple -->
       <Node id="5" coords="0.0 0.0 0.0"/>
       <Node coords="0.1 0.0 0.0"/>
       <Node coords="0.0 0.1 0.0"/>
       <Node coords="0.1 0.1 0.0"/>
-      <!--3: frcfcm_shear_SRF_damage_exp-->
+      <!-- 3: frcfcm_shear_SRF_damage_exp -->
       <Node coords="0.0 0.0 0.0"/>
       <Node id="10" coords="0.1 0.0 0.0"/>
       <Node coords="0.0 0.1 0.0"/>
@@ -37,17 +37,17 @@
       <frcfcm d="0.0" talpha="0.0" e="20000.0" n="0.2" gf="0.0001" ft="2.0" softtype="2" sheartype="1" multiplecrackshear="" beta="0.01" vf="0.02" lf="0.012" df="4e-05" ef="20000.0" gfib="1000.0" tau_0="1.0" f="0.7" kfib="0.9" fsstype="0" fibertype="2" crackspacing="0.025" fdamtype="2" gammacrack="0.5" iterlimitglobal="50"/>
     </Materials>
     <BoundaryConditions>
-      <!--horizontal restraint-->
+      <!-- horizontal restraint -->
       <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="1"/>
-      <!--vertical restraint-->
+      <!-- vertical restraint -->
       <BoundaryCondition loadtimefunction="2" dofs="2" values="0.0" set="2"/>
-      <!--lower right node - creating first crack-->
+      <!-- lower right node - creating first crack -->
       <BoundaryCondition loadtimefunction="3" dofs="1" values="1e-05" set="3"/>
-      <!--upper right node - creating first crack and then shearing-->
+      <!-- upper right node - creating first crack and then shearing -->
       <BoundaryCondition loadtimefunction="4" dofs="1" values="1e-05" set="4"/>
-      <!--left upper node - shearing-->
+      <!-- left upper node - shearing -->
       <BoundaryCondition id="5" loadtimefunction="5" dofs="1" values="1e-05" set="5"/>
-      <!--upper nodes - creating second crack-->
+      <!-- upper nodes - creating second crack -->
       <BoundaryCondition loadtimefunction="6" dofs="2" values="1e-05" set="6"/>
     </BoundaryConditions>
     <InitialConditions/>
@@ -55,23 +55,23 @@
       <ConstantFunction f_t_="1.0"/>
       <ConstantFunction f_t_="1.0"/>
       <PiecewiseLinfunction npoints="4" t="0.0 5.0 10.0 100.0" f_t_="0.0 2.0 2.0 2.0"/>
-      <!--0  5 10 15 20 25 30-->
+      <!-- 0  5 10 15 20 25 30 -->
       <PiecewiseLinfunction npoints="7" t="0.0 5.0 10.0 15.0 20.0 25.0 30.0" f_t_="0.0 2.0 4.0 2.0 2.0 4.0 2.0"/>
       <PiecewiseLinfunction id="5" npoints="7" t="0.0 5.0 10.0 15.0 20.0 25.0 30.0" f_t_="0.0 0.0 2.0 0.0 0.0 2.0 0.0"/>
       <PiecewiseLinfunction npoints="7" t="0.0 5.0 10.0 15.0 20.0 25.0 30.0" f_t_="0.0 0.0 0.0 0.0 3.0 3.0 3.0"/>
     </LoadTimeFunctions>
     <Sets>
-      <!--horizontal restraint-->
+      <!-- horizontal restraint -->
       <Set nodes="1 5 9"/>
-      <!--vertical restraint-->
+      <!-- vertical restraint -->
       <Set nodes="1 2 5 6 9 10"/>
-      <!--lower right node - creating first crack-->
+      <!-- lower right node - creating first crack -->
       <Set nodes="2 6 10"/>
-      <!--upper right node - creating first crack and then shearing-->
+      <!-- upper right node - creating first crack and then shearing -->
       <Set nodes="4 8 12"/>
-      <!--left upper node - shearing-->
+      <!-- left upper node - shearing -->
       <Set id="5" nodes="3 7 11"/>
-      <!--upper nodes - creating second crack-->
+      <!-- upper nodes - creating second crack -->
       <Set nodes="3 4 7 8 11 12"/>
       <Set elementranges="1"/>
       <Set elementranges="2"/>

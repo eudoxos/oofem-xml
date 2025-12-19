@@ -25,8 +25,8 @@
     </CrossSections>
     <Materials>
       <IsoLE d="0.0" e="100000.0" n="0.0" talpha="0.0"/>
-      <!--Bilinear cohesive zone material-->
-      <!--intmatbilinearcz 2 kn 1.0e6 g1c 1.0e1 g2c 1.5e0 mu 0.0 gamma 0.5 sigf 1.e2  use_num_tangent 1-->
+      <!-- Bilinear cohesive zone material -->
+      <!-- intmatbilinearcz 2 kn 1.0e6 g1c 1.0e1 g2c 1.5e0 mu 0.0 gamma 0.5 sigf 1.e2  use_num_tangent 1 -->
       <CohInt kn="1.0" ks="100.0" stiffcoeffkn="1.0"/>
     </Materials>
     <BoundaryConditions>
@@ -47,14 +47,14 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-05">
-      <!--step 2-->
+      <!-- step 2 -->
       <REACTION tStep="2" number="1" dof="1" value="-7.97519718"/>
       <REACTION tStep="2" number="2" dof="1" value="-7.97519718"/>
       <REACTION tStep="2" number="7" dof="1" value="7.97519718"/>
       <REACTION tStep="2" number="8" dof="1" value="7.97519718"/>
       <REACTION tStep="2" number="1" dof="2" value="-4.78515021"/>
       <REACTION tStep="2" number="2" dof="2" value="4.78515021"/>
-      <!--step 5-->
+      <!-- step 5 -->
       <REACTION tStep="5" number="1" dof="1" value="-31.9007887"/>
       <REACTION tStep="5" number="2" dof="1" value="-31.9007887"/>
       <REACTION tStep="5" number="7" dof="1" value="31.9007887"/>

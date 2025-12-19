@@ -41,12 +41,12 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.0001">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="1" number="1" dof="1" value="0.0"/>
       <REACTION tStep="1" number="1" dof="3" value="0.75"/>
       <REACTION tStep="1" number="2" dof="3" value="0.25"/>
-      <!--check all nodes-->
-      <!--check element stress vector-->
+      <!-- check all nodes -->
+      <!-- check element stress vector -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="7" component="1" value="0.5"/>
       <ELEMENT tStep="1" number="2" gp="1" keyword="7" component="1" value="-0.9013878"/>
       <ELEMENT tStep="1" number="3" gp="1" keyword="7" component="1" value="-0.559017"/>

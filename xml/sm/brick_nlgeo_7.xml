@@ -39,7 +39,7 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-12">
-      <!--check Green-Lagrange strain tensor-->
+      <!-- check Green-Lagrange strain tensor -->
       <ELEMENT tStep="2" number="1" gp="1" keyword="4" component="1" value="0.0"/>
       <ELEMENT tStep="2" number="1" gp="1" keyword="4" component="2" value="0.0"/>
       <ELEMENT tStep="2" number="1" gp="1" keyword="4" component="3" value="0.625"/>

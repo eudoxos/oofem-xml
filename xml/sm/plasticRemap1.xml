@@ -17,7 +17,7 @@
       <SimpleCS thick="1.0" material="1"/>
     </CrossSections>
     <Materials>
-      <!--J2-plasticity-->
+      <!-- J2-plasticity -->
       <j2mat d="1.0" e="4000.0" n="0.3" ry="10.0" ihm="1.0" talpha="0.0"/>
     </Materials>
     <BoundaryConditions>
@@ -37,16 +37,16 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-07">
-      <!--step 2-->
+      <!-- step 2 -->
       <REACTION tStep="2" number="3" dof="2" value="3.51648352"/>
       <REACTION tStep="2" number="4" dof="2" value="3.51648352"/>
-      <!--step 3-->
+      <!-- step 3 -->
       <REACTION tStep="3" number="3" dof="2" value="5.68173688"/>
       <REACTION tStep="3" number="4" dof="2" value="5.68173688"/>
-      <!--step 4-->
+      <!-- step 4 -->
       <REACTION tStep="4" number="3" dof="2" value="5.74281407"/>
       <REACTION tStep="4" number="4" dof="2" value="5.74281407"/>
-      <!--step 5-->
+      <!-- step 5 -->
       <REACTION tStep="5" number="3" dof="2" value="5.76502539"/>
       <REACTION tStep="5" number="4" dof="2" value="5.76502539"/>
     </errorcheck>

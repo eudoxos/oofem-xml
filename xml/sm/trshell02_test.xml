@@ -1,61 +1,61 @@
 <oofem version="1">
   <Output>trshell02_test.out</Output>
   <Description>Complex test od tr_shell02 element</Description>
-  <!--First, separate membrane and plate solutions obtained using-->
-  <!--reference elements (elements 1,2 (membrane) and (11,12) plate)-->
-  <!--Then shell elements are positioned in yz plane and loaded by combination of-->
-  <!--membrane and plate loading (elements 31,32)-->
-  <!--Finally, the same structure positioned arbitrarily in space (elements 41,42)-->
-  <!--Rectangular domain 3x2 originally located in global xy plane-->
-  <!--The rotated coordinate system initially same as global,-->
-  <!--then rotated first around x axis about 30 degrees,-->
-  <!--then rotated around  y axis about 30 degrees.-->
-  <!--This yields rotation matrix R=-->
-  <!--0.86603   0.25000   0.43301-->
-  <!--0.00000   0.86603  -0.50000-->
-  <!---0.50000   0.43301   0.75000-->
-  <!--Nodal positions:-->
-  <!--n1 (0,0,0) -> (0,0,0)-->
-  <!--n2 (3,0,0) -> (2.59808   0.00000  -1.50000)-->
-  <!--n3 (3,2,0) -> (3.09808   1.73205  -0.63397)-->
-  <!--n4 (0,2,0) -> (0.50000   1.73205   0.86603)-->
-  <!--Author: bp-->
+  <!-- First, separate membrane and plate solutions obtained using -->
+  <!-- reference elements (elements 1,2 (membrane) and (11,12) plate) -->
+  <!-- Then shell elements are positioned in yz plane and loaded by combination of -->
+  <!-- membrane and plate loading (elements 31,32) -->
+  <!-- Finally, the same structure positioned arbitrarily in space (elements 41,42) -->
+  <!-- Rectangular domain 3x2 originally located in global xy plane -->
+  <!-- The rotated coordinate system initially same as global, -->
+  <!-- then rotated first around x axis about 30 degrees, -->
+  <!-- then rotated around  y axis about 30 degrees. -->
+  <!-- This yields rotation matrix R= -->
+  <!-- 0.86603   0.25000   0.43301 -->
+  <!-- 0.00000   0.86603  -0.50000 -->
+  <!-- -0.50000   0.43301   0.75000 -->
+  <!-- Nodal positions: -->
+  <!-- n1 (0,0,0) -> (0,0,0) -->
+  <!-- n2 (3,0,0) -> (2.59808   0.00000  -1.50000) -->
+  <!-- n3 (3,2,0) -> (3.09808   1.73205  -0.63397) -->
+  <!-- n4 (0,2,0) -> (0.50000   1.73205   0.86603) -->
+  <!-- Author: bp -->
   <Analysis type="StaticStructural" nsteps="1"/>
   <Domain domain="3dshell">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
-      <!--membrane part-->
+      <!-- membrane part -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="3.0 0.0 0.0"/>
       <Node coords="3.0 2.0 0.0"/>
       <Node coords="0.0 2.0 0.0"/>
-      <!--plate part-->
+      <!-- plate part -->
       <Node id="11" coords="0.0 0.0 0.0"/>
       <Node coords="3.0 0.0 0.0"/>
       <Node coords="3.0 2.0 0.0"/>
       <Node coords="0.0 2.0 0.0"/>
-      <!--shell in yz plane-->
+      <!-- shell in yz plane -->
       <Node id="21" coords="0.0 0.0 0.0"/>
       <Node coords="0.0 3.0 0.0"/>
       <Node coords="0.0 3.0 2.0"/>
       <Node coords="0.0 0.0 2.0"/>
-      <!--shell with arbitrary position in space (see before)-->
+      <!-- shell with arbitrary position in space (see before) -->
       <Node id="31" coords="0.0 0.0 0.0"/>
       <Node coords="2.59808 0.0 -1.5"/>
       <Node coords="3.09808 1.73205 -0.63397"/>
       <Node coords="0.5 1.73205 0.86603"/>
     </Nodes>
     <Elements>
-      <!--simple membrane-->
+      <!-- simple membrane -->
       <trplanestressrotallman nodes="1 2 3"/>
       <trplanestressrotallman nodes="1 3 4"/>
-      <!--simple plate-->
+      <!-- simple plate -->
       <DKTPlate id="11" nodes="11 12 13" nip="4"/>
       <DKTPlate nodes="11 13 14" nip="4"/>
-      <!--shell in yz plane-->
+      <!-- shell in yz plane -->
       <tr_shell02 id="21" nodes="21 22 23" nip="4"/>
       <tr_shell02 nodes="21 23 24" nip="4"/>
-      <!--general position-->
+      <!-- general position -->
       <tr_shell02 id="31" nodes="31 32 33" nip="4"/>
       <tr_shell02 nodes="31 33 34" nip="4"/>
     </Elements>
@@ -68,9 +68,9 @@
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" dofs="1 2 3 4 5 6" values="0.0 0.0 0.0 0.0 0.0 0.0" set="2"/>
       <NodalLoad loadtimefunction="1" dofs="1 2 3 4 5 6" components="0.0 1.0 0.0 0.0 0.0 1.0" set="5"/>
-      <!--pure membrane load -> force in x dir-->
+      <!-- pure membrane load -> force in x dir -->
       <NodalLoad loadtimefunction="1" dofs="1 2 6" components="1.0 0.0 0.0" set="3"/>
-      <!--pure plate load -> moment m_y-->
+      <!-- pure plate load -> moment m_y -->
       <NodalLoad loadtimefunction="1" dofs="3 4 5" components="0.0 0.0 1.0" set="4"/>
       <NodalLoad id="5" loadtimefunction="1" dofs="1 2 3 4 5 6" components="0.86603 0.0 -0.5 0.25 0.86603 0.43301" set="6"/>
     </BoundaryConditions>
@@ -89,29 +89,29 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.0001">
-      <!--check nodes nodes-->
-      <!--membrane-->
+      <!-- check nodes nodes -->
+      <!-- membrane -->
       <NODE tStep="1" number="2" dof="1" unknown="d" value="0.215860171"/>
       <NODE tStep="1" number="2" dof="2" unknown="d" value="0.0500889569"/>
       <NODE tStep="1" number="2" dof="6" unknown="d" value="0.0717537795"/>
       <NODE tStep="1" number="22" dof="2" unknown="d" value="0.215860171"/>
       <NODE tStep="1" number="22" dof="3" unknown="d" value="0.0500889569"/>
       <NODE tStep="1" number="22" dof="4" unknown="d" value="0.0717537795"/>
-      <!--plate-->
+      <!-- plate -->
       <NODE tStep="1" number="12" dof="3" unknown="d" value="-3.51790585"/>
       <NODE tStep="1" number="12" dof="4" unknown="d" value="-0.185469239"/>
       <NODE tStep="1" number="12" dof="5" unknown="d" value="2.38212187"/>
       <NODE tStep="1" number="22" dof="1" unknown="d" value="-3.51790585"/>
       <NODE tStep="1" number="22" dof="5" unknown="d" value="-0.185469239"/>
       <NODE tStep="1" number="22" dof="6" unknown="d" value="2.38212187"/>
-      <!--displacements of node 32 obtained by transforming those from nodes 2 and 12-->
+      <!-- displacements of node 32 obtained by transforming those from nodes 2 and 12 -->
       <NODE tStep="1" number="32" dof="1" unknown="d" value="-1.32383845"/>
       <NODE tStep="1" number="32" dof="2" unknown="d" value="1.80233765"/>
       <NODE tStep="1" number="32" dof="3" unknown="d" value="-2.72467525"/>
       <NODE tStep="1" number="32" dof="4" unknown="d" value="0.465981301"/>
       <NODE tStep="1" number="32" dof="5" unknown="d" value="2.02710609"/>
       <NODE tStep="1" number="32" dof="6" unknown="d" value="1.1780384"/>
-      <!--compare internal (selected) strains & forces-->
+      <!-- compare internal (selected) strains & forces -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="0.063981"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="-0.017254"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="6" value="-0.0050361"/>
@@ -124,7 +124,7 @@
       <ELEMENT tStep="1" number="21" gp="1" keyword="10" component="2" value="0.95468"/>
       <ELEMENT tStep="1" number="21" gp="1" keyword="10" component="3" value="-0.020144"/>
       <ELEMENT tStep="1" number="21" gp="1" keyword="10" component="4" value="-0.030217"/>
-      <!--plate-->
+      <!-- plate -->
       <ELEMENT tStep="1" number="11" gp="1" keyword="4" component="4" value="0.75368"/>
       <ELEMENT tStep="1" number="11" gp="1" keyword="4" component="5" value="-0.15347"/>
       <ELEMENT tStep="1" number="11" gp="1" keyword="4" component="6" value="0.03907"/>

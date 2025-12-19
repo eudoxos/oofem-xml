@@ -16,11 +16,11 @@
     </Elements>
     <CrossSections>
       <SimpleTransportCS thickness="1.0" mat="1" set="1"/>
-      <!--Cooling pipe 3/4" PVC, k=0.2 W/m/K, effective circumference 0.0707 m, thickness 0.0035 m, if heat flux (W/m2) corresponds to dissipated power (W/m of length), thickness need to be extended to 0.0035/0.0707=0.0495 m-->
+      <!-- Cooling pipe 3/4" PVC, k=0.2 W/m/K, effective circumference 0.0707 m, thickness 0.0035 m, if heat flux (W/m2) corresponds to dissipated power (W/m of length), thickness need to be extended to 0.0035/0.0707=0.0495 m -->
       <SimpleTransportCS area="1.0" mat="2" set="2"/>
     </CrossSections>
     <Materials>
-      <!--Standard concrete k(conductivity)=1.7 W/m/K   c(capacity)=870 J/kg/K-->
+      <!-- Standard concrete k(conductivity)=1.7 W/m/K   c(capacity)=870 J/kg/K -->
       <HydratingConcreteMat d="2458.0" k="1.7" c="870.0" hydrationmodeltype="1" qpot="509.0" masscement="409.0" referencetemperature="25.0" tau="48600.0" beta="0.9" dohinf="0.85" activationenergy="38300.0" castingtime="0.0"/>
       <IsoHeat d="0.1" k="0.2" c="1.0"/>
     </Materials>

@@ -49,23 +49,23 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--exact solution-->
-    <!--DISPLACEMENT                   STRAIN                     STRESS-->
-    <!--node 1   0.0                epsilon_x = -0.520833333   sigma_x = -8.333333333-->
-    <!--node 2   0.0                epsilon_y =  0.0           sigma_y = -2.083333333-->
-    <!--node 3  -1.5625             gama_xy   =  0.0           tau_xy  =  0.0-->
-    <!--node 4  -4.6875-->
-    <!--node 5  -4.6875-->
-    <!--node 6   0.0                   REACTION-->
-    <!--node 7  -0.78125            node 1   R_u = 0.8333333333   R_v =  0.46875-->
-    <!--node 8  -0.78125            node 2   R_u = 0.8333333333   R_v = -0.46875-->
-    <!--node 9  -2.34375            node 4   R_u = 0.0            R_v =  0.46875-->
-    <!--node 10 -2.34375            node 5   R_u = 0.0            R_v = -0.46875-->
-    <!--node 11 -3.125              node 6   R_u = 3.3333333333   R_v =  0.0-->
-    <!--node 12 -3.125              node 9   R_u = 0.0            R_v =  1.875-->
-    <!--node 13 -4.6875             node 10  R_u = 0.0            R_v = -1.875-->
+    <!-- exact solution -->
+    <!-- DISPLACEMENT                   STRAIN                     STRESS -->
+    <!-- node 1   0.0                epsilon_x = -0.520833333   sigma_x = -8.333333333 -->
+    <!-- node 2   0.0                epsilon_y =  0.0           sigma_y = -2.083333333 -->
+    <!-- node 3  -1.5625             gama_xy   =  0.0           tau_xy  =  0.0 -->
+    <!-- node 4  -4.6875 -->
+    <!-- node 5  -4.6875 -->
+    <!-- node 6   0.0                   REACTION -->
+    <!-- node 7  -0.78125            node 1   R_u = 0.8333333333   R_v =  0.46875 -->
+    <!-- node 8  -0.78125            node 2   R_u = 0.8333333333   R_v = -0.46875 -->
+    <!-- node 9  -2.34375            node 4   R_u = 0.0            R_v =  0.46875 -->
+    <!-- node 10 -2.34375            node 5   R_u = 0.0            R_v = -0.46875 -->
+    <!-- node 11 -3.125              node 6   R_u = 3.3333333333   R_v =  0.0 -->
+    <!-- node 12 -3.125              node 9   R_u = 0.0            R_v =  1.875 -->
+    <!-- node 13 -4.6875             node 10  R_u = 0.0            R_v = -1.875 -->
     <errorcheck tolerance="0.0001">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="1" number="1" dof="1" value="0.83333"/>
       <REACTION tStep="1" number="1" dof="2" value="0.46875"/>
       <REACTION tStep="1" number="2" dof="1" value="0.83333"/>
@@ -76,7 +76,7 @@
       <REACTION tStep="1" number="6" dof="2" value="0.0"/>
       <REACTION tStep="1" number="9" dof="2" value="1.875"/>
       <REACTION tStep="1" number="10" dof="2" value="-1.875"/>
-      <!--check all nodes-->
+      <!-- check all nodes -->
       <NODE tStep="1" number="3" dof="1" unknown="d" value="-1.5625"/>
       <NODE tStep="1" number="4" dof="1" unknown="d" value="-4.6875"/>
       <NODE tStep="1" number="5" dof="1" unknown="d" value="-4.6875"/>
@@ -88,11 +88,11 @@
       <NODE tStep="1" number="11" dof="1" unknown="d" value="-3.125"/>
       <NODE tStep="1" number="12" dof="1" unknown="d" value="-3.125"/>
       <NODE tStep="1" number="13" dof="1" unknown="d" value="-4.6875"/>
-      <!--check element no. 1 strain vector-->
+      <!-- check element no. 1 strain vector -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="-0.520833333"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="0.0"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="6" value="0.0"/>
-      <!--check element no. 1 stress vector-->
+      <!-- check element no. 1 stress vector -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="1" value="-8.333333333"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="2" value="-2.083333333"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="6" value="0.0"/>

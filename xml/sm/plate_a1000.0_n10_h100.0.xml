@@ -5,7 +5,7 @@
   <Domain domain="3dshell">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
-      <!--Nodes-->
+      <!-- Nodes -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="100.0 0.0 0.0"/>
       <Node coords="200.0 0.0 0.0"/>
@@ -129,7 +129,7 @@
       <Node coords="1000.0 1000.0 0.0"/>
     </Nodes>
     <Elements>
-      <!--Elements-->
+      <!-- Elements -->
       <mitc4shell nodes="1 2 13 12" nip="9"/>
       <mitc4shell nodes="2 3 14 13" nip="9"/>
       <mitc4shell nodes="3 4 15 14" nip="9"/>
@@ -232,7 +232,7 @@
       <mitc4shell id="100" nodes="109 110 121 120" nip="9"/>
     </Elements>
     <CrossSections>
-      <!--unread token on the next line: beamshearcoeffyz 1-->
+      <!-- unread token on the next line: beamshearcoeffyz 1 -->
       <LayeredCS nlayers="2" layermaterials="1 2" thicks="50.0 50.0" widths="1.0 1.0" nintegrationpoints="4" beamshearcoeffxz="1.0" set="1"/>
     </CrossSections>
     <Materials>
@@ -259,11 +259,11 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--Reference solution:-->
-    <!--J. Reddy, N.D. Phan: Stability and Vibration of Isotropic, Orhtotropic and Laminated Plates According to a Higher-Order Shear Deformation Theory,-->
-    <!--Journal of Sounds and Vibration, 98(2), 157-170, 1995.-->
-    <!--this example corresponds to Table 3, simply supported laminated plate [0/90], first eigenfrequency-->
-    <!--Reference value of nondimansional frequency 10.355 (See Table 3).-->
+    <!-- Reference solution: -->
+    <!-- J. Reddy, N.D. Phan: Stability and Vibration of Isotropic, Orhtotropic and Laminated Plates According to a Higher-Order Shear Deformation Theory, -->
+    <!-- Journal of Sounds and Vibration, 98(2), 157-170, 1995. -->
+    <!-- this example corresponds to Table 3, simply supported laminated plate [0/90], first eigenfrequency -->
+    <!-- Reference value of nondimansional frequency 10.355 (See Table 3). -->
     <vtkxml tstep_all="" primvars="1"/>
     <errorcheck>
       <EIGVAL tStep="1" eignum="1" value="1.12340721e-06"/>

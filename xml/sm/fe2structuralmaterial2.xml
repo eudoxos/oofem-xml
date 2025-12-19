@@ -29,7 +29,7 @@
       <SimpleCS thick="1.0" material="1" set="1"/>
     </CrossSections>
     <Materials>
-      <!--Linear elasticity-->
+      <!-- Linear elasticity -->
       <structfe2material d="1.0" filename="fe2structuralmaterial2.in.rve" use_num_tangent=""/>
     </Materials>
     <BoundaryConditions>
@@ -48,7 +48,7 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.0001">
-      <!--check selected nodes-->
+      <!-- check selected nodes -->
       <NODE tStep="1" number="2" dof="1" unknown="d" value="-0.000325"/>
       <NODE tStep="1" number="2" dof="2" unknown="d" value="-0.00220690476"/>
     </errorcheck>

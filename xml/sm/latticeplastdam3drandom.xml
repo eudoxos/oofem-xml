@@ -18,7 +18,7 @@
       <latticeplastdam d="0.0" talpha="0.0" e="40000000000.0" a1="0.175" a2="1.0" ft="6500000.0" fc="130000000.0" angle1="0.5" angle2="0.5" flow="0.25" wf="1.53e-05" ahard="0.001" iter="100" tol="1e-06" randvars="806 807" randgen="3 3"/>
     </Materials>
     <BoundaryConditions>
-      <!--latticeplastdam 1 d 0 talpha 0. e 30.e9 e0 100.e-6 wf 100.e-4 randvars 2 800 randgen 2 3 3-->
+      <!-- latticeplastdam 1 d 0 talpha 0. e 30.e9 e0 100.e-6 wf 100.e-4 randvars 2 800 randgen 2 3 3 -->
       <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
     </BoundaryConditions>
     <InitialConditions/>

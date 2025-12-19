@@ -15,7 +15,7 @@
       <SimpleCS thick="1.0" width="10.0" material="1" set="1"/>
     </CrossSections>
     <Materials>
-      <!--linear softening, fracturing strain-->
+      <!-- linear softening, fracturing strain -->
       <idm1 d="1.0" e="10.0" n="0.2" e0="0.5" ef="1.2" equivstraintype="0" talpha="0.0" damlaw="1"/>
     </Materials>
     <BoundaryConditions>
@@ -33,7 +33,7 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--Used for Extractor-->
+    <!-- Used for Extractor -->
     <errorcheck tolerance="0.0001">
       <NODE tStep="11" number="2" dof="1" unknown="d" value="0.55"/>
       <LOADLEVEL tStep="8" value="28.57143"/>

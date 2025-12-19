@@ -35,20 +35,20 @@
       <Set elementranges="1-2"/>
       <Set nodes="3 4"/>
       <Set nodes="1 2"/>
-      <!--TODO: Should we have an edge or surface set here?-->
+      <!-- TODO: Should we have an edge or surface set here? -->
       <Set elementboundaries="2 1"/>
     </Sets>
   </Domain>
   <ExportModules>
-    <!--exact solution-->
-    <!--DISPLACEMENT             w-->
-    <!--node 3                   0.2496-->
-    <!--STRAIN                     STRESS-->
-    <!--kapa_x  =  1.0800e-03             m_x  =  0.0-->
-    <!--kapa_y  = -3.6000e-03             m_y  = -3.0-->
-    <!--kapa_xy =  0.0                    m_xy =  0.0-->
-    <!--gama_xz =  0.0                    q_x  =  0.0-->
-    <!--gama_yz =  0.0                    q_y  =  0.0-->
+    <!-- exact solution -->
+    <!-- DISPLACEMENT             w -->
+    <!-- node 3                   0.2496 -->
+    <!-- STRAIN                     STRESS -->
+    <!-- kapa_x  =  1.0800e-03             m_x  =  0.0 -->
+    <!-- kapa_y  = -3.6000e-03             m_y  = -3.0 -->
+    <!-- kapa_xy =  0.0                    m_xy =  0.0 -->
+    <!-- gama_xz =  0.0                    q_x  =  0.0 -->
+    <!-- gama_yz =  0.0                    q_y  =  0.0 -->
     <errorcheck tolerance="0.0001">
       <NODE tStep="1" number="1" dof="5" unknown="d" value="-0.00432"/>
       <NODE tStep="1" number="2" dof="5" unknown="d" value="0.00432"/>
@@ -58,7 +58,7 @@
       <NODE tStep="1" number="4" dof="3" unknown="d" value="0.1152"/>
       <NODE tStep="1" number="4" dof="4" unknown="d" value="0.0288"/>
       <NODE tStep="1" number="4" dof="5" unknown="d" value="-0.00432"/>
-      <!--check element no. 1 stress vector-->
+      <!-- check element no. 1 stress vector -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="4" value="0.0"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="5" value="-3.0"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="6" value="0.0"/>

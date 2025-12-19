@@ -3,11 +3,11 @@
   <Description>Test: 3-point bending, triangular elements, 1 loaded point, direct displacement control</Description>
   <Analysis type="StaticStructural" nsteps="20" rtolf="0.0001" maxiter="100" manrmsteps="10" stiffmode="1" initialguess="1"/>
   <Domain domain="2dplanestress">
-    <!--zkracena verze vypoctu z me disertace-->
-    <!--Monitored 2-->
-    <!--1 node 1 displacement 2 *-->
-    <!--2 node 1 force        2 *-->
-    <!--**-->
+    <!-- zkracena verze vypoctu z me disertace -->
+    <!-- Monitored 2 -->
+    <!-- 1 node 1 displacement 2 * -->
+    <!-- 2 node 1 force        2 * -->
+    <!-- ** -->
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
       <Node coords="1000.0 500.0"/>
@@ -456,9 +456,9 @@
       <Node coords="1750.158691 168.39357"/>
     </Nodes>
     <Elements>
-      <!--**-->
-      <!--Element 799-->
-      <!--TrPlaneStress2d Elements-->
+      <!-- ** -->
+      <!-- Element 799 -->
+      <!-- TrPlaneStress2d Elements -->
       <TrPlaneStress2d nodes="14 48 15"/>
       <TrPlaneStress2d nodes="15 49 16"/>
       <TrPlaneStress2d nodes="16 50 17"/>
@@ -1260,7 +1260,7 @@
       <TrPlaneStress2d nodes="347 441 332"/>
     </Elements>
     <CrossSections>
-      <!--**-->
+      <!-- ** -->
       <SimpleCS thick="1.0" material="1" set="1"/>
       <SimpleCS thick="1.0" material="2" set="2"/>
     </CrossSections>
@@ -1275,7 +1275,7 @@
     </BoundaryConditions>
     <InitialConditions/>
     <LoadTimeFunctions>
-      <!--NodalLoad 3 loadTimeFunction 1 dofs 2 1 2 Components 2 0. -0.025 set 5-->
+      <!-- NodalLoad 3 loadTimeFunction 1 dofs 2 1 2 Components 2 0. -0.025 set 5 -->
       <ConstantFunction f_t_="1.0"/>
       <PiecewiseLinFunction t="0.0 200.0" f_t_="0.0 200.0"/>
     </LoadTimeFunctions>

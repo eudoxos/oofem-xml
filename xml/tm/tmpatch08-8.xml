@@ -42,11 +42,11 @@
     </Materials>
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" dofs="10" values="0.0" set="2"/>
-      <!--Neumann bc-->
+      <!-- Neumann bc -->
       <constantedgeload loadtimefunction="1" components="-1.5" loadtype="2"/>
     </BoundaryConditions>
     <InitialConditions>
-      <!--set 3-->
+      <!-- set 3 -->
       <InitialCondition conditions="u 0.0" dofs="10" set="1"/>
     </InitialConditions>
     <LoadTimeFunctions>
@@ -60,9 +60,9 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-05">
-      <!-- 5.0-->
+      <!--  5.0 -->
       <NODE tStep="100" number="17" dof="10" unknown="d" value="4.95963195"/>
-      <!-- 5.0-->
+      <!--  5.0 -->
       <NODE tStep="100" number="18" dof="10" unknown="d" value="4.95963195"/>
     </errorcheck>
   </ExportModules>

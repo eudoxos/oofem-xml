@@ -67,7 +67,7 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-05">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="1" number="1" dof="2" value="-0.013333"/>
       <REACTION tStep="1" number="4" dof="2" value="-0.0066667"/>
       <REACTION tStep="1" number="5" dof="2" value="-0.0066667"/>
@@ -76,7 +76,7 @@
       <REACTION tStep="1" number="4" dof="1" value="0.0"/>
       <REACTION tStep="1" number="4" dof="3" value="0.0"/>
       <REACTION tStep="1" number="8" dof="1" value="0.0"/>
-      <!--check all nodes-->
+      <!-- check all nodes -->
       <NODE tStep="1" number="1" dof="1" unknown="d" value="-0.00333333333"/>
       <NODE tStep="1" number="2" dof="1" unknown="d" value="-0.00333333333"/>
       <NODE tStep="1" number="2" dof="2" unknown="d" value="0.0133333333"/>
@@ -99,25 +99,25 @@
       <NODE tStep="1" number="10" dof="1" unknown="d" value="-0.00333333333"/>
       <NODE tStep="1" number="10" dof="2" unknown="d" value="0.0267666667"/>
       <NODE tStep="1" number="10" dof="3" unknown="d" value="0.0"/>
-      <!--NODE tStep 1 number 11 dof 1 unknown d value  0.0-->
-      <!--NODE tStep 1 number 11 dof 2 unknown d value  2.67666667e-02-->
-      <!--NODE tStep 1 number 11 dof 3 unknown d value  0.0-->
-      <!--NODE tStep 1 number 12 dof 1 unknown d value  0.0-->
-      <!--NODE tStep 1 number 12 dof 2 unknown d value  1.34333333e-02-->
-      <!--NODE tStep 1 number 12 dof 3 unknown d value  0.0-->
+      <!-- NODE tStep 1 number 11 dof 1 unknown d value  0.0 -->
+      <!-- NODE tStep 1 number 11 dof 2 unknown d value  2.67666667e-02 -->
+      <!-- NODE tStep 1 number 11 dof 3 unknown d value  0.0 -->
+      <!-- NODE tStep 1 number 12 dof 1 unknown d value  0.0 -->
+      <!-- NODE tStep 1 number 12 dof 2 unknown d value  1.34333333e-02 -->
+      <!-- NODE tStep 1 number 12 dof 3 unknown d value  0.0 -->
       <NODE tStep="1" number="13" dof="1" unknown="d" value="-0.00333333333"/>
       <NODE tStep="1" number="13" dof="2" unknown="d" value="0.0134333333"/>
       <NODE tStep="1" number="13" dof="3" unknown="d" value="-0.00333333333"/>
-      <!--NODE tStep 1 number 14 dof 1 unknown d value -3.33333333e-03-->
-      <!--NODE tStep 1 number 14 dof 2 unknown d value  2.67666667e-02-->
-      <!--NODE tStep 1 number 14 dof 3 unknown d value -3.33333333e-03-->
+      <!-- NODE tStep 1 number 14 dof 1 unknown d value -3.33333333e-03 -->
+      <!-- NODE tStep 1 number 14 dof 2 unknown d value  2.67666667e-02 -->
+      <!-- NODE tStep 1 number 14 dof 3 unknown d value -3.33333333e-03 -->
       <NODE tStep="1" number="15" dof="1" unknown="d" value="0.0"/>
       <NODE tStep="1" number="15" dof="2" unknown="d" value="0.0267666667"/>
       <NODE tStep="1" number="15" dof="3" unknown="d" value="-0.00333333333"/>
       <NODE tStep="1" number="16" dof="1" unknown="d" value="0.0"/>
       <NODE tStep="1" number="16" dof="2" unknown="d" value="0.0134333333"/>
       <NODE tStep="1" number="16" dof="3" unknown="d" value="-0.00333333333"/>
-      <!--check element's stress & strain vectors-->
+      <!-- check element's stress & strain vectors -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="-0.016667"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="0.066667"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="3" value="-0.016667"/>

@@ -1,11 +1,11 @@
 <oofem version="1">
   <Output>deadweight02.out</Output>
   <Description>Test of deadweight on LSpace element</Description>
-  <!--The analytical solution (x is the coordinate from the top) for the second step reads:-->
-  <!--F(x) = -20x-->
-  <!--sigma(x)=-20x-->
-  <!--epsilon(x)=0.2x-->
-  <!--displacement_x(x)=0.1x^2-0.4-->
+  <!-- The analytical solution (x is the coordinate from the top) for the second step reads: -->
+  <!-- F(x) = -20x -->
+  <!-- sigma(x)=-20x -->
+  <!-- epsilon(x)=0.2x -->
+  <!-- displacement_x(x)=0.1x^2-0.4 -->
   <Analysis type="StaticStructural" nsteps="1"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -47,18 +47,18 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.001">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="5" number="1" dof="1" value="-1.3303"/>
-      <!--check displacements in top nodes-->
+      <!-- check displacements in top nodes -->
       <NODE tStep="1" number="1" dof="3" unknown="d" value="-0.4"/>
       <NODE tStep="1" number="2" dof="3" unknown="d" value="-0.4"/>
       <NODE tStep="1" number="3" dof="3" unknown="d" value="-0.4"/>
       <NODE tStep="1" number="4" dof="3" unknown="d" value="-0.4"/>
-      <!--check element No. 1 strain vector-->
+      <!-- check element No. 1 strain vector -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="0.002"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="0.002"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="3" value="-0.2"/>
-      <!--check element No. 1 stress vector-->
+      <!-- check element No. 1 stress vector -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="3" value="-20.0"/>
     </errorcheck>
   </ExportModules>

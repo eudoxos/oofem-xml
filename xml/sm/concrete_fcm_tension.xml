@@ -5,39 +5,39 @@
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
-      <!--ST 0-->
+      <!-- ST 0 -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="0.1 0.0 0.0"/>
       <Node coords="0.0 0.1 0.0"/>
-      <!--ST 1-->
+      <!-- ST 1 -->
       <Node coords="0.0 0.0 0.0"/>
       <Node id="5" coords="0.1 0.0 0.0"/>
       <Node coords="0.0 0.1 0.0"/>
-      <!--ST 2-->
+      <!-- ST 2 -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="0.1 0.0 0.0"/>
       <Node coords="0.0 0.1 0.0"/>
-      <!--ST 3-->
+      <!-- ST 3 -->
       <Node id="10" coords="0.0 0.0 0.0"/>
       <Node coords="0.1 0.0 0.0"/>
       <Node coords="0.0 0.1 0.0"/>
-      <!--ST 4-->
+      <!-- ST 4 -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="0.1 0.0 0.0"/>
       <Node id="15" coords="0.0 0.1 0.0"/>
-      <!--ST 5-->
+      <!-- ST 5 -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="0.1 0.0 0.0"/>
       <Node coords="0.0 0.1 0.0"/>
-      <!--ST 6-->
+      <!-- ST 6 -->
       <Node coords="0.0 0.0 0.0"/>
       <Node id="20" coords="0.1 0.0 0.0"/>
       <Node coords="0.0 0.1 0.0"/>
-      <!--UNLO-->
+      <!-- UNLO -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="0.1 0.0 0.0"/>
       <Node coords="0.0 0.1 0.0"/>
-      <!--CRACK-SPACING-->
+      <!-- CRACK-SPACING -->
       <Node id="25" coords="0.0 0.0 0.0"/>
       <Node coords="0.2 0.0 0.0"/>
       <Node coords="0.0 0.1 0.0"/>

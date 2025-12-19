@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>quasicontinuum3d.out</Output>
   <Description>quasicontinuum 3d test</Description>
-  <!--qcLinearStatic nsteps 1 nmodules 0 QcApproach 3 mtrxt 1 geninterpelem 1 t3dfile quasicontinuum3d.t3d.in imsize 100-->
+  <!-- qcLinearStatic nsteps 1 nmodules 0 QcApproach 3 mtrxt 1 geninterpelem 1 t3dfile quasicontinuum3d.t3d.in imsize 100 -->
   <Analysis type="qcLinearStatic" nsteps="1" qcapproach="3" mtrxt="1" geninterpelem="2" t3dfile="quasicontinuum3d.out.t3d"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>

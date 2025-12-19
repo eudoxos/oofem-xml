@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>tmpatch39.out</Output>
   <Description>Patch test of Brick_ht elements, heat transfer coefficient depending on temperature</Description>
-  <!--StationaryProblem nsteps 1 nmodules 1-->
+  <!-- StationaryProblem nsteps 1 nmodules 1 -->
   <Analysis type="TransientTransport" nsteps="5" deltat="50000.0" alpha="0.5" lumped="" rtolf="1e-06" miniter="1"/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>

@@ -37,20 +37,20 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--beam exact solution:-->
-    <!--load-level 1.0 -> end of elastic behaviour and begining of elasto- -->
-    <!--plastic behaviour-->
-    <!--at load-level 1.5 -> vycerpana unosnost -kolaps.-->
+    <!-- beam exact solution: -->
+    <!-- load-level 1.0 -> end of elastic behaviour and begining of elasto-  -->
+    <!-- plastic behaviour -->
+    <!-- at load-level 1.5 -> vycerpana unosnost -kolaps. -->
     <errorcheck tolerance="1e-12">
-      <!--check load levels-->
-      <!--check node displacement at final step-->
+      <!-- check load levels -->
+      <!-- check node displacement at final step -->
       <NODE tStep="1" number="2" dof="1" unknown="d" value="0.0"/>
       <NODE tStep="1" number="2" dof="3" unknown="d" value="2.68333333e-05"/>
       <NODE tStep="1" number="2" dof="5" unknown="d" value="-1.33333333e-05"/>
       <NODE tStep="1" number="12" dof="1" unknown="d" value="0.0"/>
       <NODE tStep="1" number="12" dof="3" unknown="d" value="2.68333333e-05"/>
       <NODE tStep="1" number="12" dof="5" unknown="d" value="-1.33333333e-05"/>
-      <!--check elements-->
+      <!-- check elements -->
       <REACTION tStep="1" number="1" dof="3" value="-0.1"/>
       <REACTION tStep="1" number="1" dof="5" value="0.3"/>
       <REACTION tStep="1" number="11" dof="3" value="-0.1"/>

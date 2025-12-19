@@ -53,12 +53,12 @@
   <ExportModules>
     <vtkxmllattice tstep_all="" primvars="1" cross="1" cellvars="60 90" domain_all=""/>
     <errorcheck tolerance="1e-08">
-      <!--%BEGIN_CHECK%-->
-      <!--NODE number 6 dof 31 unknown d-->
-      <!--REACTION number 6 dof 31-->
-      <!--LOADLEVEL-->
-      <!--TIME-->
-      <!--%END_CHECK%-->
+      <!-- %BEGIN_CHECK% -->
+      <!-- NODE number 6 dof 31 unknown d -->
+      <!-- REACTION number 6 dof 31 -->
+      <!-- LOADLEVEL -->
+      <!-- TIME -->
+      <!-- %END_CHECK% -->
       <REACTION tStep="1" number="6" dof="31" value="0.00068942"/>
     </errorcheck>
   </ExportModules>

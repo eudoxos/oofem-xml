@@ -5,7 +5,7 @@
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
-      <!--NODES-->
+      <!-- NODES -->
       <Node coords="0.0 0.0"/>
       <Node coords="0.1 0.0"/>
       <Node coords="0.0 0.1"/>
@@ -20,20 +20,20 @@
       <hangingNode coords="0.1 0.25" doftype="2 2" masterelement="4"/>
     </Nodes>
     <Elements>
-      <!--ELEMENTS-->
+      <!-- ELEMENTS -->
       <Truss2d nodes="5 6" cs="1"/>
       <PlaneStress2d nodes="1 2 4 3"/>
       <Truss2d nodes="11 12" cs="1"/>
       <PlaneStress2d nodes="7 8 10 9"/>
     </Elements>
     <CrossSections>
-      <!--CROSSECTION-->
+      <!-- CROSSECTION -->
       <SimpleCS thick="1.0" width="1.0" material="1" set="1"/>
       <SimpleCS thick="1.0" area="0.001" material="2" set="2"/>
       <SimpleCS thick="1.0" area="0.001" material="3" set="3"/>
     </CrossSections>
     <Materials>
-      <!--MATERIAL-->
+      <!-- MATERIAL -->
       <IsoLE d="0.0" n="0.2" e="30000.0" talpha="0.0"/>
       <SteelRelaxMat d="0.0" e="200000.0" reinfclass="1" timefactor="1.0" charstrength="1000.0" approach="0"/>
       <SteelRelaxMat d="0.0" e="200000.0" reinfclass="1" timefactor="1.0" charstrength="1000.0" approach="1"/>
@@ -45,12 +45,12 @@
     </BoundaryConditions>
     <InitialConditions/>
     <LoadTimeFunctions>
-      <!--TIME FUNCTION-->
+      <!-- TIME FUNCTION -->
       <ConstantFunction f_t_="1.0"/>
       <HeavisideLTF origin="0.0" value="1.0"/>
     </LoadTimeFunctions>
     <Sets>
-      <!--SETS-->
+      <!-- SETS -->
       <Set elements="2 4"/>
       <Set elements="1"/>
       <Set elements="3"/>

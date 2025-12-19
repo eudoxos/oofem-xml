@@ -24,8 +24,8 @@
     </Materials>
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" dofs="10" values="0.0" set="2"/>
-      <!--BoundaryCondition  1 loadTimeFunction 1 dofs 1 10 values 1 15.0 set 3-->
-      <!--Newton bc-->
+      <!-- BoundaryCondition  1 loadTimeFunction 1 dofs 1 10 values 1 15.0 set 3 -->
+      <!-- Newton bc -->
       <constantedgeload loadtimefunction="1" components="15.0" properties="a 0.8" loadtype="3" set="3"/>
     </BoundaryConditions>
     <InitialConditions/>

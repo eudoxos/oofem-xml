@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>scctest01.out</Output>
   <Description>scc specimen, gravity colapse</Description>
-  <!--supg nsteps 20 lstype 1 smtype 2 stype 1 lsprecond 2 deltaT 1.0e-2 rtolv 5.e-3 alpha 0.5 miflag 1 nmodules 0-->
+  <!-- supg nsteps 20 lstype 1 smtype 2 stype 1 lsprecond 2 deltaT 1.0e-2 rtolv 5.e-3 alpha 0.5 miflag 1 nmodules 0 -->
   <Analysis type="supg" nsteps="20" lstype="0" smtype="1" deltat="0.01" rtolv="0.005" alpha="0.5" miflag="1"/>
   <Domain domain="2dincompflow">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -253,19 +253,19 @@
     </CrossSections>
     <Materials>
       <twofluidmat mat="2 3"/>
-      <!--air-->
-      <!--binghamfluid2 2 d 1.0 mu0 0.1 tau0 0.0 muinf 0.1-->
+      <!-- air -->
+      <!-- binghamfluid2 2 d 1.0 mu0 0.1 tau0 0.0 muinf 0.1 -->
       <newtonianfluid d="1.0" mu="0.1"/>
-      <!--concrete-->
+      <!-- concrete -->
       <binghamfluid2 d="2450.0" mu0="100.0" tau0="25.0" muinf="1.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--prescribed zero velocity - wall condition-->
+      <!-- prescribed zero velocity - wall condition -->
       <BoundaryCondition loadtimefunction="1" dofs="7" values="0.0" valtype="5" set="3"/>
       <BoundaryCondition loadtimefunction="1" dofs="8" values="0.0" valtype="5" set="4"/>
-      <!--pressure-->
+      <!-- pressure -->
       <BoundaryCondition loadtimefunction="1" dofs="11" values="0.0" valtype="3" set="2"/>
-      <!--gravity-->
+      <!-- gravity -->
       <deadweight components="0.0 -9.81" loadtimefunction="1" valtype="2" set="1"/>
     </BoundaryConditions>
     <InitialConditions/>

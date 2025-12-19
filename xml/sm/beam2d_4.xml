@@ -1,8 +1,8 @@
 <oofem version="1">
   <Output>beam2d_4.out</Output>
   <Description>Test of nodal coordinate system</Description>
-  <!--only momentum influence to the displacements is taken into account-->
-  <!--beamShearCoeff is artificially enlarged.-->
+  <!-- only momentum influence to the displacements is taken into account -->
+  <!-- beamShearCoeff is artificially enlarged. -->
   <Analysis type="StaticStructural" nsteps="1"/>
   <Domain domain="2dbeam">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -40,14 +40,14 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--exact solution-->
+    <!-- exact solution -->
     <errorcheck tolerance="1e-08">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="1" number="1" dof="1" value="2.01446385"/>
       <REACTION tStep="1" number="1" dof="3" value="-6.51084789"/>
       <REACTION tStep="1" number="4" dof="3" value="-4.02892629"/>
-      <!--check all nodes-->
-      <!--check element no. 3 force vector-->
+      <!-- check all nodes -->
+      <!-- check element no. 3 force vector -->
       <BEAM_ELEMENT tStep="1" number="3" keyword="1" component="1" value="2.01446385"/>
       <BEAM_ELEMENT tStep="1" number="3" keyword="1" component="2" value="3.48915211"/>
       <BEAM_ELEMENT tStep="1" number="3" keyword="1" component="3" value="-6.97830422"/>

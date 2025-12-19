@@ -44,7 +44,7 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-08">
-      <!--Node displacements-->
+      <!-- Node displacements -->
       <NODE tStep="2" number="1" dof="1" unknown="d" value="0.0"/>
       <NODE tStep="2" number="1" dof="2" unknown="d" value="0.0"/>
       <NODE tStep="2" number="2" dof="1" unknown="d" value="0.0"/>

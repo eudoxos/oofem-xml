@@ -39,37 +39,37 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--exact solution-->
-    <!--DISPLACEMENT             w        fi_y-->
-    <!--node 1                  0.0         0.0-->
-    <!--node 2                  0.0         0.0-->
-    <!--node 3                156.25     -104.166666666-->
-    <!--node 4               1406.25     -312.5-->
-    <!--node 5               1406.25     -312.5-->
-    <!--STRAIN                     STRESS-->
-    <!--kapa_x  = -0.520833333     m_x  = -1.25-->
-    <!--kapa_y  =  0.0             m_y  = -0.3125-->
-    <!--kapa_xy =  0.0             m_xy =  0.0-->
-    <!--gama_xz =  0.0             q_x  =  0.0-->
-    <!--gama_yz =  0.0             q_y  =  0.0-->
-    <!--node 1   R_w = 0.0   R_fi_x =  1.40625  R_fi_y = 2.5-->
-    <!--node 2   R_w = 0.0   R_fi_x = -1.40625  R_fi_y = 2.5-->
+    <!-- exact solution -->
+    <!-- DISPLACEMENT             w        fi_y -->
+    <!-- node 1                  0.0         0.0 -->
+    <!-- node 2                  0.0         0.0 -->
+    <!-- node 3                156.25     -104.166666666 -->
+    <!-- node 4               1406.25     -312.5 -->
+    <!-- node 5               1406.25     -312.5 -->
+    <!-- STRAIN                     STRESS -->
+    <!-- kapa_x  = -0.520833333     m_x  = -1.25 -->
+    <!-- kapa_y  =  0.0             m_y  = -0.3125 -->
+    <!-- kapa_xy =  0.0             m_xy =  0.0 -->
+    <!-- gama_xz =  0.0             q_x  =  0.0 -->
+    <!-- gama_yz =  0.0             q_y  =  0.0 -->
+    <!-- node 1   R_w = 0.0   R_fi_x =  1.40625  R_fi_y = 2.5 -->
+    <!-- node 2   R_w = 0.0   R_fi_x = -1.40625  R_fi_y = 2.5 -->
     <errorcheck tolerance="0.0001">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="1" number="1" dof="3" value="0.0"/>
       <REACTION tStep="1" number="1" dof="4" value="-1.40625"/>
       <REACTION tStep="1" number="1" dof="5" value="2.5"/>
       <REACTION tStep="1" number="2" dof="3" value="0.0"/>
       <REACTION tStep="1" number="2" dof="4" value="1.40625"/>
       <REACTION tStep="1" number="2" dof="5" value="2.5"/>
-      <!--check all nodes-->
+      <!-- check all nodes -->
       <NODE tStep="1" number="3" dof="3" unknown="d" value="156.25"/>
       <NODE tStep="1" number="3" dof="5" unknown="d" value="-104.166667"/>
       <NODE tStep="1" number="4" dof="3" unknown="d" value="1406.25"/>
       <NODE tStep="1" number="4" dof="5" unknown="d" value="-312.5"/>
       <NODE tStep="1" number="5" dof="3" unknown="d" value="1406.25"/>
       <NODE tStep="1" number="5" dof="5" unknown="d" value="-312.5"/>
-      <!--check element no. 1 stress vector-->
+      <!-- check element no. 1 stress vector -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="4" value="-1.25"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="5" value="-0.3125"/>
       <ELEMENT tStep="1" number="2" gp="1" keyword="1" component="4" value="-1.25"/>

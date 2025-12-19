@@ -33,7 +33,7 @@
       <SimpleCS material="1" set="1"/>
     </CrossSections>
     <Materials>
-      <!--IsoLE 1 d 0. E 100. n 0.3 tAlpha 0.-->
+      <!-- IsoLE 1 d 0. E 100. n 0.3 tAlpha 0. -->
       <SimpleVitrificationMaterial d="0.0" vitrificationtime="0.99" e="130000.0 9500.0 9500.0" g="4500.0 4500.0 4500.0" nu="0.45 0.3 0.3" alpha="2e-08 3.2e-05 3.2e-05" e_r="130000.0 165.0 165.0" g_r="41.0 44.0 44.0" nu_r="0.98 0.345 0.345" alpha_r="2e-08 6.4e-05 6.4e-05"/>
     </Materials>
     <BoundaryConditions>

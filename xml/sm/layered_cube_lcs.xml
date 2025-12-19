@@ -30,7 +30,7 @@
       <QSpace nodes="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20" matcs=""/>
     </Elements>
     <CrossSections>
-      <!--SimpleCS 1 set 1 material 1-->
+      <!-- SimpleCS 1 set 1 material 1 -->
       <LayeredCS set="1" nlayers="2" layermaterials="2 3" thicks="1.0 1.0" widths="1.0 1.0" nintegrationpoints="3" rotations="0.0 45.0"/>
     </CrossSections>
     <Materials>
@@ -40,8 +40,8 @@
     </Materials>
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" values="0.0 0.0 0.0" dofs="1 2 3" set="2"/>
-      <!--BoundaryCondition 2 loadTimeFunction 1 values 3 0.86603. 0. 0.5 dofs 3 1 2 3 set 3-->
-      <!--BoundaryCondition 3 loadTimeFunction 1 values 3 0.433015. 0. 0.25 dofs 3 1 2 3 set 0-->
+      <!-- BoundaryCondition 2 loadTimeFunction 1 values 3 0.86603. 0. 0.5 dofs 3 1 2 3 set 3 -->
+      <!-- BoundaryCondition 3 loadTimeFunction 1 values 3 0.433015. 0. 0.25 dofs 3 1 2 3 set 0 -->
       <ConstantSurfaceLoad loadtimefunction="1" components="0.86603 0.0 0.5" set="3"/>
     </BoundaryConditions>
     <InitialConditions/>

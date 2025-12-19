@@ -1591,18 +1591,18 @@
     </CrossSections>
     <Materials>
       <twofluidmat mat="2 3"/>
-      <!--air-->
+      <!-- air -->
       <newtonianfluid d="1.0" mu="0.0005"/>
-      <!--water-->
+      <!-- water -->
       <newtonianfluid d="1000.0" mu="0.001"/>
     </Materials>
     <BoundaryConditions>
-      <!--prescribed zero velocity - wall condition-->
+      <!-- prescribed zero velocity - wall condition -->
       <BoundaryCondition loadtimefunction="1" dofs="7" values="0.0" valtype="5" set="3"/>
       <BoundaryCondition loadtimefunction="1" dofs="8" values="0.0" valtype="5" set="4"/>
-      <!--pressure-->
+      <!-- pressure -->
       <BoundaryCondition loadtimefunction="1" dofs="11" values="0.0" valtype="3" set="2"/>
-      <!--gravity-->
+      <!-- gravity -->
       <deadweight components="0.0 -9.81" loadtimefunction="1" valtype="2"/>
     </BoundaryConditions>
     <InitialConditions/>
@@ -1618,7 +1618,7 @@
   </Domain>
   <ExportModules>
     <errorcheck>
-      <!--Solution time at step 4-->
+      <!-- Solution time at step 4 -->
       <NODE tStep="4" number="1" dof="11" unknown="d" value="379.0" tolerance="1.5"/>
       <NODE tStep="4" number="2" dof="7" unknown="d" value="0.414" tolerance="0.001"/>
       <NODE tStep="4" number="4" dof="8" unknown="d" value="-0.095" tolerance="0.001"/>

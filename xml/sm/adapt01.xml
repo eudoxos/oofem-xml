@@ -18,7 +18,7 @@
       <SimpleCS thick="1.0" material="1"/>
     </CrossSections>
     <Materials>
-      <!--ft is 2.0-->
+      <!-- ft is 2.0 -->
       <idm1 e="34000.0" n="0.18" e0="5e-05" gf="0.123" damlaw="1" talpha="0.0" d="0.0"/>
     </Materials>
     <BoundaryConditions>
@@ -34,7 +34,7 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-06">
-      <!--check reactions-->
+      <!-- check reactions -->
       <NODE tStep="3" number="2" dof="1" unknown="d" value="9e-05"/>
       <NODE tStep="3" number="3" dof="1" unknown="d" value="9e-05"/>
       <NODE tStep="3" number="3" dof="2" unknown="d" value="-1.62e-05"/>
@@ -55,7 +55,7 @@
       <ELEMENT tStep="5" tstepver="0" number="3" gp="1" keyword="4" component="1" value="0.00014995"/>
       <ELEMENT tStep="5" tstepver="0" number="3" gp="1" keyword="4" component="2" value="-2.6988e-05"/>
       <ELEMENT tStep="5" tstepver="0" number="3" gp="1" keyword="1" component="1" value="1.6994" tolerance="0.0001"/>
-      <!--ELEMENT tStep 5 tStepVer 0 number 3 gp 1 keyword 1 component 2  value 4.6502e-05-->
+      <!-- ELEMENT tStep 5 tStepVer 0 number 3 gp 1 keyword 1 component 2  value 4.6502e-05 -->
       <ELEMENT tStep="5" tstepver="0" number="3" gp="1" keyword="13" component="1" value="0.666679" tolerance="0.001"/>
     </errorcheck>
   </ExportModules>

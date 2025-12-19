@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>trussb3_relax.out</Output>
   <Description>Test of 1D relaxation behaviour using Truss2d elements and B3 material model</Description>
-  <!--example from dissertation-->
+  <!-- example from dissertation -->
   <Analysis type="StaticStructural" nsteps="30" prescribedtimes="0.1 0.1373 0.1887 0.2592 0.3562 0.4893 0.6723 0.9236 1.2689 1.7433 2.395 3.2903 4.5203 6.2101 8.5316 11.721 16.1026 22.1221 30.3919 41.7531 57.3615 78.8046 108.2636 148.7352 204.3359 280.7216 385.662 529.8317 727.8954 1000.0"/>
   <Domain domain="2dtruss">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -18,8 +18,8 @@
       <SimpleCS thick="1.0" width="1.0" material="1" set="1"/>
     </CrossSections>
     <Materials>
-      <!--CebFip78 1 d 0. E28 36.e3 relMatAge 3. n 0.2 nChainUnits 4 fibf 3.8 kap_a 3.0 kap_c 1.0 kap_tt 0.633 u 3.0-->
-      <!--DoublePowerLaw 1 relMatAge 30. E28 45625.868 fi1 3.538 m 0.305 n 0.166 alpha 0.081-->
+      <!-- CebFip78 1 d 0. E28 36.e3 relMatAge 3. n 0.2 nChainUnits 4 fibf 3.8 kap_a 3.0 kap_c 1.0 kap_tt 0.633 u 3.0 -->
+      <!-- DoublePowerLaw 1 relMatAge 30. E28 45625.868 fi1 3.538 m 0.305 n 0.166 alpha 0.081 -->
       <B3Mat relmatage="28.0" fc="27.58" cc="219.45" w_c="0.6" a_c="7.0" t0="28.0" shmode="0" d="0.0" n="0.18" timefactor="1.0" talpha="1.2e-05"/>
     </Materials>
     <BoundaryConditions>
@@ -43,10 +43,10 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-12">
-      <!--check nodal values at the end of time interest-->
+      <!-- check nodal values at the end of time interest -->
       <NODE tStep="1000" number="2" dof="3" unknown="d" value="0.001"/>
       <NODE tStep="1000" number="3" dof="3" unknown="d" value="0.002"/>
-      <!--check element no. 1 strain vector-->
+      <!-- check element no. 1 strain vector -->
       <ELEMENT tStep="1000" number="1" gp="1" keyword="4" component="1" value="0.001"/>
       <ELEMENT tStep="1000" number="1" gp="1" keyword="1" component="1" value="11.055"/>
       <ELEMENT tStep="1000" number="2" gp="1" keyword="4" component="1" value="0.001"/>

@@ -646,11 +646,11 @@
       <newtonianfluid d="1.0" mu="1.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--prescribed inlet velocity v = 1m/s-->
+      <!-- prescribed inlet velocity v = 1m/s -->
       <BoundaryCondition loadtimefunction="1" dofs="7" values="1.0" set="2"/>
-      <!--zero velocity (wall) condition-->
+      <!-- zero velocity (wall) condition -->
       <BoundaryCondition loadtimefunction="1" dofs="8" values="0.0" set="3"/>
-      <!--pressure-->
+      <!-- pressure -->
       <BoundaryCondition loadtimefunction="1" dofs="11" values="0.0" set="4"/>
     </BoundaryConditions>
     <InitialConditions/>

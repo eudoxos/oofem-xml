@@ -39,17 +39,17 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--Solution:-->
-    <!--Stiffness matrix of the system (dofs: rotation_at_node_1, rotation_at_node_2)-->
-    <!--K=[2EI/l+k EI/l; EI/l 2EI/l];-->
-    <!--f=[-f*l*l/12; f*l*l/12];-->
-    <!--=> r = [-0.56250; 0.65625];-->
-    <!--=> spring force = -0.5625*5= -2.8125-->
+    <!-- Solution: -->
+    <!-- Stiffness matrix of the system (dofs: rotation_at_node_1, rotation_at_node_2) -->
+    <!-- K=[2EI/l+k EI/l; EI/l 2EI/l]; -->
+    <!-- f=[-f*l*l/12; f*l*l/12]; -->
+    <!-- => r = [-0.56250; 0.65625]; -->
+    <!-- => spring force = -0.5625*5= -2.8125 -->
     <errorcheck tolerance="1e-05">
-      <!--check nodal displacements-->
+      <!-- check nodal displacements -->
       <NODE tStep="1" number="2" dof="5" unknown="d" value="-0.5625"/>
       <NODE tStep="1" number="3" dof="5" unknown="d" value="0.65625"/>
-      <!--element stresses and strains-->
+      <!-- element stresses and strains -->
       <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="1" value="0.0"/>
       <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="2" value="-15.9375"/>
       <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="3" value="2.8125"/>

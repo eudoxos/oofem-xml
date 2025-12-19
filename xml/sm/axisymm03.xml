@@ -38,32 +38,32 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-06">
-      <!--Exact displacement is 2.0e-2-->
+      <!-- Exact displacement is 2.0e-2 -->
       <NODE tStep="1" number="2" dof="2" unknown="d" value="0.0231711636"/>
       <NODE tStep="1" number="4" dof="2" unknown="d" value="0.0198945383"/>
       <NODE tStep="1" number="6" dof="2" unknown="d" value="0.018402294"/>
-      <!--Constant strains and stresses over an element-->
-      <!--Element 1-->
+      <!-- Constant strains and stresses over an element -->
+      <!-- Element 1 -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="-5.3613e-05"/>
-      <!--Exact solution for is 1.0e-1-->
+      <!-- Exact solution for is 1.0e-1 -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="0.010293"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="3" value="0.0"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="6" value="-4.1271e-05"/>
       <ELEMENT tStep="1" number="1" gp="4" keyword="4" component="1" value="5.3613e-05"/>
-      <!--Exact solution for is 1.0e-1-->
+      <!-- Exact solution for is 1.0e-1 -->
       <ELEMENT tStep="1" number="1" gp="4" keyword="4" component="2" value="0.011239"/>
       <ELEMENT tStep="1" number="1" gp="4" keyword="4" component="3" value="0.0"/>
       <ELEMENT tStep="1" number="1" gp="4" keyword="4" component="6" value="-4.1271e-05"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="1" value="-0.053613"/>
-      <!--Exact solution is sig_y=10.0-->
+      <!-- Exact solution is sig_y=10.0 -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="2" value="10.2934853"/>
       <ELEMENT tStep="1" number="1" gp="4" keyword="1" component="1" value="0.053613"/>
-      <!--Exact solution is sig_y=10.0-->
+      <!-- Exact solution is sig_y=10.0 -->
       <ELEMENT tStep="1" number="1" gp="4" keyword="1" component="2" value="11.2393656"/>
-      <!--Element 2-->
+      <!-- Element 2 -->
       <ELEMENT tStep="1" number="2" gp="1" keyword="4" component="1" value="-3.4691e-05"/>
       <ELEMENT tStep="1" number="2" gp="1" keyword="4" component="2" value="0.0093588"/>
-      <!--Exact solution is 2.05e-1-->
+      <!-- Exact solution is 2.05e-1 -->
       <ELEMENT tStep="1" number="2" gp="1" keyword="4" component="3" value="0.0"/>
       <ELEMENT tStep="1" number="2" gp="1" keyword="4" component="6" value="2.6705e-05"/>
       <ELEMENT tStep="1" number="2" gp="4" keyword="4" component="1" value="3.4691e-05"/>
@@ -71,10 +71,10 @@
       <ELEMENT tStep="1" number="2" gp="4" keyword="4" component="3" value="0.0"/>
       <ELEMENT tStep="1" number="2" gp="4" keyword="4" component="6" value="2.6705e-05"/>
       <ELEMENT tStep="1" number="2" gp="1" keyword="1" component="1" value="-0.034691"/>
-      <!--Exact solution is sig_y=10.0-->
+      <!-- Exact solution is sig_y=10.0 -->
       <ELEMENT tStep="1" number="2" gp="1" keyword="1" component="2" value="9.358821"/>
       <ELEMENT tStep="1" number="2" gp="4" keyword="1" component="1" value="0.034691"/>
-      <!--Exact solution is sig_y=10.0-->
+      <!-- Exact solution is sig_y=10.0 -->
       <ELEMENT tStep="1" number="2" gp="4" keyword="1" component="2" value="9.789595"/>
     </errorcheck>
   </ExportModules>

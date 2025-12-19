@@ -33,27 +33,27 @@
       <tr_shell01 nodes="16 15 12" nip="4"/>
     </Elements>
     <CrossSections>
-      <!--CROSS SECTIONS-->
+      <!-- CROSS SECTIONS -->
       <SimpleCS thick="0.02" material="1" set="1" drillstiffness="1000000000.0"/>
       <LayeredCS nlayers="2" layermaterials="1 1" widths="1.0 1.0" thicks="0.01 0.01" nintegrationpoints="2" set="2"/>
     </CrossSections>
     <Materials>
-      <!--MATERIALS-->
+      <!-- MATERIALS -->
       <IsoLE d="1.0" e="1000000000.0" n="0.0" talpha="0.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--BOUNDARY CONDITIONS-->
+      <!-- BOUNDARY CONDITIONS -->
       <BoundaryCondition loadtimefunction="1" dofs="1 2 3 4 5 6" values="0.0 0.0 0.0 0.0 0.0 0.0" set="3"/>
       <nodalload loadtimefunction="2" components="0.0 1000.0 1000.0 0.0 0.0 0.0"/>
     </BoundaryConditions>
     <InitialConditions/>
     <LoadTimeFunctions>
-      <!--FUNCTIONS-->
+      <!-- FUNCTIONS -->
       <ConstantFunction f_t_="1.0"/>
       <PiecewiseLinFunction npoints="3" t="-1.0 0.0 10.0" f_t_="0.0 0.0 10.0"/>
     </LoadTimeFunctions>
     <Sets>
-      <!--SETS-->
+      <!-- SETS -->
       <Set elementranges="1-4"/>
       <Set elementranges="11-14"/>
       <Set nodes="1 4 11 14"/>
@@ -61,8 +61,8 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-08">
-      <!--check load levels-->
-      <!--check node displacement at final step-->
+      <!-- check load levels -->
+      <!-- check node displacement at final step -->
       <NODE tStep="2" number="1" dof="2" unknown="d" value="0.0"/>
       <NODE tStep="2" number="2" dof="2" unknown="d" value="0.00589140445"/>
       <NODE tStep="2" number="3" dof="2" unknown="d" value="0.0184651546"/>
@@ -73,7 +73,7 @@
       <NODE tStep="2" number="13" dof="2" unknown="d" value="0.0184651546"/>
       <NODE tStep="2" number="13" dof="3" unknown="d" value="4.68420501"/>
       <NODE tStep="2" number="13" dof="5" unknown="d" value="-7.4762123"/>
-      <!--check some arbitrary element-->
+      <!-- check some arbitrary element -->
       <ELEMENT tStep="2" number="1" gp="1" keyword="10" component="1" value="52896.226" tolerance="0.01"/>
       <ELEMENT tStep="2" number="1" gp="1" keyword="10" component="2" value="-6766.454" tolerance="0.01"/>
       <ELEMENT tStep="2" number="1" gp="1" keyword="10" component="4" value="5494.2" tolerance="0.01"/>

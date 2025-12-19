@@ -5,7 +5,7 @@
   <Domain domain="planestrain">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
-      <!--NODES ###################################################################-->
+      <!-- NODES ################################################################### -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="1.0 0.0 0.0"/>
       <Node coords="2.0 0.0 0.0"/>
@@ -24,7 +24,7 @@
       <GeneralSlaveNode coords="3.0 3.0 0.0" doftype="2 2" mastersizes="2 2" masterlist="4 1 13 1 4 2 13 2" masterweights="1 1 1 1"/>
     </Nodes>
     <Elements>
-      <!--Elements ####################################################################################-->
+      <!-- Elements #################################################################################### -->
       <quad1planestrain nodes="1 2 6 5" crosssect="1"/>
       <quad1planestrain nodes="2 3 7 6" crosssect="1"/>
       <quad1planestrain nodes="3 4 8 7" crosssect="1"/>
@@ -36,25 +36,25 @@
       <quad1planestrain nodes="11 12 16 15" crosssect="1"/>
     </Elements>
     <CrossSections>
-      <!--MATERIALS AND CROSS-SECTIONS-->
+      <!-- MATERIALS AND CROSS-SECTIONS -->
       <SimpleCS thick="1.0" material="1" set="1"/>
     </CrossSections>
     <Materials>
       <IsoLE d="1.0" e="500.0" n="0.0" talpha="1e-06"/>
     </Materials>
     <BoundaryConditions>
-      <!--BCS-->
+      <!-- BCS -->
       <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="2"/>
       <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.5 0.0" set="3"/>
       <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.1 0.2" set="4"/>
     </BoundaryConditions>
     <InitialConditions/>
     <LoadTimeFunctions>
-      <!--LOAD TIME FUNCTIONS-->
+      <!-- LOAD TIME FUNCTIONS -->
       <PiecewiseLinFunction npoints="2" t="0.0 100.0" f_t_="0.0 100.0"/>
     </LoadTimeFunctions>
     <Sets>
-      <!--SETS-->
+      <!-- SETS -->
       <Set allelements=""/>
       <Set nodes="1"/>
       <Set nodes="4"/>

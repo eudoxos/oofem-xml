@@ -99,7 +99,7 @@
     <errorcheck tolerance="0.001">
       <REACTION tStep="1" number="126" dof="31" value="6250000.0"/>
       <REACTION tStep="1" number="126" dof="38" value="10000000.0"/>
-      <!--TIME-->
+      <!-- TIME -->
       <REACTION tStep="1" number="126" dof="32" value="-13750000.0"/>
     </errorcheck>
   </ExportModules>

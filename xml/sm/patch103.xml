@@ -39,7 +39,7 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-10">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="1" number="1" dof="1" value="-0.00216"/>
       <REACTION tStep="1" number="1" dof="2" value="-0.00162"/>
       <REACTION tStep="1" number="2" dof="1" value="-0.00216"/>
@@ -49,7 +49,7 @@
       <REACTION tStep="1" number="5" dof="2" value="-0.00162"/>
       <REACTION tStep="1" number="6" dof="1" value="0.00216"/>
       <REACTION tStep="1" number="6" dof="2" value="0.00162"/>
-      <!--check all nodes-->
+      <!-- check all nodes -->
       <NODE tStep="1" number="1" dof="1" unknown="d" value="0.0"/>
       <NODE tStep="1" number="2" dof="1" unknown="d" value="0.0"/>
       <NODE tStep="1" number="3" dof="1" unknown="d" value="0.0"/>
@@ -62,14 +62,14 @@
       <NODE tStep="1" number="4" dof="2" unknown="d" value="0.0"/>
       <NODE tStep="1" number="5" dof="2" unknown="d" value="0.0"/>
       <NODE tStep="1" number="6" dof="2" unknown="d" value="0.0"/>
-      <!--check element strain vector-->
+      <!-- check element strain vector -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="0.0"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="0.0"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="6" value="0.0"/>
       <ELEMENT tStep="1" number="2" gp="3" keyword="4" component="1" value="0.0"/>
       <ELEMENT tStep="1" number="2" gp="3" keyword="4" component="2" value="0.0"/>
       <ELEMENT tStep="1" number="2" gp="3" keyword="4" component="6" value="0.0"/>
-      <!--check element stress vector-->
+      <!-- check element stress vector -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="1" value="0.0072"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="2" value="0.0072"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="6" value="0.0"/>

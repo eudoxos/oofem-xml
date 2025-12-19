@@ -5,7 +5,7 @@
   <Domain domain="3dshell">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
-      <!--pure bending along y axis-->
+      <!-- pure bending along y axis -->
       <Node coords="0.0 4.0 0.0"/>
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="1.6 2.8 0.0"/>
@@ -14,7 +14,7 @@
       <Node coords="3.2 1.2 0.0"/>
       <Node coords="4.0 4.0 0.0"/>
       <Node coords="4.0 0.0 0.0"/>
-      <!--pure shear-->
+      <!-- pure shear -->
       <Node id="11" coords="10.0 4.0 0.0"/>
       <Node coords="10.0 0.0 0.0"/>
       <Node coords="11.6 2.8 0.0"/>
@@ -23,7 +23,7 @@
       <Node coords="13.2 1.2 0.0"/>
       <Node coords="14.0 4.0 0.0"/>
       <Node coords="14.0 0.0 0.0"/>
-      <!--pure twist-->
+      <!-- pure twist -->
       <Node id="21" coords="20.0 4.0 0.0"/>
       <Node coords="20.0 0.0 0.0"/>
       <Node coords="21.6 2.8 0.0"/>
@@ -58,12 +58,12 @@
     </Materials>
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" dofs="1 2 3 4 5 6" values="0.0 0.0 0.0 0.0 0.0 0.0" set="4"/>
-      <!--BoundaryCondition 2 loadTimeFunction 1 dofs 2 4 6 values 2 0 0 set 5-->
+      <!-- BoundaryCondition 2 loadTimeFunction 1 dofs 2 4 6 values 2 0 0 set 5 -->
       <BoundaryCondition loadtimefunction="1" dofs="4" values="0.0" set="5"/>
-      <!--BoundaryCondition 3 loadTimeFunction 1 dofs 5 1 2 4 5 6 values 5 0 0 0 0 0 set 6-->
+      <!-- BoundaryCondition 3 loadTimeFunction 1 dofs 5 1 2 4 5 6 values 5 0 0 0 0 0 set 6 -->
       <BoundaryCondition loadtimefunction="1" dofs="1 2 4 5" values="0.0 0.0 0.0 0.0" set="6"/>
       <BoundaryCondition loadtimefunction="1" dofs="1 2 3 6" values="0.0 0.0 0.0 0.0" set="7"/>
-      <!--BoundaryCondition 5 loadTimeFunction 1 dofs 3 1 2 6 values 3 0 0 0 set 8-->
+      <!-- BoundaryCondition 5 loadTimeFunction 1 dofs 3 1 2 6 values 3 0 0 0 set 8 -->
       <BoundaryCondition id="5" loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="8"/>
       <NodalLoad loadtimefunction="1" dofs="1 2 3 4 5 6" components="0.0 0.0 0.0 0.0 -2.5 0.0" set="2"/>
       <NodalLoad loadtimefunction="1" dofs="1 2 3 4 5 6" components="0.0 0.0 5.0 0.0 0.0 0.0" set="3"/>
@@ -85,15 +85,15 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.005">
-      <!--pure bending-->
+      <!-- pure bending -->
       <REACTION tStep="1" number="1" dof="4" value="0.625"/>
       <REACTION tStep="1" number="1" dof="5" value="2.5"/>
       <REACTION tStep="1" number="2" dof="4" value="-0.625"/>
       <REACTION tStep="1" number="2" dof="5" value="2.5"/>
       <REACTION tStep="1" number="7" dof="4" value="0.625"/>
-      <!--REACTION tStep 1 number 7 dof 6 value 0.0-->
+      <!-- REACTION tStep 1 number 7 dof 6 value 0.0 -->
       <REACTION tStep="1" number="8" dof="4" value="-0.625"/>
-      <!--REACTION tStep 1 number 8 dof 6 value 0.0-->
+      <!-- REACTION tStep 1 number 8 dof 6 value 0.0 -->
       <NODE tStep="1" number="7" dof="3" unknown="d" value="7500.0"/>
       <NODE tStep="1" number="7" dof="5" unknown="d" value="-3750.0"/>
       <NODE tStep="1" number="8" dof="3" unknown="d" value="7500.0"/>
@@ -130,7 +130,7 @@
       <ELEMENT tStep="1" number="5" gp="6" keyword="1" component="4" value="0.0"/>
       <ELEMENT tStep="1" number="5" gp="7" keyword="1" component="4" value="0.0"/>
       <ELEMENT tStep="1" number="5" gp="8" keyword="1" component="4" value="0.0"/>
-      <!--pure shear-->
+      <!-- pure shear -->
       <REACTION tStep="1" number="11" dof="3" value="-5.0"/>
       <REACTION tStep="1" number="12" dof="3" value="-5.0"/>
       <NODE tStep="1" number="17" dof="3" unknown="d" value="16.6666667"/>
@@ -151,7 +151,7 @@
       <ELEMENT tStep="1" number="15" gp="6" keyword="4" component="5" value="4.16666667"/>
       <ELEMENT tStep="1" number="15" gp="7" keyword="4" component="5" value="4.16666667"/>
       <ELEMENT tStep="1" number="15" gp="8" keyword="4" component="5" value="4.16666667"/>
-      <!--pure twist-->
+      <!-- pure twist -->
       <REACTION tStep="1" number="21" dof="3" value="-5.0"/>
       <REACTION tStep="1" number="22" dof="3" value="5.0"/>
       <REACTION tStep="1" number="28" dof="3" value="-5.0"/>

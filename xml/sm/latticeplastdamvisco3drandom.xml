@@ -38,9 +38,9 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--TIME-->
-    <!--ELEMENT number 1 gp 1 keyword "latticestrain" component 1-->
-    <!--ELEMENT number 1 gp 1 keyword "latticestress" component 1-->
+    <!-- TIME -->
+    <!-- ELEMENT number 1 gp 1 keyword "latticestrain" component 1 -->
+    <!-- ELEMENT number 1 gp 1 keyword "latticestress" component 1 -->
     <errorcheck>
       <ELEMENT tStep="10" number="1" gp="1" keyword="139" component="1" value="2.53647629" tolerance="1e-06"/>
       <ELEMENT tStep="13" number="1" gp="1" keyword="139" component="1" value="2.32538054" tolerance="1e-06"/>

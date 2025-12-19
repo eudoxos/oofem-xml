@@ -5,7 +5,7 @@
   <Domain domain="2dmindlinplate">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
-      <!--pure bending along x axis-->
+      <!-- pure bending along x axis -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="1.0 0.0 0.0"/>
       <Node coords="2.0 0.0 0.0"/>
@@ -63,7 +63,7 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--Exact solution: w = 0.1*exp(-sqrt(c1/c2)*x-->
+    <!-- Exact solution: w = 0.1*exp(-sqrt(c1/c2)*x -->
     <errorcheck tolerance="0.0005">
       <NODE tStep="1" number="1" dof="3" unknown="d" value="0.1"/>
       <NODE tStep="1" number="2" dof="3" unknown="d" value="0.0485431647"/>

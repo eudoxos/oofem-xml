@@ -37,16 +37,16 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.001">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="1" number="1" dof="2" value="4.0"/>
       <REACTION tStep="1" number="2" dof="2" value="4.0"/>
-      <!--check displacements of top nodes-->
+      <!-- check displacements of top nodes -->
       <NODE tStep="1" number="3" dof="2" unknown="d" value="-0.0666459054"/>
       <NODE tStep="1" number="4" dof="2" unknown="d" value="-0.0333540946"/>
-      <!--check element No. 1 strain vector-->
+      <!-- check element No. 1 strain vector -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="-0.0666459054"/>
       <ELEMENT tStep="1" number="2" gp="1" keyword="4" component="2" value="-0.0333540946"/>
-      <!--check element No. 1 stress vector-->
+      <!-- check element No. 1 stress vector -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="2" value="-6.6701"/>
       <ELEMENT tStep="1" number="2" gp="1" keyword="1" component="2" value="-3.3299"/>
     </errorcheck>

@@ -1164,7 +1164,7 @@
       <SimpleCS thick="1.0" material="1" set="1"/>
     </CrossSections>
     <Materials>
-      <!--HMH 1 Ry 4.0-->
+      <!-- HMH 1 Ry 4.0 -->
       <IsoLE d="2500.0" e="30000000000.0" n="0.15" talpha="1.2e-05"/>
     </Materials>
     <BoundaryConditions>
@@ -1181,12 +1181,12 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.0001">
-      <!--check eigen values-->
+      <!-- check eigen values -->
       <EIGVAL tStep="1" eignum="1" value="0.974361712"/>
       <EIGVAL tStep="1" eignum="2" value="15.6019327"/>
       <EIGVAL tStep="1" eignum="3" value="79.0745373"/>
       <EIGVAL tStep="1" eignum="4" value="189.865089"/>
-      <!--check some nodal values-->
+      <!-- check some nodal values -->
       <EIGVAL tStep="1" eignum="5" value="250.242909"/>
     </errorcheck>
   </ExportModules>

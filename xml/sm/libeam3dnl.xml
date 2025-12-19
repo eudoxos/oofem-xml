@@ -1,8 +1,8 @@
 <oofem version="1">
   <Output>libeam3dnl.out</Output>
   <Description>Non-Linear cantilever. Critical load is 1*1*pi^2/(2*8)^2 = 0.0385531</Description>
-  <!--LinearStatic 1 nsteps 1-->
-  <!--LinearStability nroot 4 rtolv 1.e-8-->
+  <!-- LinearStatic 1 nsteps 1 -->
+  <!-- LinearStability nroot 4 rtolv 1.e-8 -->
   <Analysis type="StaticStructural" nsteps="6" solvertype="calm" maxiter="30" steplength="1.0471976" minsteplength="1.0471976" rtolf="0.0001" psi="0.0" manrmsteps="1" hpc="9 6"/>
   <Domain domain="3dshell">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -16,7 +16,7 @@
       <Node coords="6.0 0.0 0.0"/>
       <Node coords="7.0 0.0 0.0"/>
       <Node coords="8.0 0.0 0.0"/>
-      <!--common reference node-->
+      <!-- common reference node -->
       <Node id="10" coords="8.0 8.0 0.0"/>
     </Nodes>
     <Elements>

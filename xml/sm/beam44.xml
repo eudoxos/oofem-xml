@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>beam44.out</Output>
   <Description>TEST OF trplanestressrotallman ELEMENTS (clamped beam loaded by uniform load)</Description>
-  <!--domain section-->
+  <!-- domain section -->
   <Analysis type="StaticStructural" nsteps="1"/>
   <Domain domain="2dplanestressrot">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -67,21 +67,21 @@
       <trplanestressrotallman nodes="20 19 25" boundaryloads="2 3"/>
     </Elements>
     <CrossSections>
-      <!--crossSect section-->
+      <!-- crossSect section -->
       <SimpleCS thick="1.0" material="1" set="1"/>
     </CrossSections>
     <Materials>
-      <!--material section-->
+      <!-- material section -->
       <IsoLE d="1.0" e="23000000.0" n="0.0" talpha="1.2e-05"/>
     </Materials>
     <BoundaryConditions>
-      <!--load and boundary condition section-->
+      <!-- load and boundary condition section -->
       <BoundaryCondition loadtimefunction="1" dofs="1 2 6" values="0.0 0.0 0.0" set="2"/>
       <ConstantEdgeLoad loadtimefunction="1" dofs="1 2 6" components="0.0 100.0 0.0" set="0"/>
     </BoundaryConditions>
     <InitialConditions/>
     <LoadTimeFunctions>
-      <!--load time function list-->
+      <!-- load time function list -->
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
     <Sets>
@@ -92,7 +92,7 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.0001">
-      <!--check nodes nodes-->
+      <!-- check nodes nodes -->
       <NODE tStep="1" number="11" dof="2" unknown="d" value="2.91761456e-05"/>
       <NODE tStep="1" number="13" dof="2" unknown="d" value="2.8159473e-05"/>
     </errorcheck>

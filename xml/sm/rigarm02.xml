@@ -1,8 +1,8 @@
 <oofem version="1">
   <Output>rigarm02.out</Output>
   <Description>Test of rigid arm node</Description>
-  <!--only momentum influence to the displacements is taken into account-->
-  <!--beamShearCoeff is artificially enlarged.-->
+  <!-- only momentum influence to the displacements is taken into account -->
+  <!-- beamShearCoeff is artificially enlarged. -->
   <Analysis type="StaticStructural" nsteps="1"/>
   <Domain domain="2dbeam">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -39,13 +39,13 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--exact solution-->
+    <!-- exact solution -->
     <errorcheck tolerance="1e-08">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="1" number="1" dof="1" value="-3.0"/>
       <REACTION tStep="1" number="1" dof="3" value="0.5"/>
       <REACTION tStep="1" number="3" dof="3" value="-0.5"/>
-      <!--check all nodes-->
+      <!-- check all nodes -->
       <NODE tStep="1" number="1" dof="1" unknown="d" value="0.0"/>
       <NODE tStep="1" number="1" dof="3" unknown="d" value="0.0"/>
       <NODE tStep="1" number="1" dof="5" unknown="d" value="0.375"/>
@@ -58,7 +58,7 @@
       <NODE tStep="1" number="4" dof="1" unknown="d" value="4.875"/>
       <NODE tStep="1" number="4" dof="3" unknown="d" value="0.0"/>
       <NODE tStep="1" number="4" dof="5" unknown="d" value="-0.75"/>
-      <!--check element no. 3 force vector-->
+      <!-- check element no. 3 force vector -->
       <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="1" value="-3.0"/>
       <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="2" value="0.5"/>
       <BEAM_ELEMENT tStep="1" number="1" keyword="1" component="3" value="0.0"/>

@@ -37,12 +37,12 @@
       <SimpleCS thick="1.0" material="1" set="1"/>
     </CrossSections>
     <Materials>
-      <!--Linear elasticity-->
+      <!-- Linear elasticity -->
       <IsoLE d="1.0" e="1000000.0" n="0.3" talpha="0.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--Cohesive zone-->
-      <!--IntMatBilinearCZElastic 2 kn 1.0e-6 ks 1.0e-6 knc 1.0e-6 g1c 1.0e6 sigfn 1.0e6 sigfs 1.0e6-->
+      <!-- Cohesive zone -->
+      <!-- IntMatBilinearCZElastic 2 kn 1.0e-6 ks 1.0e-6 knc 1.0e-6 g1c 1.0e6 sigfn 1.0e6 sigfs 1.0e6 -->
       <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.0 0.0" set="2"/>
       <BoundaryCondition loadtimefunction="1" dofs="1 2" values="0.01 0.02" set="3"/>
     </BoundaryConditions>
@@ -58,7 +58,7 @@
   </Domain>
   <ExportModules>
     <errorcheck filename="xFemIntersectingCracks.in" tolerance="1e-06">
-      <!--Node displacements-->
+      <!-- Node displacements -->
       <NODE tStep="0" number="14" dof="1" unknown="d" value="0.01"/>
       <NODE tStep="0" number="14" dof="2" unknown="d" value="0.02"/>
       <NODE tStep="0" number="14" dof="23" unknown="d" value="0.0"/>

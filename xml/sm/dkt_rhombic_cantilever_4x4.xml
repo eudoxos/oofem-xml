@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>dkt_rhombic_cantilever_4x4.out</Output>
   <Description>Rhombic cantilever loaded by uniform load</Description>
-  <!--(see J.L. Batoz, K.J.Bathe, L.W.Ho: A study of thee node triangular plate elements, IJNME, vol. 15, 1771-1812, 1980.)-->
+  <!-- (see J.L. Batoz, K.J.Bathe, L.W.Ho: A study of thee node triangular plate elements, IJNME, vol. 15, 1771-1812, 1980.) -->
   <Analysis type="LinearStatic" nsteps="1"/>
   <Domain domain="2dmindlinplate">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -74,7 +74,7 @@
     </Materials>
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" dofs="3 4 5" values="0.0 0.0 0.0" set="2"/>
-      <!--q= 0.26066, b=0.26066/thicness = 2.08528-->
+      <!-- q= 0.26066, b=0.26066/thicness = 2.08528 -->
       <Deadweight loadtimefunction="1" components="2.08528 0.0 0.0" set="1"/>
     </BoundaryConditions>
     <InitialConditions/>
@@ -87,10 +87,10 @@
     </Sets>
   </Domain>
   <ExportModules>
-    <!--expected solution-->
-    <!--(see J.L. Batoz, K.J.Bathe, L.W.Ho: A study of thee node triangular plate elements, IJNME, vol. 15, 1771-1812, 1980.)-->
+    <!-- expected solution -->
+    <!-- (see J.L. Batoz, K.J.Bathe, L.W.Ho: A study of thee node triangular plate elements, IJNME, vol. 15, 1771-1812, 1980.) -->
     <errorcheck tolerance="0.0001">
-      <!--check nodes-->
+      <!-- check nodes -->
       <NODE tStep="1" number="25" dof="3" unknown="d" value="0.303727848"/>
       <NODE tStep="1" number="23" dof="3" unknown="d" value="0.198631626"/>
       <NODE tStep="1" number="21" dof="3" unknown="d" value="0.112781864"/>

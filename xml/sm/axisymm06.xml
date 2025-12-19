@@ -40,28 +40,28 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-06">
-      <!--Exact displacement is 2.0e-2-->
+      <!-- Exact displacement is 2.0e-2 -->
       <NODE tStep="1" number="2" dof="2" unknown="d" value="0.0219036007"/>
       <NODE tStep="1" number="4" dof="2" unknown="d" value="0.0199832366"/>
       <NODE tStep="1" number="6" dof="2" unknown="d" value="0.0189685205"/>
-      <!--Constant strains and stresses over an element-->
-      <!--Element 1-->
+      <!-- Constant strains and stresses over an element -->
+      <!-- Element 1 -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="-0.00010412"/>
-      <!--Exact solution for is 1.0e-1-->
+      <!-- Exact solution for is 1.0e-1 -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="2" value="0.010952"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="3" value="2.1648e-05"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="6" value="-0.0001446"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="1" value="-0.10412"/>
-      <!--Exact solution is sig_y=10.0-->
+      <!-- Exact solution is sig_y=10.0 -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="2" value="10.9518003"/>
-      <!--Element 4-->
+      <!-- Element 4 -->
       <ELEMENT tStep="1" number="4" gp="1" keyword="4" component="1" value="4.5464e-05"/>
-      <!--Exact solution for is 1.0e-1-->
+      <!-- Exact solution for is 1.0e-1 -->
       <ELEMENT tStep="1" number="4" gp="1" keyword="4" component="2" value="0.0094843"/>
       <ELEMENT tStep="1" number="4" gp="1" keyword="4" component="3" value="-5.1712e-06"/>
       <ELEMENT tStep="1" number="4" gp="1" keyword="4" component="6" value="5.9853e-05"/>
       <ELEMENT tStep="1" number="4" gp="1" keyword="1" component="1" value="0.045464"/>
-      <!--Exact solution is sig_y=10.0-->
+      <!-- Exact solution is sig_y=10.0 -->
       <ELEMENT tStep="1" number="4" gp="1" keyword="1" component="2" value="9.48426023"/>
     </errorcheck>
   </ExportModules>

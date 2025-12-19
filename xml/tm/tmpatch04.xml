@@ -24,8 +24,8 @@
     </Materials>
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" dofs="10" values="0.0" set="2"/>
-      <!--BoundaryCondition  1 loadTimeFunction 1 dofs 1 10 values 1 15.0 set 3-->
-      <!--Neumann bc-->
+      <!-- BoundaryCondition  1 loadTimeFunction 1 dofs 1 10 values 1 15.0 set 3 -->
+      <!-- Neumann bc -->
       <constantedgeload loadtimefunction="1" components="1.0" loadtype="2" set="3"/>
     </BoundaryConditions>
     <InitialConditions/>

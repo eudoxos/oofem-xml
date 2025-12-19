@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>eigen_beam2d.out</Output>
   <Description>Eigen vibration of simply suported beam</Description>
-  <!--LinearStatic 1 nsteps 1-->
+  <!-- LinearStatic 1 nsteps 1 -->
   <Analysis type="EigenValueDynamic" nroot="4" rtolv="1e-06"/>
   <Domain domain="2dbeam">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -62,7 +62,7 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.001">
-      <!--check eigen values-->
+      <!-- check eigen values -->
       <EIGVAL tStep="1" eignum="1" value="2853.78786" tolerance="0.001"/>
       <EIGVAL tStep="1" eignum="2" value="45662.0244" tolerance="0.02"/>
     </errorcheck>

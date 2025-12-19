@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>patch160.out</Output>
   <Description>test of Truss2d elements with j2plasticMaterial</Description>
-  <!--LinearStatic nsteps 1-->
+  <!-- LinearStatic nsteps 1 -->
   <Analysis type="StaticStructural" nsteps="6" solvertype="calm" steplength="6.0" minsteplength="0.1" rtolf="1e-05" psi="0.0" maxiter="30"/>
   <Domain domain="2dtruss">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -35,28 +35,28 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.0001">
-      <!--exact solution-->
-      <!--step 1-->
+      <!-- exact solution -->
+      <!-- step 1 -->
       <NODE tStep="1" number="2" dof="3" unknown="d" value="6.0"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="4" component="1" value="2.0"/>
       <ELEMENT tStep="1" number="1" gp="1" keyword="1" component="1" value="1.8214"/>
-      <!--step 2-->
+      <!-- step 2 -->
       <NODE tStep="2" number="2" dof="3" unknown="d" value="12.0"/>
       <ELEMENT tStep="2" number="1" gp="1" keyword="4" component="1" value="4.0"/>
       <ELEMENT tStep="2" number="1" gp="1" keyword="1" component="1" value="2.4881"/>
-      <!--step 3-->
+      <!-- step 3 -->
       <NODE tStep="3" number="2" dof="3" unknown="d" value="18.0"/>
       <ELEMENT tStep="3" number="1" gp="1" keyword="4" component="1" value="6.0"/>
       <ELEMENT tStep="3" number="1" gp="1" keyword="1" component="1" value="3.1547"/>
-      <!--step 4-->
+      <!-- step 4 -->
       <NODE tStep="4" number="2" dof="3" unknown="d" value="24.0"/>
       <ELEMENT tStep="4" number="1" gp="1" keyword="4" component="1" value="8.0"/>
       <ELEMENT tStep="4" number="1" gp="1" keyword="1" component="1" value="3.8214"/>
-      <!--step 5-->
+      <!-- step 5 -->
       <NODE tStep="5" number="2" dof="3" unknown="d" value="30.0"/>
       <ELEMENT tStep="5" number="1" gp="1" keyword="4" component="1" value="10.0"/>
       <ELEMENT tStep="5" number="1" gp="1" keyword="1" component="1" value="4.4881"/>
-      <!--step 6-->
+      <!-- step 6 -->
       <NODE tStep="6" number="2" dof="3" unknown="d" value="36.0"/>
       <ELEMENT tStep="6" number="1" gp="1" keyword="4" component="1" value="12.0"/>
       <ELEMENT tStep="6" number="1" gp="1" keyword="1" component="1" value="5.1547"/>

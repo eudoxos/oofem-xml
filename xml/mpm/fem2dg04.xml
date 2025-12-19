@@ -3,9 +3,9 @@
   <Description>Sample 3D scalar advection problem, non-homogeneous BCs</Description>
   <Analysis type="DGproblem" nsteps="80" deltat="0.01" alpha="1.0" smtype="1" fem2dg="" boundarysets="3 4 5 6 7 8" targetboundarynodesets="9 10 11 12 13 14" targetallnodeset="15" targetallelementset="16">
     <Fields>
-      <!--velocity field-->
+      <!-- velocity field -->
       <exprfield f="f[1]=1.0;f[2]=0.0;f[3]=0.0" type="1"/>
-      <!--initial distribution-->
+      <!-- initial distribution -->
       <exprfield f="f=0.0" type="7"/>
     </Fields>
   </Analysis>
@@ -149,7 +149,7 @@
       <Set elementboundaries="1 5 2 5 3 5 4 5 5 5 6 5 7 5 8 5 9 5 10 5 11 5 12 5 13 5 14 5 15 5 16 5 17 5 18 5 19 5 20 5"/>
       <Set elementboundaries="1 1 2 1 3 1 4 1 5 1 6 1 7 1 8 1 9 1 10 1 11 1 12 1 13 1 14 1 15 1 16 1 17 1 18 1 19 1 20 1"/>
       <Set elementboundaries="1 2 2 2 3 2 4 2 5 2 6 2 7 2 8 2 9 2 10 2 11 2 12 2 13 2 14 2 15 2 16 2 17 2 18 2 19 2 20 2"/>
-      <!--target sets-->
+      <!-- target sets -->
       <Set/>
       <Set id="10"/>
       <Set/>
@@ -162,7 +162,7 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.11">
-      <!--check nodes (against exact solution - sine function)-->
+      <!-- check nodes (against exact solution - sine function) -->
       <NODE tStep="80" number="85" dof="14" unknown="d" value="0.0"/>
       <NODE tStep="80" number="110" dof="14" unknown="d" value="-1.0"/>
       <NODE tStep="80" number="142" dof="14" unknown="d" value="0.0"/>

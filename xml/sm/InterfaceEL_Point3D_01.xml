@@ -21,7 +21,7 @@
       <InterfaceCS material="1" set="8"/>
     </CrossSections>
     <Materials>
-      <!--IntMatElastic 1 k 2.e+4-->
+      <!-- IntMatElastic 1 k 2.e+4 -->
       <CohInt kn="20000.0" ks="0.0"/>
     </Materials>
     <BoundaryConditions>
@@ -49,7 +49,7 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-05">
-      <!--Step 1-->
+      <!-- Step 1 -->
       <NODE tStep="1" number="2" dof="1" unknown="d" value="0.0003"/>
       <NODE tStep="1" number="3" dof="2" unknown="d" value="0.00035"/>
       <NODE tStep="1" number="4" dof="3" unknown="d" value="0.0004"/>

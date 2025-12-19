@@ -1,9 +1,9 @@
 <oofem version="1">
   <Output>cantilever_Qspace.out</Output>
   <Description>Cantilever 'beam' test from 3 Qspace elements</Description>
-  <!--If considered as a beam, cross section width=2m, height=1.2m, length=12m.-->
-  <!--End deflection=FL3/3EI=200*F-->
-  <!--Second step with end deflection 1.0 m gives F=0.005 N, M(x=0m)=0.06 Nm, sig_max(x=0 m)=0.125 Pa, strain energy 2.5e-3 J (only sig_x, small contribution from shear)-->
+  <!-- If considered as a beam, cross section width=2m, height=1.2m, length=12m. -->
+  <!-- End deflection=FL3/3EI=200*F -->
+  <!-- Second step with end deflection 1.0 m gives F=0.005 N, M(x=0m)=0.06 Nm, sig_max(x=0 m)=0.125 Pa, strain energy 2.5e-3 J (only sig_x, small contribution from shear) -->
   <Analysis type="StaticStructural" nsteps="3"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -81,19 +81,19 @@
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-08">
-      <!--check reactions-->
+      <!-- check reactions -->
       <REACTION tStep="1" number="29" dof="1" value="0.0"/>
       <REACTION tStep="2" number="29" dof="1" value="0.03365711"/>
       <REACTION tStep="3" number="29" dof="1" value="0.06731422"/>
-      <!--check horizontal displacement at the end-->
+      <!-- check horizontal displacement at the end -->
       <NODE tStep="1" number="28" dof="1" unknown="d" value="0.0"/>
       <NODE tStep="2" number="28" dof="1" unknown="d" value="0.0757284993"/>
       <NODE tStep="3" number="28" dof="1" unknown="d" value="0.151456999"/>
-      <!--check element no. 3 strain vector-->
+      <!-- check element no. 3 strain vector -->
       <ELEMENT tStep="1" number="3" gp="1" keyword="4" component="1" value="0.0"/>
       <ELEMENT tStep="2" number="3" gp="1" keyword="4" component="1" value="-0.002227274"/>
       <ELEMENT tStep="3" number="3" gp="1" keyword="4" component="1" value="-0.004454549"/>
-      <!--check element no. 3 stress vector-->
+      <!-- check element no. 3 stress vector -->
       <ELEMENT tStep="1" number="3" gp="1" keyword="1" component="1" value="0.0"/>
       <ELEMENT tStep="2" number="3" gp="1" keyword="1" component="1" value="-0.02227274"/>
       <ELEMENT tStep="3" number="3" gp="1" keyword="1" component="1" value="-0.04454549"/>

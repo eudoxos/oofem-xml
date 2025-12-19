@@ -16,7 +16,7 @@
       <SimpleTransportCS thickness="0.15" mat="1"/>
     </CrossSections>
     <Materials>
-      <!--Standard concrete k(conductivity)=1.7 W/m/K   c(capacity)=870 J/kg/K-->
+      <!-- Standard concrete k(conductivity)=1.7 W/m/K   c(capacity)=870 J/kg/K -->
       <HydratingConcreteMat d="2458.0" k="1.7" c="870.0" hydrationmodeltype="3" qpot="509.0" masscement="400.0" w_c="0.5" a_c="5.0" castingtime="0.0" maturityt0="20.0"/>
     </Materials>
     <BoundaryConditions>
@@ -35,9 +35,9 @@
   <ExportModules>
     <errorcheck tolerance="0.001">
       <TIME/>
-      <!--ELEMENT tStep 30 number 1 gp 1 keyword 39 component 1 value 5.20334463e-01-->
-      <!--ELEMENT tStep 6 number 2 gp 1 keyword 39 component 1 value 1.07180394e-01-->
-      <!--ELEMENT tStep 30 number 2 gp 1 keyword 39 component 1 value 6.48537723e-01-->
+      <!-- ELEMENT tStep 30 number 1 gp 1 keyword 39 component 1 value 5.20334463e-01 -->
+      <!-- ELEMENT tStep 6 number 2 gp 1 keyword 39 component 1 value 1.07180394e-01 -->
+      <!-- ELEMENT tStep 30 number 2 gp 1 keyword 39 component 1 value 6.48537723e-01 -->
       <ELEMENT tStep="1" number="1" gp="1" keyword="39" component="1" value="0.05"/>
     </errorcheck>
   </ExportModules>

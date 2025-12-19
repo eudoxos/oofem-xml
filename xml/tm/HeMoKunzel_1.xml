@@ -33,21 +33,21 @@
       <hemokunzel d="2000.0" iso_type="0" iso_a="4.83" iso_n="0.183" iso_wh="109.5" mu="10.0" permeability_type="2" a="0.001" lambda0="1.3" b="8.0" cs="880.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--temperature & humidity-->
+      <!-- temperature & humidity -->
       <BoundaryCondition loadtimefunction="1" dofs="10 14" values="298.15 0.6" set="2"/>
-      <!--temperature-->
+      <!-- temperature -->
       <BoundaryCondition loadtimefunction="1" dofs="10" values="323.15" set="3"/>
     </BoundaryConditions>
     <InitialConditions>
-      <!--temparature ic-->
+      <!-- temparature ic -->
       <InitialCondition conditions="u 293.15" dofs="10" set="1"/>
-      <!--humidity ic-->
+      <!-- humidity ic -->
       <InitialCondition conditions="u 0.9" dofs="14" set="1"/>
     </InitialConditions>
     <LoadTimeFunctions>
-      <!--InitialCondition 3 Conditions 1 u 298.15 dofs 1 10 set 2-->
-      <!--InitialCondition 4 Conditions 1 u 0.6 dofs 1 14 set 2-->
-      <!--InitialCondition 5 Conditions 1 u 323.15 dofs 1 10 set 3-->
+      <!-- InitialCondition 3 Conditions 1 u 298.15 dofs 1 10 set 2 -->
+      <!-- InitialCondition 4 Conditions 1 u 0.6 dofs 1 14 set 2 -->
+      <!-- InitialCondition 5 Conditions 1 u 323.15 dofs 1 10 set 3 -->
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
     <Sets>

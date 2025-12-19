@@ -3,7 +3,7 @@
   <Description>Test of PlaneStress2d element -&gt; tensile test with subsequent load-unload cycles</Description>
   <Analysis type="NonLinearStatic" nsteps="1">
     <Metasteps>
-      <!--unread on the next line: steplength 0.000001-->
+      <!-- unread on the next line: steplength 0.000001 -->
       <Metastep nsteps="100" rtolv="1e-07" maxiter="9000" controlmode="1"/>
     </Metasteps>
   </Analysis>

@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>tmpatch11.out</Output>
   <Description>Patch test of Quad1_ht elements</Description>
-  <!--StationaryProblem nsteps 1-->
+  <!-- StationaryProblem nsteps 1 -->
   <Analysis type="TransientTransport" nsteps="200" deltat="600000.0" alpha="0.5" rtolf="1e-09" miniter="1" maxiter="300" lumped=""/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -39,7 +39,7 @@
   </Domain>
   <ExportModules>
     <errorcheck>
-      <!--NODE tStep 9 number 3 dof 10 unknown d value 6.11951769e+00-->
+      <!-- NODE tStep 9 number 3 dof 10 unknown d value 6.11951769e+00 -->
       <NODE tStep="9" number="3" dof="10" unknown="d" value="4.90659093"/>
       <NODE tStep="200" number="3" dof="10" unknown="d" value="7.5"/>
     </errorcheck>

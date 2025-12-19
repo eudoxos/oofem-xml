@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>nlisomoisture02.out</Output>
   <Description>drying at 50% RH - axisymmetric</Description>
-  <!--Time in days-->
+  <!-- Time in days -->
   <Analysis type="TransientTransport" nsteps="6" alpha="0.5" lumped="" rtolf="1e-12" miniter="1" prescribedtimes="0.2 0.4 1.0 2.0 4.0 8.0"/>
   <Domain domain="mass1transfer">
     <OutputManager tstep_all="" dofman_output="1,3,5" element_output="1"/>
@@ -45,7 +45,7 @@
       <SimpleTransportCS mat="1" set="1"/>
     </CrossSections>
     <Materials>
-      <!--moisture capacity 180 kg/m3, hydration takes maximum 70 kg/m3-->
+      <!-- moisture capacity 180 kg/m3, hydration takes maximum 70 kg/m3 -->
       <nlisomoisturemat d="2400.0" isothermtype="0" capa="180.0" permeabilitytype="1" c1="0.015" alpha0="0.05" hc="0.7" n="12.0" wn="70.0" alpha="$1-exp(-t/1.2)$"/>
     </Materials>
     <BoundaryConditions>

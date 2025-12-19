@@ -74,19 +74,19 @@
       <SimpleTransportCS thickness="1.0" mat="7"/>
     </CrossSections>
     <Materials>
-      <!--constant capacity + BN permeability-->
+      <!-- constant capacity + BN permeability -->
       <nlisomoisturemat d="2400.0" isothermtype="0" permeabilitytype="1" capa="100.0" c1="0.0015" alpha0="0.1" hc="0.75" n="10.0"/>
-      <!--piecewise linear capacity + BN permeability-->
+      <!-- piecewise linear capacity + BN permeability -->
       <nlisomoisturemat d="2400.0" isothermtype="1" iso_h="0.0 0.2 0.6 0.8 0.9 1.0" iso_w_h_="0.0 20.0 40.0 60.0 80.0 130.0" permeabilitytype="1" c1="0.0015" alpha0="0.1" hc="0.75" n="10.0"/>
-      <!--Ricken capacity + BN permeability-->
+      <!-- Ricken capacity + BN permeability -->
       <nlisomoisturemat d="2400.0" isothermtype="2" dd="0.022" permeabilitytype="1" c1="0.0015" alpha0="0.1" hc="0.75" n="10.0"/>
-      <!--Kuenzel capacity + BN permeability-->
+      <!-- Kuenzel capacity + BN permeability -->
       <nlisomoisturemat d="2400.0" isothermtype="3" wf="130.0" b="1.3" permeabilitytype="1" c1="0.0015" alpha0="0.1" hc="0.75" n="10.0"/>
-      <!--Hansen capacity + BN permeability-->
+      <!-- Hansen capacity + BN permeability -->
       <nlisomoisturemat id="5" d="2400.0" isothermtype="4" rhodry="2000.0" uh="0.065" a="0.14" nn="1.3" permeabilitytype="1" c1="0.0015" alpha0="0.1" hc="0.75" n="10.0"/>
-      <!--BSB capacity + piecewise linear permeability-->
+      <!-- BSB capacity + piecewise linear permeability -->
       <nlisomoisturemat d="2400.0" isothermtype="5" rhodry="2000.0" vm="0.01" c="20.0" k="0.85" permeabilitytype="1" c1="0.0015" alpha0="0.1" hc="0.75" n="10.0"/>
-      <!--BSB capacity + Xi permeability-->
+      <!-- BSB capacity + Xi permeability -->
       <nlisomoisturemat d="2400.0" isothermtype="5" rhodry="2000.0" vm="0.01" c="20.0" k="0.85" permeabilitytype="2" alphah="0.0005" betah="0.001" gammah="3.8"/>
     </Materials>
     <BoundaryConditions>

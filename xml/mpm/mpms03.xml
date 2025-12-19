@@ -3,14 +3,14 @@
   <Description>Demo of symbolic mpm problem; bending of clamped cantilever (l=3, h=0.3) loaded at the free end</Description>
   <Analysis type="test" nsteps="1" lhsterms="1" rhsterms="2">
     <MPMVariables>
-      <!--displacement-->
-      <Variable name="u" interpolation="feilin" type="1" quantity="0" size="2" dofs="1 2"/>
-      <!--test function-->
-      <Variable name="w" interpolation="feilin" type="1" quantity="0" size="2" dofs="1 2"/>
+      <!-- displacement -->
+      <Variable name="u" interpolation="feilin" type="vector" quantity="Displacement" size="2" dofs="1 2"/>
+      <!-- test function -->
+      <Variable name="w" interpolation="feilin" type="vector" quantity="Displacement" size="2" dofs="1 2"/>
     </MPMVariables>
     <MPMTerms>
-      <BTSigmaTerm variable="u" testvariable="w" mmode="6"/>
-      <NTfTerm variable="u" testvariable="w" mmode="6" flux="0.0 1.0"/>
+      <BTSigmaTerm variable="u" testvariable="w" mmode="PlaneStress"/>
+      <NTfTerm variable="u" testvariable="w" mmode="PlaneStress" flux="0.0 1.0"/>
     </MPMTerms>
     <MPMIntegrals>
       <Integral domain="1" set="1" term="1"/>
@@ -20,8 +20,8 @@
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
-      <!--6    7     8      9     10-->
-      <!--1    2     3      4     5-->
+      <!-- 6    7     8      9     10 -->
+      <!-- 1    2     3      4     5 -->
       <Node coords="0.0 0.0 0.0"/>
       <Node coords="0.75 0.0 0.0"/>
       <Node coords="1.5 0.0 0.0"/>
@@ -47,9 +47,9 @@
       <isole d="1.0" e="1.0" n="0.3" talpha="1.0"/>
     </Materials>
     <BoundaryConditions>
-      <!--x-displacement-->
+      <!-- x-displacement -->
       <boundarycondition loadtimefunction="1" set="3" values="0.0" dofs="1"/>
-      <!--y-displacement-->
+      <!-- y-displacement -->
       <boundarycondition loadtimefunction="1" set="4" values="0.0" dofs="2"/>
     </BoundaryConditions>
     <InitialConditions/>
@@ -60,15 +60,15 @@
     <Sets>
       <Set elements="1 2 3 4"/>
       <Set elements="5"/>
-      <!--x-bc-->
+      <!-- x-bc -->
       <Set nodes="1 6"/>
-      <!--y-bc-->
+      <!-- y-bc -->
       <Set nodes="1 6"/>
     </Sets>
   </Domain>
   <ExportModules>
     <errorcheck>
-      <!--check nodes-->
+      <!-- check nodes -->
       <NODE tStep="1" number="5" dof="1" unknown="d" value="25.6941176"/>
       <NODE tStep="1" number="5" dof="2" unknown="d" value="345.035294"/>
       <NODE tStep="1" number="10" dof="1" unknown="d" value="-25.6941176"/>
