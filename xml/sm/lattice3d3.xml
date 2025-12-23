@@ -3,8 +3,8 @@
   <Description>Direct tension. 3D Model</Description>
   <Analysis type="StaticStructural" nsteps="1">
     <Metasteps>
-      <Metastep nsteps="5" rtolv="1e-06" ddm="2 1" ddv="-4.0" ddltf="2"/>
-      <Metastep nsteps="5" rtolv="1e-06" ddm="2 1" ddv="-1.0" ddltf="2"/>
+      <MetaStep nsteps="5" rtolv="1e-06" ddm="2 1" ddv="-4.0" ddltf="2"/>
+      <MetaStep nsteps="5" rtolv="1e-06" ddm="2 1" ddv="-1.0" ddltf="2"/>
     </Metasteps>
   </Analysis>
   <Domain domain="3dlattice">
@@ -30,7 +30,6 @@
       <ConstantFunction f_t_="1.0"/>
       <PiecewiseLinFunction t="1.0 100.0" f_t_="0.0 1.0"/>
     </LoadTimeFunctions>
-    <Sets/>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-08">

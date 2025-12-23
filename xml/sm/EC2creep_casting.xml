@@ -2,6 +2,7 @@
   <Output>EC2creep_casting.out</Output>
   <Description>Test on material casting. Before casting time the material is characterized by properties of "preCastingTimeMaterial"</Description>
   <Analysis type="StaticStructural" nsteps="40" prescribedtimes="0.0001 0.0002 0.0005 0.001 0.002 0.005 0.01 0.02 0.05 0.1 0.2 0.5 1.0 2.0 5.0 10.0 10.0001 10.0002 10.0005 10.001 10.002 10.005 10.01 10.02 10.05 10.1 10.2 10.5 11.0 12.0 15.0 20.0 50.0 100.0 200.0 500.0 1000.0 2000.0 5000.0 10000.0" miniter="1" maxiter="1"/>
+  <!-- vtkxml tstep_step 1 domain_all vars 2 1 4 primvars 1 1 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
@@ -15,6 +16,11 @@
       <!-- ELEMENTS -->
       <planestress2d nodes="1 2 4 3" crosssect="1"/>
     </Elements>
+    <Sets>
+      <Set nodes="1"/>
+      <Set nodes="3"/>
+      <Set nodes="2 4"/>
+    </Sets>
     <CrossSections>
       <!-- CROSSECTION -->
       <SimpleCS thick="1.0" width="1.0" material="1"/>
@@ -36,11 +42,6 @@
       <ConstantFunction f_t_="1.0"/>
       <HeavisideLTF origin="10.0" value="1.0"/>
     </LoadTimeFunctions>
-    <Sets>
-      <Set nodes="1"/>
-      <Set nodes="3"/>
-      <Set nodes="2 4"/>
-    </Sets>
   </Domain>
   <ExportModules>
     <!-- _#%BEGIN_CHECK% -->

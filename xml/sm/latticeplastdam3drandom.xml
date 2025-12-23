@@ -27,7 +27,6 @@
       <PiecewiseLinFunction t="1.0" f_t_="0.1"/>
       <InterpolatingFunction name="latticeplastdam3drandom.dat" dim="3"/>
     </LoadTimeFunctions>
-    <Sets/>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.001">

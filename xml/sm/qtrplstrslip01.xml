@@ -2,6 +2,8 @@
   <Output>qtrplstrslip01.out</Output>
   <Description>Test case for QTrPlStrSlip element</Description>
   <Analysis type="StaticStructural" nsteps="1" deltat="1.0" constrainednrminiter="5" rtolf="1e-05" maxiter="10" miniter="1" initialguess="1"/>
+  <!-- vtkxml tstep_all domain_all primvars 2 1 17 -->
+  <!-- matlab tstep_all mesh data specials reactionforces integrationpoints internalvars 6 4 1 142 143 144 145 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
@@ -15,6 +17,11 @@
     <Elements>
       <qtrplstrslip nodes="1 2 3 4 5 6" crosssect="1"/>
     </Elements>
+    <Sets>
+      <Set nodes="1"/>
+      <Set nodes="3"/>
+      <Set nodes="2"/>
+    </Sets>
     <CrossSections>
       <SimpleCS thick="0.2" material="1" set="1"/>
     </CrossSections>
@@ -31,11 +38,6 @@
     <LoadTimeFunctions>
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
-    <Sets>
-      <Set nodes="1"/>
-      <Set nodes="3"/>
-      <Set nodes="2"/>
-    </Sets>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.001">

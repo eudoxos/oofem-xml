@@ -2,6 +2,7 @@
   <Output>hydratingConcreteMat06.out</Output>
   <Description>Test of hydrating concrete material, one linear triangluar element, transient transport solver, isothermal conditions, Rahimi-Agham's model</Description>
   <Analysis type="TransientTransport" nsteps="30" deltat="7200.0" alpha="0.5"/>
+  <!-- vtkxml tstep_step 1 domain_all primvars 1 6 vars 4 37 39 56 96 stype 1 -->
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

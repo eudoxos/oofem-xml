@@ -2,6 +2,7 @@
   <Output>patch130.out</Output>
   <Description>Patch test of TrPlaneStress2d elements -&gt; pure compression</Description>
   <Analysis type="StaticStructural" nsteps="1"/>
+  <!-- hom tstep_all ists 2 1 4 strain_energy regionsets 1 1 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

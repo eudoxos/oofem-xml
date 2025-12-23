@@ -2,6 +2,7 @@
   <Output>tr2shell7.out</Output>
   <Description>Cantilever beam with edge load</Description>
   <Analysis type="StaticStructural" nsteps="1" rtolf="0.0001" manrmsteps="1"/>
+  <!-- vtkxml tstep_all dofman_all element_all primvars 1 1 -->
   <Domain domain="3ddirshell">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

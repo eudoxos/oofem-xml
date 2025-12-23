@@ -3,6 +3,7 @@
   <Description>quasicontinuum 3d test</Description>
   <!-- qcLinearStatic nsteps 1 nmodules 0 QcApproach 3 mtrxt 1 geninterpelem 1 t3dfile quasicontinuum3d.t3d.in imsize 100 -->
   <Analysis type="qcLinearStatic" nsteps="1" qcapproach="3" mtrxt="1" geninterpelem="2" t3dfile="quasicontinuum3d.out.t3d"/>
+  <!-- qcvtkxml tstep_all domain_all primvars 1 1 vars 2 1 4 cellvars 2 1 4 expDeaktElem 0 -->
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
@@ -931,6 +932,5 @@
       <ConstantFunction f_t_="1.0"/>
       <PiecewiseLinFunction npoints="2" t="0.0 10000.0" f_t_="0.0 10000.0"/>
     </LoadTimeFunctions>
-    <Sets/>
   </Domain>
 </oofem>

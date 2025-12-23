@@ -3,7 +3,7 @@
   <Description>CDPM2 (Concretedpm2) Test of strain rate effect in tension second slope</Description>
   <Analysis type="NonLinearStatic" nsteps="1" contextoutputstep="1000">
     <Metasteps>
-      <Metastep nsteps="10" rtolv="0.001" reqiterations="4000" stiffmode="2" maxiter="4000" controllmode="0" steplength="0.0005" minsteplength="0.0005" psi="0.0" hpcmode="2" hpc="3 2" hpcw="1.0" donotfixload=""/>
+      <MetaStep nsteps="10" rtolv="0.001" reqiterations="4000" stiffmode="2" maxiter="4000" controllmode="0" steplength="0.0005" minsteplength="0.0005" psi="0.0" hpcmode="2" hpc="3 2" hpcw="1.0" donotfixload=""/>
     </Metasteps>
   </Analysis>
   <Domain domain="3d">
@@ -33,7 +33,6 @@
     <LoadTimeFunctions>
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
-    <Sets/>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.1">

@@ -2,6 +2,8 @@
   <Output>hydratingConcreteMat03.out</Output>
   <Description>Test of hydrating concrete material, linear triangluar element with a heat source, transient nonlinear solver, adiabatic conditions, exponential model</Description>
   <Analysis type="TransientTransport" nsteps="30" deltat="3600.0" alpha="0.5"/>
+  <!-- vtkxml tstep_step 1 domain_all primvars 1 6 vars 3 37 39 56 stype 1 -->
+  <!-- hom tstep_all -->
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

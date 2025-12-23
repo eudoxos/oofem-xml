@@ -3,7 +3,7 @@
   <Description>Direct tension. 3D Plasticity Damage Model</Description>
   <Analysis type="NonLinearStatic" nsteps="1" contextoutputstep="1000">
     <Metasteps>
-      <Metastep nsteps="3" rtolv="1e-06" stiffmode="1" controllmode="1" refloadmode="0" minsteplength="0.001" ddm="2 1" ddv="0.0001" ddltf="2"/>
+      <MetaStep nsteps="3" rtolv="1e-06" stiffmode="1" controllmode="1" refloadmode="0" minsteplength="0.001" ddm="2 1" ddv="0.0001" ddltf="2"/>
     </Metasteps>
   </Analysis>
   <Domain domain="3dlattice">
@@ -29,7 +29,6 @@
       <ConstantFunction f_t_="1.0"/>
       <PiecewiseLinFunction npoints="2" t="0.0 3.0" f_t_="0.0 1.0"/>
     </LoadTimeFunctions>
-    <Sets/>
   </Domain>
   <ExportModules>
     <errorcheck>

@@ -2,6 +2,7 @@
   <Output>bazantnajjar.out</Output>
   <Description>drying at 50% RH - axisymmetric</Description>
   <Analysis type="transienttransport" nsteps="8" alpha="0.5" rtolf="1e-06" forcescale="0.0" forcescaledofs="14" lumped="" prescribedtimes="0.01 0.1 0.5 1.0 2.0 4.0 6.0 8.0"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 3 -->
   <Domain domain="mass1transfer">
     <OutputManager tsteps_out="4,8" dofman_output="1,3,5" element_output="1"/>
     <Nodes>
@@ -40,6 +41,10 @@
       <quadaxisym1mt nodes="9 10 21 20"/>
       <quadaxisym1mt id="10" nodes="10 11 22 21"/>
     </Elements>
+    <Sets>
+      <Set elementranges="1-10"/>
+      <Set nodes="11 22"/>
+    </Sets>
     <CrossSections>
       <SimpleTransportCS mat="1" set="1"/>
     </CrossSections>
@@ -55,10 +60,6 @@
     <LoadTimeFunctions>
       <ConstantFunction f_t_="0.5"/>
     </LoadTimeFunctions>
-    <Sets>
-      <Set elementranges="1-10"/>
-      <Set nodes="11 22"/>
-    </Sets>
   </Domain>
   <ExportModules>
     <!-- PieceWiseLinFunction 1 t 4 -1 0 0.01 10 f(t) 4 0 0 0.5 0.5 -->

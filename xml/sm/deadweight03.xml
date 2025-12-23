@@ -2,6 +2,7 @@
   <Output>deadweight03.out</Output>
   <Description>Test of vertical deadweight on linear triagles</Description>
   <Analysis type="StaticStructural" nsteps="1"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 1 vars 2 4 1 stype 1 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

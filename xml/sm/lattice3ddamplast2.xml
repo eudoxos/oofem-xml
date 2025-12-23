@@ -3,8 +3,8 @@
   <Description>Confined shear. 3D Damage Plasticity Model</Description>
   <Analysis type="NonLinearStatic" nsteps="1" contextoutputstep="100">
     <Metasteps>
-      <Metastep nsteps="1" rtolv="0.0001" stiffmode="1" maxiter="1000" controllmode="1" minsteplength="1e-06"/>
-      <Metastep nsteps="2" rtolv="0.0001" maxiter="2000" stiffmode="1" controllmode="1" refloadmode="0" minsteplength="0.001" ddm="2 2" ddv="0.0001" ddltf="3"/>
+      <MetaStep nsteps="1" rtolv="0.0001" stiffmode="1" maxiter="1000" controllmode="1" minsteplength="1e-06"/>
+      <MetaStep nsteps="2" rtolv="0.0001" maxiter="2000" stiffmode="1" controllmode="1" refloadmode="0" minsteplength="0.001" ddm="2 2" ddv="0.0001" ddltf="3"/>
     </Metasteps>
   </Analysis>
   <Domain domain="3dlattice">
@@ -32,7 +32,6 @@
       <PiecewiseLinFunction npoints="4" t="0.0 0.1 0.2 3.0" f_t_="1.0 1.0 0.0 0.0"/>
       <PiecewiseLinFunction npoints="4" t="0.0 0.1 0.2 3.0" f_t_="0.0 0.0 0.0 10.0"/>
     </LoadTimeFunctions>
-    <Sets/>
   </Domain>
   <ExportModules>
     <errorcheck>

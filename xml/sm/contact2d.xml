@@ -1,0 +1,58 @@
+<oofem version="1">
+  <Output>contact2d.out</Output>
+  <Description>frictionless contact in 2D</Description>
+  <Analysis type="StaticStructural" nsteps="5" deltat="1.0" renumber="0" rtolv="1e-09" stiffmode="0" manrmsteps="1" maxiter="300" initialguess="1" smtype="0"/>
+  <Domain domain="planestrain">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="-0.5 -1.5"/>
+      <Node coords="0.5 -1.5"/>
+      <Node coords="0.5 0.5"/>
+      <Node coords="-0.5 -0.5"/>
+      <Node id="5" coords="-0.4 -0.4"/>
+      <Node coords="0.4 0.4"/>
+      <Node coords="0.4 1.0"/>
+      <Node coords="-0.4 1.0"/>
+    </Nodes>
+    <Elements>
+      <Quad1PlaneStrain nodes="5 6 7 8" crosssect="1" mat="1" nlgeo="1"/>
+      <Quad1PlaneStrain nodes="1 2 3 4" crosssect="1" mat="1" nlgeo="1"/>
+      <StructuralContactElement_LineLin nodes="3 4" crosssect="2" mat="2" nip="2"/>
+      <StructuralContactElement_LineLin nodes="5 6" crosssect="2" mat="2" nip="2"/>
+    </Elements>
+    <ContactSurfaces>
+      <StructuralFEContactSurface ce_set="3"/>
+      <StructuralFEContactSurface ce_set="4"/>
+    </ContactSurfaces>
+    <CrossSections>
+      <SimpleCS set="5" thick="1.0" area="1.0"/>
+      <DummyCS mat="2"/>
+    </CrossSections>
+    <Materials>
+      <!-- IsoLE 1 E 100000.0 n 0.3 d 1.0 talpha 0 -->
+      <mooneyrivlincompressiblemat d="0.0" c1="100000.0" c2="0.0" k="10000000.0"/>
+      <DummyMat/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" values="0.0 0.0" dofs="1 2" set="1"/>
+      <BoundaryCondition loadtimefunction="2" values="0.0 -0.05" dofs="1 2" set="2"/>
+      <structuralpenaltycontactbc loadtimefunction="1" dofs="1 2" pn="100000000.0" pt="100000000.0" friction="0.0" mastersurface="1" slavesurface="2" nsd="2"/>
+      <structuralpenaltycontactbc loadtimefunction="1" dofs="1 2" pn="100000000.0" pt="100000000.0" friction="0.0" mastersurface="2" slavesurface="1" nsd="2"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="0.0"/>
+      <PiecewiseLinFunction npoints="2" t="0.0 30.0" f_t_="0.0 30.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1 2"/>
+      <Set nodes="7 8"/>
+      <Set elements="3"/>
+      <Set elements="4"/>
+      <Set id="5" elements="1 2"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <vtkxml tstep_all="" domain_all="" primvars="1" cellvars="1"/>
+  </ExportModules>
+</oofem>

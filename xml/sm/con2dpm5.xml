@@ -3,7 +3,7 @@
   <Description>Test of 1D CDPM2 on a 1D truss element</Description>
   <Analysis type="NonLinearStatic" nsteps="50" contextoutputstep="10000000">
     <Metasteps>
-      <Metastep nsteps="3" rtolv="0.001" controllmode="0" steplength="5e-05" minsteplength="1e-05" psi="0.0" hpcmode="2" hpc="2 1" hpcw="1.0" reqiterations="100000" stiffmode="1" maxiter="100000" donotfixload=""/>
+      <MetaStep nsteps="3" rtolv="0.001" controllmode="0" steplength="5e-05" minsteplength="1e-05" psi="0.0" hpcmode="2" hpc="2 1" hpcw="1.0" reqiterations="100000" stiffmode="1" maxiter="100000" donotfixload=""/>
     </Metasteps>
   </Analysis>
   <Domain domain="1dtruss">
@@ -29,6 +29,5 @@
     <LoadTimeFunctions>
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
-    <Sets/>
   </Domain>
 </oofem>

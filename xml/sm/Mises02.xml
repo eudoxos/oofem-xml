@@ -2,6 +2,7 @@
   <Output>Mises02.out</Output>
   <Description>Test of Mises plasticity model with multilinear hardening/softening</Description>
   <Analysis type="StaticStructural" nsteps="10" rtolf="0.0001" maxiter="20"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 1 -->
   <Domain domain="1dtruss">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

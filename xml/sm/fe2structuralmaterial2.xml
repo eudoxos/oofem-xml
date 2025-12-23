@@ -25,6 +25,11 @@
       <planestress2d nodes="7 8 9 10"/>
       <planestress2d nodes="8 2 3 9"/>
     </Elements>
+    <Sets>
+      <Set elementranges="13-17"/>
+      <Set nodes="1 4"/>
+      <Set nodes="2 3"/>
+    </Sets>
     <CrossSections>
       <SimpleCS thick="1.0" material="1" set="1"/>
     </CrossSections>
@@ -40,11 +45,6 @@
     <LoadTimeFunctions>
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
-    <Sets>
-      <Set elementranges="13-17"/>
-      <Set nodes="1 4"/>
-      <Set nodes="2 3"/>
-    </Sets>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.0001">

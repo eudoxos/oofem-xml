@@ -2,6 +2,7 @@
   <Output>bdam7.oofem.out</Output>
   <Description>collapse of water column</Description>
   <Analysis type="supg" nsteps="4" lstype="0" smtype="1" deltat="0.01" rtolv="0.0001" alpha="0.5" miflag="1" refvol="0.002678062"/>
+  <!-- vtkxml tstep_step 10 domain_all primvars 2 1 5 vars 1 43 -->
   <Domain domain="2dincompflow">
     <OutputManager tsteps_out="4" dofman_all="" element_all=""/>
     <Nodes>

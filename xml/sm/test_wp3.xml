@@ -2,6 +2,7 @@
   <Output>test_wp3.out</Output>
   <Description>Winkler pasternak model: test of settlement profile, Quadrilateral quadratic elements</Description>
   <Analysis type="linearstatic" nsteps="1"/>
+  <!-- vtkxml tstep_step 1 domain_all  primvars 1 1  vars 3 1 2 4 stype 1 -->
   <Domain domain="2dmindlinplate">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

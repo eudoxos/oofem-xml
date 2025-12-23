@@ -2,6 +2,7 @@
   <Output>MPS_01_casting_sm.out</Output>
   <Description>basic creep in tension, test includes prediction of paramters q1-q4 based on concrete composition, casting time set to 14 days. Results are identical to test MPS_01_sm.in</Description>
   <Analysis type="StaticStructural" nsteps="28" prescribedtimes="0.0 13.0 14.0 14.0001 14.0002 14.0005 14.001 14.002 14.005 14.01 14.02 14.05 14.1 14.2 14.5 15.0 16.0 19.0 24.0 34.0 64.0 114.0 214.0 514.0 1014.0 2014.0 5014.0 10014.0"/>
+  <!-- vtkxml tstep_step 1 domain_all vars 2 1 4 primvars 1 1 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

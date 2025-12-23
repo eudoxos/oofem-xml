@@ -4,6 +4,8 @@
   <!-- This test is either extremely sensitive to initial guesses, or has a bug in the material model (!) -->
   <!-- I set the initialguess to 0 (which is a bad guess) to get the same behavior as before. -->
   <Analysis type="StaticStructural" nsteps="46" rtolf="1e-05" miniter="30" maxiter="30" deltat="1.0" initialguess="0"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 1 cellvars 1 61 vars 4 1 4 13 -->
+  <!-- hom tstep_all scale 1. -->
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

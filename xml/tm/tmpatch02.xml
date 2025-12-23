@@ -2,6 +2,7 @@
   <Output>tmpatch02.out</Output>
   <Description>Patch test of Quad1_ht elements</Description>
   <Analysis type="StationaryProblem" nsteps="1"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 6 -->
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

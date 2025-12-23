@@ -2,6 +2,7 @@
   <Output>tmpatch05.out</Output>
   <Description>Patch test of Quad1_ht elements. Convection as the Newton law (Cauchy's b.c.) via a heat transfer coefficient.</Description>
   <Analysis type="StationaryProblem" nsteps="1"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 6 vars 1 56 stype 1 -->
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

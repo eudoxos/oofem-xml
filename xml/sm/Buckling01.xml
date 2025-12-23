@@ -2,6 +2,8 @@
   <Output>Buckling01.out</Output>
   <Description>Euler buckling of a 2D beam, hinges on both supports. Rectangular cross section 160/40 mm, length 10 m, bending around more compliant axis. Initial imperfection as a sine wave with the amplitude 19 mm. The critical force is 210e+3*8.533e-07*pi^2/10^2=0.017656 MN. The reference node must be far away so the local coordination system is uninfluenced with node displacements.</Description>
   <Analysis type="StaticStructural" nsteps="50" solvertype="calm" forcedinitialsteplength="1e-08" steplength="0.01" minsteplength="0.001" reqiterations="10" rtolv="0.0001" psi="0.0" manrmsteps="1" hpc="17 1 5 3" hpcw="1000.0 1.0"/>
+  <!-- Note: hpc helps with the speed of convergence, it takes 1000*vertical displacement plus horizontal mid-span deflection -->
+  <!-- vtkxml tstep_all primvars 1 1 vars 4 7 146 147 148 stype 0 -->
   <Domain domain="3dbeam">
     <OutputManager tstep_all="" dofman_output="1,9,17" element_output="9"/>
     <Nodes>

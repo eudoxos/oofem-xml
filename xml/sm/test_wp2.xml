@@ -2,6 +2,7 @@
   <Output>test_wp2.out</Output>
   <Description>Winkler pasternak model: test of settlement profile, Tria1PlateSubSoil elements</Description>
   <Analysis type="StaticStructural" nsteps="1"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 1 -->
   <Domain domain="2dmindlinplate">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

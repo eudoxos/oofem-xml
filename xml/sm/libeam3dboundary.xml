@@ -27,6 +27,11 @@
       <libeam3d nodes="7 8" refnode="10" crosssect="1"/>
       <libeam3dboundary nodes="8 5 11" refnode="10" crosssect="1" location="0 22"/>
     </Elements>
+    <Sets>
+      <Set elementranges="1-8"/>
+      <Set nodes="11"/>
+      <Set nodes="1 5"/>
+    </Sets>
     <CrossSections>
       <FiberedCS fibermaterials="1" thicks="0.01772455923" widths="0.01772455923" thick="0.01772455923" width="0.01772455923" fiberycentrecoords="0.008862279616" fiberzcentrecoords="0.008862279616"/>
     </CrossSections>
@@ -42,11 +47,6 @@
       <ConstantFunction f_t_="1.0"/>
       <PiecewiseLinFunction t="0.0 15.0" f_t_="0.0 1.5"/>
     </LoadTimeFunctions>
-    <Sets>
-      <Set elementranges="1-8"/>
-      <Set nodes="11"/>
-      <Set nodes="1 5"/>
-    </Sets>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.001">

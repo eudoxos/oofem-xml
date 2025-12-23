@@ -2,6 +2,7 @@
   <Output>axi04.oofem.out</Output>
   <Description>axisymmetric 2D pipe test, gravity load in cylinder; no friction</Description>
   <Analysis type="supg" nsteps="4" lstype="0" smtype="1" deltat="1e-05" rtolv="0.0001" alpha="0.5"/>
+  <!-- vtkxml tstep_step 1 domain_all primvars 2 1 5 vars 1 43 -->
   <Domain domain="2dincompflow">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

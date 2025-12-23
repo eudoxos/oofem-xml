@@ -2,6 +2,7 @@
   <Output>patch107.out</Output>
   <Description>Patch test of trplanestrain elements</Description>
   <Analysis type="StaticStructural" nsteps="1"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 1 vars 2 1 4 stype 2 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

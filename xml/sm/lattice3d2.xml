@@ -51,7 +51,6 @@
     <LoadTimeFunctions>
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
-    <Sets/>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-08">

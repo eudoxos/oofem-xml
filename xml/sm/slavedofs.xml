@@ -17,6 +17,12 @@
       <Beam2d nodes="4 3"/>
       <Beam2d nodes="5 6"/>
     </Elements>
+    <Sets>
+      <Set elementranges="1-3"/>
+      <Set nodes="1"/>
+      <Set nodes="2"/>
+      <Set nodes="3"/>
+    </Sets>
     <CrossSections>
       <SimpleCS area="1.0" iy="0.0039366" beamshearcoeff="1e+18" material="1" set="1"/>
     </CrossSections>
@@ -32,12 +38,6 @@
     <LoadTimeFunctions>
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
-    <Sets>
-      <Set elementranges="1-3"/>
-      <Set nodes="1"/>
-      <Set nodes="2"/>
-      <Set nodes="3"/>
-    </Sets>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.0001">

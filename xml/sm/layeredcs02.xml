@@ -3,7 +3,7 @@
   <Description>Comparing tr_shell01 response (plate + plane_stress) for integral and layered cs</Description>
   <Analysis type="NonLinearStatic" nsteps="1" profileopt="1">
     <Metasteps>
-      <Metastep nsteps="2" controllmode="1" rtolf="0.001" rtold="0.001" maxiter="2000" refloadmode="1"/>
+      <MetaStep nsteps="2" controllmode="1" rtolf="0.001" rtold="0.001" maxiter="2000" refloadmode="1"/>
     </Metasteps>
   </Analysis>
   <Domain domain="3d">

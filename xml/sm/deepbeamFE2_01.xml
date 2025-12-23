@@ -2,6 +2,9 @@
   <Output>deepbeamFE2_01.out</Output>
   <Description>FE2 analysis of a reinforced concrete deep beam - Dirichlet-Dirichlet BC. Added by Adam Sciegaj</Description>
   <Analysis type="StaticStructural" nsteps="2" deltat="1.0" constrainednrminiter="5" rtolf="0.001" maxiter="20" miniter="1" initialguess="1"/>
+  <!-- vtkxml tstep_all domain_all vars 4 1 4 5 12 cellvars 1 47 stype 2 -->
+  <!-- vtkxml tstep_all domain_all vars 4 1 4 5 12 ipvars 3 1 4 5 -->
+  <!-- matlab tstep_all mesh data specials reactionforces integrationpoints internalvars 2 1 4 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
@@ -89,6 +92,15 @@
       <qtrplstr nodes="26 5 12 37 13 43"/>
       <qtrplstr nodes="28 26 25 57 53 54"/>
     </Elements>
+    <Sets>
+      <Set elementranges="1-23"/>
+      <!-- support -->
+      <Set nodes="11"/>
+      <!-- point load -->
+      <Set nodes="19"/>
+      <!-- symmetry line nodes -->
+      <Set nodes="3 4 15 16 17"/>
+    </Sets>
     <CrossSections>
       <SimpleCS thick="0.2" material="1" set="1"/>
     </CrossSections>
@@ -105,15 +117,6 @@
       <ConstantFunction f_t_="1.0"/>
       <PiecewiseLinFunction t="1.0 3.0" f_t_="1.0 3.0"/>
     </LoadTimeFunctions>
-    <Sets>
-      <Set elementranges="1-23"/>
-      <!-- support -->
-      <Set nodes="11"/>
-      <!-- point load -->
-      <Set nodes="19"/>
-      <!-- symmetry line nodes -->
-      <Set nodes="3 4 15 16 17"/>
-    </Sets>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.01">

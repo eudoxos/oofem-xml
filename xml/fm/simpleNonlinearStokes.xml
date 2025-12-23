@@ -1,7 +1,8 @@
 <oofem version="1">
   <Output>simpleNonlinearStokes.out</Output>
   <Description>Test for stokes flow on triangular Taylor-Hood element</Description>
-  <Analysis type="stokesflow" nsteps="1" rtolf="1e-05" lstype="0" smtype="0" linesearch="1" maxiter="50"/>
+  <Analysis type="stokesflow" nsteps="1" rtolf="1e-05" lstype="0" smtype="0" linesearch="0" maxiter="50"/>
+  <!-- vtkxml tstep_all domain_all primvars 2 4 5 -->
   <Domain domain="2dincompflow">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
@@ -19,6 +20,11 @@
       <tr21stokes nodes="1 2 4 5 6 7"/>
       <tr21stokes nodes="2 3 4 8 9 6"/>
     </Elements>
+    <Sets>
+      <Set nodes="2 3"/>
+      <Set nodes="1 4"/>
+      <Set elementranges="1-2"/>
+    </Sets>
     <CrossSections>
       <fluidcs mat="1" set="3"/>
     </CrossSections>
@@ -33,11 +39,6 @@
     <LoadTimeFunctions>
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
-    <Sets>
-      <Set nodes="2 3"/>
-      <Set nodes="1 4"/>
-      <Set elementranges="1-2"/>
-    </Sets>
   </Domain>
   <ExportModules>
     <errorcheck>

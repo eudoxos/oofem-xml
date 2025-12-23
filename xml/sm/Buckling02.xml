@@ -2,6 +2,7 @@
   <Output>Buckling02.out</Output>
   <Description>Euler buckling of a 2D beam, hinges on both supports. Rectangular cross section 160/40 mm, length 4 m, bending around more compliant axis. Initial imperfection as a sine wave with the amplitude of 2 mm. The critical force of perfect beam is 210e+3*8.533e-07*pi^2/4^2=0.1105 MN (after 50 iteration here 0.1065 MN, relative error 4% neglecting initial deflection). The solution uses updated Lagrange method, updating node coordinates after every equilibrated step.</Description>
   <Analysis type="StaticStructural" nonlinform="2" nsteps="50" maxiter="50" rtolv="0.0001" manrmsteps="1"/>
+  <!-- vtkxml tstep_all primvars 1 1 vars 1 7 stype 0 -->
   <Domain domain="3dbeam">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

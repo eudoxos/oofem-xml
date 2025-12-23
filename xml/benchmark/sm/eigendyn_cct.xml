@@ -1160,6 +1160,10 @@
       <CCTPlate nodes="399 400 389"/>
       <CCTPlate id="720" nodes="389 400 390"/>
     </Elements>
+    <Sets>
+      <Set elementranges="1-720"/>
+      <Set nodes="1 2 3 5 7 8 11 12 390 400 409 416 423 427 430 432"/>
+    </Sets>
     <CrossSections>
       <SimpleCS thick="1.0" material="1" set="1"/>
     </CrossSections>
@@ -1174,10 +1178,6 @@
     <LoadTimeFunctions>
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
-    <Sets>
-      <Set elementranges="1-720"/>
-      <Set nodes="1 2 3 5 7 8 11 12 390 400 409 416 423 427 430 432"/>
-    </Sets>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="0.0001">

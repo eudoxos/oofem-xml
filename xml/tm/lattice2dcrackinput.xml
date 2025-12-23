@@ -2,6 +2,7 @@
   <Output>lattice2dcrackinput.out</Output>
   <Description>Direct tension. 2D Model</Description>
   <Analysis type="TransientTransport" nsteps="1" deltat="6.0" alpha="1.0"/>
+  <!-- errorcheck -->
   <Domain domain="2dmasslatticetransport">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

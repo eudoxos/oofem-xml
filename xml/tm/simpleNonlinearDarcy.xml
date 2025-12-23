@@ -2,6 +2,7 @@
   <Output>simpleNonlinearDarcy.out</Output>
   <Description>Test for stokes flow on triangular Taylor-Hood element</Description>
   <Analysis type="stationaryproblem" nsteps="1" manrmsteps="1"/>
+  <!-- vtkxml tstep_all domain_all  primvars 1 5 cellvars 1 41 -->
   <Domain domain="2dincompflow">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

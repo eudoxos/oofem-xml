@@ -2,6 +2,9 @@
   <Output>linkslip01.out</Output>
   <Description>Test case for LinkSlip interface material - rebar pull-out in 3D.</Description>
   <Analysis type="StaticStructural" nsteps="20" deltat="1.0" rtolf="0.001" maxiter="500" initialguess="1"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 1 -->
+  <!-- vtkxml tstep_all domain_all ipvars 2 98 99 regionsets 1 3 -->
+  <!-- matlab tstep_all integrationpoints internalvars 2 98 99 -->
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
@@ -27,6 +30,14 @@
       <bondlink3d nodes="13 2" dirvector="1.0 0.0 0.0" length="0.1" length_end="0.05" diameter="0.02"/>
       <bondlink3d id="5" nodes="14 3" dirvector="1.0 0.0 0.0" length="0.1" length_end="0.0716199" diameter="0.02"/>
     </Elements>
+    <Sets>
+      <Set elements="1 2"/>
+      <Set elements="3"/>
+      <Set elements="4 5"/>
+      <Set nodes="1"/>
+      <Set id="5" nodes="1 4"/>
+      <Set nodes="14"/>
+    </Sets>
     <CrossSections>
       <SimpleCS material="1" set="1"/>
       <SimpleCS area="0.00031416" material="2" set="2"/>
@@ -47,14 +58,6 @@
     <LoadTimeFunctions>
       <PiecewiseLinFunction t="0.0 20.0" f_t_="0.0 1.0"/>
     </LoadTimeFunctions>
-    <Sets>
-      <Set elements="1 2"/>
-      <Set elements="3"/>
-      <Set elements="4 5"/>
-      <Set nodes="1"/>
-      <Set id="5" nodes="1 4"/>
-      <Set nodes="14"/>
-    </Sets>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="10.0">

@@ -2,6 +2,7 @@
   <Output>MPS_01_sec_sm.out</Output>
   <Description>basic creep in tension, test includes prediction of paramters q1-q4 based on concrete composition</Description>
   <Analysis type="StaticStructural" nsteps="25" prescribedtimes="8.64 17.28 43.2 86.4 172.8 432.0 864.0 1728.0 4320.0 8640.0 17280.0 43200.0 86400.0 172800.0 432000.0 864000.0 1728000.0 4320000.0 8640000.0 17280000.0 43200000.0 86400000.0 172800000.0 432000000.0 864000000.0"/>
+  <!-- vtkxml tstep_step 1 domain_all vars 2 1 4 primvars 1 1 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

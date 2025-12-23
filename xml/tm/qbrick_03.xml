@@ -2,6 +2,7 @@
   <Output>qbrick_03.out</Output>
   <Description>Patch test of QBrick1ht element, loaded b one side by heat transfer coefficient</Description>
   <Analysis type="StationaryProblem" nsteps="1"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 6 vars 2 37 56 stype 2 -->
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

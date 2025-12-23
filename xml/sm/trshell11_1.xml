@@ -3,7 +3,7 @@
   <Description>Cantilever beam, comparing two models (integral cross section and layared cross section)</Description>
   <Analysis type="NonLinearStatic" nsteps="2" profileopt="1">
     <Metasteps>
-      <Metastep nsteps="2" controllmode="1" rtolf="0.001" rtold="0.001" maxiter="2000" refloadmode="1"/>
+      <MetaStep nsteps="2" controllmode="1" rtolf="0.001" rtold="0.001" maxiter="2000" refloadmode="1"/>
     </Metasteps>
   </Analysis>
   <Domain domain="3dshell">

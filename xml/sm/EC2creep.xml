@@ -2,6 +2,7 @@
   <Output>EC2creep.out</Output>
   <Description>creep in tension with two material variants: least squares method and retardation spectrum</Description>
   <Analysis type="StaticStructural" nsteps="25" prescribedtimes="0.0001 0.0002 0.0005 0.001 0.002 0.005 0.01 0.02 0.05 0.1 0.2 0.5 1.0 2.0 5.0 10.0 20.0 50.0 100.0 200.0 500.0 1000.0 2000.0 5000.0 10000.0"/>
+  <!-- vtkxml tstep_step 1 domain_all vars 2 1 4 primvars 1 1 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
@@ -20,6 +21,11 @@
       <planestress2d nodes="1 2 4 3" crosssect="1"/>
       <planestress2d nodes="5 6 8 7" crosssect="2"/>
     </Elements>
+    <Sets>
+      <Set nodes="1 5"/>
+      <Set nodes="3 7"/>
+      <Set nodes="2 4 6 8"/>
+    </Sets>
     <CrossSections>
       <!-- CROSSECTION -->
       <SimpleCS thick="1.0" width="1.0" material="1"/>
@@ -41,11 +47,6 @@
       <ConstantFunction f_t_="1.0"/>
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
-    <Sets>
-      <Set nodes="1 5"/>
-      <Set nodes="3 7"/>
-      <Set nodes="2 4 6 8"/>
-    </Sets>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-11">

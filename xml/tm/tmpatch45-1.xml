@@ -2,6 +2,7 @@
   <Output>tmpatch45-1.out</Output>
   <Description>Test of tr1ht element with a constant heat source, adiabatic</Description>
   <Analysis type="TransientTransport" nsteps="10" deltat="3600.0" rtolf="1e-06" forcescale="0.0" forcescaledofs="10" alpha="0.5"/>
+  <!-- hom tstep_all -->
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

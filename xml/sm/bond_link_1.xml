@@ -2,6 +2,7 @@
   <Output>bond_link_1.out</Output>
   <Description>Bond test</Description>
   <Analysis type="StaticStructural" nsteps="1" initialguess="1" lstype="0" smtype="1" stiffmode="2" rtolv="0.001"/>
+  <!-- matlab tstep_all mesh data reactionforces integrationpoints internalvars 7 4 1 12 7 8 98 99 -->
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

@@ -2,6 +2,7 @@
   <Output>adapt02.out</Output>
   <Description>adaptive 3d test (subdivision+mapping+adaptnlinearstatic)</Description>
   <Analysis type="adaptnlinearstatic" nsteps="5" controllmode="1" rtolv="0.0001" maxiter="800" stiffmode="1" contextoutputstep="1" manrmsteps="1" vartype="1" minlim="0.2" maxlim="1.0" mindens="1.6" maxdens="1.6" meshpackage="3" defdens="100.0" equilmc="1" renumber="1" lstype="0" smtype="0" eetype="0" istype="13"/>
+  <!-- vtkxml domain_all tstep_all vars 2 1 13 -->
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
@@ -32,7 +33,6 @@
       <ConstantFunction f_t_="1.0"/>
       <PiecewiseLinFunction npoints="2" t="0.0 100.0" f_t_="1.0 101.0"/>
     </LoadTimeFunctions>
-    <Sets/>
   </Domain>
   <ExportModules>
     <errorcheck tolerance="1e-05">

@@ -48,7 +48,6 @@
     <LoadTimeFunctions>
       <ConstantFunction f_t_="1.0"/>
     </LoadTimeFunctions>
-    <Sets/>
   </Domain>
   <ExportModules>
     <vtkxmllattice tstep_all="" primvars="1" cross="1" cellvars="60 90" domain_all=""/>

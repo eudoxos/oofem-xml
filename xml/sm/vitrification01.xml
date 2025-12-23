@@ -2,6 +2,7 @@
   <Output>vitrification01.out</Output>
   <Description>Test of vitrification material model</Description>
   <Analysis type="StaticStructural" nsteps="2" deltat="1.0"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 1 -->
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

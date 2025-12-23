@@ -2,6 +2,7 @@
   <Output>macroLspace01.out</Output>
   <Description>test of one MacroLSpace element with embedded problem from file micromaterial01.in</Description>
   <Analysis type="StaticStructural" nsteps="3" rtolf="0.0001" deltat="1.0"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 1 -->
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

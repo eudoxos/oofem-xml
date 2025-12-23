@@ -25,6 +25,5 @@
       <ConstantFunction f_t_="1.0"/>
       <PiecewiseLinFunction npoints="2" t="1.0 4.0" f_t_="0.0 1.0"/>
     </LoadTimeFunctions>
-    <Sets/>
   </Domain>
 </oofem>

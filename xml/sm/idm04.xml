@@ -2,6 +2,7 @@
   <Output>idm04.out</Output>
   <Description>Test of damage law with linear softening on a 1D truss element, fracturing strain</Description>
   <Analysis type="StaticStructural" nsteps="12" solvertype="calm" rtolf="0.0001" maxiter="20" psi="0.0" hpcmode="1" hpc="2 1" steplength="0.05" minsteplength="0.05"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 1 -->
   <Domain domain="1dtruss">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

@@ -5,6 +5,7 @@
   <!-- Exact solution for radial stress sig_r = 40./21.*(1-100./r^2) -->
   <!-- Exact solution for hoop stress sig_theta = 40./21.*(1+100./r^2) -->
   <Analysis type="LinearStatic" nsteps="1"/>
+  <!-- vtkxml tstep_step 1 cellvars 1 46 vars 3 1 2 4 primvars 1 1 stype 2 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

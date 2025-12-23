@@ -2,6 +2,9 @@
   <Output>eigenstrain02.out</Output>
   <Description>Eigenstrain test of PlaneStress2d elements -&gt; imposed shear with horizontal strain</Description>
   <Analysis type="LinearStatic" nsteps="1"/>
+  <!-- LinearStatic nsteps 1 nmodules 2 -->
+  <!-- vtkxml tstep_all domain_all primvars 1 1 vars 2 1 4 stype 1 -->
+  <!-- hom tstep_all -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

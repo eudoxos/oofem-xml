@@ -2,6 +2,7 @@
   <Output>con2dpm8.out</Output>
   <Description>Test of thermal strain for 1D CDPM2</Description>
   <Analysis type="StaticStructural" nsteps="1" initialguess="1" rtolf="0.001" stiffmode="2" maxiter="1000"/>
+  <!-- errorcheck -->
   <Domain domain="1dtruss">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

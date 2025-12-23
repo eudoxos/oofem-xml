@@ -1,7 +1,8 @@
 <oofem version="1">
   <Output>weakPeriodicTriangularObstacle.out</Output>
   <Description>Test for SolutionbasedFormFunction</Description>
-  <Analysis type="stokesflow" nsteps="1" rtolf="0.01" lstype="0" smtype="1" linesearch="1" maxiter="1000"/>
+  <Analysis type="stokesflow" nsteps="1" rtolf="0.01" lstype="0" smtype="1" linesearch="0" maxiter="1000"/>
+  <!-- vtkxml tstep_all domain_all primvars 2 4 5 -->
   <Domain domain="2dincompflow">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

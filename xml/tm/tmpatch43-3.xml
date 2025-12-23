@@ -2,6 +2,7 @@
   <Output>tmpatch43-3.out</Output>
   <Description>Patch test of linear triangle elements, steady-state solution, prescribed constant heat source</Description>
   <Analysis type="StationaryProblem" nsteps="1"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 6 vars 2 37 56 stype 1 -->
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

@@ -2,6 +2,7 @@
   <Output>tmpatch11dtf.out</Output>
   <Description>Patch test of Quad1_ht elements</Description>
   <Analysis type="TransientTransport" nsteps="20" dtfunction="2" alpha="0.5"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 6 vars 2 37 56 stype 1 -->
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

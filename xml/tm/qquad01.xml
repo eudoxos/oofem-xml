@@ -2,6 +2,7 @@
   <Output>qquad01.out</Output>
   <Description>Test of quadratic quadrilateral QQuad element, 1. step with internal source, exact solution is a quadratic profile in y direction, 2. step with heat flow prescribed on the top boundary</Description>
   <Analysis type="StationaryProblem" nsteps="2"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 6 vars 2 37 56 stype 2 -->
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

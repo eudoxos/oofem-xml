@@ -2,6 +2,7 @@
   <Output>patch140.out</Output>
   <Description>Patch test of QTrPlStr elements -&gt; pure compression</Description>
   <Analysis type="StaticStructural" nsteps="1"/>
+  <!-- vtkxml tstep_all domain_all externalforces 1 1 primvars 1 1 vars 2 1 4 stype 2 -->
   <Domain domain="2dplanestress2d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

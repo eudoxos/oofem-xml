@@ -2,6 +2,7 @@
   <Output>interface3d.out</Output>
   <Description>patch test of interface 3d elements</Description>
   <Analysis type="LinearStatic" nsteps="1"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 1 vars 2 1 4 stype 1 -->
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

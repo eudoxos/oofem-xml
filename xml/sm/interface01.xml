@@ -21,7 +21,7 @@
     </CrossSections>
     <Materials>
       <IsoLe d="2500.0" e="40000.0" n="0.15" talpha="2.4e-06"/>
-      <simpleintermat kn="1000.0" fc="1.0" stiffcoeff="0.2" regularized="1"/>
+      <simpleintermat kn="1000.0" fc="1.0" stiffcoeff="0.2" regularized="0"/>
     </Materials>
     <BoundaryConditions>
       <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="1"/>

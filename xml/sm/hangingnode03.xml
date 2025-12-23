@@ -2,6 +2,8 @@
   <Output>hangingnode03.out</Output>
   <Description>Test of hanging node in with automatic element detection.</Description>
   <Analysis type="LinearStatic" nsteps="1"/>
+  <!-- LinearStatic nsteps 1 nmodules 1 -->
+  <!-- vtkxml tstep_all domain_all primvars 1 1 vars 2 1 4 stype 1 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

@@ -2,6 +2,7 @@
   <Output>HeMoKunzel_1.out</Output>
   <Description>Heat and moisture transport - Kunzel's model. Direct solver and unsymmetric skyline.</Description>
   <Analysis type="transienttransport" nsteps="9" deltat="36000.0" alpha="0.5" lumped="" forcescale="0.0 0.0" forcescaledofs="10 14" rtolf="1e-05" lstype="0" smtype="1"/>
+  <!-- vtkxml tstep_all domain_all primvars 2 6 7 vars 2 37 40 stype 1 -->
   <Domain domain="hema1">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

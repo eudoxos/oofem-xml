@@ -3,6 +3,8 @@
   <Description>Test of mpm upbrick11 element and distributed pressure boundary condition</Description>
   <!-- final time 500, initial time step 1 -->
   <Analysis type="mpmproblem" nsteps="500" deltat="1.0" alpha="0.5" manrmsteps="0" keeptangent=""/>
+  <!-- vtkxml tstep_all domain_all primvars 2 1 5 -->
+  <!-- errorcheck -->
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

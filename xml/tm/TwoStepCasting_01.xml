@@ -13,6 +13,7 @@
   <!-- Boundary condition on nodes 5,6 represents in fact an initial condition once MAT2 appears. -->
   <!-- HC1 needs to be deactivated after inposing HC2. -->
   <Analysis type="TransientTransport" nsteps="10" deltat="7200.0" alpha="0.5" miniter="5"/>
+  <!-- vtkxml tstep_all domain_all primvars 1 6 vars 2 37 56 stype 1 -->
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

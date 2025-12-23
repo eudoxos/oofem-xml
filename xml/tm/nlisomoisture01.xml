@@ -2,6 +2,8 @@
   <Output>nlisomoisture01.out</Output>
   <Description>test of nonlinear isotropic material for moisture transport</Description>
   <Analysis type="TransientTransport" nsteps="5" alpha="0.5" lumped="" forcescale="0.0" forcescaledofs="14" rtolf="1e-05" prescribedtimes="0.01 0.1 0.2 0.3 0.4"/>
+  <!-- nmodules 1 -->
+  <!-- vtkxml tstep_all domain_all primvars 1 3 -->
   <Domain domain="mass1transfer">
     <OutputManager tsteps_out="5" dofman_output="1,7,13,19,25,31,37" element_output="1"/>
     <Nodes>
