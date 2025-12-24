@@ -1,0 +1,238 @@
+<oofem version="1">
+  <Output>Tr2Shell7XFEM_multicrack.out</Output>
+  <Description>Test case with 2 interlaminar and 2 intralaminar cracks</Description>
+  <Analysis type="StaticStructural" nsteps="1" maxiter="5" rtolf="1e-05" manrmsteps="1"/>
+  <Domain domain="3ddirshell">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.5 0.0 0.0"/>
+      <Node coords="1.0 0.0 0.0"/>
+      <Node coords="0.0 0.5 0.0"/>
+      <Node id="5" coords="0.5 0.5 0.0"/>
+      <Node coords="1.0 0.5 0.0"/>
+      <Node coords="0.0 1.0 0.0"/>
+      <Node coords="0.4999999999 1.0 0.0"/>
+      <Node coords="1.0 1.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <!-- Elements -->
+      <Tr2Shell7XFEM nodes="1 3 9 2 6 5" boundaryloads="2 2"/>
+      <Tr2Shell7XFEM nodes="1 9 7 5 8 4" boundaryloads="3 2"/>
+    </Elements>
+    <CrossSections>
+      <!-- Cross sections -->
+      <layeredCS nlayers="3" layermaterials="1 1 1" thicks="0.01 0.01 0.01" nintegrationpoints="2" set="1" interfacematerials="0 0"/>
+    </CrossSections>
+    <Materials>
+      <!-- Materials -->
+      <IsoLE d="1.0" e="126000000000.0" n="0.0" talpha="1.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <!-- Boundary consitions -->
+      <BoundaryCondition loadtimefunction="1" values="0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0" dofs="1 2 3 15 16 17 18 500 501 502 503 504 505 506 507 508 509 510 511 512 513 514 515 516 517 518 519 520 521 522 523" set="4"/>
+      <ConstantEdgeLoad loadtype="2" loadtimefunction="1" components="0.0 0.0 -100.0 0.0 0.0 0.0 0.0 -1.0"/>
+      <ConstantEdgeLoad loadtype="2" loadtimefunction="1" components="0.0 0.0 100.0 0.0 0.0 0.0 0.0 1.0"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <!-- Load time functions -->
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction t="0.0 1.0" f_t_="0.0 0.1"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <!-- Sets -->
+      <!-- crackedEl -->
+      <Set elements="1 2"/>
+      <!-- enrichedNodes -->
+      <Set nodes="1 2 3 4 5 6 7 8 9"/>
+      <!-- load -->
+      <Set nodes="9"/>
+      <!-- support -->
+      <Set nodes="1 2 3 4 7"/>
+      <Set id="5" nodes="9"/>
+    </Sets>
+    <!-- XFEM -->
+    <XFemManager type="XfemManager" debugvtk="0">
+      <EnrichmentItems>
+        <delamination interfacenum="1 2" csnum="1">
+          <EnrichmentFunction type="DiscontinuousFunction"/>
+          <EnrichmentGeometry type="DofManList" list="1 2 3 4 5 6 7 8 9"/>
+        </delamination>
+        <delamination interfacenum="2" csnum="1">
+          <EnrichmentFunction type="DiscontinuousFunction"/>
+          <EnrichmentGeometry type="DofManList" list="1 2 3 4 5 6 7 8 9"/>
+        </delamination>
+        <shellcrack xibottom="-1.0" xitop="-0.333333">
+          <EnrichmentFunction type="DiscontinuousFunction"/>
+          <EnrichmentGeometry type="polygonline" points="-2.0 -2.0 -0.4 -0.8 1.4 2.0"/>
+          <EnrichmentFront>
+            <EnrFrontDoNothing/>
+            <EnrFrontDoNothing/>
+          </EnrichmentFront>
+        </shellcrack>
+        <shellcrack xibottom="0.333333" xitop="1.0">
+          <EnrichmentFunction type="DiscontinuousFunction"/>
+          <EnrichmentGeometry type="polygonline" points="-2.0 -2.0 -0.8 -0.4 2.0 1.4"/>
+          <EnrichmentFront>
+            <EnrFrontDoNothing/>
+            <EnrFrontDoNothing/>
+          </EnrichmentFront>
+        </shellcrack>
+      </EnrichmentItems>
+    </XFemManager>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-06">
+      <NODE tStep="1" number="1" dof="524" unknown="d" value="4.94642e-08"/>
+      <NODE tStep="1" number="1" dof="525" unknown="d" value="-7.5883e-08"/>
+      <NODE tStep="1" number="1" dof="526" unknown="d" value="4.42168e-06"/>
+      <NODE tStep="1" number="1" dof="527" unknown="d" value="-1.57894e-07"/>
+      <NODE tStep="1" number="1" dof="528" unknown="d" value="-6.86528e-09"/>
+      <NODE tStep="1" number="2" dof="524" unknown="d" value="1.24909e-06"/>
+      <NODE tStep="1" number="2" dof="525" unknown="d" value="0.000110489"/>
+      <NODE tStep="1" number="2" dof="526" unknown="d" value="-0.000374559"/>
+      <NODE tStep="1" number="2" dof="527" unknown="d" value="-0.000228795"/>
+      <NODE tStep="1" number="2" dof="528" unknown="d" value="-2.47742e-07"/>
+      <NODE tStep="1" number="3" dof="524" unknown="d" value="4.64808e-07"/>
+      <NODE tStep="1" number="3" dof="525" unknown="d" value="0.000452443"/>
+      <NODE tStep="1" number="3" dof="526" unknown="d" value="-0.000803816"/>
+      <NODE tStep="1" number="3" dof="527" unknown="d" value="-0.000322842"/>
+      <NODE tStep="1" number="3" dof="528" unknown="d" value="-1.11384e-06"/>
+      <NODE tStep="1" number="4" dof="524" unknown="d" value="4.47869e-14"/>
+      <NODE tStep="1" number="4" dof="525" unknown="d" value="-1.88964e-13"/>
+      <NODE tStep="1" number="4" dof="526" unknown="d" value="-7.73866e-13"/>
+      <NODE tStep="1" number="4" dof="527" unknown="d" value="-4.86075e-12"/>
+      <NODE tStep="1" number="4" dof="528" unknown="d" value="-2.6807e-14"/>
+      <NODE tStep="1" number="5" dof="1" unknown="d" value="1.14968e-07"/>
+      <NODE tStep="1" number="5" dof="2" unknown="d" value="7.27635e-06"/>
+      <NODE tStep="1" number="5" dof="3" unknown="d" value="-0.000183212"/>
+      <NODE tStep="1" number="5" dof="15" unknown="d" value="1.17125e-05"/>
+      <NODE tStep="1" number="5" dof="16" unknown="d" value="0.000733062"/>
+      <NODE tStep="1" number="5" dof="17" unknown="d" value="-2.65464e-07"/>
+      <NODE tStep="1" number="5" dof="18" unknown="d" value="-7.85256e-08"/>
+      <NODE tStep="1" number="5" dof="500" unknown="d" value="-1.14968e-07"/>
+      <NODE tStep="1" number="5" dof="501" unknown="d" value="-7.27635e-06"/>
+      <NODE tStep="1" number="5" dof="502" unknown="d" value="0.000183212"/>
+      <NODE tStep="1" number="5" dof="503" unknown="d" value="-1.17125e-05"/>
+      <NODE tStep="1" number="5" dof="504" unknown="d" value="-0.000733062"/>
+      <NODE tStep="1" number="5" dof="505" unknown="d" value="2.65464e-07"/>
+      <NODE tStep="1" number="5" dof="506" unknown="d" value="1.34299e-05"/>
+      <NODE tStep="1" number="5" dof="507" unknown="d" value="-7.36822e-06"/>
+      <NODE tStep="1" number="5" dof="508" unknown="d" value="0.000529555"/>
+      <NODE tStep="1" number="5" dof="509" unknown="d" value="-0.00139659"/>
+      <NODE tStep="1" number="5" dof="510" unknown="d" value="-0.000739612"/>
+      <NODE tStep="1" number="5" dof="511" unknown="d" value="-6.88709e-07"/>
+      <NODE tStep="1" number="5" dof="512" unknown="d" value="-5.74838e-08"/>
+      <NODE tStep="1" number="5" dof="513" unknown="d" value="-3.63818e-06"/>
+      <NODE tStep="1" number="5" dof="514" unknown="d" value="9.16062e-05"/>
+      <NODE tStep="1" number="5" dof="515" unknown="d" value="-5.85624e-06"/>
+      <NODE tStep="1" number="5" dof="516" unknown="d" value="-0.000366531"/>
+      <NODE tStep="1" number="5" dof="517" unknown="d" value="1.3234e-07"/>
+      <NODE tStep="1" number="5" dof="523" unknown="d" value="6.77241e-06"/>
+      <NODE tStep="1" number="5" dof="524" unknown="d" value="-4.59337e-08"/>
+      <NODE tStep="1" number="5" dof="525" unknown="d" value="0.000173171"/>
+      <NODE tStep="1" number="5" dof="526" unknown="d" value="-0.000692436"/>
+      <NODE tStep="1" number="5" dof="527" unknown="d" value="-3.27501e-06"/>
+      <NODE tStep="1" number="5" dof="528" unknown="d" value="-4.77479e-07"/>
+      <NODE tStep="1" number="6" dof="1" unknown="d" value="4.27324e-08"/>
+      <NODE tStep="1" number="6" dof="2" unknown="d" value="7.36793e-06"/>
+      <NODE tStep="1" number="6" dof="3" unknown="d" value="-0.00018677"/>
+      <NODE tStep="1" number="6" dof="15" unknown="d" value="4.79931e-06"/>
+      <NODE tStep="1" number="6" dof="16" unknown="d" value="0.000742143"/>
+      <NODE tStep="1" number="6" dof="17" unknown="d" value="-2.9358e-07"/>
+      <NODE tStep="1" number="6" dof="18" unknown="d" value="-1.03637e-06"/>
+      <NODE tStep="1" number="6" dof="500" unknown="d" value="-4.27324e-08"/>
+      <NODE tStep="1" number="6" dof="501" unknown="d" value="-7.36793e-06"/>
+      <NODE tStep="1" number="6" dof="502" unknown="d" value="0.00018677"/>
+      <NODE tStep="1" number="6" dof="503" unknown="d" value="-4.79931e-06"/>
+      <NODE tStep="1" number="6" dof="504" unknown="d" value="-0.000742143"/>
+      <NODE tStep="1" number="6" dof="505" unknown="d" value="2.9358e-07"/>
+      <NODE tStep="1" number="6" dof="506" unknown="d" value="-4.27324e-08"/>
+      <NODE tStep="1" number="6" dof="507" unknown="d" value="-7.36793e-06"/>
+      <NODE tStep="1" number="6" dof="508" unknown="d" value="0.00018677"/>
+      <NODE tStep="1" number="6" dof="509" unknown="d" value="-4.79931e-06"/>
+      <NODE tStep="1" number="6" dof="510" unknown="d" value="-0.000742143"/>
+      <NODE tStep="1" number="6" dof="511" unknown="d" value="3.03943e-07"/>
+      <NODE tStep="1" number="6" dof="512" unknown="d" value="-2.13663e-08"/>
+      <NODE tStep="1" number="6" dof="513" unknown="d" value="-3.68396e-06"/>
+      <NODE tStep="1" number="6" dof="514" unknown="d" value="9.33852e-05"/>
+      <NODE tStep="1" number="6" dof="515" unknown="d" value="-2.39966e-06"/>
+      <NODE tStep="1" number="6" dof="516" unknown="d" value="-0.000371071"/>
+      <NODE tStep="1" number="6" dof="517" unknown="d" value="1.41608e-07"/>
+      <NODE tStep="1" number="6" dof="523" unknown="d" value="9.58376e-06"/>
+      <NODE tStep="1" number="6" dof="524" unknown="d" value="1.24835e-06"/>
+      <NODE tStep="1" number="6" dof="525" unknown="d" value="0.000633677"/>
+      <NODE tStep="1" number="6" dof="526" unknown="d" value="-0.00113829"/>
+      <NODE tStep="1" number="6" dof="527" unknown="d" value="-0.000208829"/>
+      <NODE tStep="1" number="6" dof="528" unknown="d" value="-1.39776e-06"/>
+      <NODE tStep="1" number="7" dof="524" unknown="d" value="2.281e-13"/>
+      <NODE tStep="1" number="7" dof="525" unknown="d" value="-6.18429e-13"/>
+      <NODE tStep="1" number="7" dof="526" unknown="d" value="-4.15672e-12"/>
+      <NODE tStep="1" number="7" dof="527" unknown="d" value="-2.47831e-11"/>
+      <NODE tStep="1" number="7" dof="528" unknown="d" value="-1.21667e-13"/>
+      <NODE tStep="1" number="8" dof="1" unknown="d" value="3.98138e-14"/>
+      <NODE tStep="1" number="8" dof="2" unknown="d" value="7.72493e-15"/>
+      <NODE tStep="1" number="8" dof="3" unknown="d" value="5.15592e-11"/>
+      <NODE tStep="1" number="8" dof="15" unknown="d" value="4.0149e-12"/>
+      <NODE tStep="1" number="8" dof="16" unknown="d" value="1.09395e-12"/>
+      <NODE tStep="1" number="8" dof="17" unknown="d" value="1.14656e-08"/>
+      <NODE tStep="1" number="8" dof="18" unknown="d" value="1.14656e-06"/>
+      <NODE tStep="1" number="8" dof="500" unknown="d" value="-3.96408e-14"/>
+      <NODE tStep="1" number="8" dof="501" unknown="d" value="-9.00883e-15"/>
+      <NODE tStep="1" number="8" dof="502" unknown="d" value="-5.6327e-11"/>
+      <NODE tStep="1" number="8" dof="503" unknown="d" value="-4.01491e-12"/>
+      <NODE tStep="1" number="8" dof="504" unknown="d" value="-1.09395e-12"/>
+      <NODE tStep="1" number="8" dof="505" unknown="d" value="-1.14656e-08"/>
+      <NODE tStep="1" number="8" dof="506" unknown="d" value="1.38652e-05"/>
+      <NODE tStep="1" number="8" dof="507" unknown="d" value="-1.52901e-07"/>
+      <NODE tStep="1" number="8" dof="508" unknown="d" value="0.000349304"/>
+      <NODE tStep="1" number="8" dof="509" unknown="d" value="-0.00139164"/>
+      <NODE tStep="1" number="8" dof="510" unknown="d" value="-5.58678e-06"/>
+      <NODE tStep="1" number="8" dof="511" unknown="d" value="-1.002e-06"/>
+      <NODE tStep="1" number="8" dof="512" unknown="d" value="-2.5559e-06"/>
+      <NODE tStep="1" number="8" dof="513" unknown="d" value="-3.56834e-06"/>
+      <NODE tStep="1" number="8" dof="514" unknown="d" value="0.000275754"/>
+      <NODE tStep="1" number="8" dof="515" unknown="d" value="-0.000256886"/>
+      <NODE tStep="1" number="8" dof="516" unknown="d" value="-0.000369363"/>
+      <NODE tStep="1" number="8" dof="517" unknown="d" value="1.67326e-07"/>
+      <NODE tStep="1" number="8" dof="523" unknown="d" value="6.93258e-06"/>
+      <NODE tStep="1" number="8" dof="524" unknown="d" value="-7.64506e-08"/>
+      <NODE tStep="1" number="8" dof="525" unknown="d" value="0.000174652"/>
+      <NODE tStep="1" number="8" dof="526" unknown="d" value="-0.00069582"/>
+      <NODE tStep="1" number="8" dof="527" unknown="d" value="-2.7934e-06"/>
+      <NODE tStep="1" number="8" dof="528" unknown="d" value="-4.89534e-07"/>
+      <NODE tStep="1" number="9" dof="1" unknown="d" value="4.60636e-08"/>
+      <NODE tStep="1" number="9" dof="2" unknown="d" value="1.44245e-05"/>
+      <NODE tStep="1" number="9" dof="3" unknown="d" value="-0.000741161"/>
+      <NODE tStep="1" number="9" dof="15" unknown="d" value="7.38378e-06"/>
+      <NODE tStep="1" number="9" dof="16" unknown="d" value="0.00147579"/>
+      <NODE tStep="1" number="9" dof="17" unknown="d" value="-1.09064e-06"/>
+      <NODE tStep="1" number="9" dof="18" unknown="d" value="8.52506e-08"/>
+      <NODE tStep="1" number="9" dof="500" unknown="d" value="-4.60636e-08"/>
+      <NODE tStep="1" number="9" dof="501" unknown="d" value="-1.44245e-05"/>
+      <NODE tStep="1" number="9" dof="502" unknown="d" value="0.000741161"/>
+      <NODE tStep="1" number="9" dof="503" unknown="d" value="-7.38378e-06"/>
+      <NODE tStep="1" number="9" dof="504" unknown="d" value="-0.00147579"/>
+      <NODE tStep="1" number="9" dof="505" unknown="d" value="1.09064e-06"/>
+      <NODE tStep="1" number="9" dof="506" unknown="d" value="2.66754e-05"/>
+      <NODE tStep="1" number="9" dof="507" unknown="d" value="-1.51898e-05"/>
+      <NODE tStep="1" number="9" dof="508" unknown="d" value="0.0021329"/>
+      <NODE tStep="1" number="9" dof="509" unknown="d" value="-0.00278284"/>
+      <NODE tStep="1" number="9" dof="510" unknown="d" value="-0.00148702"/>
+      <NODE tStep="1" number="9" dof="511" unknown="d" value="-2.77564e-06"/>
+      <NODE tStep="1" number="9" dof="512" unknown="d" value="-2.30318e-08"/>
+      <NODE tStep="1" number="9" dof="513" unknown="d" value="-7.21224e-06"/>
+      <NODE tStep="1" number="9" dof="514" unknown="d" value="0.00037058"/>
+      <NODE tStep="1" number="9" dof="515" unknown="d" value="-3.69189e-06"/>
+      <NODE tStep="1" number="9" dof="516" unknown="d" value="-0.000737893"/>
+      <NODE tStep="1" number="9" dof="517" unknown="d" value="5.45747e-07"/>
+      <NODE tStep="1" number="9" dof="523" unknown="d" value="1.33607e-05"/>
+      <NODE tStep="1" number="9" dof="524" unknown="d" value="-3.82685e-07"/>
+      <NODE tStep="1" number="9" dof="525" unknown="d" value="0.000695869"/>
+      <NODE tStep="1" number="9" dof="526" unknown="d" value="-0.00138773"/>
+      <NODE tStep="1" number="9" dof="527" unknown="d" value="-5.61471e-06"/>
+      <NODE tStep="1" number="9" dof="528" unknown="d" value="-1.93271e-06"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>
