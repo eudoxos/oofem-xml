@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>patch301.out</Output>
   <Description>compression patch test of LTRSpace elements</Description>
-  <Analysis type="StaticStructural" nsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

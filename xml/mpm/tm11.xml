@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>tm11.out</Output>
   <Description>patch test of TMTetra11 elements</Description>
-  <Analysis type="mpmproblem" nsteps="10" deltat="1.0" alpha="1.0" manrmsteps="0" keeptangent="" ptype="tm" smtype="1"/>
+  <Analysis _="mpmproblem" nsteps="10" deltat="1.0" alpha="1.0" manrmsteps="0" keeptangent="" ptype="tm" smtype="1"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

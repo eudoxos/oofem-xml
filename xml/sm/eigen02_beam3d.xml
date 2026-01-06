@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>eigen02_beam3d.out</Output>
   <Description>Test of json interface</Description>
-  <Analysis type="eigenvaluedynamic" nroot="2" smtype="0" stype="1" rtolv="1e-08"/>
+  <Analysis _="eigenvaluedynamic" nroot="2" smtype="0" stype="1" rtolv="1e-08"/>
   <Domain domain="3dshell">
     <OutputManager dofman_all="" element_all="" tstep_all=""/>
     <Nodes>

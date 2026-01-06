@@ -2,7 +2,7 @@
   <Output>dkt_rhombic_cantilever_4x4.out</Output>
   <Description>Rhombic cantilever loaded by uniform load</Description>
   <!-- (see J.L. Batoz, K.J.Bathe, L.W.Ho: A study of thee node triangular plate elements, IJNME, vol. 15, 1771-1812, 1980.) -->
-  <Analysis type="LinearStatic" nsteps="1"/>
+  <Analysis _="LinearStatic" nsteps="1"/>
   <Domain domain="2dmindlinplate">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

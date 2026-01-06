@@ -1,0 +1,52 @@
+<oofem version="1">
+  <Output>pfemHydrostaticPressure.out</Output>
+  <Description>distribution of hydrostatic pressure in a fluid at rest</Description>
+  <Analysis _="PFEM" nsteps="3" lstype="0" smtype="1" deltat="0.01" alphashapecoef="0.8" material="1" cs="1" pressure="2"/>
+  <Domain domain="2dincompflow">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <pfemparticle coords="0.0 0.0 0.0" dofidmask="7 8 11"/>
+      <pfemparticle coords="1.0 0.0 0.0" dofidmask="7 8 11"/>
+      <pfemparticle coords="2.0 0.0 0.0" dofidmask="7 8 11"/>
+      <pfemparticle coords="0.0 1.0 0.0" dofidmask="7 8 11"/>
+      <pfemparticle id="5" coords="1.0 1.0 0.0" dofidmask="7 8 11"/>
+      <pfemparticle coords="2.0 1.0 0.0" dofidmask="7 8 11"/>
+      <pfemparticle coords="0.0 2.0 0.0" dofidmask="7 8 11"/>
+      <pfemparticle coords="1.0 2.0 0.0" dofidmask="7 8 11"/>
+      <pfemparticle coords="2.0 2.0 0.0" dofidmask="7 8 11"/>
+    </Nodes>
+    <Elements/>
+    <CrossSections>
+      <fluidcs mat="1"/>
+    </CrossSections>
+    <Materials>
+      <newtonianfluid d="1000.0" mu="0.001"/>
+    </Materials>
+    <BoundaryConditions>
+      <!-- prescribed zero velocity - wall condition -->
+      <BoundaryCondition loadtimefunction="1" dofs="7" values="0.0" valtype="5" set="1"/>
+      <!-- prescribed zero velocity - wall condition -->
+      <BoundaryCondition loadtimefunction="1" dofs="8" values="0.0" valtype="5" set="2"/>
+      <!-- gravity -->
+      <deadweight components="0.0 -9.81" loadtimefunction="1" valtype="2"/>
+      <!-- pressure -->
+      <BoundaryCondition loadtimefunction="1" dofs="11" values="0.0" valtype="3"/>
+    </BoundaryConditions>
+    <InitialConditions>
+      <!-- ic for velocity -->
+      <InitialCondition conditions="u 1.0" valtype="5"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set nodes="1 2 3 4 6 7 9"/>
+      <Set nodes="1 2 3"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck>
+      <NODE tStep="3" number="2" dof="11" unknown="d" value="19620.0"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

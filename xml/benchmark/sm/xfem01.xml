@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>xfem01.out</Output>
   <Description>Xfem test of circular inclusion in a structured plane stress square grid</Description>
-  <Analysis type="StaticStructural" nsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1"/>
   <!-- vtkxml tstep_all domain_all vars 1 94 primvars 1 1 cellvars 2 1 4 -->
   <!-- vtkxml tstep_all domain_all primvars 1 1 cellvars 1 1 -->
   <Domain domain="2dplanestress">
@@ -875,11 +875,11 @@
       <Set noderanges="1-21"/>
       <Set id="5" noderanges="421-441"/>
     </Sets>
-    <XFemManager type="XfemManager">
+    <XFemManager _="XfemManager">
       <EnrichmentItems>
         <Inclusion crosssection="2">
-          <EnrichmentFunction type="RampFunction"/>
-          <EnrichmentGeometry type="Circle" center="30.0 30.0" radius="12.5"/>
+          <EnrichmentFunction _="RampFunction"/>
+          <EnrichmentGeometry _="Circle" center="30.0 30.0" radius="12.5"/>
           <EnrichmentFront>
             <EnrFrontExtend/>
             <EnrFrontExtend/>

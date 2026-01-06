@@ -1,0 +1,5 @@
+<oofem version="1">
+  <Output>nltrans_nonlin.out</Output>
+  <Description>Staggered analysis in 2d - constantly rising temperature field in NlTransientTransportProblem is sent to NonLinearStatic problem</Description>
+  <Analysis _="StaggeredProblem" nsteps="3" deltat="3600.0" prob1="nltrans_nonlin.in.tm.xml" prob2="nltrans_nonlin.in.sm.xml"/>
+</oofem>

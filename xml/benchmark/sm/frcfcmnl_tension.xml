@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>frcfcmnl_tension.out</Output>
   <Description>tension of one row finite elements with nonuniform width</Description>
-  <Analysis type="NonLinearStatic" nsteps="200" rtolf="1e-06" maxiter="10000" stiffmode="1" controlmode="1" renumber="1" manrmsteps="20"/>
+  <Analysis _="NonLinearStatic" nsteps="200" rtolf="1e-06" maxiter="10000" stiffmode="1" controlmode="1" renumber="1" manrmsteps="20"/>
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_output="1,44" element_output="1"/>
     <Nodes>

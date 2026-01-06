@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>xfemCohesiveZone1.out</Output>
   <Description>XFEM simulation: A single element with bilinear cohesive zone, loaded in pure shear. Written by Erik Svenning, Chalmers University of Technology.</Description>
-  <Analysis type="StaticStructural" nsteps="5" deltat="1.0" rtolf="1e-06" maxiter="25" miniter="2" manrmsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="5" deltat="1.0" rtolf="1e-06" maxiter="25" miniter="2" manrmsteps="1"/>
   <!-- vtkxml tstep_all domain_all primvars 1 1 cellvars 1 1 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -36,13 +36,13 @@
       <Set nodes="1 2"/>
       <Set nodes="3 4"/>
     </Sets>
-    <XFemManager type="XfemManager" debugvtk="0">
+    <XFemManager _="XfemManager" debugvtk="0">
       <EnrichmentItems>
         <crack>
           <!-- DiscontinuousFunction 1 -->
-          <EnrichmentFunction type="HeavisideFunction"/>
+          <EnrichmentFunction _="HeavisideFunction"/>
           <!-- polygoncrack 1 points 6 -0.1 0.3 0.5 0.3 1.1 0.3 -->
-          <EnrichmentGeometry type="PolygonLine" points="-0.5 0.3 -0.2 0.3 1.1 0.3"/>
+          <EnrichmentGeometry _="PolygonLine" points="-0.5 0.3 -0.2 0.3 1.1 0.3"/>
         </crack>
       </EnrichmentItems>
     </XFemManager>

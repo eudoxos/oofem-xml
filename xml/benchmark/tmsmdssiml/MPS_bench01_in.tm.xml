@@ -1,0 +1,153 @@
+<oofem version="1">
+  <Output>MPS_bench01_out.tm</Output>
+  <Description>OOFEM input file for thermal analysis, automatically generated, test for ConTemp, a brick with size x=3 y=0.5 z=0.5</Description>
+  <Analysis _="TransientTransport" nsteps="10" deltat="7200.0" rtolv="0.0001" alpha="0.6" lstype="1" lstol="1e-05" lsiter="200.0" lsprecond="1" renumber="1" exportfields="5"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_output="21"/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0" ic="1" bc="1"/>
+      <Node coords="0.428571 0.0 0.0" ic="1"/>
+      <Node coords="0.857143 0.0 0.0" ic="1"/>
+      <Node coords="1.28571 0.0 0.0" ic="1"/>
+      <Node id="5" coords="1.71429 0.0 0.0" ic="1"/>
+      <Node coords="2.14286 0.0 0.0" ic="1"/>
+      <Node coords="2.57143 0.0 0.0" ic="1"/>
+      <Node coords="3.0 0.0 0.0" ic="1"/>
+      <Node coords="0.0 0.25 0.0" ic="1" bc="1"/>
+      <Node id="10" coords="0.428571 0.25 0.0" ic="1"/>
+      <Node coords="0.857143 0.25 0.0" ic="1"/>
+      <Node coords="1.28571 0.25 0.0" ic="1"/>
+      <Node coords="1.71429 0.25 0.0" ic="1"/>
+      <Node coords="2.14286 0.25 0.0" ic="1"/>
+      <Node id="15" coords="2.57143 0.25 0.0" ic="1"/>
+      <Node coords="3.0 0.25 0.0" ic="1"/>
+      <Node coords="0.0 0.5 0.0" ic="1" bc="1"/>
+      <Node coords="0.428571 0.5 0.0" ic="1"/>
+      <Node coords="0.857143 0.5 0.0" ic="1"/>
+      <Node id="20" coords="1.28571 0.5 0.0" ic="1"/>
+      <Node coords="1.71429 0.5 0.0" ic="1"/>
+      <Node coords="2.14286 0.5 0.0" ic="1"/>
+      <Node coords="2.57143 0.5 0.0" ic="1"/>
+      <Node coords="3.0 0.5 0.0" ic="1"/>
+      <Node id="25" coords="0.0 0.0 0.25" ic="1" bc="1"/>
+      <Node coords="0.428571 0.0 0.25" ic="1"/>
+      <Node coords="0.857143 0.0 0.25" ic="1"/>
+      <Node coords="1.28571 0.0 0.25" ic="1"/>
+      <Node coords="1.71429 0.0 0.25" ic="1"/>
+      <Node id="30" coords="2.14286 0.0 0.25" ic="1"/>
+      <Node coords="2.57143 0.0 0.25" ic="1"/>
+      <Node coords="3.0 0.0 0.25" ic="1"/>
+      <Node coords="0.0 0.25 0.25" ic="1" bc="1"/>
+      <Node coords="0.428571 0.25 0.25" ic="1"/>
+      <Node id="35" coords="0.857143 0.25 0.25" ic="1"/>
+      <Node coords="1.28571 0.25 0.25" ic="1"/>
+      <Node coords="1.71429 0.25 0.25" ic="1"/>
+      <Node coords="2.14286 0.25 0.25" ic="1"/>
+      <Node coords="2.57143 0.25 0.25" ic="1"/>
+      <Node id="40" coords="3.0 0.25 0.25" ic="1"/>
+      <Node coords="0.0 0.5 0.25" ic="1" bc="1"/>
+      <Node coords="0.428571 0.5 0.25" ic="1"/>
+      <Node coords="0.857143 0.5 0.25" ic="1"/>
+      <Node coords="1.28571 0.5 0.25" ic="1"/>
+      <Node id="45" coords="1.71429 0.5 0.25" ic="1"/>
+      <Node coords="2.14286 0.5 0.25" ic="1"/>
+      <Node coords="2.57143 0.5 0.25" ic="1"/>
+      <Node coords="3.0 0.5 0.25" ic="1"/>
+      <Node coords="0.0 0.0 0.5" ic="1" bc="1"/>
+      <Node id="50" coords="0.428571 0.0 0.5" ic="1"/>
+      <Node coords="0.857143 0.0 0.5" ic="1"/>
+      <Node coords="1.28571 0.0 0.5" ic="1"/>
+      <Node coords="1.71429 0.0 0.5" ic="1"/>
+      <Node coords="2.14286 0.0 0.5" ic="1"/>
+      <Node id="55" coords="2.57143 0.0 0.5" ic="1"/>
+      <Node coords="3.0 0.0 0.5" ic="1"/>
+      <Node coords="0.0 0.25 0.5" ic="1" bc="1"/>
+      <Node coords="0.428571 0.25 0.5" ic="1"/>
+      <Node coords="0.857143 0.25 0.5" ic="1"/>
+      <Node id="60" coords="1.28571 0.25 0.5" ic="1"/>
+      <Node coords="1.71429 0.25 0.5" ic="1"/>
+      <Node coords="2.14286 0.25 0.5" ic="1"/>
+      <Node coords="2.57143 0.25 0.5" ic="1"/>
+      <Node coords="3.0 0.25 0.5" ic="1"/>
+      <Node id="65" coords="0.0 0.5 0.5" ic="1" bc="1"/>
+      <Node coords="0.428571 0.5 0.5" ic="1"/>
+      <Node coords="0.857143 0.5 0.5" ic="1"/>
+      <Node coords="1.28571 0.5 0.5" ic="1"/>
+      <Node coords="1.71429 0.5 0.5" ic="1"/>
+      <Node id="70" coords="2.14286 0.5 0.5" ic="1"/>
+      <Node coords="2.57143 0.5 0.5" ic="1"/>
+      <Node coords="3.0 0.5 0.5" ic="1"/>
+    </Nodes>
+    <Elements>
+      <Brick1ht nodes="25 33 34 26 1 9 10 2" mat="1" crosssect="1" boundaryloads="9 6"/>
+      <Brick1ht nodes="26 34 35 27 2 10 11 3" mat="1" crosssect="1" boundaryloads="9 6"/>
+      <Brick1ht nodes="27 35 36 28 3 11 12 4" mat="1" crosssect="1" boundaryloads="9 6"/>
+      <Brick1ht nodes="28 36 37 29 4 12 13 5" mat="1" crosssect="1" boundaryloads="9 6"/>
+      <Brick1ht id="5" nodes="29 37 38 30 5 13 14 6" mat="1" crosssect="1" boundaryloads="9 6"/>
+      <Brick1ht nodes="30 38 39 31 6 14 15 7" mat="1" crosssect="1" boundaryloads="9 6"/>
+      <Brick1ht nodes="31 39 40 32 7 15 16 8" mat="1" crosssect="1" boundaryloads="8 5 9 6"/>
+      <Brick1ht nodes="33 41 42 34 9 17 18 10" mat="1" crosssect="1" boundaryloads=""/>
+      <Brick1ht nodes="34 42 43 35 10 18 19 11" mat="1" crosssect="1" boundaryloads=""/>
+      <Brick1ht id="10" nodes="35 43 44 36 11 19 20 12" mat="1" crosssect="1" boundaryloads=""/>
+      <Brick1ht nodes="36 44 45 37 12 20 21 13" mat="1" crosssect="1" boundaryloads=""/>
+      <Brick1ht nodes="37 45 46 38 13 21 22 14" mat="1" crosssect="1" boundaryloads=""/>
+      <Brick1ht nodes="38 46 47 39 14 22 23 15" mat="1" crosssect="1" boundaryloads=""/>
+      <Brick1ht nodes="39 47 48 40 15 23 24 16" mat="1" crosssect="1" boundaryloads="8 5"/>
+      <Brick1ht id="15" nodes="49 57 58 50 25 33 34 26" mat="1" crosssect="1" boundaryloads="9 6 12 1"/>
+      <Brick1ht nodes="50 58 59 51 26 34 35 27" mat="1" crosssect="1" boundaryloads="9 6 12 1"/>
+      <Brick1ht nodes="51 59 60 52 27 35 36 28" mat="1" crosssect="1" boundaryloads="9 6 12 1"/>
+      <Brick1ht nodes="52 60 61 53 28 36 37 29" mat="1" crosssect="1" boundaryloads="9 6 12 1"/>
+      <Brick1ht nodes="53 61 62 54 29 37 38 30" mat="1" crosssect="1" boundaryloads="9 6 12 1"/>
+      <Brick1ht id="20" nodes="54 62 63 55 30 38 39 31" mat="1" crosssect="1" boundaryloads="9 6 12 1"/>
+      <Brick1ht nodes="55 63 64 56 31 39 40 32" mat="1" crosssect="1" boundaryloads="8 5 9 6 12 1"/>
+      <Brick1ht nodes="57 65 66 58 33 41 42 34" mat="1" crosssect="1" boundaryloads="12 1"/>
+      <Brick1ht nodes="58 66 67 59 34 42 43 35" mat="1" crosssect="1" boundaryloads="12 1"/>
+      <Brick1ht nodes="59 67 68 60 35 43 44 36" mat="1" crosssect="1" boundaryloads="12 1"/>
+      <Brick1ht id="25" nodes="60 68 69 61 36 44 45 37" mat="1" crosssect="1" boundaryloads="12 1"/>
+      <Brick1ht nodes="61 69 70 62 37 45 46 38" mat="1" crosssect="1" boundaryloads="12 1"/>
+      <Brick1ht nodes="62 70 71 63 38 46 47 39" mat="1" crosssect="1" boundaryloads="12 1"/>
+      <Brick1ht nodes="63 71 72 64 39 47 48 40" mat="1" crosssect="1" boundaryloads="8 5 12 1"/>
+    </Elements>
+    <CrossSections>
+      <SimpleCS/>
+    </CrossSections>
+    <Materials>
+      <HydratingConcreteMat d="2403.24" k="1.471" c="961.929" hydrationmodeltype="2" qpot="471.15" masscement="279.904" b1="0.0001624" b2="0.0014" eta="7.0" dohinf="0.85" activationenergy="38300.0" castingtime="0.0" doh1="0.0" p1="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="20.0"/>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+      <BoundaryCondition id="5" loadtimefunction="1" prescribedvalue="0.0"/>
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+      <ConstantSurfaceLoad loadtimefunction="1" ndofs="1" components="20.0" properties="a 0" loadtype="3"/>
+      <ConstantSurfaceLoad loadtimefunction="1" ndofs="1" components="20.0" properties="a 15" loadtype="3"/>
+      <ConstantSurfaceLoad loadtimefunction="1" ndofs="1" components="20.0" properties="a 15" loadtype="3"/>
+      <ConstantSurfaceLoad id="10" loadtimefunction="1" ndofs="1" components="0.0" properties="a 0" loadtype="3"/>
+      <ConstantSurfaceLoad loadtimefunction="1" ndofs="1" components="0.0" properties="a 0" loadtype="3"/>
+      <ConstantSurfaceLoad loadtimefunction="1" ndofs="1" components="20.0" properties="a 15" loadtype="3"/>
+    </BoundaryConditions>
+    <InitialConditions>
+      <InitialCondition conditions="u 20"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <UsrDefLTF f_t_="20+(0)*sin(2*3.14159*(t+28800-28800)/86400.)+h(-1.e+30*sin(2*3.14159*(t+28800-28800)/86400.))*(0)*sin(2*3.14159*(t+28800-28800)/86400.)"/>
+      <UsrDefLTF f_t_="20+(0)*sin(2*3.14159*(t+28800-28800)/86400.)+h(-1.e+30*sin(2*3.14159*(t+28800-28800)/86400.))*(0)*sin(2*3.14159*(t+28800-28800)/86400.)"/>
+      <UsrDefLTF f_t_="20+(0)*sin(2*3.14159*(t+28800-28800)/86400.)+h(-1.e+30*sin(2*3.14159*(t+28800-28800)/86400.))*(0)*sin(2*3.14159*(t+28800-28800)/86400.)"/>
+      <UsrDefLTF id="5" f_t_="0+(0)*sin(2*3.14159*(t+28800-28800)/86400.)+h(-1.e+30*sin(2*3.14159*(t+28800-28800)/86400.))*(0)*sin(2*3.14159*(t+28800-28800)/86400.)"/>
+      <UsrDefLTF f_t_="0+(0)*sin(2*3.14159*(t+28800-28800)/86400.)+h(-1.e+30*sin(2*3.14159*(t+28800-28800)/86400.))*(0)*sin(2*3.14159*(t+28800-28800)/86400.)"/>
+      <UsrDefLTF f_t_="20+(0)*sin(2*3.14159*(t+28800-28800)/86400.)+h(-1.e+30*sin(2*3.14159*(t+28800-28800)/86400.))*(0)*sin(2*3.14159*(t+28800-28800)/86400.)"/>
+    </LoadTimeFunctions>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-05">
+      <NODE tStep="2" number="21" dof="10" unknown="d" value="20.3239872"/>
+      <NODE tStep="4" number="21" dof="10" unknown="d" value="21.6197503"/>
+      <NODE tStep="9" number="21" dof="10" unknown="d" value="32.5683074"/>
+      <NODE tStep="14" number="21" dof="10" unknown="d" value="39.5453679"/>
+      <NODE tStep="19" number="21" dof="10" unknown="d" value="39.9943586"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

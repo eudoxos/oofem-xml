@@ -1,0 +1,64 @@
+<oofem version="1">
+  <Output>cemhyd02.out</Output>
+  <Description>Test of CEMHYD3D hydration model, Q_pot = 534 J/g_cem, 300 kg cem/m3_con, i.e. max 160.2 kJ/m3_com; deltaT=160200/2.4/870=76.724 C</Description>
+  <!-- side YZ is kept at 20C and later released. Heat transport coefficient is assigned to opposite YZ side. The setup corresponds to 1D case. -->
+  <!-- 8 independent CEMHYD3D models are used, for each integration point one instance. -->
+  <Analysis _="TransientTransport" nsteps="10" deltat="3600.0" alpha="0.5" rtolf="1e-08"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.4"/>
+      <Node coords="0.0 0.4 0.4"/>
+      <Node coords="0.4 0.4 0.4"/>
+      <Node coords="0.4 0.0 0.4"/>
+      <Node id="5" coords="0.0 0.0 0.0"/>
+      <Node coords="0.0 0.4 0.0"/>
+      <Node coords="0.4 0.4 0.0"/>
+      <Node coords="0.4 0.0 0.0"/>
+    </Nodes>
+    <Elements>
+      <Brick1ht nodes="1 2 3 4 5 6 7 8"/>
+    </Elements>
+    <CrossSections>
+      <!-- boundaryloads 2 2 5 -->
+      <SimpleTransportCS mat="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <!-- Standard concrete k(conductivity)=1.7 W/m/K   c(capacity)=870 J/kg/K -->
+      <CemhydMat d="2400.0" k="1.7" c="870." file="cemhyd01_XML.src" eachgp="1" densitytype="0" conductivitytype="0" capacitytype="0" castingtime="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="10" values="20.0" isimposedtimefunction="2" set="2"/>
+      <constantsurfaceload loadtimefunction="1" dofs="10" components="20.0" properties="a 5.0" loadtype="3" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions>
+      <InitialCondition dofs="10" conditions="u 20.0" set="4"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <PiecewiseLinFunction t="-100000.0 15000.0 15001.0 10000000.0" f_t_="1.0 1.0 0.0 0.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <Set elementranges="1"/>
+      <Set nodes="1 2 5 6"/>
+      <Set elementboundaries="1 5"/>
+      <Set noderanges="1-8"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="0.001">
+      <!-- TIME -->
+      <!-- Check temperature -->
+      <NODE tStep="2" number="1" dof="10" unknown="d" value="20.0"/>
+      <NODE tStep="2" number="3" dof="10" unknown="d" value="25.503097"/>
+      <NODE tStep="10" number="1" dof="10" unknown="d" value="58.7740182"/>
+      <NODE tStep="10" number="3" dof="10" unknown="d" value="52.5887194"/>
+      <!-- Check degree of hydration -->
+      <ELEMENT tStep="2" number="1" gp="1" keyword="39" component="1" value="0.0653565654"/>
+      <ELEMENT tStep="2" number="1" gp="5" keyword="39" component="1" value="0.0653620289"/>
+      <ELEMENT tStep="10" number="1" gp="1" keyword="39" component="1" value="0.541535843"/>
+      <ELEMENT tStep="10" number="1" gp="5" keyword="39" component="1" value="0.580581479"/>
+    </errorcheck>
+    <vtkxml tstep_all="" domain_all="" primvars="6" vars="37 39 44 56 67 68 69 70 71 72 73" stype="1"/>
+  </ExportModules>
+</oofem>

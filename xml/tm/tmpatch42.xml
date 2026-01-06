@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>tmpatch42.out</Output>
   <Description>Patch test of Tetrah1_ht elements</Description>
-  <Analysis type="StationaryProblem" nsteps="1"/>
+  <Analysis _="StationaryProblem" nsteps="1"/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

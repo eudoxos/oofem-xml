@@ -1,0 +1,6 @@
+<oofem version="1">
+  <Output>nonstat_nonlin_01.out</Output>
+  <Description>Staggered analysis in 2d - constantly rising temperature field in transport problem is sent to structural problem</Description>
+  <!-- StaggeredProblem nsteps 3 deltat 3600 prob1 "nonstat_nonlin_01.in.tm" prob2 "nonstat_nonlin_01.in.sm" -->
+  <Analysis _="StaggeredProblem" nsteps="3" timedefinedbyprob="1" prob1="nonstat_nonlin_01.in.tm.xml" prob2="nonstat_nonlin_01.in.sm.xml"/>
+</oofem>

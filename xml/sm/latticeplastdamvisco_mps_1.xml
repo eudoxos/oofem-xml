@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>latticeplastdamvisco_mps_1.out</Output>
   <Description>Single element loaded in uniaxial tension. Nonuniform loading rate, damage initiation, partial relaxation, damage growth, end of loading, stress relaxation. MPS model used for viscoelasticity, basic creep only, no shrinkage.</Description>
-  <Analysis type="nonlinearstatic" nsteps="25" rtolv="1e-08" maxiter="5000" controllmode="1" stiffmode="1" renumber="1" updateelasticstiffnessflag="" manrmsteps="5" deltatfunction="4"/>
+  <Analysis _="nonlinearstatic" nsteps="25" rtolv="1e-08" maxiter="5000" controllmode="1" stiffmode="1" renumber="1" updateelasticstiffnessflag="" manrmsteps="5" deltatfunction="4"/>
   <Domain domain="2dlattice">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

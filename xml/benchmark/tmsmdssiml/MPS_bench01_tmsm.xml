@@ -1,0 +1,5 @@
+<oofem version="1">
+  <Output>MPS_block01_tmsm.out</Output>
+  <Description>Creep, damage and temperature effects on a single block</Description>
+  <Analysis _="StaggeredProblem" nsteps="100000" prob1="MPS_bench01_in.tm.xml" prob2="MPS_bench01_in.sm.xml" adaptivesteplength="" deltat="7200.0" adaptivestepsince="500000.0" minsteplength="360.0" maxsteplength="108000.0" reqiterations="15.0" endoftimeofinterest="136800.0"/>
+</oofem>

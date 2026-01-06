@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>freewarpingtest2.out</Output>
   <Description>warping analysis of ellipse and rectangle</Description>
-  <Analysis type="FreeWarping" nsteps="1"/>
+  <Analysis _="FreeWarping" nsteps="1"/>
   <Domain domain="warping">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

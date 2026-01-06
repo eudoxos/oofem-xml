@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>timestepreduction.out</Output>
   <Description>test of time step reduction in a case of Neo-Hookean Material usign Ogden material with alpha = 2, mu = 20, and K = 10.</Description>
-  <Analysis type="StaticStructural" finalt="0.1" treductiontype="SimpleReduction" deltat="1.0" rtolf="1e-08" maxiter="6" dtmax="2.0" dtmin="0.01" stiffmode="0" manrmsteps="1" ncrf="0.2"/>
+  <Analysis _="StaticStructural" finalt="0.1" treductiontype="SimpleReduction" deltat="1.0" rtolf="1e-08" maxiter="6" dtmax="2.0" dtmin="0.01" stiffmode="0" manrmsteps="1" ncrf="0.2"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

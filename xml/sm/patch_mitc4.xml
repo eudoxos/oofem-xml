@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>patch_mitc4.out</Output>
   <Description>"Patch test of MITC4Shell elements, three cases pure bending in y, pure shear and twist"</Description>
-  <Analysis type="StaticStructural" nsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1"/>
   <Domain domain="3dshell">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

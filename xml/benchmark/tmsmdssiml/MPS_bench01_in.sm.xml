@@ -1,0 +1,226 @@
+<oofem version="1">
+  <Output>MPS_bench01_out.sm</Output>
+  <Description>OOFEM input file for structural analysis, automatically generated, test for ConTemp, a brick with size x=3 y=0.5 z=0.5. Damage happens at time step 9 due to temperature profile. Mesh is slightly distorted to localize damage.</Description>
+  <Analysis _="nonlinearstatic" nsteps="10" deltat="1.0" rtolv="0.001" maxiter="1000" controllmode="1" stiffmode="2" renumber="1" updateelasticstiffnessflag="" lstype="4" smtype="8" miniter="3"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_output="39" element_output="30"/>
+    <Nodes>
+      <!-- NODES -->
+      <Node coords="0.0 0.0 0.0" bc="1 0 1"/>
+      <Node coords="0.25 0.0 0.0" bc="0 0 1"/>
+      <Node coords="0.5 0.0 0.0" bc="0 0 1"/>
+      <Node coords="0.75 0.0 0.0" bc="0 0 1"/>
+      <Node id="5" coords="1.0 0.0 0.0" bc="0 0 1"/>
+      <Node coords="1.25 0.0 0.0" bc="0 0 1"/>
+      <Node coords="1.5 0.0 0.0" bc="0 0 1"/>
+      <Node coords="1.75 0.0 0.0" bc="0 0 1"/>
+      <Node coords="2.0 0.0 0.0" bc="0 0 1"/>
+      <Node id="10" coords="2.25 0.0 0.0" bc="0 0 1"/>
+      <Node coords="2.5 0.0 0.0" bc="0 0 1"/>
+      <Node coords="2.75 0.0 0.0" bc="0 0 1"/>
+      <Node coords="3.0 0.0 0.0" bc="0 0 1"/>
+      <Node coords="0.0 0.25 0.0" bc="1 0 1"/>
+      <Node id="15" coords="0.25 0.25 0.0" bc="0 0 1"/>
+      <Node coords="0.5 0.25 0.0" bc="0 0 1"/>
+      <Node coords="0.75 0.25 0.0" bc="0 0 1"/>
+      <Node coords="1.0 0.25 0.0" bc="0 0 1"/>
+      <Node coords="1.25 0.25 0.0" bc="0 0 1"/>
+      <Node id="20" coords="1.5 0.25 0.0" bc="0 0 1"/>
+      <Node coords="1.75 0.25 0.0" bc="0 0 1"/>
+      <Node coords="2.0 0.25 0.0" bc="0 0 1"/>
+      <Node coords="2.25 0.25 0.0" bc="0 0 1"/>
+      <Node coords="2.5 0.25 0.0" bc="0 0 1"/>
+      <Node id="25" coords="2.75 0.25 0.0" bc="0 0 1"/>
+      <Node coords="3.0 0.25 0.0" bc="0 0 1"/>
+      <Node coords="0.0 0.5 0.0" bc="1 1 1"/>
+      <Node coords="0.25 0.5 0.0" bc="0 1 1"/>
+      <Node coords="0.5 0.5 0.0" bc="0 1 1"/>
+      <Node id="30" coords="0.75 0.5 0.0" bc="0 1 1"/>
+      <Node coords="1.0 0.5 0.0" bc="0 1 1"/>
+      <Node coords="1.25 0.5 0.0" bc="0 1 1"/>
+      <Node coords="1.5 0.5 0.0" bc="0 1 1"/>
+      <Node coords="1.75 0.5 0.0" bc="0 1 1"/>
+      <Node id="35" coords="2.0 0.5 0.0" bc="0 1 1"/>
+      <Node coords="2.25 0.5 0.0" bc="0 1 1"/>
+      <Node coords="2.5 0.5 0.0" bc="0 1 1"/>
+      <Node coords="2.75 0.5 0.0" bc="0 1 1"/>
+      <Node coords="3.0 0.5 0.0" bc="0 1 1"/>
+      <Node id="40" coords="0.0 0.0 0.25" bc="1 0 0"/>
+      <Node coords="0.25 0.0 0.25"/>
+      <Node coords="0.5 0.0 0.25"/>
+      <Node coords="0.75 0.0 0.25"/>
+      <Node coords="1.0 0.0 0.25"/>
+      <Node id="45" coords="1.25 0.0 0.25"/>
+      <Node coords="1.5 0.0 0.25"/>
+      <Node coords="1.75 0.0 0.25"/>
+      <Node coords="2.0 0.0 0.25"/>
+      <Node coords="2.25 0.0 0.25"/>
+      <Node id="50" coords="2.5 0.0 0.25"/>
+      <Node coords="2.75 0.0 0.25"/>
+      <Node coords="3.0 0.0 0.25"/>
+      <Node coords="0.0 0.25 0.25" bc="1 0 0"/>
+      <Node coords="0.25 0.25 0.25"/>
+      <Node id="55" coords="0.5 0.25 0.25"/>
+      <Node coords="0.75 0.25 0.25"/>
+      <Node coords="1.0 0.25 0.25"/>
+      <Node coords="1.25 0.25 0.25"/>
+      <Node coords="1.5 0.25 0.25"/>
+      <Node id="60" coords="1.75 0.25 0.25"/>
+      <Node coords="2.0 0.25 0.25"/>
+      <Node coords="2.25 0.25 0.25"/>
+      <Node coords="2.5 0.25 0.25"/>
+      <Node coords="2.75 0.25 0.25"/>
+      <Node id="65" coords="3.0 0.25 0.25"/>
+      <Node coords="0.0 0.5 0.25" bc="1 1 0"/>
+      <Node coords="0.25 0.5 0.25" bc="0 1 0"/>
+      <Node coords="0.5 0.5 0.25" bc="0 1 0"/>
+      <Node coords="0.75 0.5 0.25" bc="0 1 0"/>
+      <Node id="70" coords="1.0 0.5 0.25" bc="0 1 0"/>
+      <Node coords="1.25 0.5 0.25" bc="0 1 0"/>
+      <Node coords="1.5 0.5 0.25" bc="0 1 0"/>
+      <Node coords="1.75 0.5 0.25" bc="0 1 0"/>
+      <Node coords="2.0 0.5 0.25" bc="0 1 0"/>
+      <Node id="75" coords="2.25 0.5 0.25" bc="0 1 0"/>
+      <Node coords="2.5 0.5 0.25" bc="0 1 0"/>
+      <Node coords="2.75 0.5 0.25" bc="0 1 0"/>
+      <Node coords="3.0 0.5 0.25" bc="0 1 0"/>
+      <Node coords="0.0 0.0 0.5" bc="1 0 0"/>
+      <Node id="80" coords="0.25 0.0 0.5"/>
+      <Node coords="0.5 0.0 0.5"/>
+      <Node coords="0.75 -0.03 0.53"/>
+      <Node coords="1.0 0.0 0.5"/>
+      <Node coords="1.25 0.0 0.5"/>
+      <Node id="85" coords="1.5 0.0 0.5"/>
+      <Node coords="1.75 0.0 0.5"/>
+      <Node coords="2.0 0.0 0.5"/>
+      <Node coords="2.25 0.0 0.5"/>
+      <Node coords="2.5 0.0 0.5"/>
+      <Node id="90" coords="2.75 0.0 0.5"/>
+      <Node coords="3.0 0.0 0.5"/>
+      <Node coords="0.0 0.25 0.5" bc="1 0 0"/>
+      <Node coords="0.25 0.25 0.5"/>
+      <Node coords="0.5 0.25 0.5"/>
+      <Node id="95" coords="0.75 0.25 0.5"/>
+      <Node coords="1.0 0.25 0.5"/>
+      <Node coords="1.25 0.25 0.5"/>
+      <Node coords="1.5 0.25 0.5"/>
+      <Node coords="1.75 0.25 0.5"/>
+      <Node id="100" coords="2.0 0.25 0.5"/>
+      <Node coords="2.25 0.25 0.5"/>
+      <Node coords="2.5 0.25 0.5"/>
+      <Node coords="2.75 0.25 0.5"/>
+      <Node coords="3.0 0.25 0.5"/>
+      <Node id="105" coords="0.0 0.5 0.5" bc="1 1 0"/>
+      <Node coords="0.25 0.5 0.5" bc="0 1 0"/>
+      <Node coords="0.5 0.5 0.5" bc="0 1 0"/>
+      <Node coords="0.75 0.5 0.5" bc="0 1 0"/>
+      <Node coords="1.0 0.5 0.5" bc="0 1 0"/>
+      <Node id="110" coords="1.25 0.5 0.5" bc="0 1 0"/>
+      <Node coords="1.5 0.5 0.5" bc="0 1 0"/>
+      <Node coords="1.75 0.5 0.5" bc="0 1 0"/>
+      <Node coords="2.0 0.5 0.5" bc="0 1 0"/>
+      <Node coords="2.25 0.5 0.5" bc="0 1 0"/>
+      <Node id="115" coords="2.5 0.5 0.5" bc="0 1 0"/>
+      <Node coords="2.75 0.5 0.5" bc="0 1 0"/>
+      <Node coords="3.0 0.5 0.5" bc="0 1 0"/>
+    </Nodes>
+    <Elements>
+      <!-- BRICK ELEMENTS -->
+      <LSpace nodes="40 53 54 41 1 14 15 2"/>
+      <LSpace nodes="41 54 55 42 2 15 16 3"/>
+      <LSpace nodes="42 55 56 43 3 16 17 4"/>
+      <LSpace nodes="43 56 57 44 4 17 18 5"/>
+      <LSpace id="5" nodes="44 57 58 45 5 18 19 6"/>
+      <LSpace nodes="45 58 59 46 6 19 20 7"/>
+      <LSpace nodes="46 59 60 47 7 20 21 8"/>
+      <LSpace nodes="47 60 61 48 8 21 22 9"/>
+      <LSpace nodes="48 61 62 49 9 22 23 10"/>
+      <LSpace id="10" nodes="49 62 63 50 10 23 24 11"/>
+      <LSpace nodes="50 63 64 51 11 24 25 12"/>
+      <LSpace nodes="51 64 65 52 12 25 26 13"/>
+      <LSpace nodes="53 66 67 54 14 27 28 15"/>
+      <LSpace nodes="54 67 68 55 15 28 29 16"/>
+      <LSpace id="15" nodes="55 68 69 56 16 29 30 17"/>
+      <LSpace nodes="56 69 70 57 17 30 31 18"/>
+      <LSpace nodes="57 70 71 58 18 31 32 19"/>
+      <LSpace nodes="58 71 72 59 19 32 33 20"/>
+      <LSpace nodes="59 72 73 60 20 33 34 21"/>
+      <LSpace id="20" nodes="60 73 74 61 21 34 35 22"/>
+      <LSpace nodes="61 74 75 62 22 35 36 23"/>
+      <LSpace nodes="62 75 76 63 23 36 37 24"/>
+      <LSpace nodes="63 76 77 64 24 37 38 25"/>
+      <LSpace nodes="64 77 78 65 25 38 39 26"/>
+      <LSpace id="25" nodes="79 92 93 80 40 53 54 41"/>
+      <LSpace nodes="80 93 94 81 41 54 55 42"/>
+      <LSpace nodes="81 94 95 82 42 55 56 43"/>
+      <LSpace nodes="82 95 96 83 43 56 57 44"/>
+      <LSpace nodes="83 96 97 84 44 57 58 45"/>
+      <LSpace id="30" nodes="84 97 98 85 45 58 59 46"/>
+      <LSpace nodes="85 98 99 86 46 59 60 47"/>
+      <LSpace nodes="86 99 100 87 47 60 61 48"/>
+      <LSpace nodes="87 100 101 88 48 61 62 49"/>
+      <LSpace nodes="88 101 102 89 49 62 63 50"/>
+      <LSpace id="35" nodes="89 102 103 90 50 63 64 51"/>
+      <LSpace nodes="90 103 104 91 51 64 65 52"/>
+      <LSpace nodes="92 105 106 93 53 66 67 54"/>
+      <LSpace nodes="93 106 107 94 54 67 68 55"/>
+      <LSpace nodes="94 107 108 95 55 68 69 56"/>
+      <LSpace id="40" nodes="95 108 109 96 56 69 70 57"/>
+      <LSpace nodes="96 109 110 97 57 70 71 58"/>
+      <LSpace nodes="97 110 111 98 58 71 72 59"/>
+      <LSpace nodes="98 111 112 99 59 72 73 60"/>
+      <LSpace nodes="99 112 113 100 60 73 74 61"/>
+      <LSpace id="45" nodes="100 113 114 101 61 74 75 62"/>
+      <LSpace nodes="101 114 115 102 62 75 76 63"/>
+      <LSpace nodes="102 115 116 103 63 76 77 64"/>
+      <LSpace nodes="103 116 117 104 64 77 78 65"/>
+    </Elements>
+    <CrossSections>
+      <!-- CROSS-SECTIONS -->
+      <simpleCS material="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <!-- MATERIALS -->
+      <!-- concrete (bricks): -->
+      <MPSdamMat d="0.00240324" n="0.2" talpha="1e-05" mode="0" fc="25.0" cc="280.0" w_c="0.5" a_c="7.085714" stiffnessfactor="1000000.0" timefactor="1.0" lambda0="86400.0" begoftimeofinterest="300.0" endoftimeofinterest="8640000.0" relmatage="10800.0" coupledanalysistype="3" k3="35.0" p="1000.0" ktm="0.5" timedepfracturing="" fib_s="0.25" eps_cas0="7e-05" ft28="1.8" gf28="8e-05" isotropic="" temperincelsius="" castingtime="21600.0" checksnapback="1"/>
+    </Materials>
+    <BoundaryConditions>
+      <!-- BOUNDARY CONDITIONS -->
+      <BoundaryCondition loadtimefunction="1" prescribedvalue="0.0"/>
+      <DeadWeight loadtimefunction="2" components="0.0 0.0 -1.0" set="1"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <!-- DeadWeight 2 loadTimeFunction 2 components 3 0. 0. -1. set 1 reference -->
+      <!-- TIME FUNCTION -->
+      <ConstantFunction f_t_="1.0"/>
+      <PeakFunction t="1.0" f_t_="1.0"/>
+      <PiecewiseLinFunction npoints="4" t="0.0 2.0 4.0 10.0" f_t_="0.0 1.0 0.0 0.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <!-- SETS -->
+      <Set elementranges="1-48"/>
+      <Set elementranges=""/>
+      <Set elementranges=""/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!-- StaticStructural nsteps 10 deltaT 1. lstype 4 smtype 8 stiffmode 2 miniter 3 nmodules 2 -->
+    <!-- vtkxml tstep_step 1 domain_all vars 11 1 2 112 111 4 106 109 110 52 90 114 primvars 1 1 cellvars 2 90 82 stype 1 regionsets 1 1 timescale 2.77777e-4 -->
+    <!-- vtkxml tstep_step 1 domain_all vars 5 1 2 4 27 28 primvars 1 1 stype 1 regionsets 2 2 3 timescale 2.77777e-4 -->
+    <hom tstep_all="" ists="52" regionsets="1" timescale="0.000277777"/>
+    <errorcheck tolerance="1e-07">
+      <NODE tStep="2" number="39" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="4" number="39" dof="1" unknown="d" value="3.95745447e-05"/>
+      <NODE tStep="9" number="39" dof="1" unknown="d" value="0.000254306044"/>
+      <NODE tStep="14" number="39" dof="1" unknown="d" value="0.000335193649"/>
+      <NODE tStep="19" number="39" dof="1" unknown="d" value="0.000320825301"/>
+      <!-- Check element's stress vector -->
+      <ELEMENT tStep="2" number="30" gp="1" keyword="1" component="2" value="0.0"/>
+      <ELEMENT tStep="4" number="30" gp="1" keyword="1" component="2" value="0.0050422035"/>
+      <ELEMENT tStep="9" number="30" gp="1" keyword="1" component="2" value="0.0842770991"/>
+      <ELEMENT tStep="14" number="30" gp="1" keyword="1" component="2" value="0.138105684"/>
+      <ELEMENT tStep="19" number="30" gp="1" keyword="1" component="2" value="0.130319067"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

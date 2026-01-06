@@ -3,7 +3,7 @@
   <Description>pdelta analysis of simple cantilever beam</Description>
   <!-- only momentum influence to the displacements is taken into account -->
   <!-- beamShearCoeff is artificially enlarged. -->
-  <Analysis type="pdelta" nsteps="1" rtolv="0.001" maxiter="1"/>
+  <Analysis _="pdelta" nsteps="1" rtolv="0.001" maxiter="1"/>
   <Domain domain="3dbeam">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>con1dpm2.out</Output>
   <Description>Concrete Plasticity Uniaxial Compression (CDPM1 by Grassl and Jirasek)</Description>
-  <Analysis type="StaticStructural" nsteps="10" solvertype="calm" initialguess="0" rtolf="0.002" reqiterations="100" stiffmode="1" maxiter="100" steplength="0.0005" minsteplength="0.0005" psi="0.0" hpcmode="2" hpc="2 1" hpcw="-1.0"/>
+  <Analysis _="StaticStructural" nsteps="10" solvertype="calm" initialguess="0" rtolf="0.002" reqiterations="100" stiffmode="1" maxiter="100" steplength="0.0005" minsteplength="0.0005" psi="0.0" hpcmode="2" hpc="2 1" hpcw="-1.0"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

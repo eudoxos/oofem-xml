@@ -20,7 +20,7 @@
   <!-- n3 (3,2,0) -> (3.09808   1.73205  -0.63397) -->
   <!-- n4 (0,2,0) -> (0.50000   1.73205   0.86603) -->
   <!-- Author: bp -->
-  <Analysis type="StaticStructural" nsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1"/>
   <Domain domain="3dshell">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

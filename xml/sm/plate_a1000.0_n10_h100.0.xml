@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>plate.out</Output>
   <Description>Eigen vibration of simply supported plate (a1000.0_h100.0_n10)</Description>
-  <Analysis type="EigenValueDynamic" nroot="1" rtolv="1e-10"/>
+  <Analysis _="EigenValueDynamic" nroot="1" rtolv="1e-10"/>
   <Domain domain="3dshell">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>testBlatzKo.out</Output>
   <Description>uniaxial tension test of blatz-ko material model</Description>
-  <Analysis type="NonLinearStatic" nsteps="1" renumber="1" controllmode="1" rtolv="1e-06" stiffmode="0" manrmsteps="1" maxiter="300" initialguess="0"/>
+  <Analysis _="NonLinearStatic" nsteps="1" renumber="1" controllmode="1" rtolv="1e-06" stiffmode="0" manrmsteps="1" maxiter="300" initialguess="0"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

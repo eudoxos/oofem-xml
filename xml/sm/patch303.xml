@@ -2,7 +2,7 @@
   <Output>patch303.out</Output>
   <Description>Patch test of PlaneStress2d elements -&gt; pure compression in x direction</Description>
   <!-- three tests in onex -->
-  <Analysis type="StaticStructural" nsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

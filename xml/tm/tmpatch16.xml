@@ -9,7 +9,7 @@
   <!-- 3|&#8212;&#8212;-|4 -->
   <!-- |  1  | -->
   <!-- 1|_____|2 -->
-  <Analysis type="StationaryProblem" nsteps="1"/>
+  <Analysis _="StationaryProblem" nsteps="1"/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

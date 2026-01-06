@@ -2,7 +2,7 @@
   <Output>linstab_beam2d.out</Output>
   <Description>Linear stability of cantiliver</Description>
   <!-- StaticStructural 1 nsteps 1 -->
-  <Analysis type="LinearStability" nroot="9" rtolv="1e-08"/>
+  <Analysis _="LinearStability" nroot="9" rtolv="1e-08"/>
   <Domain domain="2dbeam">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

@@ -2,7 +2,7 @@
   <Output>trussb3_relax.out</Output>
   <Description>Test of 1D relaxation behaviour using Truss2d elements and B3 material model</Description>
   <!-- example from dissertation -->
-  <Analysis type="StaticStructural" nsteps="30" prescribedtimes="0.1 0.1373 0.1887 0.2592 0.3562 0.4893 0.6723 0.9236 1.2689 1.7433 2.395 3.2903 4.5203 6.2101 8.5316 11.721 16.1026 22.1221 30.3919 41.7531 57.3615 78.8046 108.2636 148.7352 204.3359 280.7216 385.662 529.8317 727.8954 1000.0"/>
+  <Analysis _="StaticStructural" nsteps="30" prescribedtimes="0.1 0.1373 0.1887 0.2592 0.3562 0.4893 0.6723 0.9236 1.2689 1.7433 2.395 3.2903 4.5203 6.2101 8.5316 11.721 16.1026 22.1221 30.3919 41.7531 57.3615 78.8046 108.2636 148.7352 204.3359 280.7216 385.662 529.8317 727.8954 1000.0"/>
   <Domain domain="2dtruss">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

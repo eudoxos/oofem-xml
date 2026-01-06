@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>rotated_1.out</Output>
   <Description>Patch test of Truss2d elements -&gt; simple structure with rotated support</Description>
-  <Analysis type="StaticStructural" nsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1"/>
   <Domain domain="2dtruss">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

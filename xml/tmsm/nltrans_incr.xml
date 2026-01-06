@@ -1,0 +1,5 @@
+<oofem version="1">
+  <Output>nltrans_incr.out</Output>
+  <Description>Staggered analysis in 2d - Nonstationary temperature field sent to NonLinearStatic problem with required renumbering of equations</Description>
+  <Analysis _="StaggeredProblem" nsteps="3" deltat="36000.0" prob1="nltrans_incr.in.tm.xml" prob2="nltrans_incr.in.sm.xml"/>
+</oofem>

@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>idm08.out</Output>
   <Description>Test of PlaneStress2d element -&gt; pure compression in y direction, Griffith/Rankine criteria</Description>
-  <Analysis type="StaticStructural" nsteps="1" rtolf="0.0001"/>
+  <Analysis _="StaticStructural" nsteps="1" rtolf="0.0001"/>
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

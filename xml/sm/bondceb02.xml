@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>bondceb02.out</Output>
   <Description>Test case for BondCEB interface material - rebar pull-out in 3D. Added by Adam Sciegaj</Description>
-  <Analysis type="StaticStructural" nsteps="20" deltat="1.0" rtolf="0.001" maxiter="50" initialguess="1"/>
+  <Analysis _="StaticStructural" nsteps="20" deltat="1.0" rtolf="0.001" maxiter="50" initialguess="1"/>
   <!-- vtkxml tstep_all domain_all primvars 1 1 -->
   <!-- vtkxml tstep_all domain_all ipvars 2 98 99 regionsets 1 3 -->
   <!-- matlab tstep_all integrationpoints internalvars 2 98 99 -->

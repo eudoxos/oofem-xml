@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>planestress_j2_new.out</Output>
   <Description>Nonlinear plastic bar (2dplanestress computation)</Description>
-  <Analysis type="StaticStructural" nsteps="6" solvertype="calm" steplength="6.0" minsteplength="6.0" rtolf="1e-06" psi="0.0" maxiter="30" hpc="20 1"/>
+  <Analysis _="StaticStructural" nsteps="6" solvertype="calm" steplength="6.0" minsteplength="6.0" rtolf="1e-06" psi="0.0" maxiter="30" hpc="20 1"/>
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

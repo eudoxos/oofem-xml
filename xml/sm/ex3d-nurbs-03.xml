@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>ex3d-nurbs-03.out</Output>
   <Description>tri-linear IGA brick, constant deformation, LCS</Description>
-  <Analysis type="LinearStatic" nsteps="1"/>
+  <Analysis _="LinearStatic" nsteps="1"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

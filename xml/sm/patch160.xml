@@ -2,7 +2,7 @@
   <Output>patch160.out</Output>
   <Description>test of Truss2d elements with j2plasticMaterial</Description>
   <!-- LinearStatic nsteps 1 -->
-  <Analysis type="StaticStructural" nsteps="6" solvertype="calm" steplength="6.0" minsteplength="0.1" rtolf="1e-05" psi="0.0" maxiter="30"/>
+  <Analysis _="StaticStructural" nsteps="6" solvertype="calm" steplength="6.0" minsteplength="0.1" rtolf="1e-05" psi="0.0" maxiter="30"/>
   <Domain domain="2dtruss">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

@@ -2,7 +2,7 @@
   <Output>setprops01.out</Output>
   <Description>TEST of SET PROPERTY MAPPING</Description>
   <!-- domain section -->
-  <Analysis type="StaticStructural" nsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1"/>
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

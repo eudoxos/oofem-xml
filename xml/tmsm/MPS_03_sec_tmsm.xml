@@ -1,0 +1,5 @@
+<oofem version="1">
+  <Output>MPS_03_sec_tmsm.out</Output>
+  <Description>tests on creep at variable temperature /and humidity/</Description>
+  <Analysis _="StaggeredProblem" nsteps="26" prob1="MPS_03_sec_in.tm.xml" prob2="MPS_03_sec_in.sm.xml" prescribedtimes="8.64e-06 8.64 17.28 43.2 86.4 172.8 432.0 864.0 1728.0 4320.0 8640.0 17280.0 43200.0 86400.0 172800.0 432000.0 864000.0 1728000.0 4320000.0 8640000.0 17280000.0 43200000.0 86400000.0 172800000.0 432000000.0 864000000.0"/>
+</oofem>

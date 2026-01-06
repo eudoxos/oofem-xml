@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>cbs2.out</Output>
   <Description>pipe test, the nondimensional version of patch02.in</Description>
-  <Analysis type="cbs" nsteps="10" lstype="0" smtype="0" deltat="0.01" cmflag="0" theta1="0.5" theta2="0.5" scaleflag="1" lscale="3.0" uscale="2.0" dscale="0.3"/>
+  <Analysis _="cbs" nsteps="10" lstype="0" smtype="0" deltat="0.01" cmflag="0" theta1="0.5" theta2="0.5" scaleflag="1" lscale="3.0" uscale="2.0" dscale="0.3"/>
   <Domain domain="2dincompflow">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

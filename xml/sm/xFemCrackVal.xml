@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>xFemCrackVal.out</Output>
   <Description>Test case for xfem: a crack through 3-node triangle elements. Added by Erik Svenning.</Description>
-  <Analysis type="StaticStructural" nsteps="3" deltat="1.0" rtolf="1e-06" maxiter="20" miniter="2"/>
+  <Analysis _="StaticStructural" nsteps="3" deltat="1.0" rtolf="1e-06" maxiter="20" miniter="2"/>
   <!-- vtkxml tstep_all domain_all primvars 1 1 cellvars 1 1 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -42,16 +42,16 @@
       <Set nodes="1 8"/>
       <Set nodes="4 5"/>
     </Sets>
-    <XFemManager type="XfemManager" vtkexport="0" exportfields="2 3 4">
+    <XFemManager _="XfemManager" vtkexport="0" exportfields="2 3 4">
       <EnrichmentItems>
         <crack>
-          <EnrichmentFunction type="DiscontinuousFunction"/>
-          <EnrichmentGeometry type="PolygonLine" points="1.2 2.5 1.2 2.0 1.3 1.1 1.65 0.59378"/>
+          <EnrichmentFunction _="DiscontinuousFunction"/>
+          <EnrichmentGeometry _="PolygonLine" points="1.2 2.5 1.2 2.0 1.3 1.1 1.65 0.59378"/>
           <EnrichmentFront>
             <EnrFrontDoNothing/>
             <EnrFrontDoNothing/>
           </EnrichmentFront>
-          <PropagationLaw type="PropagationLawCrackPrescribedDir" angle="-60.0" incrementlength="0.7"/>
+          <PropagationLaw _="PropagationLawCrackPrescribedDir" angle="-60.0" incrementlength="0.7"/>
         </crack>
       </EnrichmentItems>
     </XFemManager>

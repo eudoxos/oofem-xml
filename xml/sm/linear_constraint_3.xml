@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>linear_constraint_3.out</Output>
   <Description>Test of linear constraint condition on a Truss2d element</Description>
-  <Analysis type="IncrLinearStatic" nsteps="2"/>
+  <Analysis _="IncrLinearStatic" nsteps="2"/>
   <Domain domain="2dtruss">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

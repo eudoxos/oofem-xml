@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>beam2d_5.out</Output>
   <Description>Timoshenko Cantilever beam - test</Description>
-  <Analysis type="StaticStructural" nsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1"/>
   <Domain domain="2dbeam">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

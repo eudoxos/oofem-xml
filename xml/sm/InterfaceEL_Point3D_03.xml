@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>InterfaceEL_Point3D_03.out</Output>
   <Description>Test of cohesive interface between two points, loaded in x by tension/compression/shear.</Description>
-  <Analysis type="StaticStructural" nsteps="1" rtolf="0.0001" manrmsteps="5" deltat="1.0"/>
+  <Analysis _="StaticStructural" nsteps="1" rtolf="0.0001" manrmsteps="5" deltat="1.0"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>line02.out</Output>
   <Description>Line1_ht element in nonstationary problem</Description>
-  <Analysis type="TransientTransport" nsteps="20" deltat="3600.0" alpha="0.5" lumped=""/>
+  <Analysis _="TransientTransport" nsteps="20" deltat="3600.0" alpha="0.5" lumped=""/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

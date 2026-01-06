@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>con2dpm7.out</Output>
   <Description>Concrete Plasticity 2 Thermal Loading</Description>
-  <Analysis type="StaticStructural" nsteps="1" initialguess="1" rtolf="0.001" stiffmode="2" maxiter="1000"/>
+  <Analysis _="StaticStructural" nsteps="1" initialguess="1" rtolf="0.001" stiffmode="2" maxiter="1000"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

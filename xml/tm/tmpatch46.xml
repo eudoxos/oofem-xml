@@ -2,7 +2,7 @@
   <Output>tmpatch46.out</Output>
   <Description>Patch test of IsoHeatMat with temperature-dependent material parameters</Description>
   <!-- TransientTransport nsteps 50 deltat 100.0 rtolf 1.e-6 alpha 0.6 lstype 1 lstol 1e-6 lsiter 200 lsprecond 1 renumber 1 exportfields 1 5 nmodules 1 -->
-  <Analysis type="TransientTransport" nsteps="50" deltat="100.0" rtolf="1e-06" alpha="0.6" lstype="0" renumber="1" exportfields="5"/>
+  <Analysis _="TransientTransport" nsteps="50" deltat="100.0" rtolf="1e-06" alpha="0.6" lstype="0" renumber="1" exportfields="5"/>
   <Domain domain="heattransfer">
     <OutputManager/>
     <Nodes>

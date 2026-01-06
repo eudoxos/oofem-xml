@@ -1,0 +1,80 @@
+<oofem version="1">
+  <Output>MPS_block01_in.out.tm</Output>
+  <Description>OOFEM input file for thermal analysis, automatically generated, test for ConTemp, a brick with size x=0.6 y=0.5 z=0.5</Description>
+  <Analysis _="TransientTransport" nsteps="3" deltat="36000.0" rtolv="0.0001" alpha="0.6" lumped="" exportfields="5"/>
+  <Domain domain="heattransfer">
+    <OutputManager tstep_all="" dofman_output="8"/>
+    <Nodes>
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.3 0.0 0.0"/>
+      <Node coords="0.6 0.0 0.0"/>
+      <Node coords="0.0 0.25 0.0"/>
+      <Node id="5" coords="0.3 0.25 0.0"/>
+      <Node coords="0.6 0.25 0.0"/>
+      <Node coords="0.0 0.5 0.0"/>
+      <Node coords="0.3 0.5 0.0"/>
+      <Node coords="0.6 0.5 0.0"/>
+      <Node id="10" coords="0.0 0.0 0.25"/>
+      <Node coords="0.3 0.0 0.25"/>
+      <Node coords="0.6 0.0 0.25"/>
+      <Node coords="0.0 0.25 0.25"/>
+      <Node coords="0.3 0.25 0.25"/>
+      <Node id="15" coords="0.6 0.25 0.25"/>
+      <Node coords="0.0 0.5 0.25"/>
+      <Node coords="0.3 0.5 0.25"/>
+      <Node coords="0.6 0.5 0.25"/>
+      <Node coords="0.0 0.0 0.5"/>
+      <Node id="20" coords="0.3 0.0 0.5"/>
+      <Node coords="0.6 0.0 0.5"/>
+      <Node coords="0.0 0.25 0.5"/>
+      <Node coords="0.3 0.25 0.5"/>
+      <Node coords="0.6 0.25 0.5"/>
+      <Node id="25" coords="0.0 0.5 0.5"/>
+      <Node coords="0.3 0.5 0.5"/>
+      <Node coords="0.6 0.5 0.5"/>
+    </Nodes>
+    <Elements>
+      <Brick1ht nodes="10 13 14 11 1 4 5 2"/>
+      <Brick1ht nodes="11 14 15 12 2 5 6 3"/>
+      <Brick1ht nodes="13 16 17 14 4 7 8 5"/>
+      <Brick1ht nodes="14 17 18 15 5 8 9 6"/>
+      <Brick1ht id="5" nodes="19 22 23 20 10 13 14 11"/>
+      <Brick1ht nodes="20 23 24 21 11 14 15 12"/>
+      <Brick1ht nodes="22 25 26 23 13 16 17 14"/>
+      <Brick1ht nodes="23 26 27 24 14 17 18 15"/>
+    </Elements>
+    <Sets>
+      <Set elementranges="1-8"/>
+      <Set elementboundaries="1 6 2 6 5 6 6 6"/>
+      <Set elementboundaries="5 1 6 1 7 1 8 1"/>
+    </Sets>
+    <CrossSections>
+      <SimpleTransportCS mat="1" set="1"/>
+    </CrossSections>
+    <Materials>
+      <HydratingConcreteMat d="2445.52" k="1.52188" c="935.851" hydrationmodeltype="2" qpot="471.15" masscement="199.956" b1="0.0001624" b2="0.0014" eta="7.0" dohinf="0.85" activationenergy="38300.0" castingtime="0.0" doh1="0.0" p1="0.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <ConstantSurfaceLoad loadtimefunction="1" components="20.0" properties="a 19" loadtype="3" set="2"/>
+      <ConstantSurfaceLoad loadtimefunction="1" components="20.0" properties="a 19" loadtype="3" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions>
+      <InitialCondition conditions="u 20" dofs="10" set="1"/>
+    </InitialConditions>
+    <LoadTimeFunctions>
+      <ConstantFunction f_t_="1.0"/>
+      <UsrDefLTF f_t_="0+(0)*sin(2*3.14159*(t+28800-28800)/86400.)+h(-1.e+30*sin(2*3.14159*(t+28800-28800)/86400.))*(0)*sin(2*3.14159*(t+28800-28800)/86400.)"/>
+      <UsrDefLTF f_t_="0+(0)*sin(2*3.14159*(t+28800-28800)/86400.)+h(-1.e+30*sin(2*3.14159*(t+28800-28800)/86400.))*(0)*sin(2*3.14159*(t+28800-28800)/86400.)"/>
+      <UsrDefLTF f_t_="20+(0)*sin(2*3.14159*(t+28800-28800)/86400.)+h(-1.e+30*sin(2*3.14159*(t+28800-28800)/86400.))*(0)*sin(2*3.14159*(t+28800-28800)/86400.)"/>
+      <UsrDefLTF id="5" f_t_="0+(0)*sin(2*3.14159*(t+28800-28800)/86400.)+h(-1.e+30*sin(2*3.14159*(t+28800-28800)/86400.))*(0)*sin(2*3.14159*(t+28800-28800)/86400.)"/>
+      <UsrDefLTF f_t_="0+(0)*sin(2*3.14159*(t+28800-28800)/86400.)+h(-1.e+30*sin(2*3.14159*(t+28800-28800)/86400.))*(0)*sin(2*3.14159*(t+28800-28800)/86400.)"/>
+      <UsrDefLTF f_t_="20+(0)*sin(2*3.14159*(t+28800-28800)/86400.)+h(-1.e+30*sin(2*3.14159*(t+28800-28800)/86400.))*(0)*sin(2*3.14159*(t+28800-28800)/86400.)"/>
+    </LoadTimeFunctions>
+  </Domain>
+  <ExportModules>
+    <errorcheck tolerance="1e-06">
+      <NODE tStep="10" number="8" dof="10" unknown="d" value="31.6472144" tolerance="0.0001"/>
+      <NODE tStep="15" number="8" dof="10" unknown="d" value="31.2574472" tolerance="0.0001"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

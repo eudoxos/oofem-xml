@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>ltrspaceboundary06.out</Output>
   <Description>3D RVE - periodic boundary conditions with LTRSpaceBoundaryPlate elements, periodicity in x y</Description>
-  <Analysis type="StaticStructural" nsteps="1" initialguess="1" lstype="0" smtype="1"/>
+  <Analysis _="StaticStructural" nsteps="1" initialguess="1" lstype="0" smtype="1"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

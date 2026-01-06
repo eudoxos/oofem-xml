@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>tmpatch07-8.out</Output>
   <Description>Test of Quad1_ht elements; transient case</Description>
-  <Analysis type="TransientTransport" nsteps="100" deltat="600000.0" alpha="0.5" rtolf="1e-06"/>
+  <Analysis _="TransientTransport" nsteps="100" deltat="600000.0" alpha="0.5" rtolf="1e-06"/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

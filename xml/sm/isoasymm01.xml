@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>test1.out</Output>
   <Description>Patch test of Truss1d elements -&gt; temperature load</Description>
-  <Analysis type="StaticStructural" nsteps="1" stiffmode="0" manrmsteps="5"/>
+  <Analysis _="StaticStructural" nsteps="1" stiffmode="0" manrmsteps="5"/>
   <Domain domain="1dtruss">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

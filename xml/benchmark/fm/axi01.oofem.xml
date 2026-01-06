@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>axi01.oofem.out</Output>
   <Description>axisymmetric 2D pipe test in radial direction, inlet velocity (constant), outlet: pressure, no friction</Description>
-  <Analysis type="supg" nsteps="10" lstype="0" smtype="1" deltat="100.0" rtolv="0.0001" alpha="0.5" renumber="1"/>
+  <Analysis _="supg" nsteps="10" lstype="0" smtype="1" deltat="100.0" rtolv="0.0001" alpha="0.5" renumber="1"/>
   <Domain domain="2dincompflow">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

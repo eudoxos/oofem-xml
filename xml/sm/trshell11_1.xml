@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>trshell11_1.out</Output>
   <Description>Cantilever beam, comparing two models (integral cross section and layared cross section)</Description>
-  <Analysis type="NonLinearStatic" nsteps="2" profileopt="1">
+  <Analysis _="NonLinearStatic" nsteps="2" profileopt="1">
     <Metasteps>
       <MetaStep nsteps="2" controllmode="1" rtolf="0.001" rtold="0.001" maxiter="2000" refloadmode="1"/>
     </Metasteps>

@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>mp04.out</Output>
   <Description>Test of mpm uptetra21 element</Description>
-  <Analysis type="mpmproblem" nsteps="1" deltat="0.1" alpha="0.5" rtolv="1e-06"/>
+  <Analysis _="mpmproblem" nsteps="1" deltat="0.1" alpha="0.5" rtolv="1e-06"/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

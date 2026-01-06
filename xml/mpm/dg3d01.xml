@@ -1,10 +1,10 @@
 <oofem version="1">
   <Output>dg3d01.out</Output>
   <Description>Sample 3D scalar advection problem; initial condition is a sine wave, homogenous BC, natural input (3D and 2D boundary elements), strip of 20 elements in x-direction</Description>
-  <Analysis type="DGproblem" nsteps="40" deltat="0.01" alpha="1.0" smtype="1">
+  <Analysis _="DGproblem" nsteps="40" deltat="0.01" alpha="1.0" smtype="1">
     <Fields>
-      <exprfield f="f[1]=1.0;f[2]=0.0;f[3]=0.0" type="1"/>
-      <exprfield f="f=(x&lt;0.40)*(sin(x*pi/0.4))" type="7"/>
+      <exprfield f="f[1]=1.0;f[2]=0.0;f[3]=0.0" type="Velocity"/>
+      <exprfield f="f=(x&lt;0.40)*(sin(x*pi/0.4))" type="TransportProblemUnknowns"/>
     </Fields>
   </Analysis>
   <Domain domain="2dplanestress">

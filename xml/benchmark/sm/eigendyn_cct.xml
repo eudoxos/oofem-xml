@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>eigendyn_cct.out</Output>
   <Description>Free vibration  of CCT  elements</Description>
-  <Analysis type="EigenValueDynamic" nroot="10" rtolv="1e-05"/>
+  <Analysis _="EigenValueDynamic" nroot="10" rtolv="1e-05"/>
   <Domain domain="2dmindlinplate">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

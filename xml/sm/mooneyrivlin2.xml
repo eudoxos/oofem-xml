@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>testMooneyRivlin2.out</Output>
   <Description>test of Mooney-Rivlin material with C_1 = 10, C_2 = 10, and K = 0. See ogden2.in for the same case modeled by compressible Ogden material with alpha_1 = 2, alpha_2 = -2, mu_1 = 20, and mu_2 = -20.</Description>
-  <Analysis type="NonLinearStatic" nsteps="1" renumber="1" controllmode="1" rtolv="1e-11" stiffmode="0" manrmsteps="1" maxiter="10"/>
+  <Analysis _="NonLinearStatic" nsteps="1" renumber="1" controllmode="1" rtolv="1e-11" stiffmode="0" manrmsteps="1" maxiter="10"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

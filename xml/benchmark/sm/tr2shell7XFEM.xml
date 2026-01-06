@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>tr2shell7XFEM.out</Output>
   <Description>Cantilever beam split in two parts by delamination subjected to edge load</Description>
-  <Analysis type="StaticStructural" nsteps="1" lstype="0" smtype="0" rtolf="0.0001" manrmsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1" lstype="0" smtype="0" rtolf="0.0001" manrmsteps="1"/>
   <!-- vtkxml tstep_all dofman_all element_all primvars 1 1 -->
   <Domain domain="3ddirshell">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -46,12 +46,12 @@
       <Set elementranges="1-4"/>
       <Set nodes="1 4 11"/>
     </Sets>
-    <XFemManager type="XfemManager">
+    <XFemManager _="XfemManager">
       <EnrichmentItems>
         <!-- delamination 1 enrichmentdomains 1 1  enrichmentfunction 1  enrichmentdomain 1 enrichmentfront 1 delaminationxicoord 0.0 -->
         <delamination interfacenum="1" csnum="1">
-          <EnrichmentFunction type="DiscontinuousFunction"/>
-          <EnrichmentGeometry type="DofManList" list="2 3 5 6 7 8 9 10 12 13 14 15"/>
+          <EnrichmentFunction _="DiscontinuousFunction"/>
+          <EnrichmentGeometry _="DofManList" list="2 3 5 6 7 8 9 10 12 13 14 15"/>
         </delamination>
       </EnrichmentItems>
     </XFemManager>

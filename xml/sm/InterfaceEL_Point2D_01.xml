@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>InterfaceEL_Point2D_01.out</Output>
   <Description>2D quadrilateral with one contacts. The contact works in compression and separates in tension.</Description>
-  <Analysis type="StaticStructural" nsteps="10" maxiter="300" manrmsteps="5" deltat="1.0" renumber="1"/>
+  <Analysis _="StaticStructural" nsteps="10" maxiter="300" manrmsteps="5" deltat="1.0" renumber="1"/>
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

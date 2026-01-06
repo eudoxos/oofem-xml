@@ -3,7 +3,7 @@
   <Description>Homework www sm40 no. 1</Description>
   <!-- only momentum influence to the displacements is taken into account -->
   <!-- beamShearCoeff is artificially enlarged. -->
-  <Analysis type="StaticStructural" nsteps="3"/>
+  <Analysis _="StaticStructural" nsteps="3"/>
   <Domain domain="2dbeam">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

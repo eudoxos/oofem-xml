@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>FV12_mitc1.out</Output>
   <Description>Eigen vibration of free thin rectangular plate (10x10x0.05), E=200GPa, nu=0.3</Description>
-  <Analysis type="EigenValueDynamic" nroot="12" rtolv="1e-06" stype="1"/>
+  <Analysis _="EigenValueDynamic" nroot="12" rtolv="1e-06" stype="1"/>
   <Domain domain="3dshell">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

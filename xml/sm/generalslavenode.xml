@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>generalslavenode.out</Output>
   <Description>Rectangle made of 9 elements and 16 nodes, some of them setup as general slave nodes leading to periodic boundary conditions</Description>
-  <Analysis type="StaticStructural" nsteps="1" stiffmode="0" manrmsteps="1" rtolv="1e-08"/>
+  <Analysis _="StaticStructural" nsteps="1" stiffmode="0" manrmsteps="1" rtolv="1e-08"/>
   <Domain domain="planestrain">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

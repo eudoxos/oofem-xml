@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>dkt_twist01.out</Output>
   <Description>"Patch test of DKT elements -&gt; twisting of a square plate"</Description>
-  <Analysis type="LinearStatic" nsteps="1"/>
+  <Analysis _="LinearStatic" nsteps="1"/>
   <Domain domain="2dmindlinplate">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>tmpatch36.out</Output>
   <Description>Patch test of Quad1_ht elements in x-dir</Description>
-  <Analysis type="StationaryProblem" nsteps="1"/>
+  <Analysis _="StationaryProblem" nsteps="1"/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

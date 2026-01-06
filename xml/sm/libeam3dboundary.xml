@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>libeam3dboundary.out</Output>
   <Description>Reinforcement test case in 3D RVE - periodicity with LIBeam3dBoundary elements</Description>
-  <Analysis type="StaticStructural" nsteps="1" deltat="1.0" rtolf="0.0001" maxiter="30" miniter="1" initialguess="1"/>
+  <Analysis _="StaticStructural" nsteps="1" deltat="1.0" rtolf="0.0001" maxiter="30" miniter="1" initialguess="1"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

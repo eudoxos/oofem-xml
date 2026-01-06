@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>steel1.out</Output>
   <Description>Plane stress - cantilever l=3. h=1. - Nonlinear solution using HMH material.</Description>
-  <Analysis type="StaticStructural" nsteps="8" solvertype="calm" steplength="1.1497039e-05" minsteplength="1e-05" rtolf="0.0001" psi="0.0" maxiter="120"/>
+  <Analysis _="StaticStructural" nsteps="8" solvertype="calm" steplength="1.1497039e-05" minsteplength="1e-05" rtolf="0.0001" psi="0.0" maxiter="120"/>
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

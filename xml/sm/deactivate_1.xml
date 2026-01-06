@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>deactivate_1.out</Output>
   <Description>Patch test of Truss2d elements -&gt; simple structure with activated and deactivated element L</Description>
-  <Analysis type="IncrLinearStatic" endoftimeofinterest="5.0" prescribedtimes="0.0 1.0 2.0 3.0 4.0"/>
+  <Analysis _="IncrLinearStatic" endoftimeofinterest="5.0" prescribedtimes="0.0 1.0 2.0 3.0 4.0"/>
   <Domain domain="2dtruss">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

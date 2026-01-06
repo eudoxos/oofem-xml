@@ -3,7 +3,7 @@
   <Description>bar with linear variation of area; loaded in tension</Description>
   <!-- only momentum influence to the displacements is taken into account -->
   <!-- beamShearCoeff is artificially enlarged. -->
-  <Analysis type="StaticStructural" nsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1"/>
   <Domain domain="2dtruss">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

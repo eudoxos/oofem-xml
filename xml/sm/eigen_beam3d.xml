@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>eigen_beam3d.out</Output>
   <Description>eigen vibration analysis of simple suported beam</Description>
-  <Analysis type="EigenValueDynamic" nroot="4" rtolv="1e-06" stype="0"/>
+  <Analysis _="EigenValueDynamic" nroot="4" rtolv="1e-06" stype="0"/>
   <Domain domain="3dshell">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

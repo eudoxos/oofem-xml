@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>Tr2Shell7XFEM_multicrack.out</Output>
   <Description>Test case with 2 interlaminar and 2 intralaminar cracks</Description>
-  <Analysis type="StaticStructural" nsteps="1" maxiter="5" rtolf="1e-05" manrmsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1" maxiter="5" rtolf="1e-05" manrmsteps="1"/>
   <Domain domain="3ddirshell">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
@@ -53,27 +53,27 @@
       <Set id="5" nodes="9"/>
     </Sets>
     <!-- XFEM -->
-    <XFemManager type="XfemManager" debugvtk="0">
+    <XFemManager _="XfemManager" debugvtk="0">
       <EnrichmentItems>
         <delamination interfacenum="1 2" csnum="1">
-          <EnrichmentFunction type="DiscontinuousFunction"/>
-          <EnrichmentGeometry type="DofManList" list="1 2 3 4 5 6 7 8 9"/>
+          <EnrichmentFunction _="DiscontinuousFunction"/>
+          <EnrichmentGeometry _="DofManList" list="1 2 3 4 5 6 7 8 9"/>
         </delamination>
         <delamination interfacenum="2" csnum="1">
-          <EnrichmentFunction type="DiscontinuousFunction"/>
-          <EnrichmentGeometry type="DofManList" list="1 2 3 4 5 6 7 8 9"/>
+          <EnrichmentFunction _="DiscontinuousFunction"/>
+          <EnrichmentGeometry _="DofManList" list="1 2 3 4 5 6 7 8 9"/>
         </delamination>
         <shellcrack xibottom="-1.0" xitop="-0.333333">
-          <EnrichmentFunction type="DiscontinuousFunction"/>
-          <EnrichmentGeometry type="polygonline" points="-2.0 -2.0 -0.4 -0.8 1.4 2.0"/>
+          <EnrichmentFunction _="DiscontinuousFunction"/>
+          <EnrichmentGeometry _="polygonline" points="-2.0 -2.0 -0.4 -0.8 1.4 2.0"/>
           <EnrichmentFront>
             <EnrFrontDoNothing/>
             <EnrFrontDoNothing/>
           </EnrichmentFront>
         </shellcrack>
         <shellcrack xibottom="0.333333" xitop="1.0">
-          <EnrichmentFunction type="DiscontinuousFunction"/>
-          <EnrichmentGeometry type="polygonline" points="-2.0 -2.0 -0.8 -0.4 2.0 1.4"/>
+          <EnrichmentFunction _="DiscontinuousFunction"/>
+          <EnrichmentGeometry _="polygonline" points="-2.0 -2.0 -0.8 -0.4 2.0 1.4"/>
           <EnrichmentFront>
             <EnrFrontDoNothing/>
             <EnrFrontDoNothing/>

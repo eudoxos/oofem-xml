@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>lattice3d_mt1.out</Output>
   <Description>Test of 3d lattice mass transport elements</Description>
-  <Analysis type="TransientTransport" nsteps="2" deltat="20.0" rtolf="1e-06" forcescale="0.0" forcescaledofs="11" alpha="1.0" contextoutputstep="100"/>
+  <Analysis _="TransientTransport" nsteps="2" deltat="20.0" rtolf="1e-06" forcescale="0.0" forcescaledofs="11" alpha="1.0" contextoutputstep="100"/>
   <Domain domain="3dmasslatticetransport">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

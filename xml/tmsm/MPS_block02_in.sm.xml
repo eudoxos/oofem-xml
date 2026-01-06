@@ -1,0 +1,109 @@
+<oofem version="1">
+  <Output>MPS_block02_in.out.sm</Output>
+  <Description>OOFEM input file for structural analysis, automatically generated, test for ConTemp, a brick with size x=0.6 y=0.5 z=0.5. Damage occurs in timeStep 9.</Description>
+  <Analysis _="staticstructural" nsteps="2" deltat="1.0" rtolf="1e-06" lstype="0" smtype="0"/>
+  <Domain domain="3d">
+    <OutputManager tstep_all="" dofman_output="9" element_output="4"/>
+    <Nodes>
+      <!-- NODES -->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.3 0.0 0.0"/>
+      <Node coords="0.6 0.0 0.0"/>
+      <Node coords="0.0 0.25 0.0"/>
+      <Node id="5" coords="0.3 0.25 0.0"/>
+      <Node coords="0.6 0.25 0.0"/>
+      <Node coords="0.0 0.5 0.0"/>
+      <Node coords="0.3 0.5 0.0"/>
+      <Node coords="0.6 0.5 0.0"/>
+      <Node id="10" coords="0.0 0.0 0.25"/>
+      <Node coords="0.3 0.0 0.25"/>
+      <Node coords="0.6 0.0 0.25"/>
+      <Node coords="0.0 0.25 0.25"/>
+      <Node coords="0.3 0.25 0.25"/>
+      <Node id="15" coords="0.6 0.25 0.25"/>
+      <Node coords="0.0 0.5 0.25"/>
+      <Node coords="0.3 0.5 0.25"/>
+      <Node coords="0.6 0.5 0.25"/>
+      <Node coords="0.0 0.0 0.5"/>
+      <Node id="20" coords="0.3 0.0 0.5"/>
+      <Node coords="0.6 0.0 0.5"/>
+      <Node coords="0.0 0.25 0.5"/>
+      <Node coords="0.3 0.25 0.5"/>
+      <Node coords="0.6 0.25 0.5"/>
+      <Node id="25" coords="0.0 0.5 0.5"/>
+      <Node coords="0.3 0.5 0.5"/>
+      <Node coords="0.6 0.5 0.5"/>
+      <!-- HANGING NODES -->
+      <hangingNode id="29" coords="0.0 0.2 0.2" doftype="2 2 2" masterelement="1"/>
+      <hangingNode id="30" coords="0.3 0.2 0.2" doftype="2 2 2" masterelement="2"/>
+      <hangingNode coords="0.6 0.2 0.2" doftype="2 2 2" masterelement="2"/>
+    </Nodes>
+    <Elements>
+      <!-- BRICK ELEMENTS -->
+      <LSpace nodes="10 13 14 11 1 4 5 2"/>
+      <LSpace nodes="11 14 15 12 2 5 6 3"/>
+      <LSpace nodes="13 16 17 14 4 7 8 5"/>
+      <LSpace nodes="14 17 18 15 5 8 9 6"/>
+      <LSpace id="5" nodes="19 22 23 20 10 13 14 11"/>
+      <LSpace nodes="20 23 24 21 11 14 15 12"/>
+      <LSpace nodes="22 25 26 23 13 16 17 14"/>
+      <LSpace nodes="23 26 27 24 14 17 18 15"/>
+      <!-- REINFORCEMENT ELEMENTS -->
+      <Truss3d nodes="29 30"/>
+      <Truss3d id="10" nodes="30 31"/>
+    </Elements>
+    <CrossSections>
+      <!-- CROSS-SECTIONS -->
+      <!-- CS for concrete: -->
+      <simpleCS material="1" set="1"/>
+      <!-- CS for reinforcements, i.e. constant reinfrocement ratio + row + single: -->
+      <simpleCS material="2" area="0.0001" set="2"/>
+    </CrossSections>
+    <Materials>
+      <!-- MATERIALS -->
+      <!-- concrete (bricks): -->
+      <!-- Model for autogenous shrinkage is 0 -->
+      <MPSdamMat d="0.00244552" n="0.2" talpha="1e-05" mode="0" fc="40.0" cc="200.0" w_c="0.55" a_c="10.68" stiffnessfactor="1000000.0" timefactor="1.0" lambda0="86400.0" begoftimeofinterest="300.0" endoftimeofinterest="8640000.0" relmatage="14400.0" coupledanalysistype="3" k3="35.0" p="1000.0" ktm="0.5" timedepfracturing="" fib_s="0.2" ft28="1.3" gf28="0.0001" b4_cem_type="0" b4_eps_au_infty="-0.0018" isotropic="" temperincelsius="" castingtime="28800.0" checksnapback="1"/>
+      <!-- springs (interfaces): -->
+      <!-- steel (single): -->
+      <Steel1 d="0.0785" e="200000.0" n="0.3" talpha="1e-05" ry="550.0" castingtime="28800.0"/>
+    </Materials>
+    <BoundaryConditions>
+      <!-- BOUNDARY CONDITIONS -->
+      <BoundaryCondition loadtimefunction="1" values="0.0" dofs="1" set="4"/>
+      <BoundaryCondition loadtimefunction="1" values="0.0" dofs="2" set="5"/>
+      <BoundaryCondition loadtimefunction="1" values="0.0" dofs="3" set="6"/>
+      <DeadWeight loadtimefunction="2" components="0.0 0.0 -1.0" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <!-- TIME FUNCTION -->
+      <ConstantFunction f_t_="1.0"/>
+      <PeakFunction t="1.0" f_t_="1.0"/>
+      <PiecewiseLinFunction npoints="4" t="0.0 2.0 4.0 10.0" f_t_="0.0 1.0 0.0 0.0"/>
+    </LoadTimeFunctions>
+    <Sets>
+      <!-- SETS -->
+      <Set elementranges="1-8"/>
+      <Set elementranges="9-10"/>
+      <Set elementranges="1-10"/>
+      <Set nodes="1 4 7 10 13 16 19 22 25"/>
+      <Set id="5" nodes="7 8 9 16 17 18 25 26 27"/>
+      <Set nodes="1 2 3 4 5 6 7 8 9"/>
+    </Sets>
+  </Domain>
+  <ExportModules>
+    <!-- vtkxml tstep_step 1 domain_all vars 11 1 2 112 111 4 106 109 110 52 90 114 primvars 1 1 cellvars 2 90 82 stype 1 regionsets 1 1 timescale 2.77777e-4 -->
+    <!-- vtkxml tstep_step 1 domain_all vars 5 1 2 4 27 28 primvars 1 1 stype 1 regionsets 1 2 timescale 2.77777e-4 -->
+    <hom tstep_all="" ists="52" regionsets="1" timescale="0.000277777"/>
+    <errorcheck tolerance="1e-07">
+      <NODE tStep="2" number="9" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="10" number="9" dof="1" unknown="d" value="6.51901149e-05" tolerance="1e-10"/>
+      <NODE tStep="15" number="9" dof="1" unknown="d" value="5.78804768e-05" tolerance="1e-10"/>
+      <!-- Check element's stress vector -->
+      <ELEMENT tStep="2" number="4" gp="1" keyword="1" component="1" value="0.0"/>
+      <ELEMENT tStep="10" number="4" gp="1" keyword="1" component="1" value="0.0397144912"/>
+      <ELEMENT tStep="15" number="4" gp="1" keyword="1" component="1" value="0.147988005"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

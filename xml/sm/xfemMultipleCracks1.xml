@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>xfemMultipleCracks1.out</Output>
   <Description>XFEM simulation: A single element with three cracks and cohesive zones, loaded in shear. Written by Erik Svenning, Chalmers University of Technology.</Description>
-  <Analysis type="StaticStructural" nsteps="5" deltat="1.0" rtolf="1e-06" maxiter="25" miniter="2" lstype="0" smtype="1" manrmsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="5" deltat="1.0" rtolf="1e-06" maxiter="25" miniter="2" lstype="0" smtype="1" manrmsteps="1"/>
   <!-- vtkxml tstep_all domain_all primvars 1 1 cellvars 1 1 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -37,27 +37,27 @@
       <Set nodes="1 2 4"/>
       <Set nodes="3"/>
     </Sets>
-    <XFemManager type="XfemManager" numberofgppertri="1" vtkexport="1" exportfields="2 3 4">
+    <XFemManager _="XfemManager" numberofgppertri="1" vtkexport="1" exportfields="2 3 4">
       <EnrichmentItems>
         <!-- DiscontinuousFunction 1 -->
         <!-- polygoncrack 1 points 6 -0.1 0.3 0.5 0.3 1.1 0.3 -->
         <!-- Crack 1 -->
         <crack>
-          <EnrichmentFunction type="HeavisideFunction"/>
+          <EnrichmentFunction _="HeavisideFunction"/>
           <!-- DiscontinuousFunction 1 -->
-          <EnrichmentGeometry type="PolygonLine" points="-0.5 0.3 -0.2 0.3 1.1 0.3"/>
+          <EnrichmentGeometry _="PolygonLine" points="-0.5 0.3 -0.2 0.3 1.1 0.3"/>
         </crack>
         <!-- Crack 2 -->
         <crack>
-          <EnrichmentFunction type="HeavisideFunction"/>
+          <EnrichmentFunction _="HeavisideFunction"/>
           <!-- DiscontinuousFunction 1 -->
-          <EnrichmentGeometry id="2" type="PolygonLine" points="0.5 1.1 0.5 0.5 0.5 -0.1"/>
+          <EnrichmentGeometry id="2" _="PolygonLine" points="0.5 1.1 0.5 0.5 0.5 -0.1"/>
         </crack>
         <!-- Crack 3 -->
         <crack>
-          <EnrichmentFunction type="HeavisideFunction"/>
+          <EnrichmentFunction _="HeavisideFunction"/>
           <!-- DiscontinuousFunction 1 -->
-          <EnrichmentGeometry id="2" type="PolygonLine" points="-0.1 0.8 0.4 0.5 0.7 -0.1 0.8 -0.2"/>
+          <EnrichmentGeometry id="2" _="PolygonLine" points="-0.1 0.8 0.4 0.5 0.7 -0.1 0.8 -0.2"/>
         </crack>
       </EnrichmentItems>
     </XFemManager>

@@ -2,7 +2,7 @@
   <Output>incrlinstatic_isimposed.out</Output>
   <Description>Test of proper handling of changes of static system during computation</Description>
   <!-- supported only by some engng. models -->
-  <Analysis type="IncrLinearStatic" endoftimeofinterest="5.0" prescribedtimes="1.0 2.0 3.0 4.0 5.0"/>
+  <Analysis _="IncrLinearStatic" endoftimeofinterest="5.0" prescribedtimes="1.0 2.0 3.0 4.0 5.0"/>
   <Domain domain="2dtruss">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

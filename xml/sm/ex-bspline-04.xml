@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>ex-bspline-04.out</Output>
   <Description>Two bspline patches together, constant deformation</Description>
-  <Analysis type="LinearStatic" nsteps="1"/>
+  <Analysis _="LinearStatic" nsteps="1"/>
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

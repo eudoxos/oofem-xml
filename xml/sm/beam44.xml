@@ -2,7 +2,7 @@
   <Output>beam44.out</Output>
   <Description>TEST OF trplanestressrotallman ELEMENTS (clamped beam loaded by uniform load)</Description>
   <!-- domain section -->
-  <Analysis type="StaticStructural" nsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1"/>
   <Domain domain="2dplanestressrot">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

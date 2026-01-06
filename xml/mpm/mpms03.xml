@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>mpms03.out</Output>
   <Description>Demo of symbolic mpm problem; bending of clamped cantilever (l=3, h=0.3) loaded at the free end</Description>
-  <Analysis type="test" nsteps="1" lhsterms="1" rhsterms="2">
+  <Analysis _="test" nsteps="1" lhsterms="1" rhsterms="2">
     <MPMVariables>
       <!-- displacement -->
       <Variable name="u" interpolation="feilin" type="vector" quantity="Displacement" size="2" dofs="1 2"/>

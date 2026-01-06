@@ -2,7 +2,7 @@
   <Output>FCSimple3DPlateUnsym.out</Output>
   <Description>Test of mpm upbrick11 element and distributed pressure boundary condition</Description>
   <!-- final time 500, initial time step 1 -->
-  <Analysis type="mpmproblem" nsteps="50" deltat="10.0" alpha="1.0" manrmsteps="0" keeptangent=""/>
+  <Analysis _="mpmproblem" nsteps="50" deltat="10.0" alpha="1.0" manrmsteps="0" keeptangent=""/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

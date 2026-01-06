@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>frcfcm_shear.out</Output>
   <Description>fixed crack model for fiber reinforced concrete - separate tests on a single finite element</Description>
-  <Analysis type="NonLinearStatic" nsteps="31" deltat="1.0" rtolv="1e-06" maxiter="10000" controllmode="1" stiffmode="0" renumber="1"/>
+  <Analysis _="NonLinearStatic" nsteps="31" deltat="1.0" rtolv="1e-06" maxiter="10000" controllmode="1" stiffmode="0" renumber="1"/>
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

@@ -2,7 +2,7 @@
   <Output>tm04.out</Output>
   <Description>Test of mpm tm mpm formulation, single element, boundary flux, transient, nonzero initial condition</Description>
   <!-- final time 500, initial time step 1 -->
-  <Analysis type="mpmproblem" nsteps="10" deltat="1.0" alpha="1.0" manrmsteps="0" keeptangent="" ptype="tm" smtype="1"/>
+  <Analysis _="mpmproblem" nsteps="10" deltat="1.0" alpha="1.0" manrmsteps="0" keeptangent="" ptype="tm" smtype="1"/>
   <Domain domain="heattransfer">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

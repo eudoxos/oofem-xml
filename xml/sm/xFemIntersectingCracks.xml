@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>xFemIntersectingCracks.out</Output>
   <Description>Test of enrichment front for intersecting cracks. Written by Erik Svenning, Chalmers University of Technology, February 2014</Description>
-  <Analysis type="StaticStructural" nsteps="1" deltat="1.0" rtolf="1e-06" maxiter="40" miniter="2" manrmsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1" deltat="1.0" rtolf="1e-06" maxiter="40" miniter="2" manrmsteps="1"/>
   <!-- vtkxml tstep_all domain_all primvars 1 1 cellvars 1 1 -->
   <!-- gnuplot tstep_all reactionforces boundaryconditions -->
   <Domain domain="2dplanestress">
@@ -57,16 +57,16 @@
       <Set noderanges="1,2,4-7,10-12"/>
       <Set nodes="3 8 9"/>
     </Sets>
-    <XFemManager type="XfemManager" numberofgppertri="3" vtkexport="1" exportfields="2 3 4">
+    <XFemManager _="XfemManager" numberofgppertri="3" vtkexport="1" exportfields="2 3 4">
       <EnrichmentItems>
         <crack>
-          <EnrichmentFunction type="HeavisideFunction"/>
-          <EnrichmentGeometry type="PolygonLine" points="-0.5 0.5 -0.2 0.5 1.1 0.5"/>
+          <EnrichmentFunction _="HeavisideFunction"/>
+          <EnrichmentGeometry _="PolygonLine" points="-0.5 0.5 -0.2 0.5 1.1 0.5"/>
         </crack>
         <!-- Crack 2 -->
         <crack>
-          <EnrichmentFunction type="HeavisideFunction"/>
-          <EnrichmentGeometry id="2" type="PolygonLine" points="0.5 1.1 0.5 1.0 0.5 0.5"/>
+          <EnrichmentFunction _="HeavisideFunction"/>
+          <EnrichmentGeometry id="2" _="PolygonLine" points="0.5 1.1 0.5 1.0 0.5 0.5"/>
           <EnrichmentFront>
             <enrfrontdonothing/>
             <enrfrontintersection tangent="0.0 -1.0"/>
@@ -74,8 +74,8 @@
         </crack>
         <!-- Crack 3 -->
         <crack>
-          <EnrichmentFunction type="HeavisideFunction"/>
-          <EnrichmentGeometry id="3" type="PolygonLine" points="0.5 0.5 0.5 0.1 0.5 -0.1"/>
+          <EnrichmentFunction _="HeavisideFunction"/>
+          <EnrichmentGeometry id="3" _="PolygonLine" points="0.5 0.5 0.5 0.1 0.5 -0.1"/>
           <EnrichmentFront>
             <enrfrontintersection tangent="0.0 1.0"/>
             <enrfrontdonothing/>

@@ -1,0 +1,116 @@
+<oofem version="1">
+  <Output>MPS_05.out.sm</Output>
+  <Description>creep at variable temperature &amp; relative humidity</Description>
+  <!-- element 1: expansion - K -->
+  <!-- element 2: expansion - C -->
+  <!-- element 3: accelerated creep - K -->
+  <!-- element 4: accelerated creep - C -->
+  <!-- element 5: TTC - K -->
+  <!-- element 6: TTC - C -->
+  <Analysis _="StaticStructural" nsteps="25" prescribedtimes="0.0001 0.0002 0.0005 0.001 0.002 0.005 0.01 0.02 0.05 0.1 0.2 0.5 1.0 2.0 5.0 10.0 20.0 50.0 100.0 200.0 500.0 1000.0 2000.0 5000.0 10000.0"/>
+  <!-- vtkxml tstep_step 1 domain_all vars 2 1 4 primvars 1 1 -->
+  <Domain domain="2dplanestress">
+    <OutputManager tstep_all="" dofman_all="" element_all=""/>
+    <Nodes>
+      <!-- NODES -->
+      <Node coords="0.0 0.0 0.0"/>
+      <Node coords="0.1 0.0 0.0"/>
+      <Node coords="0.0 0.1 0.0"/>
+      <Node coords="0.1 0.1 0.0"/>
+      <Node id="5" coords="0.0 0.2 0.0"/>
+      <Node coords="0.1 0.2 0.0"/>
+      <Node coords="0.0 0.3 0.0"/>
+      <Node coords="0.1 0.3 0.0"/>
+      <Node coords="0.0 0.4 0.0"/>
+      <Node id="10" coords="0.1 0.4 0.0"/>
+      <Node coords="0.0 0.5 0.0"/>
+      <Node coords="0.1 0.5 0.0"/>
+      <Node coords="0.0 0.6 0.0"/>
+      <Node coords="0.1 0.6 0.0"/>
+      <Node id="15" coords="0.0 0.7 0.0"/>
+      <Node coords="0.1 0.7 0.0"/>
+      <Node coords="0.0 0.8 0.0"/>
+      <Node coords="0.1 0.8 0.0"/>
+      <Node coords="0.0 0.9 0.0"/>
+      <Node id="20" coords="0.1 0.9 0.0"/>
+      <Node coords="0.0 1.0 0.0"/>
+      <Node coords="0.1 1.0 0.0"/>
+      <Node coords="0.0 1.1 0.0"/>
+      <Node coords="0.1 1.1 0.0"/>
+    </Nodes>
+    <Elements>
+      <!-- ELEMENTS -->
+      <planestress2d nodes="1 2 4 3" crosssect="1"/>
+      <planestress2d nodes="5 6 8 7" crosssect="2"/>
+      <planestress2d nodes="9 10 12 11" crosssect="3"/>
+      <planestress2d nodes="13 14 16 15" crosssect="4"/>
+      <planestress2d id="5" nodes="17 18 20 19" crosssect="3"/>
+      <planestress2d nodes="21 22 24 23" crosssect="4"/>
+    </Elements>
+    <Sets>
+      <Set nodes="1 3 5 7 9 11 13 15 17 19 21 23"/>
+      <Set nodes="1 5 9 13 17 21"/>
+      <Set nodes="10 12 14 16 18 20 22 24"/>
+    </Sets>
+    <CrossSections>
+      <!-- CROSSECTION -->
+      <SimpleCS thick="1.0" material="1"/>
+      <SimpleCS thick="1.0" material="2"/>
+      <SimpleCS thick="1.0" material="3"/>
+      <SimpleCS thick="1.0" material="4"/>
+    </CrossSections>
+    <Materials>
+      <!-- MATERIAL -->
+      <mps d="0.0" n="0.2" talpha="1e-05" referencetemperature="298.0" mode="0" fc="30.0" cc="350.0" w_c="0.5" a_c="6.0" stiffnessfactor="1000000.0" timefactor="1.0" lambda0="1.0" begoftimeofinterest="1e-06" endoftimeofinterest="10000.0" relmatage="7.0" coupledanalysistype="3" mus="5e-06" ktm="0.0202"/>
+      <mps d="0.0" n="0.2" talpha="1e-05" referencetemperature="25.0" mode="0" fc="30.0" cc="350.0" w_c="0.5" a_c="6.0" stiffnessfactor="1000000.0" timefactor="1.0" lambda0="1.0" begoftimeofinterest="1e-06" endoftimeofinterest="10000.0" relmatage="7.0" coupledanalysistype="3" mus="5e-06" ktm="0.0202" temperincelsius=""/>
+      <mps d="0.0" n="0.2" talpha="0.0" referencetemperature="298.15" mode="0" fc="30.0" cc="350.0" w_c="0.5" a_c="6.0" stiffnessfactor="1000000.0" timefactor="1.0" lambda0="1.0" begoftimeofinterest="1e-06" endoftimeofinterest="10000.0" relmatage="7.0" coupledanalysistype="3" mus="5e-06" ktm="0.0202"/>
+      <mps d="0.0" n="0.2" talpha="0.0" referencetemperature="25.0" mode="0" fc="30.0" cc="350.0" w_c="0.5" a_c="6.0" stiffnessfactor="1000000.0" timefactor="1.0" lambda0="1.0" begoftimeofinterest="1e-06" endoftimeofinterest="10000.0" relmatage="7.0" coupledanalysistype="3" mus="5e-06" ktm="0.0202" temperincelsius=""/>
+    </Materials>
+    <BoundaryConditions>
+      <BoundaryCondition loadtimefunction="1" dofs="1" values="0.0" set="1"/>
+      <BoundaryCondition loadtimefunction="1" dofs="2" values="0.0" set="2"/>
+      <NodalLoad loadtimefunction="2" dofs="1 2" components="0.05 0.0" set="3"/>
+    </BoundaryConditions>
+    <InitialConditions/>
+    <LoadTimeFunctions>
+      <!-- TIME FUNCTION -->
+      <ConstantFunction f_t_="1.0"/>
+      <ConstantFunction f_t_="1.0"/>
+    </LoadTimeFunctions>
+  </Domain>
+  <ExportModules>
+    <!-- PeakFunction 2 t 0.0001 f(t) 1.0 -->
+    <errorcheck tolerance="1e-11">
+      <NODE tStep="5" number="2" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="11" number="2" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="17" number="2" dof="1" unknown="d" value="2e-06"/>
+      <NODE tStep="23" number="2" dof="1" unknown="d" value="-4.8e-05"/>
+      <NODE tStep="26" number="2" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="5" number="6" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="11" number="6" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="17" number="6" dof="1" unknown="d" value="2e-06"/>
+      <NODE tStep="23" number="6" dof="1" unknown="d" value="-4.8e-05"/>
+      <NODE tStep="26" number="6" dof="1" unknown="d" value="0.0"/>
+      <NODE tStep="5" number="10" dof="1" unknown="d" value="5.496591e-06"/>
+      <NODE tStep="11" number="10" dof="1" unknown="d" value="6.899754e-06"/>
+      <NODE tStep="17" number="10" dof="1" unknown="d" value="1.104828e-05"/>
+      <NODE tStep="23" number="10" dof="1" unknown="d" value="1.819214e-05"/>
+      <NODE tStep="26" number="10" dof="1" unknown="d" value="2.175228e-05"/>
+      <NODE tStep="5" number="14" dof="1" unknown="d" value="5.496591e-06"/>
+      <NODE tStep="11" number="14" dof="1" unknown="d" value="6.899754e-06"/>
+      <NODE tStep="17" number="14" dof="1" unknown="d" value="1.104828e-05"/>
+      <NODE tStep="23" number="14" dof="1" unknown="d" value="1.819214e-05"/>
+      <NODE tStep="26" number="14" dof="1" unknown="d" value="2.175228e-05"/>
+      <NODE tStep="5" number="18" dof="1" unknown="d" value="4.93619e-06"/>
+      <NODE tStep="11" number="18" dof="1" unknown="d" value="6.091352e-06"/>
+      <NODE tStep="17" number="18" dof="1" unknown="d" value="7.943465e-06"/>
+      <NODE tStep="23" number="18" dof="1" unknown="d" value="1.118435e-05"/>
+      <NODE tStep="26" number="18" dof="1" unknown="d" value="1.589569e-05"/>
+      <NODE tStep="5" number="22" dof="1" unknown="d" value="4.93619e-06"/>
+      <NODE tStep="11" number="22" dof="1" unknown="d" value="6.091352e-06"/>
+      <NODE tStep="17" number="22" dof="1" unknown="d" value="7.943465e-06"/>
+      <NODE tStep="23" number="22" dof="1" unknown="d" value="1.118435e-05"/>
+      <NODE tStep="26" number="22" dof="1" unknown="d" value="1.589569e-05"/>
+    </errorcheck>
+  </ExportModules>
+</oofem>

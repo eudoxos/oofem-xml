@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>contact2d.out</Output>
   <Description>frictionless contact in 2D</Description>
-  <Analysis type="StaticStructural" nsteps="5" deltat="1.0" renumber="0" rtolv="1e-09" stiffmode="0" manrmsteps="1" maxiter="300" initialguess="1" smtype="0"/>
+  <Analysis _="StaticStructural" nsteps="5" deltat="1.0" renumber="0" rtolv="1e-09" stiffmode="0" manrmsteps="1" maxiter="300" initialguess="1" smtype="0"/>
   <Domain domain="planestrain">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

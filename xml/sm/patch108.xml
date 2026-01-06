@@ -2,7 +2,7 @@
   <Output>patch108.out</Output>
   <Description>PATCH TEST OF TrPlaneStress2d ELEMENTS</Description>
   <!-- domain section -->
-  <Analysis type="StaticStructural" nsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="1"/>
   <Domain domain="2dplanestressrot">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

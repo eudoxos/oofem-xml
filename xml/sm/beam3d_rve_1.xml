@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>beam3d_rve_1.out</Output>
   <Description>Beam element test</Description>
-  <Analysis type="StaticStructural" nsteps="1" initialguess="1" lstype="0" smtype="1" stiffmode="1" rtolv="0.001" maxiter="10000"/>
+  <Analysis _="StaticStructural" nsteps="1" initialguess="1" lstype="0" smtype="1" stiffmode="1" rtolv="0.001" maxiter="10000"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

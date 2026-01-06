@@ -2,7 +2,7 @@
   <Output>eigen_beam2d.out</Output>
   <Description>Eigen vibration of simply suported beam</Description>
   <!-- LinearStatic 1 nsteps 1 -->
-  <Analysis type="EigenValueDynamic" nroot="4" rtolv="1e-06"/>
+  <Analysis _="EigenValueDynamic" nroot="4" rtolv="1e-06"/>
   <Domain domain="2dbeam">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

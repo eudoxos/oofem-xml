@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>plasticRemap1.out</Output>
   <Description>Test case for mapping of state variables between domains. This is a quite academic test case: at the end of each time step, the domain is cloned and the state variables are mapped to the new domain. Written by Erik Svenning, Chalmers University of Technology.</Description>
-  <Analysis type="StaticStructural" nsteps="5" deltat="1.0" rtolf="1e-07" maxiter="25" miniter="2" manrmsteps="1"/>
+  <Analysis _="StaticStructural" nsteps="5" deltat="1.0" rtolf="1e-07" maxiter="25" miniter="2" manrmsteps="1"/>
   <!-- vtkxml tstep_all domain_all primvars 1 1 cellvars 1 1 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -35,12 +35,12 @@
       <Set nodes="2"/>
       <Set nodes="3 4"/>
     </Sets>
-    <XFemManager type="XfemManager">
+    <XFemManager _="XfemManager">
       <EnrichmentItems>
         <crack>
           <!-- DiscontinuousFunction 1 -->
-          <EnrichmentFunction type="HeavisideFunction"/>
-          <EnrichmentGeometry type="PolygonLine" points="-0.1 100.0 0.5 100.0 1.1 100.0"/>
+          <EnrichmentFunction _="HeavisideFunction"/>
+          <EnrichmentGeometry _="PolygonLine" points="-0.1 100.0 0.5 100.0 1.1 100.0"/>
         </crack>
       </EnrichmentItems>
     </XFemManager>

@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>concrete_fcm_visco.out</Output>
   <Description>Single element creep test</Description>
-  <Analysis type="nonlinearstatic" nsteps="25" rtolv="1e-08" maxiter="5000" controllmode="1" stiffmode="0" updateelasticstiffnessflag="" manrmsteps="1" deltatfunction="3"/>
+  <Analysis _="nonlinearstatic" nsteps="25" rtolv="1e-08" maxiter="5000" controllmode="1" stiffmode="0" updateelasticstiffnessflag="" manrmsteps="1" deltatfunction="3"/>
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

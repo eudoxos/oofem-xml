@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>xFemCrackValBranch.out</Output>
   <Description>XFEM simulation: A crack with branch functions. Written by Erik Svenning, Chalmers University of Technology.</Description>
-  <Analysis type="StaticStructural" nsteps="3" deltat="1.0" rtolf="1e-06" maxiter="20" miniter="2"/>
+  <Analysis _="StaticStructural" nsteps="3" deltat="1.0" rtolf="1e-06" maxiter="20" miniter="2"/>
   <!-- vtkxml tstep_all domain_all primvars 1 1 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
@@ -75,16 +75,16 @@
       <Set nodes="11"/>
       <Set nodes="12"/>
     </Sets>
-    <XFemManager type="XfemManager" vtkexport="0" exportfields="2 3 4">
+    <XFemManager _="XfemManager" vtkexport="0" exportfields="2 3 4">
       <EnrichmentItems>
         <crack>
-          <EnrichmentFunction type="DiscontinuousFunction"/>
-          <EnrichmentGeometry type="PolygonLine" points="-1.0 1.0 0.333333333333333 1.0 0.56666666666667 1.0"/>
+          <EnrichmentFunction _="DiscontinuousFunction"/>
+          <EnrichmentGeometry _="PolygonLine" points="-1.0 1.0 0.333333333333333 1.0 0.56666666666667 1.0"/>
           <EnrichmentFront>
             <EnrFrontLinearBranchFuncRadius radius="0.5"/>
             <EnrFrontLinearBranchFuncRadius radius="0.5"/>
           </EnrichmentFront>
-          <PropagationLaw type="PropagationLawCrackPrescribedDir" angle="0.0" incrementlength="0.55"/>
+          <PropagationLaw _="PropagationLawCrackPrescribedDir" angle="0.0" incrementlength="0.55"/>
         </crack>
       </EnrichmentItems>
     </XFemManager>

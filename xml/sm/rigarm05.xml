@@ -3,7 +3,7 @@
   <Description>Test of master-slave connection</Description>
   <!-- only momentum influence to the displacements is taken into account -->
   <!-- beamShearCoeff is artificially enlarged. -->
-  <Analysis type="LinearStatic" nsteps="1"/>
+  <Analysis _="LinearStatic" nsteps="1"/>
   <Domain domain="2dbeam">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

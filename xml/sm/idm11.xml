@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>idm11.out</Output>
   <Description>Test of PlaneStress2d element -&gt; tensile test with subsequent load-unload cycles</Description>
-  <Analysis type="NonLinearStatic" nsteps="1">
+  <Analysis _="NonLinearStatic" nsteps="1">
     <Metasteps>
       <!-- unread on the next line: steplength 0.000001 -->
       <MetaStep nsteps="100" rtolv="1e-07" maxiter="9000" controlmode="1"/>

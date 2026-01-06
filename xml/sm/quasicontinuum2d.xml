@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>quasicontinuum2d.out</Output>
   <Description>quasicontinuum simulation of 2d disordered elastic latices - shear test with area of high interest</Description>
-  <Analysis type="qcLinearStatic" nsteps="1" qcapproach="3" mtrxt="2" geninterpelem="0" intmatnum="4" fsd_b="5.0 0.0 0.0 10.0 10.0 0.0"/>
+  <Analysis _="qcLinearStatic" nsteps="1" qcapproach="3" mtrxt="2" geninterpelem="0" intmatnum="4" fsd_b="5.0 0.0 0.0 10.0 10.0 0.0"/>
   <!-- qcvtkxml tstep_all domain_all primvars 1 1 vars 2 1 4 cellvars 2 1 4 expDeaktElem 0 -->
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>

@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>lattice2drandom.out</Output>
   <Description>Direct tension. 2D Lattice Model with random input</Description>
-  <Analysis type="StaticStructural" nsteps="1" solvertype="calm" rtolf="1e-05" maxiter="10" steplength="1e-05" minsteplength="1e-05" hpcmode="2" hpc="2 1" hpcw="1.0"/>
+  <Analysis _="StaticStructural" nsteps="1" solvertype="calm" rtolf="1e-05" maxiter="10" steplength="1e-05" minsteplength="1e-05" hpcmode="2" hpc="2 1" hpcw="1.0"/>
   <Domain domain="2dlattice">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

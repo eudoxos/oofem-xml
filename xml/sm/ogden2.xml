@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>testOgden1.out</Output>
   <Description>Ogden model with alpha_1 = 2, alpha_2 = -2, mu_1 = 20, and mu_2 = -20, K = 0. This setting of material parametes corresponds to the Mooney-Rivlin material with C_1 = 10, C_2 = 10, and K = 0. See thest mooneyrivlin1 for the same case.</Description>
-  <Analysis type="NonLinearStatic" nsteps="1" renumber="1" controllmode="1" rtolv="1e-11" stiffmode="0" manrmsteps="1" maxiter="10"/>
+  <Analysis _="NonLinearStatic" nsteps="1" renumber="1" controllmode="1" rtolv="1e-11" stiffmode="0" manrmsteps="1" maxiter="10"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

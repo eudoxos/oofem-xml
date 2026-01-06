@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>InterfaceEL_Point3D_02.out</Output>
   <Description>One brick element with one contact element. The contact is linear with a constant stiffness. Brick is loaded in uniaxial tension in y direction. Node 6 has higher stiffness due to the added interface element.</Description>
-  <Analysis type="StaticStructural" nsteps="2" rtolf="0.0001" manrmsteps="30" deltat="1.0"/>
+  <Analysis _="StaticStructural" nsteps="2" rtolf="0.0001" manrmsteps="30" deltat="1.0"/>
   <Domain domain="3d">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>

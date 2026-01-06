@@ -1,7 +1,7 @@
 <oofem version="1">
   <Output>adapt01.out</Output>
   <Description>Test of adaptive solution with state remapping</Description>
-  <Analysis type="adaptnlinearstatic" nsteps="5" controllmode="1" rtolv="0.0001" maxiter="800" stiffmode="1" contextoutputstep="1" manrmsteps="1" vartype="1" minlim="0.2" maxlim="1.0" mindens="0.5" maxdens="0.5" meshpackage="3" defdens="100.0" equilmc="1" renumber="1" lstype="0" smtype="0" eetype="0" istype="13"/>
+  <Analysis _="adaptnlinearstatic" nsteps="5" controllmode="1" rtolv="0.0001" maxiter="800" stiffmode="1" contextoutputstep="1" manrmsteps="1" vartype="1" minlim="0.2" maxlim="1.0" mindens="0.5" maxdens="0.5" meshpackage="3" defdens="100.0" equilmc="1" renumber="1" lstype="0" smtype="0" eetype="0" istype="13"/>
   <Domain domain="2dplanestress">
     <OutputManager tstep_all="" dofman_all="" element_all=""/>
     <Nodes>
